@@ -40,7 +40,7 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
       if (anchor) {
         const href = anchor.getAttribute('href');
         if (href && href !== '#' && href.startsWith('#')) {
-          const targetElement = document.querySelector(href);
+          const targetElement = document.querySelector(href) as HTMLElement;
           if (targetElement) {
             e.preventDefault();
             lenis.scrollTo(targetElement, {
