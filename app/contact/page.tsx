@@ -39,8 +39,8 @@ export default function ContactPage() {
                 <div className="space-y-4 text-gray-700">
                   <div>
                     <div className="text-sm font-medium text-gray-600 mb-1">Email</div>
-                    <a href="mailto:info@rockford.com" className="text-navy hover:underline">
-                      info@rockford.com
+                    <a href="mailto:info@kenningford.com" className="text-navy hover:underline">
+                      info@kenningford.com
                     </a>
                   </div>
 

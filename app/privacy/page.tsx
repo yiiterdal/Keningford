@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-navy mb-3">Contact Us</h2>
-              <p>If you have any questions about this Privacy Policy, please contact us at info@rockford.com</p>
+              <p>If you have any questions about this Privacy Policy, please contact us at info@kenningford.com</p>
             </div>
           </div>
         </div>

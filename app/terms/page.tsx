@@ -30,7 +30,7 @@ export default function TermsPage() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-navy mb-3">Contact Information</h2>
-              <p>For questions about these Terms of Service, please contact us at info@rockford.com</p>
+              <p>For questions about these Terms of Service, please contact us at info@kenningford.com</p>
             </div>
           </div>
         </div>

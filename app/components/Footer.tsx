@@ -32,8 +32,8 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 uppercase tracking-wide text-gray-700">Contact</h4>
             <div className="text-sm text-gray-600 space-y-2">
               <div>
-                <a href="mailto:info@rockford.com" className="hover:text-navy transition-colors">
-                  info@rockford.com
+                <a href="mailto:info@kenningford.com" className="hover:text-navy transition-colors">
+                  info@kenningford.com
                 </a>
               </div>
               <div className="space-y-1">
