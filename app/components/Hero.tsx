@@ -1,5 +1,3 @@
-import Logo from './Logo';
-
 interface HeroProps {
   title: string;
   subtitle?: string;
@@ -35,16 +33,12 @@ export default function Hero({ title, subtitle, imageUrl = defaultImageUrl, imag
       </div>
       
       <div className="container mx-auto relative z-10 px-6 md:px-8">
-        <div className="max-w-4xl">
-          {/* Logo at the top of Hero section */}
-          <div className="mb-8 flex justify-center md:justify-start">
-            <Logo className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36" />
-          </div>
+        <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] mb-8 tracking-tight text-white">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-3xl font-light">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto font-light">
               {subtitle}
             </p>
           )}
