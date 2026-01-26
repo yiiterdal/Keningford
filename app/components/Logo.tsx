@@ -1,13 +1,12 @@
 // app/components/Logo.tsx
 export default function Logo({ className = '' }: { className?: string }) {
   return (
-    <div className={`rounded-full bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 p-4 md:p-6 shadow-2xl ${className}`}>
-      <svg
-        viewBox="0 0 120 120"
-        className="w-full h-full"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="Keningford Logo"
-      >
+    <svg
+      viewBox="0 0 120 120"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Keningford Logo"
+    >
         <defs>
           {/* Enhanced gold gradient with more depth */}
           <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -95,7 +94,6 @@ export default function Logo({ className = '' }: { className?: string }) {
         fill="none"
         opacity="0.6"
       />
-      </svg>
-    </div>
+    </svg>
   );
 }
