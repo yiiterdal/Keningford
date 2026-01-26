@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -7,8 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-3">
-              <Logo className="w-10 h-10" />
+            <Link href="/" className="mb-3 block">
               <h3 className="text-lg font-semibold text-navy">Keningford</h3>
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed">
