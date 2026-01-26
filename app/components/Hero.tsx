@@ -38,7 +38,7 @@ export default function Hero({ title, subtitle, imageUrl = defaultImageUrl, imag
             {title}
           </h1>
           {subtitle && (
-            <p className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto font-light">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto font-light mt-6 md:mt-8">
               {subtitle}
             </p>
           )}
