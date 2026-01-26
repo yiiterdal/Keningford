@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import Logo from './Logo';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -35,12 +34,9 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link 
           href="/" 
-          className="flex items-center gap-3 group"
+          className="text-lg font-semibold tracking-tight text-navy"
         >
-          <Logo className="w-10 h-10 md:w-12 md:h-12 transition-transform group-hover:scale-105" />
-          <span className="text-lg font-semibold tracking-tight text-navy">
-            Keningford
-          </span>
+          Keningford
         </Link>
 
         <nav className="hidden md:flex gap-8 items-center">
