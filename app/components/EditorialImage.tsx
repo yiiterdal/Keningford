@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface EditorialImageProps {
   variant: 'architecture-1' | 'architecture-2' | 'architecture-3' | 'architecture-4' | 'architecture-5';
@@ -49,11 +50,12 @@ export default function EditorialImage({
     >
       {/* Real photographic image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={image.url}
           alt={image.alt}
-          className="w-full h-full object-cover"
+          fill
           loading="lazy"
+          className="object-cover"
         />
         {/* Very subtle darkening overlay for text readability - only if text is present */}
         {(title || description) && (

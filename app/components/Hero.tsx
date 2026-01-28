@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface HeroProps {
   title: string;
   subtitle?: string;
@@ -6,10 +8,17 @@ interface HeroProps {
   variant?: 'default' | 'large';
 }
 
-const defaultImageUrl = 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80&auto=format&fit=crop';
+const defaultImageUrl =
+  'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80&auto=format&fit=crop';
 const defaultImageAlt = 'Modern city skyline with office buildings';
 
-export default function Hero({ title, subtitle, imageUrl = defaultImageUrl, imageAlt = defaultImageAlt, variant = 'default' }: HeroProps) {
+export default function Hero({
+  title,
+  subtitle,
+  imageUrl = defaultImageUrl,
+  imageAlt = defaultImageAlt,
+  variant = 'default',
+}: HeroProps) {
   const isLarge = variant === 'large';
   
   return (
@@ -20,11 +29,12 @@ export default function Hero({ title, subtitle, imageUrl = defaultImageUrl, imag
     }`}>
       {/* Real photographic background */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={imageUrl}
           alt={imageAlt}
-          className="w-full h-full object-cover"
-          loading="eager"
+          fill
+          priority={isLarge}
+          className="object-cover"
         />
         {/* Subtle darkening overlay for text readability */}
         <div className="absolute inset-0 bg-black/35" />
