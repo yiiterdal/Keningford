@@ -1,6 +1,5 @@
 import Hero from '../components/Hero';
 import Divider from '../components/Divider';
-import LogoCircle from '../components/LogoCircle';
 
 export const metadata = {
   title: 'About | Keningford',
@@ -20,9 +19,6 @@ export default function AboutPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
-            <div className="flex justify-center mb-12">
-              <LogoCircle />
-            </div>
             <div className="mb-12">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 With over 20 years of combined experience, we have established ourselves as a trusted partner for leading companies and institutional investors worldwide.
