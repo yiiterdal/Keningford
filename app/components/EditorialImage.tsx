@@ -93,14 +93,17 @@ export default function EditorialImage({
                 </p>
               )}
               {ctaText && ctaHref && (
-                <Link
-                  href={ctaHref}
+                <div
                   ref={ctaAnimation.ref}
                   style={ctaAnimation.style}
-                  className="inline-block px-8 py-3 bg-white text-navy text-sm font-medium hover:bg-gray-100 transition-colors mt-4"
                 >
-                  {ctaText}
-                </Link>
+                  <Link
+                    href={ctaHref}
+                    className="inline-block px-8 py-3 bg-white text-navy text-sm font-medium hover:bg-gray-100 transition-colors mt-4"
+                  >
+                    {ctaText}
+                  </Link>
+                </div>
               )}
             </div>
           </div>

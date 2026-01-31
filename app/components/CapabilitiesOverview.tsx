@@ -55,23 +55,26 @@ export default function CapabilitiesOverview() {
           {capabilities.map((capability, index) => {
             const anim = cardAnimations[index];
             return (
-              <Link
+              <div
                 key={index}
-                href={capability.href}
                 ref={anim.ref}
                 style={anim.style}
-                className="group bg-white p-8 border border-gray-200 hover:border-navy transition-all duration-200 hover:shadow-sm"
               >
-                <h3 className="text-xl font-semibold text-navy mb-3 group-hover:underline">
-                  {capability.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-sm mb-4">
-                  {capability.description}
-                </p>
-                <span className="text-sm text-navy font-medium">
-                  Learn more →
-                </span>
-              </Link>
+                <Link
+                  href={capability.href}
+                  className="group bg-white p-8 border border-gray-200 hover:border-navy transition-all duration-200 hover:shadow-sm block"
+                >
+                  <h3 className="text-xl font-semibold text-navy mb-3 group-hover:underline">
+                    {capability.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm mb-4">
+                    {capability.description}
+                  </p>
+                  <span className="text-sm text-navy font-medium">
+                    Learn more →
+                  </span>
+                </Link>
+              </div>
             );
           })}
         </div>
