@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
 
 interface StatConfig {
   value: number;
@@ -76,33 +77,61 @@ export default function FirmPositioning() {
     { value: 100, suffix: '+', label: 'Completed Transactions' },
   ];
 
+  const introAnimation = useFadeInAnimation({ delay: 0, duration: 800 });
+  const statAnimations = stats.map((_, index) => 
+    useFadeInAnimation({ delay: 200 + index * 150, duration: 800 })
+  );
+  const pillarAnimations = pillars.map((_, index) => 
+    useFadeInAnimation({ delay: 100 + index * 100, duration: 800 })
+  );
+
   return (
     <section className="py-24 md:py-32 bg-white border-b border-gray-100">
       <div className="container mx-auto px-6 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 font-light max-w-4xl">
+          <p 
+            ref={introAnimation.ref}
+            style={introAnimation.style}
+            className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 font-light max-w-4xl"
+          >
             Keningford provides strategic capital advisory and financial services to leading companies and institutional investors. We combine deep market knowledge, extensive transaction experience, and disciplined execution to deliver customized solutions that support our clients' strategic objectives.
           </p>
 
           {/* Trust indicators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20 pb-20 border-b border-gray-200">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center md:text-left">
-                <CountUpStat value={stat.value} prefix={stat.prefix} suffix={stat.suffix} label={stat.label} />
-                <div className="text-sm text-gray-600 uppercase tracking-wide">
-                  {stat.label}
+            {stats.map((stat, index) => {
+              const anim = statAnimations[index];
+              return (
+                <div 
+                  key={index} 
+                  ref={anim.ref}
+                  style={anim.style}
+                  className="text-center md:text-left"
+                >
+                  <CountUpStat value={stat.value} prefix={stat.prefix} suffix={stat.suffix} label={stat.label} />
+                  <div className="text-sm text-gray-600 uppercase tracking-wide">
+                    {stat.label}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
-            {pillars.map((pillar, index) => (
-              <div key={index} className="flex gap-4">
-                <span className="text-navy mt-1 flex-shrink-0 text-xl">—</span>
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed">{pillar}</p>
-              </div>
-            ))}
+            {pillars.map((pillar, index) => {
+              const anim = pillarAnimations[index];
+              return (
+                <div 
+                  key={index} 
+                  ref={anim.ref}
+                  style={anim.style}
+                  className="flex gap-4"
+                >
+                  <span className="text-navy mt-1 flex-shrink-0 text-xl">—</span>
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed">{pillar}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

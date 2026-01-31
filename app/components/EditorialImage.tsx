@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
 
 interface EditorialImageProps {
   variant: 'architecture-1' | 'architecture-2' | 'architecture-3' | 'architecture-4' | 'architecture-5';
@@ -43,6 +46,9 @@ export default function EditorialImage({
   ctaHref
 }: EditorialImageProps) {
   const image = imageMap[variant];
+  const titleAnimation = useFadeInAnimation({ delay: 200, duration: 1000 });
+  const descriptionAnimation = useFadeInAnimation({ delay: 500, duration: 1000 });
+  const ctaAnimation = useFadeInAnimation({ delay: 800, duration: 1000 });
   
   return (
     <section 
@@ -69,18 +75,28 @@ export default function EditorialImage({
           <div className="container mx-auto px-6 md:px-8">
             <div className="max-w-3xl mx-auto text-center">
               {title && (
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 md:mb-6 leading-tight">
+                <h2 
+                  ref={titleAnimation.ref}
+                  style={titleAnimation.style}
+                  className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 md:mb-6 leading-tight"
+                >
                   {title}
                 </h2>
               )}
               {description && (
-                <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto mb-6 md:mb-8">
+                <p 
+                  ref={descriptionAnimation.ref}
+                  style={descriptionAnimation.style}
+                  className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto mb-6 md:mb-8"
+                >
                   {description}
                 </p>
               )}
               {ctaText && ctaHref && (
                 <Link
                   href={ctaHref}
+                  ref={ctaAnimation.ref}
+                  style={ctaAnimation.style}
                   className="inline-block px-8 py-3 bg-white text-navy text-sm font-medium hover:bg-gray-100 transition-colors mt-4"
                 >
                   {ctaText}

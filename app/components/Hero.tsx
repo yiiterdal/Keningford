@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
 
 interface HeroProps {
   title: string;
@@ -20,6 +23,8 @@ export default function Hero({
   variant = 'default',
 }: HeroProps) {
   const isLarge = variant === 'large';
+  const titleAnimation = useFadeInAnimation({ delay: 200, duration: 1000 });
+  const subtitleAnimation = useFadeInAnimation({ delay: 600, duration: 1000 });
   
   return (
     <section className={`relative overflow-hidden ${
@@ -44,11 +49,19 @@ export default function Hero({
       
       <div className="container mx-auto relative z-10 px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] mb-8 tracking-tight text-white">
+          <h1 
+            ref={titleAnimation.ref}
+            style={titleAnimation.style}
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] mb-8 tracking-tight text-white"
+          >
             {title}
           </h1>
           {subtitle && (
-            <p className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto font-light mt-6 md:mt-8">
+            <p 
+              ref={subtitleAnimation.ref}
+              style={subtitleAnimation.style}
+              className="text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto font-light mt-6 md:mt-8"
+            >
               {subtitle}
             </p>
           )}

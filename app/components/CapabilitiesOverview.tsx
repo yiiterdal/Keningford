@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
 
 const capabilities = [
   {
@@ -29,10 +32,19 @@ const capabilities = [
 ];
 
 export default function CapabilitiesOverview() {
+  const headerAnimation = useFadeInAnimation({ delay: 0, duration: 800 });
+  const cardAnimations = capabilities.map((_, index) => 
+    useFadeInAnimation({ delay: 200 + index * 100, duration: 800 })
+  );
+
   return (
     <section className="py-24 md:py-32 bg-gray-50">
       <div className="container mx-auto px-6 md:px-8">
-        <div className="mb-16 md:mb-20">
+        <div 
+          ref={headerAnimation.ref}
+          style={headerAnimation.style}
+          className="mb-16 md:mb-20"
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-6">Capabilities</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
             Comprehensive advisory services across the capital markets spectrum.
@@ -40,23 +52,28 @@ export default function CapabilitiesOverview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {capabilities.map((capability, index) => (
-            <Link
-              key={index}
-              href={capability.href}
-              className="group bg-white p-8 border border-gray-200 hover:border-navy transition-all duration-200 hover:shadow-sm"
-            >
-              <h3 className="text-xl font-semibold text-navy mb-3 group-hover:underline">
-                {capability.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-sm mb-4">
-                {capability.description}
-              </p>
-              <span className="text-sm text-navy font-medium">
-                Learn more →
-              </span>
-            </Link>
-          ))}
+          {capabilities.map((capability, index) => {
+            const anim = cardAnimations[index];
+            return (
+              <Link
+                key={index}
+                href={capability.href}
+                ref={anim.ref}
+                style={anim.style}
+                className="group bg-white p-8 border border-gray-200 hover:border-navy transition-all duration-200 hover:shadow-sm"
+              >
+                <h3 className="text-xl font-semibold text-navy mb-3 group-hover:underline">
+                  {capability.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm mb-4">
+                  {capability.description}
+                </p>
+                <span className="text-sm text-navy font-medium">
+                  Learn more →
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
