@@ -45,7 +45,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-gray-200">
+            <div className="pt-8">
               <p className="text-gray-600 text-sm leading-relaxed">
                 We are committed to maintaining the highest level of confidentiality and professionalism. 
                 All inquiries are handled with discretion and responded to promptly by our senior team members.

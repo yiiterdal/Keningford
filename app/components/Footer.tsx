@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-gray-200">
+    <footer className="w-full bg-white">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8">
+        <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
             <div className="text-sm text-gray-600">© {new Date().getFullYear()} Keningford. All rights reserved.</div>
             <div className="text-sm text-gray-600">Confidential — By appointment only</div>
@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Social Media Links */}
           <div className="flex justify-center md:justify-start gap-6">
             <a 
-              href="https://www.linkedin.com/company/rockford-co" 
+              href="https://www.linkedin.com/company/keningford-partners/posts/?feedView=all" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-navy transition-colors"

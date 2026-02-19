@@ -36,7 +36,7 @@ export default function CaseStudiesSection() {
 
         <div className="space-y-16">
           {cases.map((caseStudy, index) => (
-            <div key={index} className="border-b border-gray-200 pb-16 last:border-0 last:pb-0">
+            <div key={index} className="pb-16 last:pb-0">
               <div className="mb-4">
                 <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                   {caseStudy.result}

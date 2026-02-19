@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
-        scrolled ? 'bg-white border-b border-gray-200' : 'bg-white border-b border-gray-100'
+        scrolled ? 'bg-white' : 'bg-white'
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
+        <div className="md:hidden bg-white">
           <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link

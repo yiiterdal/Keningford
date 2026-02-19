@@ -19,7 +19,7 @@ export default function SidebarNav() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden w-full flex items-center justify-between py-4 border-b border-gray-200 text-navy font-medium"
+        className="md:hidden w-full flex items-center justify-between py-4 text-navy font-medium"
       >
         <span>Capabilities</span>
         <svg

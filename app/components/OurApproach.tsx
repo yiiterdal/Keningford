@@ -32,7 +32,7 @@ export default function OurApproach() {
   );
 
   return (
-    <section className="py-24 md:py-32 bg-white border-t border-gray-100">
+    <section className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-6 md:px-8">
         <div 
           ref={headerAnimation.ref}

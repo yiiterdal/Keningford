@@ -86,7 +86,7 @@ export default function FirmPositioning() {
   );
 
   return (
-    <section className="py-24 md:py-32 bg-white border-b border-gray-100">
+    <section className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-6 md:px-8">
         <div className="max-w-5xl mx-auto">
           <p 
@@ -98,7 +98,7 @@ export default function FirmPositioning() {
           </p>
 
           {/* Trust indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20 pb-20 border-b border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20 pb-20">
             {stats.map((stat, index) => {
               const anim = statAnimations[index];
               return (

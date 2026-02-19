@@ -1,6 +1,6 @@
 export default function MarketPerspective() {
   return (
-    <section className="py-24 md:py-32 bg-gray-50 border-t border-gray-200">
+    <section className="py-24 md:py-32 bg-gray-50">
       <div className="container mx-auto px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
           <blockquote className="border-l-4 border-navy pl-8 md:pl-12 py-6 md:py-8">
