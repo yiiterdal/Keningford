@@ -29,8 +29,8 @@ export default function ValuationFairnessOpinionsPage() {
       <Hero
         title="Valuation & Fairness Opinions"
         subtitle="Independent valuation services and fairness opinions for M&A transactions, restructuring, and strategic initiatives."
-        imageUrl="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=1920&q=80&auto=format&fit=crop"
-        imageAlt="Cold blue ocean with distant mountains and cloudy sky"
+        imageUrl="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80&auto=format&fit=crop"
+        imageAlt="Financial district skyline with modern office buildings"
       />
 
       <section className="py-12 bg-white">
