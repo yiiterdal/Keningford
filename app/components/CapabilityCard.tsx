@@ -10,7 +10,7 @@ export default function CapabilityCard({ title, description, href }: CapabilityC
   return (
     <Link
       href={href}
-      className="group block pb-8 hover:pb-6 transition-all duration-200"
+      className="group block border-b border-gray-200 pb-8 hover:pb-6 transition-all duration-200"
     >
       <h3 className="text-xl font-semibold text-navy mb-3 group-hover:text-navy-dark transition-colors">
         {title}

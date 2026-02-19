@@ -54,7 +54,7 @@ export default function SelectedExperience() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {transactions.map((transaction, index) => (
-            <div key={index} className="pb-6">
+            <div key={index} className="border-b border-gray-200 pb-6">
               <div className="mb-2">
                 <span className="text-xs text-gray-500 uppercase tracking-wide">
                   {transaction.type} · {transaction.sector}

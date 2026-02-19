@@ -45,14 +45,6 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <div className="text-sm font-medium text-gray-600 mb-1">Phone</div>
-                    <div className="text-navy">
-                      <a href="tel:+12125551234" className="hover:underline">+1 212 555 12 34</a>
-                      <span className="text-gray-600"> (New York)</span>
-                    </div>
-                  </div>
-
-                  <div>
                     <div className="text-sm font-medium text-gray-600 mb-1">Office</div>
                     <div className="text-navy">
                       New York, USA
