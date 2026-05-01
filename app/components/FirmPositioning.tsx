@@ -94,7 +94,7 @@ export default function FirmPositioning() {
             style={introAnimation.style}
             className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 font-light max-w-4xl"
           >
-            Keningford provides strategic capital advisory and financial services to leading companies and institutional investors. We combine deep market knowledge, extensive transaction experience, and disciplined execution to deliver customized solutions that support our clients' strategic objectives.
+            Keningford Partners provides strategic capital advisory and financial services to leading companies and institutional investors. We combine deep market knowledge, extensive transaction experience, and disciplined execution to deliver customized solutions that support our clients' strategic objectives.
           </p>
 
           {/* Trust indicators */}

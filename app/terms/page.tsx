@@ -18,15 +18,15 @@ export default function TermsPage() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-navy mb-3">Use License</h2>
-              <p>Permission is granted to temporarily download one copy of the materials on Keningford's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.</p>
+              <p>Permission is granted to temporarily download one copy of the materials on Keningford Partners' website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.</p>
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-navy mb-3">Disclaimer</h2>
-              <p>The materials on Keningford's website are provided on an "as is" basis. Keningford makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+              <p>The materials on Keningford Partners' website are provided on an "as is" basis. Keningford Partners makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-navy mb-3">Limitations</h2>
-              <p>In no event shall Keningford or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Keningford's website.</p>
+              <p>In no event shall Keningford Partners or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Keningford Partners' website.</p>
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-navy mb-3">Contact Information</h2>
@@ -39,3 +39,4 @@ export default function TermsPage() {
     </>
   );
 }
+

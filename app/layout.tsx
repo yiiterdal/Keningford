@@ -6,7 +6,7 @@ import SmoothScrollProvider from './components/SmoothScrollProvider';
 import type { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Keningford | Strategic Capital Advisory & Financial Services',
+  title: 'Keningford Partners | Strategic Capital Advisory & Financial Services',
   description: 'Partnering with institutional investors and leading companies to deliver customized capital solutions. Expert M&A advisory, capital raising, strategic financing, and investor relations services.',
   icons: {
     icon: [

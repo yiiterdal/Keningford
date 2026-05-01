@@ -1,7 +1,7 @@
 import Hero from '../components/Hero';
 
 export const metadata = {
-  title: 'Contact | Keningford',
+  title: 'Contact | Keningford Partners',
   description: 'Request a confidential consultation or meeting with our team.',
 };
 
@@ -28,7 +28,7 @@ export default function ContactPage() {
                   src="https://calendly.com/keningford/30min"
                   className="w-full"
                   style={{ minHeight: '700px' }}
-                  title="Schedule a meeting with Keningford"
+                  title="Schedule a meeting with Keningford Partners"
                 />
               </div>
             </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Transactions | Keningford',
+  title: 'Transactions | Keningford Partners',
   description: 'Representative transactions demonstrating our experience across industries and transaction types.',
 };
 

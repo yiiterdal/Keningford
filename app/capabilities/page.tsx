@@ -4,7 +4,7 @@ import Divider from '../components/Divider';
 import CTABlock from '../components/CTABlock';
 
 export const metadata = {
-  title: 'Capabilities | Keningford',
+  title: 'Capabilities | Keningford Partners',
   description: 'Strategic capital advisory and financial services including M&A, capital raising, strategic advisory, valuation, and restructuring.',
 };
 

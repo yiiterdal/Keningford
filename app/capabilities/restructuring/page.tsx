@@ -6,7 +6,7 @@ import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
 
 export const metadata = {
-  title: 'Restructuring | Keningford',
+  title: 'Restructuring | Keningford Partners',
   description: 'Strategic restructuring advisory for companies facing operational or financial challenges.',
 };
 

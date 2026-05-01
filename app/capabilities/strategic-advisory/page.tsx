@@ -6,7 +6,7 @@ import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
 
 export const metadata = {
-  title: 'Strategic Advisory | Keningford',
+  title: 'Strategic Advisory | Keningford Partners',
   description: 'Customized strategic advisory services to optimize capital efficiency and strategic flexibility.',
 };
 

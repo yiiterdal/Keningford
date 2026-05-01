@@ -5,7 +5,7 @@ import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
 
 export const metadata = {
-  title: 'Mergers & Acquisitions | Keningford',
+  title: 'Mergers & Acquisitions | Keningford Partners',
   description: 'Strategic M&A advisory services from deal origination through execution and integration.',
 };
 

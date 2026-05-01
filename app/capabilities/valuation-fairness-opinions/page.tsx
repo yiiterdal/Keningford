@@ -6,7 +6,7 @@ import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
 
 export const metadata = {
-  title: 'Valuation & Fairness Opinions | Keningford',
+  title: 'Valuation & Fairness Opinions | Keningford Partners',
   description: 'Independent valuation services and fairness opinions for M&A transactions, restructuring, and strategic initiatives.',
 };
 

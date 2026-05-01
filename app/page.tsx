@@ -7,7 +7,7 @@ import MarketPerspective from './components/MarketPerspective';
 import EditorialImage from './components/EditorialImage';
 
 export const metadata = {
-  title: 'Keningford | Strategic Capital Advisory & Financial Services',
+  title: 'Keningford Partners | Strategic Capital Advisory & Financial Services',
   description: 'Partnering with institutional investors and leading companies to deliver customized capital solutions.',
 };
 

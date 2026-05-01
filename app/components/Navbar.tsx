@@ -32,11 +32,13 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
-        <Link 
-          href="/" 
-          className="text-lg font-semibold tracking-tight text-navy"
+        <Link
+          href="/"
+          className="flex items-baseline gap-1 text-navy"
+          aria-label="Keningford Partners"
         >
-          Keningford
+          <span className="text-lg font-semibold tracking-tight">Keningford</span>
+          <span className="text-lg font-semibold tracking-tight">Partners</span>
         </Link>
 
         <nav className="hidden md:flex gap-8 items-center">

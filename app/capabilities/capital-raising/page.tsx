@@ -6,7 +6,7 @@ import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
 
 export const metadata = {
-  title: 'Capital Raising | Keningford',
+  title: 'Capital Raising | Keningford Partners',
   description: 'Debt and equity financing solutions for growth, acquisitions, and strategic initiatives.',
 };
 

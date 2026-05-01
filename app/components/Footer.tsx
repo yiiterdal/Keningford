@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link href="/" className="mb-3 block">
-              <h3 className="text-lg font-semibold text-navy">Keningford</h3>
+              <h3 className="text-lg font-semibold text-navy">Keningford Partners</h3>
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed">
               Strategic capital advisory and financial services for leading companies and institutional investors.
@@ -47,7 +47,7 @@ export default function Footer() {
 
         <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-            <div className="text-sm text-gray-600">© {new Date().getFullYear()} Keningford. All rights reserved.</div>
+            <div className="text-sm text-gray-600">© {new Date().getFullYear()} Keningford Partners. All rights reserved.</div>
             <div className="text-sm text-gray-600">Confidential — By appointment only</div>
           </div>
           
