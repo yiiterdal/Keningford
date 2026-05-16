@@ -12,7 +12,7 @@ export default function AboutPage() {
       <Hero
         title="About"
         subtitle="Strategic capital advisory and financial services for leading companies and institutional investors."
-        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Professional business meeting"
       />
 

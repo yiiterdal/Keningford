@@ -1,18 +1,24 @@
 'use client';
 
 import Image from 'next/image';
+import type { ReactNode } from 'react';
 import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
+import {
+  IMAGE_BLUR_DATA_URL,
+  IMAGE_QUALITY,
+  IMAGE_SIZES,
+  unsplashSrc,
+} from '../lib/image-utils';
 
 interface HeroProps {
-  title: string;
+  title: ReactNode;
   subtitle?: string;
   imageUrl?: string;
   imageAlt?: string;
   variant?: 'default' | 'large';
 }
 
-const defaultImageUrl =
-  'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80&auto=format&fit=crop';
+const defaultImageUrl = unsplashSrc('photo-1449824913935-59a10b8d2000');
 const defaultImageAlt = 'Modern city skyline with office buildings';
 
 export default function Hero({
@@ -38,7 +44,11 @@ export default function Hero({
           src={imageUrl}
           alt={imageAlt}
           fill
-          priority={isLarge}
+          priority
+          quality={IMAGE_QUALITY}
+          sizes={IMAGE_SIZES.fullBleed}
+          placeholder="blur"
+          blurDataURL={IMAGE_BLUR_DATA_URL}
           className="object-cover"
         />
         {/* Subtle darkening overlay for text readability */}

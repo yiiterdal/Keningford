@@ -60,7 +60,7 @@ export default function TransactionsPage() {
       <Hero
         title="Transactions"
         subtitle="Representative engagements demonstrating our experience across industries and transaction types."
-        imageUrl="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Financial district with modern skyscrapers"
       />
 

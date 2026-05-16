@@ -1,10 +1,16 @@
+import dynamic from 'next/dynamic';
 import Hero from './components/Hero';
-import FirmPositioning from './components/FirmPositioning';
-import CapabilitiesOverview from './components/CapabilitiesOverview';
-import OurApproach from './components/OurApproach';
+import { unsplashSrc } from './lib/image-utils';
+import EditorialImage from './components/EditorialImage';
 import SelectedExperience from './components/SelectedExperience';
 import MarketPerspective from './components/MarketPerspective';
-import EditorialImage from './components/EditorialImage';
+import NewsSection from './components/NewsSection';
+
+const FirmPositioning = dynamic(() => import('./components/FirmPositioning'));
+const CapabilitiesOverview = dynamic(() => import('./components/CapabilitiesOverview'));
+const OurApproach = dynamic(() => import('./components/OurApproach'));
+
+const HERO_IMAGE = unsplashSrc('photo-1449824913935-59a10b8d2000');
 
 export const metadata = {
   title: 'Keningford Partners | Strategic Capital Advisory & Financial Services',
@@ -14,6 +20,8 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <link rel="preload" as="image" href={HERO_IMAGE} />
+
       <Hero
         title="Strategic Capital Advisory & Financial Services"
         subtitle="Partnering with institutional investors and leading companies to deliver customized capital solutions and strategic advisory services."
@@ -22,15 +30,16 @@ export default function Home() {
 
       <FirmPositioning />
 
-      <EditorialImage 
+      <EditorialImage
         variant="architecture-1"
+        priority
         title="Global Reach, Local Expertise"
         description="Combining deep market knowledge with extensive transaction experience across industries and geographies."
       />
 
       <CapabilitiesOverview />
 
-      <EditorialImage 
+      <EditorialImage
         variant="architecture-4"
         title="Long-term Perspective"
         description="We focus on strategic outcomes that create sustainable value over time, not short-term transactions."
@@ -38,7 +47,7 @@ export default function Home() {
 
       <OurApproach />
 
-      <EditorialImage 
+      <EditorialImage
         variant="architecture-2"
         title="Institutional Relationships"
         description="Access to global capital sources and strategic partners through established institutional networks."
@@ -46,7 +55,7 @@ export default function Home() {
 
       <SelectedExperience />
 
-      <EditorialImage 
+      <EditorialImage
         variant="architecture-5"
         title="Disciplined Execution"
         description="Rigorous analysis, structured processes, and senior-level attention on every engagement."
@@ -54,7 +63,9 @@ export default function Home() {
 
       <MarketPerspective />
 
-      <EditorialImage 
+      <NewsSection />
+
+      <EditorialImage
         variant="architecture-3"
         title="Strategic Partnership"
         description="To learn more about our capabilities and how we can assist with your strategic objectives, please contact our team."

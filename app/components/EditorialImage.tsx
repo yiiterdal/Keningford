@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
+import { IMAGE_BLUR_DATA_URL, IMAGE_QUALITY, IMAGE_SIZES, unsplashSrc } from '../lib/image-utils';
 
 interface EditorialImageProps {
   variant: 'architecture-1' | 'architecture-2' | 'architecture-3' | 'architecture-4' | 'architecture-5';
@@ -11,39 +12,42 @@ interface EditorialImageProps {
   className?: string;
   ctaText?: string;
   ctaHref?: string;
+  /** Load immediately — use for the first visible editorial band on a page */
+  priority?: boolean;
 }
 
 // High-quality photographic images from Unsplash
 const imageMap: Record<string, { url: string; alt: string }> = {
   'architecture-1': {
-    url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop',
-    alt: 'Modern corporate office buildings in business district'
+    url: unsplashSrc('photo-1486406146926-c627a92ad1ab'),
+    alt: 'Modern corporate office buildings in business district',
   },
   'architecture-2': {
-    url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80&auto=format&fit=crop',
-    alt: 'Contemporary glass office tower architecture'
+    url: unsplashSrc('photo-1497366216548-37526070297c'),
+    alt: 'Contemporary glass office tower architecture',
   },
   'architecture-3': {
-    url: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80&auto=format&fit=crop',
-    alt: 'Modern corporate building with glass facade'
+    url: unsplashSrc('photo-1487958449943-2429e8be8625'),
+    alt: 'Modern corporate building with glass facade',
   },
   'architecture-4': {
-    url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80&auto=format&fit=crop',
-    alt: 'Modern corporate building with architectural details'
+    url: unsplashSrc('photo-1497366811353-6870744d04b2'),
+    alt: 'Modern corporate building with architectural details',
   },
   'architecture-5': {
-    url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80&auto=format&fit=crop',
-    alt: 'Contemporary corporate architecture with clean lines and glass panels'
+    url: unsplashSrc('photo-1503387762-592deb58ef4e'),
+    alt: 'Contemporary corporate architecture with clean lines and glass panels',
   },
 };
 
-export default function EditorialImage({ 
-  variant, 
-  title, 
-  description, 
+export default function EditorialImage({
+  variant,
+  title,
+  description,
   className = '',
   ctaText,
-  ctaHref
+  ctaHref,
+  priority = false,
 }: EditorialImageProps) {
   const image = imageMap[variant];
   const titleAnimation = useFadeInAnimation({ delay: 200, duration: 1000 });
@@ -51,8 +55,8 @@ export default function EditorialImage({
   const ctaAnimation = useFadeInAnimation({ delay: 800, duration: 1000 });
   
   return (
-    <section 
-      className={`relative w-full h-[60vh] md:h-[70vh] overflow-hidden ${className}`}
+    <section
+      className={`relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-200 ${className}`}
     >
       {/* Real photographic image */}
       <div className="absolute inset-0">
@@ -60,7 +64,12 @@ export default function EditorialImage({
           src={image.url}
           alt={image.alt}
           fill
-          loading="lazy"
+          priority={priority}
+          loading={priority ? undefined : 'lazy'}
+          quality={IMAGE_QUALITY}
+          sizes={IMAGE_SIZES.fullBleed}
+          placeholder="blur"
+          blurDataURL={IMAGE_BLUR_DATA_URL}
           className="object-cover"
         />
         {/* Very subtle darkening overlay for text readability - only if text is present */}

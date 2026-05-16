@@ -29,7 +29,7 @@ export default function CapitalRaisingPage() {
       <Hero
         title="Capital Raising"
         subtitle="Debt and equity financing solutions for growth, acquisitions, and strategic initiatives."
-        imageUrl="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Ocean waves on rocky coast"
       />
 

@@ -28,7 +28,7 @@ export default function MergersAcquisitionsPage() {
       <Hero
         title="Mergers & Acquisitions"
         subtitle="Strategic M&A advisory from deal origination through execution and integration."
-        imageUrl="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Mountain landscape with lake"
       />
 

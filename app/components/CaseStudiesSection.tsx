@@ -1,4 +1,5 @@
 // app/components/CaseStudiesSection.tsx
+
 export default function CaseStudiesSection() {
   const cases = [
     {
@@ -42,7 +43,9 @@ export default function CaseStudiesSection() {
                   {caseStudy.result}
                 </span>
               </div>
-              <h3 className="text-2xl font-semibold text-navy mb-4">{caseStudy.title}</h3>
+              <h3 className="text-2xl font-semibold text-navy mb-4">
+                {caseStudy.title}
+              </h3>
               <p className="text-gray-600 leading-relaxed mb-8 max-w-3xl">
                 {caseStudy.description}
               </p>

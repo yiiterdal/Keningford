@@ -29,7 +29,7 @@ export default function RestructuringPage() {
       <Hero
         title="Restructuring"
         subtitle="Strategic restructuring advisory for companies facing operational or financial challenges."
-        imageUrl="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Calm blue ocean with gentle waves at sunset"
       />
 

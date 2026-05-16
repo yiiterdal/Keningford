@@ -29,10 +29,13 @@
 - **Type**: website
 - **Image**: (Add OG image URL when available)
 
-## Twitter Card Tags
-- **Card Type**: summary_large_image
-- **Title**: Greyhawk Capital | Strategic Capital Advisory & Financial Services
-- **Description**: Partnering with institutional investors and leading companies to deliver customized capital solutions.
+## X / paylaşım önizlemesi (link preview meta)
+
+Bu etiketler URL paylaşıldığında (X, LinkedIn, Slack vb.) başlık ve görsel önizlemesini iyileştirir; sitede görünen sosyal medya ikonlarından bağımsızdır. HTML’de hâlâ `twitter:` ad alanı kullanılır (platform adı değişse de etiket adları aynıdır).
+
+- **twitter:card** (card type): summary_large_image
+- **twitter:title**: Greyhawk Capital | Strategic Capital Advisory & Financial Services
+- **twitter:description**: Partnering with institutional investors and leading companies to deliver customized capital solutions.
 
 ## Page-Specific SEO Recommendations
 

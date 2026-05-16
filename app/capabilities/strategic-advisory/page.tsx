@@ -29,7 +29,7 @@ export default function StrategicAdvisoryPage() {
       <Hero
         title="Strategic Advisory"
         subtitle="Customized strategic advisory services to optimize capital efficiency and strategic flexibility."
-        imageUrl="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Coastal landscape with horizon and water"
       />
 

@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SmoothScrollProvider from './components/SmoothScrollProvider';
+import { inter, playfair } from './fonts';
 import type { ReactNode } from 'react';
 
 export const metadata = {
@@ -22,8 +23,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col bg-white">
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.pexels.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.pexels.com" crossOrigin="anonymous" />
+      </head>
+      <body className="min-h-screen flex flex-col bg-white font-sans antialiased">
         <SmoothScrollProvider>
           <Navbar />
           <main className="flex-1 w-full">{children}</main>

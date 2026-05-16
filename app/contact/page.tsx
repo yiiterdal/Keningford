@@ -11,7 +11,7 @@ export default function ContactPage() {
       <Hero
         title="Contact"
         subtitle="Request a confidential consultation or meeting with our senior team."
-        imageUrl="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=80&auto=format&fit=crop"
+        imageUrl="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=3840&q=90&auto=format&fit=crop"
         imageAlt="Modern office meeting room"
       />
 
