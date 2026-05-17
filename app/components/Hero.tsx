@@ -22,7 +22,7 @@ interface HeroProps {
 
 const defaultImageUrl = unsplashSrc('photo-1449824913935-59a10b8d2000');
 const defaultImageAlt = 'Modern city skyline with office buildings';
-const defaultHeroVideo = '/videos/hero.mp4';
+const defaultHeroVideo = '/videos/hero-web.mp4';
 
 export default function Hero({
   title,
@@ -84,6 +84,14 @@ export default function Hero({
     });
   };
 
+  const handleVideoError = () => {
+    setPreferStaticImage(true);
+    setVideoReady(false);
+  };
+
+  const showPosterImage =
+    Boolean(videoSrc) && (!useVideoBackground || !videoReady || preferStaticImage);
+
   return (
     <section
       className={`relative overflow-hidden ${
@@ -93,7 +101,21 @@ export default function Hero({
       }`}
     >
       <div className="absolute inset-0 bg-[#0c1628]">
-        {useVideoBackground ? (
+        {showPosterImage && (
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            priority
+            quality={IMAGE_QUALITY}
+            sizes={IMAGE_SIZES.fullBleed}
+            placeholder="blur"
+            blurDataURL={IMAGE_BLUR_DATA_URL}
+            className="object-cover"
+          />
+        )}
+
+        {useVideoBackground && (
           <video
             ref={videoRef}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out ${
@@ -106,27 +128,14 @@ export default function Hero({
             preload="metadata"
             onLoadedData={handleVideoReady}
             onCanPlay={handleVideoReady}
+            onError={handleVideoError}
             aria-hidden
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
-        ) : (
-          !videoSrc && (
-            <Image
-              src={imageUrl}
-              alt={imageAlt}
-              fill
-              priority
-              quality={IMAGE_QUALITY}
-              sizes={IMAGE_SIZES.fullBleed}
-              placeholder="blur"
-              blurDataURL={IMAGE_BLUR_DATA_URL}
-              className="object-cover"
-            />
-          )
         )}
 
-        {videoSrc && preferStaticImage && (
+        {!videoSrc && (
           <Image
             src={imageUrl}
             alt={imageAlt}

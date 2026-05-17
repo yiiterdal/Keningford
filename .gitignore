@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large hero assets (host via CDN or compress before commit)
-public/videos/*.mp4
+# original uncompressed hero source only
+public/videos/hero.mp4
