@@ -51,7 +51,7 @@ export default function CapitalRaisingPage() {
                 <div className="mb-12">
                   <h2 className="text-2xl font-semibold text-navy mb-4">What We Do</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    We help companies access institutional capital&mdash;equity, debt, and hybrid instruments&mdash;to fund growth, acquisitions, refinancings, and balance sheet optimization. 
+                    We help companies access institutional capital, including equity, debt, and hybrid instruments, to fund growth, acquisitions, refinancings, and balance sheet optimization. 
                     Our role is to position the story, design the right structure, and run a focused investor process.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
@@ -65,19 +65,19 @@ export default function CapitalRaisingPage() {
                   <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
                   <ul className="space-y-3">
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Growth equity and minority recapitalizations for expansion or shareholder liquidity</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Senior, unitranche, and mezzanine financings, including refinancing of existing facilities</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Structured and asset-backed solutions for cash-flowing or asset-heavy platforms</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Hybrid and preferred instruments aligning risk, return, and governance for all stakeholders</span>
                     </li>
                   </ul>

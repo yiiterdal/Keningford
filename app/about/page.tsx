@@ -22,7 +22,7 @@ export default function AboutPage() {
             {/* Firm overview */}
             <div className="mb-12">
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                Keningford Partners is a global investment bank focused on structuring complex capital solutions for companies and institutional investors. We specialize in transactions where capital is truly strategic — situations that require precision, creativity, and access to the right investors rather than the widest audience.
+                Keningford Partners is a global investment bank focused on structuring complex capital solutions for companies and institutional investors. We specialize in transactions where capital is truly strategic, in situations that require precision, creativity, and access to the right investors rather than the widest audience.
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 Our work spans growth capital, recapitalizations, bespoke credit, and strategic M&amp;A across sectors ranging from industrials and business services to technology, healthcare, and financial services. In each case, we engineer financing structures that align long-term capital with ambitious growth objectives.
@@ -35,10 +35,10 @@ export default function AboutPage() {
             <div className="mb-12">
               <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">Our Foundation</h2>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                Keningford Partners was founded by senior investment bankers who have spent their careers navigating high-stakes, time‑sensitive transactions. Drawing on experience across multiple cycles and market regimes, our team brings a rigorous approach to structuring, negotiation, and investor alignment.
+                Keningford Partners was founded by senior investment bankers who have spent their careers navigating high-stakes, time-sensitive transactions. Drawing on experience across multiple cycles and market regimes, our team brings a rigorous approach to structuring, negotiation, and investor alignment.
               </p>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                We operate as an embedded partner rather than a transactional intermediary&mdash;helping clients design capital strategies, not just execute single deals. Whether optimizing an existing balance sheet, raising capital for transformative growth, or evaluating strategic alternatives, we focus on turning each transaction into a durable inflection point for the business.
+                We operate as an embedded partner rather than a transactional intermediary, helping clients design capital strategies, not just execute single deals. Whether optimizing an existing balance sheet, raising capital for transformative growth, or evaluating strategic alternatives, we focus on turning each transaction into a durable inflection point for the business.
               </p>
             </div>
 

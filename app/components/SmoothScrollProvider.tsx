@@ -1,11 +1,15 @@
 'use client';
 
 import { useEffect, type ReactNode } from 'react';
+import {
+  premiumScrollEasing,
+  SCROLL_CONFIG,
+  shouldUseReducedMotion,
+} from '../lib/scroll-config';
 
 export default function SmoothScrollProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) return;
+    if (shouldUseReducedMotion()) return;
 
     let lenis: import('lenis').default | null = null;
     let rafId = 0;
@@ -26,8 +30,8 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
       e.preventDefault();
       lenis.scrollTo(targetElement, {
         offset: -80,
-        duration: 1.5,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        duration: SCROLL_CONFIG.anchorDuration,
+        easing: premiumScrollEasing,
       });
     };
 
@@ -35,12 +39,13 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
       if (cancelled) return;
 
       lenis = new Lenis({
-        duration: 1.2,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        lerp: SCROLL_CONFIG.lerp,
+        wheelMultiplier: SCROLL_CONFIG.wheelMultiplier,
+        touchMultiplier: SCROLL_CONFIG.touchMultiplier,
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
-        wheelMultiplier: 0.8,
+        syncTouch: true,
         infinite: false,
       });
 

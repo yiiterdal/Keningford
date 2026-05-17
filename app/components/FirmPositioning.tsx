@@ -38,7 +38,7 @@ function CountUpStat({ value, prefix = '', suffix = '' }: StatConfig) {
   useEffect(() => {
     if (!hasAnimated) return;
 
-    const duration = 2600; // ms - slower, more noticeable animation
+    const duration = 1800;
     const start = performance.now();
 
     const animate = (time: number) => {
@@ -127,7 +127,7 @@ export default function FirmPositioning() {
                   style={anim.style}
                   className="flex gap-4"
                 >
-                  <span className="text-navy mt-1 flex-shrink-0 text-xl">—</span>
+                  <span className="mt-2.5 block h-px w-5 shrink-0 bg-navy" aria-hidden />
                   <p className="text-base md:text-lg text-gray-700 leading-relaxed">{pillar}</p>
                 </div>
               );

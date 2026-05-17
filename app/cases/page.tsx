@@ -10,8 +10,8 @@ export default function Cases() {
       </Section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-        <CaseStudyCard title="Growth equity placement — fintech" body="Led a targeted syndicate raise, achieving favorable terms and preserving founder control." />
-        <CaseStudyCard title="Strategic sale — healthcare platform" body="Managed competitive sale process; optimized timing and buyer selection to maximize value." />
+        <CaseStudyCard title="Growth equity placement, fintech" body="Led a targeted syndicate raise, achieving favorable terms and preserving founder control." />
+        <CaseStudyCard title="Strategic sale, healthcare platform" body="Managed competitive sale process; optimized timing and buyer selection to maximize value." />
         <CaseStudyCard title="Restructuring & recapitalization" body="Repositioned balance sheet and negotiated creditor terms to enable sustained growth." />
       </div>
     </>

@@ -65,19 +65,19 @@ export default function ValuationFairnessOpinionsPage() {
                   <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
                   <ul className="space-y-3">
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Fairness opinions for public and private M&A transactions</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Business and asset valuations for strategic reviews, tax, or financial reporting</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Valuations in connection with restructurings, recapitalizations, and distress situations</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Valuation of complex equity and debt instruments, including preferred and convertible securities</span>
                     </li>
                   </ul>

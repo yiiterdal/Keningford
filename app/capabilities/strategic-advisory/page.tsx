@@ -65,19 +65,19 @@ export default function StrategicAdvisoryPage() {
                   <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
                   <ul className="space-y-3">
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Capital structure reviews and recommendations on leverage, dividend, and buyback policies</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Strategic alternatives assessments, including sale, IPO, recapitalization, or partnership scenarios</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Board-level advisory on shareholder alignment, governance, and stakeholder communication</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Investor messaging, positioning, and preparation ahead of capital markets or M&A activity</span>
                     </li>
                   </ul>

@@ -50,7 +50,7 @@ export default function MergersAcquisitionsPage() {
                 <div className="mb-12">
                   <h2 className="text-2xl font-semibold text-navy mb-4">What We Do</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    We advise corporates, financial sponsors, and family-owned businesses on strategically important M&A transactions&mdash;both sell-side and buy-side. 
+                    We advise corporates, financial sponsors, and family-owned businesses on strategically important M&A transactions, both sell-side and buy-side. 
                     Our role is to shape the right transaction thesis, position the asset, and run a disciplined, competitive process that maximizes value and certainty of closing.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
@@ -64,19 +64,19 @@ export default function MergersAcquisitionsPage() {
                   <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
                   <ul className="space-y-3">
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Sell-side mandates for full or partial company sales, including carve-outs and spin-offs</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Buy-side advisory, target screening, and confidential approach to selected counterparties</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Divestitures and non-core asset sales to refocus the portfolio</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Joint ventures and strategic partnerships where governance and economics must be carefully balanced</span>
                     </li>
                   </ul>
@@ -100,7 +100,7 @@ export default function MergersAcquisitionsPage() {
                 <div className="mb-12">
                   <h2 className="text-2xl font-semibold text-navy mb-4">Outcomes</h2>
                   <p className="text-gray-700 leading-relaxed">
-                    Our clients achieve transactions that are strategically sound, competitively priced, and executable under real-world market conditions&mdash;not just on paper. 
+                    Our clients achieve transactions that are strategically sound, competitively priced, and executable under real-world market conditions, not just on paper. 
                     We measure success by quality of counterparties, deal economics, and the long-term fit with your strategy.
                   </p>
                 </div>

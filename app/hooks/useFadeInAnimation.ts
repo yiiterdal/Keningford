@@ -11,8 +11,8 @@ interface UseFadeInAnimationOptions {
 
 export function useFadeInAnimation<T extends HTMLElement = HTMLDivElement>({
   delay = 0,
-  duration = 800,
-  threshold = 0.1,
+  duration = 600,
+  threshold = 0.08,
   triggerOnce = true,
 }: UseFadeInAnimationOptions = {}) {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,7 +53,7 @@ export function useFadeInAnimation<T extends HTMLElement = HTMLDivElement>({
     isVisible,
     style: {
       opacity: isVisible ? 1 : 0,
-      transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+      transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
       transition: `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`,
     },
   };

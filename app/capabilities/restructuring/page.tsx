@@ -51,7 +51,7 @@ export default function RestructuringPage() {
                 <div className="mb-12">
                   <h2 className="text-2xl font-semibold text-navy mb-4">What We Do</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    We advise companies, sponsors, and creditors in situations of stress or transition&mdash;from covenant pressure to full financial distress. 
+                    We advise companies, sponsors, and creditors in situations of stress or transition, from covenant pressure to full financial distress. 
                     Our focus is on stabilizing the business, preserving value, and designing sustainable capital structures.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
@@ -65,19 +65,19 @@ export default function RestructuringPage() {
                   <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
                   <ul className="space-y-3">
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Debt amendments, maturity extensions, and covenant resets</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Operational restructuring plans and performance improvement programs</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Recapitalizations, debt-for-equity swaps, and new-money solutions</span>
                     </li>
                     <li className="flex gap-4">
-                      <span className="text-navy mt-1">—</span>
+                      <span className="text-navy mt-1">•</span>
                       <span className="text-gray-700">Stakeholder negotiation, creditor coordination, and contingency planning</span>
                     </li>
                   </ul>

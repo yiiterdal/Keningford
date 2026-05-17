@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
-import Hero from './components/Hero';
-import { unsplashSrc } from './lib/image-utils';
+import Hero, { defaultHeroVideo } from './components/Hero';
 import EditorialImage from './components/EditorialImage';
 import SelectedExperience from './components/SelectedExperience';
 import MarketPerspective from './components/MarketPerspective';
@@ -10,8 +9,6 @@ const FirmPositioning = dynamic(() => import('./components/FirmPositioning'));
 const CapabilitiesOverview = dynamic(() => import('./components/CapabilitiesOverview'));
 const OurApproach = dynamic(() => import('./components/OurApproach'));
 
-const HERO_IMAGE = unsplashSrc('photo-1449824913935-59a10b8d2000');
-
 export const metadata = {
   title: 'Keningford Partners | Strategic Capital Advisory & Financial Services',
   description: 'Partnering with institutional investors and leading companies to deliver customized capital solutions.',
@@ -20,12 +17,11 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <link rel="preload" as="image" href={HERO_IMAGE} />
-
       <Hero
         title="Strategic Capital Advisory & Financial Services"
         subtitle="Partnering with institutional investors and leading companies to deliver customized capital solutions and strategic advisory services."
         variant="large"
+        videoSrc={defaultHeroVideo}
       />
 
       <FirmPositioning />

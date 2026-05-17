@@ -58,7 +58,7 @@ export default function Footer() {
         <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
             <div className="text-sm text-gray-400">© {new Date().getFullYear()} Keningford Partners. All rights reserved.</div>
-            <div className="text-sm text-gray-400">Confidential — By appointment only</div>
+            <div className="text-sm text-gray-400">Confidential. By appointment only</div>
           </div>
 
           <div className="flex justify-center md:justify-start gap-6">
