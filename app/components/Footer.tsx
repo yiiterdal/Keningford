@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { cookiePolicyTitle } from '../data/cookie-policy';
 
 export default function Footer() {
   return (
@@ -18,6 +19,16 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 uppercase tracking-wide text-gray-200">Company</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
+                <Link href="/capabilities" className="hover:text-white transition-colors">
+                  Capabilities
+                </Link>
+              </li>
+              <li>
+                <Link href="/transactions" className="hover:text-white transition-colors">
+                  Transactions
+                </Link>
+              </li>
+              <li>
                 <Link href="/news" className="hover:text-white transition-colors">
                   News
                 </Link>
@@ -28,8 +39,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
@@ -55,7 +66,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8">
+        <div className="pt-8 border-t border-slate-700">
+          <Link
+            href="/privacy"
+            className="inline-block text-sm text-gray-300 hover:text-white transition-colors leading-relaxed mb-6 max-w-2xl"
+          >
+            {cookiePolicyTitle} →
+          </Link>
+
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
             <div className="text-sm text-gray-400">© {new Date().getFullYear()} Keningford Partners. All rights reserved.</div>
             <div className="text-sm text-gray-400">Confidential. By appointment only</div>

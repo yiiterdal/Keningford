@@ -17,11 +17,20 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <link
+        rel="preload"
+        href="/images/hero/poster.webp"
+        as="image"
+        type="image/webp"
+        fetchPriority="high"
+      />
       <Hero
         title="Strategic Capital Advisory & Financial Services"
         subtitle="Partnering with institutional investors and leading companies to deliver customized capital solutions and strategic advisory services."
         variant="large"
         videoSrc={defaultHeroVideo}
+        primaryCta={{ label: 'Schedule a Consultation', href: '/contact' }}
+        secondaryCta={{ label: 'Our Capabilities', href: '/capabilities' }}
       />
 
       <FirmPositioning />

@@ -72,9 +72,10 @@ export default function FirmPositioning() {
   ];
 
   const stats: StatConfig[] = [
-    { value: 15, suffix: '+', label: 'Years of Experience' },
-    { value: 5, prefix: '$', suffix: 'B+', label: 'Transaction Value' },
-    { value: 100, suffix: '+', label: 'Completed Transactions' },
+    { value: 15, suffix: '+', label: 'Years of Experienced Team' },
+    { value: 1000, suffix: '+', label: 'Institutional Partners' },
+    { value: 105, suffix: '+', label: 'Completed Transactions by Principals' },
+    { value: 40, suffix: '+', label: 'Location (Cross - Border)' },
   ];
 
   const introAnimation = useFadeInAnimation({ delay: 0, duration: 800 });
@@ -98,7 +99,7 @@ export default function FirmPositioning() {
           </p>
 
           {/* Trust indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20 pb-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-20 pb-20">
             {stats.map((stat, index) => {
               const anim = statAnimations[index];
               return (
@@ -106,10 +107,14 @@ export default function FirmPositioning() {
                   key={index} 
                   ref={anim.ref}
                   style={anim.style}
-                  className="text-center md:text-left"
+                  className="text-left"
                 >
                   <CountUpStat value={stat.value} prefix={stat.prefix} suffix={stat.suffix} label={stat.label} />
-                  <div className="text-sm text-gray-600 uppercase tracking-wide">
+                  <div
+                    className={`text-xs md:text-sm text-gray-600 uppercase tracking-wide leading-snug ${
+                      index === 2 ? 'max-w-[11rem]' : ''
+                    }`}
+                  >
                     {stat.label}
                   </div>
                 </div>

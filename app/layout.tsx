@@ -1,7 +1,6 @@
 // app/layout.tsx
 import './globals.css';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import SiteChrome from './components/SiteChrome';
 import SmoothScrollProvider from './components/SmoothScrollProvider';
 import { inter, playfair } from './fonts';
 import type { ReactNode } from 'react';
@@ -32,9 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="min-h-screen flex flex-col bg-white font-sans antialiased">
         <SmoothScrollProvider>
-          <Navbar />
-          <main className="flex-1 w-full">{children}</main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </SmoothScrollProvider>
       </body>
     </html>

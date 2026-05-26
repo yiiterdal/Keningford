@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
 import {
@@ -11,18 +12,28 @@ import {
 } from '../lib/image-utils';
 import { shouldLoadHeavyMedia, shouldUseReducedMotion } from '../lib/scroll-config';
 
+interface HeroCta {
+  label: string;
+  href: string;
+}
+
 interface HeroProps {
   title: ReactNode;
   subtitle?: string;
   imageUrl?: string;
   imageAlt?: string;
   videoSrc?: string;
+  /** Local poster while video loads; avoids a second large remote fetch */
+  posterSrc?: string;
   variant?: 'default' | 'large';
+  primaryCta?: HeroCta;
+  secondaryCta?: HeroCta;
 }
 
 const defaultImageUrl = unsplashSrc('photo-1449824913935-59a10b8d2000');
 const defaultImageAlt = 'Modern city skyline with office buildings';
 const defaultHeroVideo = '/videos/hero-web.mp4';
+const defaultHeroPoster = '/images/hero/poster.webp';
 
 export default function Hero({
   title,
@@ -30,11 +41,15 @@ export default function Hero({
   imageUrl = defaultImageUrl,
   imageAlt = defaultImageAlt,
   videoSrc,
+  posterSrc = defaultHeroPoster,
   variant = 'default',
+  primaryCta,
+  secondaryCta,
 }: HeroProps) {
   const isLarge = variant === 'large';
   const titleAnimation = useFadeInAnimation({ delay: 150, duration: 700 });
   const subtitleAnimation = useFadeInAnimation({ delay: 400, duration: 700 });
+  const ctaAnimation = useFadeInAnimation({ delay: 600, duration: 700 });
   const videoRef = useRef<HTMLVideoElement>(null);
   const [preferStaticImage, setPreferStaticImage] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
@@ -53,7 +68,7 @@ export default function Hero({
     const startLoading = () => setLoadVideo(true);
 
     if (typeof window.requestIdleCallback === 'function') {
-      const idleId = window.requestIdleCallback(startLoading, { timeout: 1500 });
+      const idleId = window.requestIdleCallback(startLoading, { timeout: 2500 });
       return () => window.cancelIdleCallback(idleId);
     }
 
@@ -91,6 +106,7 @@ export default function Hero({
 
   const showPosterImage =
     Boolean(videoSrc) && (!useVideoBackground || !videoReady || preferStaticImage);
+  const posterImageSrc = videoSrc && posterSrc ? posterSrc : imageUrl;
 
   return (
     <section
@@ -103,10 +119,11 @@ export default function Hero({
       <div className="absolute inset-0 bg-[#0c1628]">
         {showPosterImage && (
           <Image
-            src={imageUrl}
+            src={posterImageSrc}
             alt={imageAlt}
             fill
             priority
+            fetchPriority="high"
             quality={IMAGE_QUALITY}
             sizes={IMAGE_SIZES.fullBleed}
             placeholder="blur"
@@ -125,7 +142,8 @@ export default function Hero({
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
+            poster={posterSrc}
             onLoadedData={handleVideoReady}
             onCanPlay={handleVideoReady}
             onError={handleVideoError}
@@ -170,6 +188,30 @@ export default function Hero({
             >
               {subtitle}
             </p>
+          )}
+          {(primaryCta || secondaryCta) && (
+            <div
+              ref={ctaAnimation.ref}
+              style={ctaAnimation.style}
+              className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className="inline-flex min-w-[200px] items-center justify-center rounded-sm bg-white px-8 py-3.5 text-sm font-semibold text-navy transition hover:bg-gray-100"
+                >
+                  {primaryCta.label}
+                </Link>
+              )}
+              {secondaryCta && (
+                <Link
+                  href={secondaryCta.href}
+                  className="inline-flex min-w-[200px] items-center justify-center rounded-sm border border-white/80 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  {secondaryCta.label}
+                </Link>
+              )}
+            </div>
           )}
         </div>
       </div>

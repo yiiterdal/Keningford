@@ -5,8 +5,10 @@ export const IMAGE_BLUR_DATA_URL =
 /** Next/Image encoder quality (1–100) */
 export const IMAGE_QUALITY = 85;
 
-/** Remote source widths — full-bleed heroes vs. card thumbnails */
-export const REMOTE_FULL_WIDTH = 2560;
+/** Remote source widths — match typical viewport; Next/Image serves AVIF/WebP */
+export const REMOTE_HERO_WIDTH = 1920;
+export const REMOTE_EDITORIAL_WIDTH = 1920;
+export const REMOTE_FULL_WIDTH = REMOTE_HERO_WIDTH;
 export const REMOTE_CARD_WIDTH = 1280;
 
 export const IMAGE_SIZES = {

@@ -21,7 +21,6 @@ export default function Navbar() {
     { href: '/transactions', label: 'Transactions' },
     { href: '/news', label: 'News' },
     { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
   ];
 
   const isActive = (href: string) => pathname?.startsWith(href);
@@ -35,11 +34,10 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link
           href="/"
-          className="flex items-baseline gap-1 text-white"
+          className="font-serif text-xl font-bold text-white tracking-tight"
           aria-label="Keningford Partners"
         >
-          <span className="text-lg font-semibold tracking-tight">Keningford</span>
-          <span className="text-lg font-semibold tracking-tight">Partners</span>
+          Keningford Partners
         </Link>
 
         <nav className="hidden md:flex gap-8 items-center">
@@ -59,6 +57,12 @@ export default function Navbar() {
               )}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            className="ml-2 rounded-sm bg-white px-4 py-2 text-sm font-semibold text-[#1E293B] transition hover:bg-gray-100"
+          >
+            Contact
+          </Link>
         </nav>
 
         <button 
@@ -89,6 +93,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex w-fit rounded-sm bg-white px-4 py-2 text-sm font-semibold text-[#1E293B]"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       )}

@@ -3,7 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
-import { IMAGE_BLUR_DATA_URL, IMAGE_QUALITY, IMAGE_SIZES, unsplashSrc } from '../lib/image-utils';
+import {
+  IMAGE_BLUR_DATA_URL,
+  IMAGE_QUALITY,
+  IMAGE_SIZES,
+  REMOTE_EDITORIAL_WIDTH,
+  unsplashSrc,
+} from '../lib/image-utils';
 
 interface EditorialImageProps {
   variant: 'architecture-1' | 'architecture-2' | 'architecture-3' | 'architecture-4' | 'architecture-5';
@@ -19,23 +25,23 @@ interface EditorialImageProps {
 // High-quality photographic images from Unsplash
 const imageMap: Record<string, { url: string; alt: string }> = {
   'architecture-1': {
-    url: unsplashSrc('photo-1486406146926-c627a92ad1ab'),
+    url: unsplashSrc('photo-1486406146926-c627a92ad1ab', REMOTE_EDITORIAL_WIDTH),
     alt: 'Modern corporate office buildings in business district',
   },
   'architecture-2': {
-    url: unsplashSrc('photo-1497366216548-37526070297c'),
+    url: unsplashSrc('photo-1497366216548-37526070297c', REMOTE_EDITORIAL_WIDTH),
     alt: 'Contemporary glass office tower architecture',
   },
   'architecture-3': {
-    url: unsplashSrc('photo-1487958449943-2429e8be8625'),
+    url: unsplashSrc('photo-1487958449943-2429e8be8625', REMOTE_EDITORIAL_WIDTH),
     alt: 'Modern corporate building with glass facade',
   },
   'architecture-4': {
-    url: unsplashSrc('photo-1497366811353-6870744d04b2'),
+    url: unsplashSrc('photo-1497366811353-6870744d04b2', REMOTE_EDITORIAL_WIDTH),
     alt: 'Modern corporate building with architectural details',
   },
   'architecture-5': {
-    url: unsplashSrc('photo-1503387762-592deb58ef4e'),
+    url: unsplashSrc('photo-1503387762-592deb58ef4e', REMOTE_EDITORIAL_WIDTH),
     alt: 'Contemporary corporate architecture with clean lines and glass panels',
   },
 };
@@ -87,7 +93,7 @@ export default function EditorialImage({
                 <h2 
                   ref={titleAnimation.ref}
                   style={titleAnimation.style}
-                  className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 md:mb-6 leading-tight"
+                  className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 md:mb-6 leading-tight"
                 >
                   {title}
                 </h2>
