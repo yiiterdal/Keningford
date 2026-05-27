@@ -21,6 +21,7 @@ export default function Navbar() {
     { href: '/transactions', label: 'Transactions' },
     { href: '/news', label: 'News' },
     { href: '/about', label: 'About' },
+    { href: '/careers', label: 'Careers' },
   ];
 
   const isActive = (href: string) => pathname?.startsWith(href);

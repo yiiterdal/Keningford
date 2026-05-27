@@ -23,8 +23,8 @@ export default function CapabilitiesPage() {
       <Hero
         title="Capabilities"
         subtitle="Strategic capital advisory and financial services for leading companies and institutional investors."
-        imageUrl="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=3840&q=90&auto=format&fit=crop"
-        imageAlt="Modern office building with glass facade"
+        imageUrl="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=3840&fit=crop"
+        imageAlt="Executive team discussing strategy in a modern office"
       />
 
       <CapabilitiesOverview showHeader={false} />

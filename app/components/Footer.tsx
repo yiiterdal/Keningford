@@ -1,5 +1,12 @@
 import Link from 'next/link';
 import { cookiePolicyTitle } from '../data/cookie-policy';
+import {
+  contactAddressLine1,
+  contactAddressLine2,
+  contactEmail,
+  contactPhone,
+  contactPhoneHref,
+} from '../data/contact';
 
 export default function Footer() {
   return (
@@ -39,6 +46,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/careers" className="hover:text-white transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
                   Contact
                 </Link>
@@ -55,12 +67,18 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 uppercase tracking-wide text-gray-200">Contact</h4>
             <div className="text-sm text-gray-300 space-y-2">
               <div>
-                <a href="mailto:info@keningfordpartners.com" className="hover:text-white transition-colors">
-                  info@keningfordpartners.com
+                <a href={`mailto:${contactEmail}`} className="hover:text-white transition-colors">
+                  {contactEmail}
                 </a>
               </div>
-              <div className="space-y-1">
-                <div>New York, USA</div>
+              <div>
+                <a href={contactPhoneHref} className="hover:text-white transition-colors">
+                  {contactPhone}
+                </a>
+              </div>
+              <div className="space-y-0.5 leading-relaxed">
+                <div>{contactAddressLine1}</div>
+                <div>{contactAddressLine2}</div>
               </div>
             </div>
           </div>

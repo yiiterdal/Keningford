@@ -66,6 +66,53 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">How We Work</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="border border-gray-200 rounded-sm p-6 md:p-7">
+                  <h3 className="text-lg font-semibold text-navy mb-3">Senior-Led Execution</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    Every mandate is led by senior bankers from start to finish. Clients work directly with decision-makers
+                    throughout strategy design, investor positioning, negotiation, and closing.
+                  </p>
+                </div>
+                <div className="border border-gray-200 rounded-sm p-6 md:p-7">
+                  <h3 className="text-lg font-semibold text-navy mb-3">Selective Mandate Model</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    We intentionally maintain a focused number of concurrent assignments so each client receives depth,
+                    speed, and high-quality execution without dilution of attention.
+                  </p>
+                </div>
+                <div className="border border-gray-200 rounded-sm p-6 md:p-7">
+                  <h3 className="text-lg font-semibold text-navy mb-3">Institutional Process Discipline</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    From data room architecture to buyer and investor communication plans, we run disciplined processes
+                    that reduce execution risk and improve negotiating leverage.
+                  </p>
+                </div>
+                <div className="border border-gray-200 rounded-sm p-6 md:p-7">
+                  <h3 className="text-lg font-semibold text-navy mb-3">Long-Term Partnership</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    Our advisory model extends beyond transaction close. We continue to support boards and management
+                    teams on post-transaction capital strategy and strategic priorities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">Sectors & Situations</h2>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                We advise across business services, technology, healthcare, industrials, and selected financial services.
+                Our mandates typically involve inflection-point decisions: acceleration capital, ownership transitions,
+                recapitalizations, complex stakeholder alignment, or strategic alternatives under tight timelines.
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                Regardless of sector, our role is consistent: define the right capital strategy, structure options with
+                institutional rigor, and execute with clear communication and process control.
+              </p>
+            </div>
           </div>
         </div>
       </section>

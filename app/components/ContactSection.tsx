@@ -1,5 +1,12 @@
 // app/components/ContactSection.tsx
 import ContactForm from './ContactForm';
+import {
+  contactAddressLine1,
+  contactAddressLine2,
+  contactEmail,
+  contactPhone,
+  contactPhoneHref,
+} from '../data/contact';
 
 export default function ContactSection() {
   return (
@@ -23,16 +30,25 @@ export default function ContactSection() {
               <div className="space-y-4 text-gray-700">
                 <div>
                   <div className="text-sm font-medium text-gray-600 mb-1">Email</div>
-                  <a href="mailto:info@keningfordpartners.com" className="text-navy hover:underline">
-                    info@keningfordpartners.com
+                  <a href={`mailto:${contactEmail}`} className="text-navy hover:underline">
+                    {contactEmail}
+                  </a>
+                </div>
+
+                <div>
+                  <div className="text-sm font-medium text-gray-600 mb-1">Phone</div>
+                  <a href={contactPhoneHref} className="text-navy hover:underline">
+                    {contactPhone}
                   </a>
                 </div>
 
                 <div>
                   <div className="text-sm font-medium text-gray-600 mb-1">Office</div>
-                  <div className="text-navy">
-                    New York, USA
-                  </div>
+                  <address className="text-navy not-italic leading-relaxed">
+                    {contactAddressLine1}
+                    <br />
+                    {contactAddressLine2}
+                  </address>
                 </div>
               </div>
             </div>
