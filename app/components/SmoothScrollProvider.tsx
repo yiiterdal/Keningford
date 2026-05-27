@@ -1,13 +1,68 @@
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, type ReactNode } from 'react';
 import {
   premiumScrollEasing,
   SCROLL_CONFIG,
   shouldUseReducedMotion,
 } from '../lib/scroll-config';
 
+function scrollWindowToTop() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
+function scrollToTop(lenis: import('lenis').default | null) {
+  if (lenis) {
+    lenis.scrollTo(0, { immediate: true, force: true });
+  } else {
+    scrollWindowToTop();
+  }
+}
+
+function scrollToHash(lenis: import('lenis').default | null, hash: string) {
+  const id = hash.replace(/^#/, '');
+  if (!id) {
+    scrollToTop(lenis);
+    return;
+  }
+
+  const target = document.getElementById(id);
+  if (!target) {
+    scrollToTop(lenis);
+    return;
+  }
+
+  if (lenis) {
+    lenis.scrollTo(target, { offset: -80, immediate: true });
+  } else {
+    target.scrollIntoView();
+  }
+}
+
 export default function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const lenisRef = useRef<import('lenis').default | null>(null);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    const run = () => {
+      if (hash) {
+        scrollToHash(lenisRef.current, hash);
+      } else {
+        scrollToTop(lenisRef.current);
+      }
+    };
+
+    // Run after the new page paints
+    requestAnimationFrame(() => {
+      requestAnimationFrame(run);
+    });
+  }, [pathname]);
+
   useEffect(() => {
     if (shouldUseReducedMotion()) return;
 
@@ -49,6 +104,8 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
         infinite: false,
       });
 
+      lenisRef.current = lenis;
+
       const raf = (time: number) => {
         lenis?.raf(time);
         rafId = requestAnimationFrame(raf);
@@ -62,6 +119,7 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
       cancelled = true;
       cancelAnimationFrame(rafId);
       lenis?.destroy();
+      lenisRef.current = null;
       document.removeEventListener('click', handleAnchorClick);
     };
   }, []);

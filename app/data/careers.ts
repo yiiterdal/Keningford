@@ -35,7 +35,7 @@ export const careerValues: CareerValue[] = [
   {
     title: 'High-Stakes Mandates',
     description:
-      'Work on complex capital raises, recapitalizations, and strategic M&A alongside senior bankers from day one—not peripheral support roles.',
+      'Work on complex capital raises, recapitalizations, and strategic M&A alongside senior bankers from day one, not peripheral support roles.',
   },
   {
     title: 'Direct Client Exposure',
@@ -83,9 +83,9 @@ export const careerOpenings: CareerOpening[] = [
     department: 'Investment Banking',
     location: 'New York, NY (on-site)',
     type: 'Full-time',
-    experience: '0–2 years',
+    experience: '0-2 years',
     summary:
-      'We are seeking an Analyst to join our lean deal team and support active M&A and capital raising mandates. This is a hands-on role on a boutique platform—you will work directly with Partners on live client work, not on internal projects alone.',
+      'We are seeking an Analyst to join our lean deal team and support active M&A and capital raising mandates. This is a hands-on role on a boutique platform. You will work directly with Partners on live client work, not on internal projects alone.',
     responsibilities: [
       'Prepare financial models, valuation work, and board/investor presentation materials',
       'Support comparable company and precedent transaction analysis',
@@ -106,7 +106,7 @@ export const careerOpenings: CareerOpening[] = [
     department: 'Capital Markets',
     location: 'New York, NY (on-site)',
     type: 'Full-time',
-    experience: '2–4 years',
+    experience: '2-4 years',
     summary:
       'The Associate will take ownership of day-to-day execution on sell-side M&A and private capital processes, working closely with Partners on middle-market and growth-company mandates across North America and cross-border situations.',
     responsibilities: [
@@ -118,7 +118,7 @@ export const careerOpenings: CareerOpening[] = [
     ],
     requirements: [
       "Bachelor's degree required; MBA or CFA progress a plus",
-      '2–4 years of experience in investment banking, corporate development, or a related advisory role',
+      '2-4 years of experience in investment banking, corporate development, or a related advisory role',
       'Demonstrated experience running workstreams on live transactions',
       'Comfort interfacing with founders, management teams, and institutional investors',
     ],
