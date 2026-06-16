@@ -168,7 +168,6 @@ export default function Hero({
         )}
 
         <div className="absolute inset-0 bg-black/35" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 lg:h-48 bg-gradient-to-b from-transparent via-gray-100/50 to-white pointer-events-none z-20" />
       </div>
 
       <div className="container mx-auto relative z-10 px-6 md:px-8">
