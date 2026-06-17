@@ -4,6 +4,7 @@ import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
+import { unsplashSrc } from '../../lib/image-utils';
 
 export const metadata = {
   title: 'Strategic Advisory | Keningford Partners',
@@ -27,9 +28,10 @@ export default function StrategicAdvisoryPage() {
   return (
     <>
       <Hero
-        title="Strategic Advisory"
+        eyebrow="Strategic Advisory"
+        title="Customized counsel for complex decisions."
         subtitle="Customized strategic advisory services to optimize capital efficiency and strategic flexibility."
-        imageUrl="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1506905925346-21bda4d32df4')}
         imageAlt="Coastal landscape with horizon and water"
       />
 

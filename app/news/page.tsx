@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import NewsCardImage from '../components/NewsCardImage';
 import NewsMeta from '../components/NewsMeta';
 import NewsReadMore from '../components/NewsReadMore';
-import { IMAGE_SIZES } from '../lib/image-utils';
+import { IMAGE_SIZES, unsplashSrc } from '../lib/image-utils';
 import { newsItems } from '../data/news';
 
 export const metadata = {
@@ -15,9 +15,10 @@ export default function NewsPage() {
   return (
     <>
       <Hero
-        title="News & Insights"
+        eyebrow="News & Insights"
+        title="Perspectives from our team."
         subtitle="Perspectives on markets, transactions, and developments from our team."
-        imageUrl="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1504711434969-e33886168f5c')}
         imageAlt="Business news and market analysis"
       />
 

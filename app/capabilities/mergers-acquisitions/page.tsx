@@ -3,6 +3,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
+import { unsplashSrc } from '../../lib/image-utils';
 
 export const metadata = {
   title: 'Mergers & Acquisitions | Keningford Partners',
@@ -26,9 +27,10 @@ export default function MergersAcquisitionsPage() {
   return (
     <>
       <Hero
-        title="Mergers & Acquisitions"
+        eyebrow="Mergers & Acquisitions"
+        title="From origination through integration."
         subtitle="Strategic M&A advisory from deal origination through execution and integration."
-        imageUrl="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1505142468610-359e7d316be0')}
         imageAlt="Mountain landscape with lake"
       />
 

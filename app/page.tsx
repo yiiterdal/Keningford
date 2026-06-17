@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Hero, { defaultHeroVideo } from './components/Hero';
+import Hero, { DEFAULT_HERO_IMAGE, DEFAULT_HERO_IMAGE_ALT } from './components/Hero';
 import EditorialImage from './components/EditorialImage';
 import SelectedExperience from './components/SelectedExperience';
 import MarketPerspective from './components/MarketPerspective';
@@ -19,18 +19,21 @@ export default function Home() {
     <>
       <link
         rel="preload"
-        href="/images/hero/poster.webp"
+        href={DEFAULT_HERO_IMAGE}
         as="image"
-        type="image/webp"
+        type="image/jpeg"
         fetchPriority="high"
       />
       <Hero
-        title="Strategic Capital Advisory & Financial Services"
-        subtitle="Partnering with institutional investors and leading companies to deliver customized capital solutions and strategic advisory services."
+        eyebrow="Independent Capital Advisory"
+        title="Counsel for the decisions that define a company's future."
+        subtitle="Keningford Partners advises boards, founders and institutional investors on their most consequential transactions, pairing global capital reach with senior, conflict-free judgment on every engagement."
+        imageUrl={DEFAULT_HERO_IMAGE}
+        imageAlt={DEFAULT_HERO_IMAGE_ALT}
         variant="large"
-        videoSrc={defaultHeroVideo}
-        primaryCta={{ label: 'Schedule a Consultation', href: '/contact' }}
-        secondaryCta={{ label: 'Our Capabilities', href: '/capabilities' }}
+        layout="editorial"
+        primaryCta={{ label: 'Schedule a consultation', href: '/contact' }}
+        secondaryCta={{ label: 'Our capabilities', href: '/capabilities' }}
       />
 
       <FirmPositioning />
@@ -38,7 +41,8 @@ export default function Home() {
       <EditorialImage
         variant="architecture-1"
         priority
-        title="Global Reach, Local Expertise"
+        eyebrow="Global Reach, Local Expertise"
+        title="Capital is global. Judgment is personal."
         description="Combining deep market knowledge with extensive transaction experience across industries and geographies."
       />
 
@@ -46,7 +50,8 @@ export default function Home() {
 
       <EditorialImage
         variant="architecture-4"
-        title="Long-term Perspective"
+        eyebrow="Long-term Perspective"
+        title="Value is created over years, not quarters."
         description="We focus on strategic outcomes that create sustainable value over time, not short-term transactions."
       />
 
@@ -54,7 +59,8 @@ export default function Home() {
 
       <EditorialImage
         variant="architecture-2"
-        title="Institutional Relationships"
+        eyebrow="Institutional Relationships"
+        title="The right capital starts with the right relationships."
         description="Access to global capital sources and strategic partners through established institutional networks."
       />
 
@@ -62,7 +68,8 @@ export default function Home() {
 
       <EditorialImage
         variant="architecture-5"
-        title="Disciplined Execution"
+        eyebrow="Disciplined Execution"
+        title="Senior attention on every mandate."
         description="Rigorous analysis, structured processes, and senior-level attention on every engagement."
       />
 
@@ -72,7 +79,8 @@ export default function Home() {
 
       <EditorialImage
         variant="architecture-3"
-        title="Strategic Partnership"
+        eyebrow="Strategic Partnership"
+        title="Begin with a confidential conversation."
         description="To learn more about our capabilities and how we can assist with your strategic objectives, please contact our team."
         ctaText="Contact Our Team"
         ctaHref="/contact"

@@ -4,6 +4,7 @@ import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
+import { unsplashSrc } from '../../lib/image-utils';
 
 export const metadata = {
   title: 'Restructuring | Keningford Partners',
@@ -27,9 +28,10 @@ export default function RestructuringPage() {
   return (
     <>
       <Hero
-        title="Restructuring"
+        eyebrow="Restructuring"
+        title="Clarity when the stakes are highest."
         subtitle="Strategic restructuring advisory for companies facing operational or financial challenges."
-        imageUrl="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1500375592092-40eb2168fd21')}
         imageAlt="Calm blue ocean with gentle waves at sunset"
       />
 

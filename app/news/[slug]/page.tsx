@@ -27,7 +27,7 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
   const article = getNewsBySlug(params.slug);
   if (!article) notFound();
 
-  const paragraphs = article.content.split('\n\n').filter(Boolean);
+  const blocks = article.content.split('\n\n').filter(Boolean);
 
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-white">
@@ -57,11 +57,24 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
           />
 
           <div className="prose max-w-none">
-            {paragraphs.map((paragraph, index) => (
-              <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6">
-                {paragraph}
-              </p>
-            ))}
+            {blocks.map((block, index) => {
+              if (block.startsWith('## ')) {
+                return (
+                  <h2
+                    key={index}
+                    className="text-2xl font-semibold text-navy mb-4 mt-10 first:mt-0"
+                  >
+                    {block.slice(3)}
+                  </h2>
+                );
+              }
+
+              return (
+                <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6">
+                  {block}
+                </p>
+              );
+            })}
           </div>
 
           <Link href="/news" className="inline-block mt-8 text-sm font-medium text-navy hover:underline">

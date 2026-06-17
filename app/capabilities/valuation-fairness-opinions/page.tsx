@@ -4,6 +4,7 @@ import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
+import { unsplashSrc } from '../../lib/image-utils';
 
 export const metadata = {
   title: 'Valuation & Fairness Opinions | Keningford Partners',
@@ -27,9 +28,10 @@ export default function ValuationFairnessOpinionsPage() {
   return (
     <>
       <Hero
-        title="Valuation & Fairness Opinions"
+        eyebrow="Valuation & Fairness Opinions"
+        title="Independent judgment you can rely on."
         subtitle="Independent valuation services and fairness opinions for M&A transactions, restructuring, and strategic initiatives."
-        imageUrl="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1450101499163-c8848c66ca85')}
         imageAlt="Financial district skyline with modern office buildings"
       />
 

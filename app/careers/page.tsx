@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CareerApplyButton from '../components/CareerApplyButton';
 import Hero from '../components/Hero';
+import { IMAGE_QUALITY, isLocalImage, unsplashSrc } from '../lib/image-utils';
 import { careerOpenings, careerPartners, careerValues, careersContactEmail, gmailApplicationUrl } from '../data/careers';
 
 export const metadata = {
@@ -14,9 +15,10 @@ export default function CareersPage() {
   return (
     <>
       <Hero
-        title="Careers"
+        eyebrow="Careers"
+        title="Build your career in complex transactions."
         subtitle="Build your career at the intersection of strategic advisory, capital markets, and complex transactions."
-        imageUrl="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1522071820081-009f0129c71c')}
         imageAlt="Professional team collaborating in a modern office"
         primaryCta={{ label: 'View Open Roles', href: '#open-roles' }}
         secondaryCta={{ label: 'Contact Us', href: '/contact' }}
@@ -25,15 +27,16 @@ export default function CareersPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">Working at Keningford</h2>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-              Keningford Partners is a lean, senior-led investment bank where exceptional people do meaningful work on
+              Keningford Partners is a lean, senior led investment bank where exceptional people do meaningful work on
               behalf of leading companies and institutional investors. We hire individuals who combine analytical rigor
-              with sound judgment, discretion, and a genuine interest in long-term client outcomes.
+              with sound judgment, discretion, and a genuine interest in long term client outcomes.
             </p>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              Our culture rewards ownership, intellectual curiosity, and teamwork. If you thrive in fast-paced
-              environments and want direct exposure to live transactions, not back-office support. We encourage you to
-              explore our current openings.
+              Our culture rewards ownership, intellectual curiosity, and teamwork. If you thrive in fast paced
+              environments and want direct exposure to live transactions rather than back office support, we encourage
+              you to explore our current openings.
             </p>
           </div>
         </div>
@@ -74,6 +77,8 @@ export default function CareersPage() {
                           alt={partner.name}
                           fill
                           sizes="80px"
+                          quality={IMAGE_QUALITY}
+                          unoptimized={isLocalImage(partner.imageUrl!)}
                           className="object-cover object-center grayscale"
                         />
                       </div>
@@ -170,6 +175,8 @@ export default function CareersPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 480px"
+                quality={IMAGE_QUALITY}
+                unoptimized
               />
               <div className="absolute inset-0 bg-[#1E293B]/20" aria-hidden />
             </div>

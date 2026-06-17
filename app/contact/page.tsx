@@ -1,4 +1,7 @@
 import Hero from '../components/Hero';
+import CalendlyEmbed from '../components/CalendlyEmbed';
+import { getCalendlyUrl, isCalendlyConfigured } from '../lib/calendly';
+import { unsplashSrc } from '../lib/image-utils';
 import {
   contactAddressLine1,
   contactAddressLine2,
@@ -13,12 +16,15 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const showCalendly = isCalendlyConfigured();
+
   return (
     <>
       <Hero
-        title="Contact"
+        eyebrow="Contact"
+        title="Request a confidential consultation."
         subtitle="Request a confidential consultation or meeting with our senior team."
-        imageUrl="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1497366754035-f200968a6e72')}
         imageAlt="Modern office meeting room"
       />
 
@@ -30,14 +36,21 @@ export default function ContactPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Choose a time that works for you to schedule a confidential consultation with our team.
               </p>
-              <div className="w-full border border-gray-200 rounded-sm overflow-hidden">
-                <iframe
-                  src="https://calendly.com/keningford/30min"
-                  className="w-full"
-                  style={{ minHeight: '700px' }}
-                  title="Schedule a meeting with Keningford Partners"
-                />
-              </div>
+              {showCalendly ? (
+                <div className="w-full border border-gray-200 rounded-sm overflow-hidden bg-white">
+                  <CalendlyEmbed url={getCalendlyUrl()} />
+                </div>
+              ) : (
+                <div className="w-full border border-gray-200 rounded-sm bg-gray-50 px-6 py-10 text-center">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    Online scheduling is being updated. Please reach out by email or phone and we will
+                    arrange a time promptly.
+                  </p>
+                  <a href={`mailto:${contactEmail}`} className="text-navy font-medium hover:underline">
+                    {contactEmail}
+                  </a>
+                </div>
+              )}
             </div>
 
             <div className="space-y-8">

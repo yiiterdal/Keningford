@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Hero from '../components/Hero';
+import { unsplashSrc } from '../lib/image-utils';
 
 const transactions = [
   {
@@ -58,9 +59,10 @@ export default function TransactionsPage() {
   return (
     <>
       <Hero
-        title="Transactions"
+        eyebrow="Transactions"
+        title="Representative engagements across sectors."
         subtitle="Representative engagements demonstrating our experience across industries and transaction types."
-        imageUrl="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1554224155-6726b3ff858f')}
         imageAlt="Financial district with modern skyscrapers"
       />
 

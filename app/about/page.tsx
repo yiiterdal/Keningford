@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import Divider from '../components/Divider';
+import { unsplashSrc } from '../lib/image-utils';
 
 export const metadata = {
   title: 'About | Keningford Partners',
@@ -10,9 +11,10 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        title="About"
+        eyebrow="About"
+        title="A trusted partner to leading institutions."
         subtitle="Strategic capital advisory and financial services for leading companies and institutional investors."
-        imageUrl="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1521737604893-d14cc237f11d')}
         imageAlt="Professional business meeting"
       />
 

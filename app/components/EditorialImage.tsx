@@ -7,6 +7,7 @@ import {
   IMAGE_BLUR_DATA_URL,
   IMAGE_QUALITY,
   IMAGE_SIZES,
+  isFullBleedImage,
   REMOTE_EDITORIAL_WIDTH,
   unsplashSrc,
 } from '../lib/image-utils';
@@ -14,6 +15,7 @@ import {
 interface EditorialImageProps {
   variant: 'architecture-1' | 'architecture-2' | 'architecture-3' | 'architecture-4' | 'architecture-5';
   title?: string;
+  eyebrow?: string;
   description?: string;
   className?: string;
   ctaText?: string;
@@ -22,11 +24,10 @@ interface EditorialImageProps {
   priority?: boolean;
 }
 
-// High-quality photographic images from Unsplash
 const imageMap: Record<string, { url: string; alt: string }> = {
   'architecture-1': {
-    url: unsplashSrc('photo-1486406146926-c627a92ad1ab', REMOTE_EDITORIAL_WIDTH),
-    alt: 'Modern corporate office buildings in business district',
+    url: '/images/hero/hero.jpg',
+    alt: 'Modern glass skyscrapers rising toward a cloudy sky',
   },
   'architecture-2': {
     url: unsplashSrc('photo-1497366216548-37526070297c', REMOTE_EDITORIAL_WIDTH),
@@ -37,8 +38,8 @@ const imageMap: Record<string, { url: string; alt: string }> = {
     alt: 'Modern corporate building with glass facade',
   },
   'architecture-4': {
-    url: unsplashSrc('photo-1497366811353-6870744d04b2', REMOTE_EDITORIAL_WIDTH),
-    alt: 'Modern corporate building with architectural details',
+    url: '/images/editorial/long-term-perspective.jpg',
+    alt: 'Modern conference room with natural light and contemporary furnishings',
   },
   'architecture-5': {
     url: unsplashSrc('photo-1503387762-592deb58ef4e', REMOTE_EDITORIAL_WIDTH),
@@ -49,6 +50,7 @@ const imageMap: Record<string, { url: string; alt: string }> = {
 export default function EditorialImage({
   variant,
   title,
+  eyebrow,
   description,
   className = '',
   ctaText,
@@ -56,15 +58,18 @@ export default function EditorialImage({
   priority = false,
 }: EditorialImageProps) {
   const image = imageMap[variant];
+  const serveUnoptimized = isFullBleedImage(image.url);
+  const eyebrowAnimation = useFadeInAnimation({ delay: 0, duration: 1000 });
   const titleAnimation = useFadeInAnimation({ delay: 200, duration: 1000 });
   const descriptionAnimation = useFadeInAnimation({ delay: 500, duration: 1000 });
   const ctaAnimation = useFadeInAnimation({ delay: 800, duration: 1000 });
-  
+
+  const hasContent = Boolean(title || description || eyebrow);
+
   return (
     <section
-      className={`relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-200 ${className}`}
+      className={`relative h-[65vh] w-full overflow-hidden bg-gray-200 md:h-[75vh] ${className}`}
     >
-      {/* Real photographic image */}
       <div className="absolute inset-0">
         <Image
           src={image.url}
@@ -74,47 +79,55 @@ export default function EditorialImage({
           loading={priority ? undefined : 'lazy'}
           quality={IMAGE_QUALITY}
           sizes={IMAGE_SIZES.fullBleed}
-          placeholder="blur"
-          blurDataURL={IMAGE_BLUR_DATA_URL}
-          className="object-cover"
+          unoptimized={serveUnoptimized}
+          placeholder={serveUnoptimized ? 'empty' : 'blur'}
+          blurDataURL={serveUnoptimized ? undefined : IMAGE_BLUR_DATA_URL}
+          className="object-cover object-center"
         />
-        {/* Very subtle darkening overlay for text readability - only if text is present */}
-        {(title || description) && (
-          <div className="absolute inset-0 bg-black/20" />
+        {hasContent && (
+          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/25" />
         )}
       </div>
 
-      {/* Text overlay */}
-      {(title || description) && (
-        <div className="absolute inset-0 flex items-center justify-center">
+      {hasContent && (
+        <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-6 md:px-8">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-xl lg:max-w-2xl">
+              {eyebrow && (
+                <div
+                  ref={eyebrowAnimation.ref}
+                  style={eyebrowAnimation.style}
+                  className="mb-6 flex items-center gap-4 md:mb-8"
+                >
+                  <span className="h-px w-10 shrink-0 bg-[#e8d5a8] md:w-12" aria-hidden />
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e8d5a8] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] md:text-xs">
+                    {eyebrow}
+                  </p>
+                </div>
+              )}
               {title && (
-                <h2 
+                <h2
                   ref={titleAnimation.ref}
                   style={titleAnimation.style}
-                  className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 md:mb-6 leading-tight"
+                  className="font-serif text-3xl font-normal leading-[1.12] tracking-[-0.01em] text-white md:text-4xl lg:text-[2.75rem]"
                 >
                   {title}
                 </h2>
               )}
               {description && (
-                <p 
+                <p
                   ref={descriptionAnimation.ref}
                   style={descriptionAnimation.style}
-                  className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto mb-6 md:mb-8"
+                  className="mt-6 max-w-lg text-[0.9375rem] leading-[1.8] text-white/85 md:mt-7 md:text-base"
                 >
                   {description}
                 </p>
               )}
               {ctaText && ctaHref && (
-                <div
-                  ref={ctaAnimation.ref}
-                  style={ctaAnimation.style}
-                >
+                <div ref={ctaAnimation.ref} style={ctaAnimation.style}>
                   <Link
                     href={ctaHref}
-                    className="inline-block px-8 py-3 bg-white text-navy text-sm font-medium hover:bg-gray-100 transition-colors mt-4"
+                    className="mt-8 inline-block border border-white/15 bg-black/45 px-7 py-3.5 text-[13px] font-medium text-white transition hover:bg-black/60"
                   >
                     {ctaText}
                   </Link>

@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import CapabilitiesOverview from '../components/CapabilitiesOverview';
 import Divider from '../components/Divider';
 import CTABlock from '../components/CTABlock';
+import { pexelsSrc, REMOTE_EDITORIAL_WIDTH } from '../lib/image-utils';
 
 export const metadata = {
   title: 'Capabilities | Keningford Partners',
@@ -21,9 +22,13 @@ export default function CapabilitiesPage() {
   return (
     <>
       <Hero
-        title="Capabilities"
+        eyebrow="Capabilities"
+        title="Full-spectrum capital advisory."
         subtitle="Strategic capital advisory and financial services for leading companies and institutional investors."
-        imageUrl="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=3840&fit=crop"
+        imageUrl={pexelsSrc(
+          'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
+          REMOTE_EDITORIAL_WIDTH,
+        )}
         imageAlt="Executive team discussing strategy in a modern office"
       />
 

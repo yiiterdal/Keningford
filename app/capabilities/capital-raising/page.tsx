@@ -4,6 +4,7 @@ import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
 import CTABlock from '../../components/CTABlock';
+import { unsplashSrc } from '../../lib/image-utils';
 
 export const metadata = {
   title: 'Capital Raising | Keningford Partners',
@@ -27,9 +28,10 @@ export default function CapitalRaisingPage() {
   return (
     <>
       <Hero
-        title="Capital Raising"
+        eyebrow="Capital Raising"
+        title="Debt and equity solutions for growth."
         subtitle="Debt and equity financing solutions for growth, acquisitions, and strategic initiatives."
-        imageUrl="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=3840&q=90&auto=format&fit=crop"
+        imageUrl={unsplashSrc('photo-1518837695005-2083093ee35b')}
         imageAlt="Ocean waves on rocky coast"
       />
 
