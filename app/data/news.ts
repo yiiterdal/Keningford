@@ -66,6 +66,33 @@ We will be publishing additional sector notes on healthcare services and vertica
     imageAlt: 'Stock market trading screens and financial data',
   },
   {
+    slug: 'keningford-partners-launches-in-new-york',
+    title: 'Keningford Partners Launches as Boutique Capital Advisory and M&A Firm in New York',
+    excerpt:
+      'Keningford Partners has officially launched in New York, led by Founder and Managing Partner Tuna Yilar, with a principal-led model focused on capital raises, M&A advisory, and debt advisory from Series A through pre-IPO.',
+    content: `NEW YORK, June 25, 2026. Keningford Partners, a boutique capital advisory and M&A firm, has officially launched in New York. The firm is led by Founder and Managing Partner Tuna Yilar, who previously built, operated, and exited his own investment bank before founding Keningford Partners.
+
+Keningford Partners specializes in capital raises from Series A through pre-IPO stage, sell-side and buy-side M&A advisory, and debt advisory services. The firm operates on a principal-led model, with a deliberately limited number of active mandates at any given time to ensure direct, senior-level involvement on every engagement from origination through close.
+
+## Founder Commentary
+
+"I have sat on both sides of the table, as an owner, an operator, and an advisor," said Tuna Yilar, Founder and Managing Partner of Keningford Partners. "I started Keningford because founders deserve the person they actually met during the pitch to be the same person doing the work. That is not how most of this industry operates. It is how Keningford operates."
+
+The firm works closely with founders and management teams to identify the right investor universe, develop a focused outreach strategy, and manage the capital raise or transaction process through to close.
+
+## About Keningford Partners
+
+Keningford Partners is a boutique capital advisory and M&A firm based in New York, founded by Tuna Yilar. The firm provides capital raise advisory, M&A advisory, and debt advisory services to companies from Series A through the pre-IPO stage.
+
+For more information, visit keningfordpartners.com or contact the firm through its website.`,
+    date: 'June 25, 2026',
+    category: 'Firm News',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Glass skyscrapers in the New York financial district',
+  },
+  {
     slug: 'keningford-advises-growth-equity-financing',
     title: 'Keningford Partners Advises on $150 Million Growth Equity Financing',
     excerpt:
