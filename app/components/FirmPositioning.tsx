@@ -87,7 +87,7 @@ export default function FirmPositioning() {
 
   const stats: StatConfig[] = [
     { value: 30, suffix: '+', label: 'Years of combined principal experience' },
-    { value: 45, suffix: '+', label: 'Institutional capital relationships' },
+    { value: 1000, suffix: '+', label: 'Institutional capital relationships' },
     { value: 120, suffix: '+', label: 'Transactions advised by our principals' },
     { value: 14, label: 'Cross-border markets served' },
   ];
