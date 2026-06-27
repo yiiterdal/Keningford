@@ -1,22 +1,26 @@
 import dynamic from 'next/dynamic';
 import Hero, { DEFAULT_HERO_IMAGE, DEFAULT_HERO_IMAGE_ALT } from './components/Hero';
 import EditorialImage from './components/EditorialImage';
+import JsonLd from './components/JsonLd';
 import SelectedExperience from './components/SelectedExperience';
 import MarketPerspective from './components/MarketPerspective';
 import NewsSection from './components/NewsSection';
+import { financialServiceSchema } from './lib/json-ld';
 
 const FirmPositioning = dynamic(() => import('./components/FirmPositioning'));
 const CapabilitiesOverview = dynamic(() => import('./components/CapabilitiesOverview'));
 const OurApproach = dynamic(() => import('./components/OurApproach'));
 
 export const metadata = {
-  title: 'Keningford Partners | Strategic Capital Advisory & Financial Services',
-  description: 'Partnering with institutional investors and leading companies to deliver customized capital solutions.',
+  title: 'Strategic Capital Advisory & Financial Services',
+  description:
+    'Partnering with institutional investors and leading companies to deliver customized capital solutions.',
 };
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={financialServiceSchema} />
       <link
         rel="preload"
         href={DEFAULT_HERO_IMAGE}

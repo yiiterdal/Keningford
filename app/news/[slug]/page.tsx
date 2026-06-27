@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import JsonLd from '../../components/JsonLd';
 import NewsCardImage, { ARTICLE_SIZES } from '../../components/NewsCardImage';
 import NewsMeta from '../../components/NewsMeta';
 import { getNewsBySlug, newsItems } from '../../data/news';
+import { newsArticleSchema } from '../../lib/json-ld';
+import type { Metadata } from 'next';
 
 interface NewsArticlePageProps {
   params: { slug: string };
@@ -13,13 +16,28 @@ export function generateStaticParams() {
   return newsItems.map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: NewsArticlePageProps) {
+export function generateMetadata({ params }: NewsArticlePageProps): Metadata {
   const article = getNewsBySlug(params.slug);
-  if (!article) return { title: 'Article Not Found | Keningford Partners' };
+  if (!article) return { title: 'Article Not Found' };
+
+  const publishedTime = new Date(article.date).toISOString();
 
   return {
-    title: `${article.title} | Keningford Partners`,
+    title: article.title,
     description: article.excerpt,
+    openGraph: {
+      type: 'article',
+      publishedTime,
+      title: article.title,
+      description: article.excerpt,
+      images: [article.imageUrl],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: [article.imageUrl],
+    },
   };
 }
 
@@ -30,9 +48,10 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
   const blocks = article.content.split('\n\n').filter(Boolean);
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-white">
+    <section className="bg-white pt-32 pb-16 md:pt-40 md:pb-24">
+      <JsonLd data={newsArticleSchema(article)} />
       <div className="container mx-auto px-6 md:px-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto max-w-3xl">
           <Breadcrumbs
             items={[
               { label: 'Home', href: '/' },
@@ -43,7 +62,7 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
 
           <NewsMeta category={article.category} date={article.date} className="mb-6" />
 
-          <h1 className="text-3xl md:text-4xl font-semibold text-navy mb-8 leading-tight">
+          <h1 className="mb-8 text-3xl font-semibold leading-tight text-navy md:text-4xl">
             {article.title}
           </h1>
 
@@ -62,7 +81,7 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
                 return (
                   <h2
                     key={index}
-                    className="text-2xl font-semibold text-navy mb-4 mt-10 first:mt-0"
+                    className="mb-4 mt-10 text-2xl font-semibold text-navy first:mt-0"
                   >
                     {block.slice(3)}
                   </h2>
@@ -70,14 +89,14 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
               }
 
               return (
-                <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p key={index} className="mb-6 text-lg leading-relaxed text-gray-700">
                   {block}
                 </p>
               );
             })}
           </div>
 
-          <Link href="/news" className="inline-block mt-8 text-sm font-medium text-navy hover:underline">
+          <Link href="/news" className="mt-8 inline-block text-sm font-medium text-navy hover:underline">
             ← Back to News
           </Link>
         </div>

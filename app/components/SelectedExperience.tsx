@@ -1,37 +1,5 @@
 import Link from 'next/link';
-
-const transactions = [
-  {
-    type: 'M&A',
-    sector: 'Technology',
-    description: 'Strategic sale of technology platform',
-    value: '$800M',
-  },
-  {
-    type: 'Capital Raising',
-    sector: 'Technology',
-    description: 'Series C growth equity financing',
-    value: '$150M',
-  },
-  {
-    type: 'Capital Raising',
-    sector: 'Real Estate',
-    description: 'Debt refinancing for real estate portfolio',
-    value: '$500M',
-  },
-  {
-    type: 'M&A',
-    sector: 'Healthcare',
-    description: 'Acquisition of healthcare services platform',
-    value: '$800M',
-  },
-  {
-    type: 'Strategic Advisory',
-    sector: 'Consumer',
-    description: 'Strategic alternatives assessment',
-    value: 'Confidential',
-  },
-];
+import { transactions } from '../data/transactions';
 
 export default function SelectedExperience() {
   return (

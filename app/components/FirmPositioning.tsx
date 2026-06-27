@@ -11,7 +11,7 @@ interface StatConfig {
 }
 
 function CountUpStat({ value, prefix = '', suffix = '' }: Omit<StatConfig, 'label'>) {
-  const [displayValue, setDisplayValue] = useState(0);
+  const [displayValue, setDisplayValue] = useState(value);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -38,8 +38,15 @@ function CountUpStat({ value, prefix = '', suffix = '' }: Omit<StatConfig, 'labe
   useEffect(() => {
     if (!hasAnimated) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setDisplayValue(value);
+      return;
+    }
+
     const duration = 1800;
     const start = performance.now();
+    setDisplayValue(0);
 
     const animate = (time: number) => {
       const progress = Math.min((time - start) / duration, 1);
