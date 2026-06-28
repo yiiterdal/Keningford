@@ -25,8 +25,17 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) => pathname?.startsWith(href);
-  const isHome = pathname === '/';
-  const isTransparent = isHome && !scrolled;
+
+  const hasHeroOverlay =
+    pathname === '/' ||
+    pathname?.startsWith('/capabilities') ||
+    pathname === '/transactions' ||
+    pathname === '/news' ||
+    pathname === '/about' ||
+    pathname === '/careers' ||
+    pathname === '/contact';
+
+  const isTransparent = hasHeroOverlay && !scrolled;
 
   const headerClasses = isTransparent
     ? 'fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300'
