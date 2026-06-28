@@ -41,7 +41,7 @@ export default function Footer() {
                 Keningford Partners
               </h3>
             </Link>
-            <p className="max-w-sm text-sm leading-relaxed text-white/55">
+            <p className="max-w-sm text-sm leading-relaxed text-white/70">
               Independent capital advisory and financial services for leading companies and institutional
               investors.
             </p>
@@ -51,7 +51,7 @@ export default function Footer() {
             <h4 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#c4a062]">
               Company
             </h4>
-            <ul className="space-y-2.5 text-sm text-white/55">
+            <ul className="space-y-2.5 text-sm text-white/70">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="transition-colors hover:text-white/90">
@@ -66,7 +66,7 @@ export default function Footer() {
             <h4 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#c4a062]">
               Profiles
             </h4>
-            <ul className="space-y-2.5 text-sm text-white/55">
+            <ul className="space-y-2.5 text-sm text-white/70">
               {profileLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -86,7 +86,7 @@ export default function Footer() {
             <h4 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#c4a062]">
               Contact
             </h4>
-            <div className="space-y-2.5 text-sm leading-relaxed text-white/55">
+            <div className="space-y-2.5 text-sm leading-relaxed text-white/70">
               <div>
                 <a href={`mailto:${contactEmail}`} className="transition-colors hover:text-white/90">
                   {contactEmail}
@@ -108,13 +108,13 @@ export default function Footer() {
         <div className="mt-12 border-t border-white/10 pt-8 md:mt-14">
           <Link
             href="/privacy"
-            className="block text-center text-sm text-white/50 transition-colors hover:text-white/80"
+            className="block text-center text-sm text-white/65 transition-colors hover:text-white/90"
           >
             {cookiePolicyTitle} →
           </Link>
         </div>
 
-        <div className="mt-6 flex flex-col gap-4 pt-6 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+        <div className="mt-6 flex flex-col gap-4 pt-6 text-xs text-white/55 md:flex-row md:items-center md:justify-between">
           <p>© {year} Keningford Partners. All rights reserved.</p>
           <p className="md:text-center">Confidential · By appointment only</p>
         </div>

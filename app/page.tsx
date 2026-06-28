@@ -21,13 +21,6 @@ export default function Home() {
   return (
     <>
       <JsonLd data={financialServiceSchema} />
-      <link
-        rel="preload"
-        href={DEFAULT_HERO_IMAGE}
-        as="image"
-        type="image/jpeg"
-        fetchPriority="high"
-      />
       <Hero
         eyebrow="Independent Capital Advisory"
         title="Counsel for the decisions that define a company's future."
@@ -44,7 +37,6 @@ export default function Home() {
 
       <EditorialImage
         variant="architecture-1"
-        priority
         eyebrow="Global Reach, Local Expertise"
         title="Capital is global. Judgment is personal."
         description="Combining deep market knowledge with extensive transaction experience across industries and geographies."
