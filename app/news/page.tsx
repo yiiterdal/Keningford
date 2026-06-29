@@ -36,6 +36,7 @@ export default function NewsPage() {
                     src={item.imageUrl}
                     alt={item.imageAlt}
                     sizes={IMAGE_SIZES.newsList}
+                    clientLogo={item.clientLogo}
                   />
                 </div>
                 <div className="md:col-span-3 flex flex-col justify-center">

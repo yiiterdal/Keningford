@@ -8,6 +8,10 @@ interface NewsCardImageProps {
   priority?: boolean;
   sizes?: string;
   aspectClassName?: string;
+  clientLogo?: {
+    src: string;
+    alt: string;
+  };
 }
 
 const DEFAULT_SIZES = IMAGE_SIZES.newsCard;
@@ -20,6 +24,7 @@ export default function NewsCardImage({
   priority = false,
   sizes = DEFAULT_SIZES,
   aspectClassName = 'aspect-[16/10]',
+  clientLogo,
 }: NewsCardImageProps) {
   const serveUnoptimized = isFullBleedImage(src);
 
@@ -39,6 +44,17 @@ export default function NewsCardImage({
         className="object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
       />
       <div className="absolute inset-0 bg-navy/10 pointer-events-none" aria-hidden="true" />
+      {clientLogo && (
+        <div className="absolute bottom-4 left-4 rounded-sm bg-white/95 px-4 py-3 shadow-sm">
+          <Image
+            src={clientLogo.src}
+            alt={clientLogo.alt}
+            width={120}
+            height={48}
+            className="h-8 w-auto object-contain md:h-10"
+          />
+        </div>
+      )}
     </div>
   );
 }

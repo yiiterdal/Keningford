@@ -34,7 +34,12 @@ export default function NewsSection() {
                 href={`/news/${item.slug}`}
                 className="group flex flex-col h-full border-b border-gray-200 pb-6 hover:border-gray-400 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
               >
-                <NewsCardImage src={item.imageUrl} alt={item.imageAlt} priority={index === 0} />
+                <NewsCardImage
+                  src={item.imageUrl}
+                  alt={item.imageAlt}
+                  priority={index === 0}
+                  clientLogo={item.clientLogo}
+                />
                 <div className="flex flex-col flex-1 pt-4">
                   {item.eyebrow && (
                     <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#BF9B5F]">

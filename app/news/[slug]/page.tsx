@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '../../components/Breadcrumbs';
@@ -80,6 +81,18 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
             aspectClassName="aspect-[21/9]"
             className="mb-8"
           />
+
+          {article.clientLogo && (
+            <div className="mb-8 flex items-center justify-center border border-gray-200 bg-gray-50 px-8 py-6">
+              <Image
+                src={article.clientLogo.src}
+                alt={article.clientLogo.alt}
+                width={240}
+                height={96}
+                className="h-16 w-auto object-contain md:h-20"
+              />
+            </div>
+          )}
 
           <div className="prose max-w-none">
             {blocks.map((block, index) => {
