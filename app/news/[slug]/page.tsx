@@ -62,6 +62,12 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
 
           <NewsMeta category={article.category} date={article.date} className="mb-6" />
 
+          {article.eyebrow && (
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#BF9B5F]">
+              {article.eyebrow}
+            </p>
+          )}
+
           <h1 className="mb-8 text-3xl font-semibold leading-tight text-navy md:text-4xl">
             {article.title}
           </h1>
@@ -94,6 +100,23 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
                 </p>
               );
             })}
+
+            {article.quote && (
+              <blockquote className="my-8 border-l-[3px] border-[#BF9B5F] pl-5">
+                <p className="mb-2.5 text-lg italic leading-relaxed text-navy">
+                  &ldquo;{article.quote.text}&rdquo;
+                </p>
+                <cite className="text-sm font-semibold not-italic text-[#BF9B5F]">
+                  {article.quote.attribution}
+                </cite>
+              </blockquote>
+            )}
+
+            {article.closingNote && (
+              <p className="border-t border-gray-200 pt-5 text-sm leading-relaxed text-gray-600">
+                {article.closingNote}
+              </p>
+            )}
           </div>
 
           <Link href="/news" className="mt-8 inline-block text-sm font-medium text-navy hover:underline">

@@ -11,9 +11,39 @@ export interface NewsItem {
   category: NewsCategory;
   imageUrl: string;
   imageAlt: string;
+  eyebrow?: string;
+  quote?: {
+    text: string;
+    attribution: string;
+  };
+  closingNote?: string;
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    slug: 'keningford-advises-ecopha-biotech-capital-raise',
+    title: 'Advising EcoPHA Biotech on Its Current Capital Raise',
+    eyebrow: 'Current Mandate',
+    excerpt:
+      'Keningford Partners is advising EcoPHA Biotech on its current capital raise. The company is developing sustainable bioplastics and aviation fuel from a single non-edible feedstock, with a flagship project in Queensland supported by government co-funding.',
+    content: `NEW YORK, June 29, 2026. Keningford Partners announces that it is advising EcoPHA Biotech on its current capital raise.
+
+EcoPHA Biotech is developing sustainable bioplastics and aviation fuel from a single non-edible feedstock. Its flagship project, based in Queensland, is supported by government co-funding, alongside strategic partnerships across the aviation and industrial sectors.
+
+The engagement reflects Keningford Partners' focus on growth-stage biotech and deep-tech mandates where capital structure, cross-border SPV coordination, and investor positioning require senior-led attention from origination through close.`,
+    quote: {
+      text: 'What stood out working with Keningford is the level of attention on a mandate like ours, multiple SPVs, multiple geographies, a lot of moving pieces. Haktan took the time to actually understand the technology and the story before taking it to investors, which isn\'t something we\'d experienced before. It\'s made the whole process feel far more credible.',
+      attribution: 'Dr. Wilson Ling, CEO, EcoPHA Biotech',
+    },
+    closingNote:
+      'Keningford Partners works with a small number of companies each year on capital raises and strategic transactions, providing direct, senior-led access to institutional investors.',
+    date: 'June 29, 2026',
+    category: 'Transactions',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Sustainable biotechnology research laboratory',
+  },
   {
     slug: 'capital-markets-outlook-2026',
     title: 'Capital Markets Outlook for 2026',

@@ -1,8 +1,8 @@
-const DEFAULT_CALENDLY_URL = 'https://calendly.com/keningford';
+const DEFAULT_CALENDLY_URL = 'https://calendly.com/tuna-keningfordpartners/30min';
 
-/** Set NEXT_PUBLIC_CALENDLY_ENABLED=true in .env.local or Vercel to show the embed. */
+/** Set NEXT_PUBLIC_CALENDLY_ENABLED=false to hide the embed. Enabled by default. */
 export function isCalendlyEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_CALENDLY_ENABLED === 'true';
+  return process.env.NEXT_PUBLIC_CALENDLY_ENABLED !== 'false';
 }
 
 /** Calendly scheduling page URL — override with NEXT_PUBLIC_CALENDLY_URL in .env.local or Vercel. */

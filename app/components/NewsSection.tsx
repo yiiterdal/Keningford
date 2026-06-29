@@ -36,6 +36,11 @@ export default function NewsSection() {
               >
                 <NewsCardImage src={item.imageUrl} alt={item.imageAlt} priority={index === 0} />
                 <div className="flex flex-col flex-1 pt-4">
+                  {item.eyebrow && (
+                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#BF9B5F]">
+                      {item.eyebrow}
+                    </p>
+                  )}
                   <NewsMeta category={item.category} date={item.date} className="mb-3" />
                   <h3 className="text-lg font-semibold text-navy mb-3 leading-snug decoration-navy/40 group-hover:underline underline-offset-[5px]">
                     {item.title}
