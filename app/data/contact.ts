@@ -1,4 +1,8 @@
 export const contactEmail = 'info@keningfordpartners.com';
+export const contactReferralsEmail = 'info@keningfordpartners.com';
+export const contactInvestorsEmail = 'info@keningfordpartners.com';
+
+export const contactLinkedIn = 'https://www.linkedin.com/company/keningford-partners/';
 
 export const contactPhone = '+1 (315) 932-6269';
 export const contactPhoneHref = 'tel:+13159326269';

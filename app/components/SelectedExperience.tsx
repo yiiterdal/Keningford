@@ -1,60 +1,43 @@
 import Link from 'next/link';
 import { transactions } from '../data/transactions';
+import TransactionCard from './TransactionCard';
 
 export default function SelectedExperience() {
+  const featured = transactions.slice(0, 6);
+
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="bg-white py-20 md:py-24">
       <div className="container mx-auto px-6 md:px-8">
-        <div className="mb-12 md:mb-16 flex items-end justify-between">
+        <div className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-6">Selected Experience</h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-              Representative transactions across industries and transaction types.
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">
+              Select Transactions
+            </p>
+            <h2 className="text-2xl font-semibold text-navy md:text-3xl">Representative deal experience</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
+              A selection of mandates across M&A, capital raising, and strategic advisory.
             </p>
           </div>
           <Link
             href="/transactions"
-            className="hidden md:block text-sm text-navy font-medium hover:underline"
+            className="hidden shrink-0 text-sm font-medium text-navy hover:underline md:block"
           >
-            View All →
+            View all →
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {transactions.map((transaction, index) => (
-            <div key={index} className="border-b border-gray-200 pb-6">
-              <div className="mb-2">
-                <span className="text-xs text-gray-500 uppercase tracking-wide">
-                  {transaction.type} · {transaction.sector}
-                </span>
-              </div>
-              <h3 className="text-lg font-semibold text-navy mb-2">
-                {transaction.description}
-              </h3>
-              <p className="text-sm text-gray-600">{transaction.value}</p>
-            </div>
+        <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((transaction, index) => (
+            <TransactionCard key={`${transaction.description}-${index}`} transaction={transaction} compact />
           ))}
         </div>
 
-        <div className="md:hidden text-center">
-          <Link
-            href="/transactions"
-            className="inline-block text-sm text-navy font-medium hover:underline"
-          >
-            View All Transactions →
+        <div className="mt-8 text-center md:hidden">
+          <Link href="/transactions" className="text-sm font-medium text-navy hover:underline">
+            View all transactions →
           </Link>
         </div>
       </div>
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-

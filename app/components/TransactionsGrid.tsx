@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { Transaction } from '../data/transactions';
 import { transactionDealTypes, transactionSectors } from '../data/transactions';
+import TransactionCard from './TransactionCard';
 
 interface TransactionsGridProps {
   transactions: Transaction[];
@@ -18,43 +19,43 @@ export default function TransactionsGrid({ transactions }: TransactionsGridProps
     return sectorMatch && typeMatch;
   });
 
+  const filterButtonClass = (active: boolean) =>
+    `cursor-pointer px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition-colors ${
+      active
+        ? 'bg-navy text-white'
+        : 'bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-navy'
+    }`;
+
   return (
     <>
-      <div className="mb-12">
-        <div className="mb-6">
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-700">Sector</h3>
-          <div className="flex flex-wrap gap-2">
+      <div className="mb-8 flex flex-col gap-4 border-b border-gray-200 pb-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">
+            Select Transactions
+          </p>
+          <h2 className="text-xl font-semibold text-navy md:text-2xl">Representative deal experience</h2>
+        </div>
+
+        <div className="flex flex-col gap-3 md:items-end">
+          <div className="flex flex-wrap gap-1.5">
             {transactionSectors.map((sector) => (
               <button
                 key={sector}
-                onClick={() => setSelectedSector(sector)}
                 type="button"
-                className={`cursor-pointer border px-4 py-2 text-sm transition-colors ${
-                  selectedSector === sector
-                    ? 'border-navy bg-navy text-white'
-                    : 'border-gray-300 text-gray-700 hover:border-navy hover:bg-gray-50 hover:text-navy'
-                }`}
+                onClick={() => setSelectedSector(sector)}
+                className={filterButtonClass(selectedSector === sector)}
               >
                 {sector}
               </button>
             ))}
           </div>
-        </div>
-        <div>
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-700">
-            Transaction Type
-          </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {transactionDealTypes.map((type) => (
               <button
                 key={type}
-                onClick={() => setSelectedDealType(type)}
                 type="button"
-                className={`cursor-pointer border px-4 py-2 text-sm transition-colors ${
-                  selectedDealType === type
-                    ? 'border-navy bg-navy text-white'
-                    : 'border-gray-300 text-gray-700 hover:border-navy hover:bg-gray-50 hover:text-navy'
-                }`}
+                onClick={() => setSelectedDealType(type)}
+                className={filterButtonClass(selectedDealType === type)}
               >
                 {type}
               </button>
@@ -63,22 +64,14 @@ export default function TransactionsGrid({ transactions }: TransactionsGridProps
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {filteredTransactions.length > 0 ? (
           filteredTransactions.map((transaction, index) => (
-            <div key={index} className="border-b border-gray-200 pb-6">
-              <div className="mb-2">
-                <span className="text-xs uppercase tracking-wide text-gray-500">
-                  {transaction.type} · {transaction.sector}
-                </span>
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-navy">{transaction.description}</h3>
-              <p className="text-sm text-gray-600">{transaction.value}</p>
-            </div>
+            <TransactionCard key={`${transaction.description}-${index}`} transaction={transaction} />
           ))
         ) : (
-          <div className="col-span-full py-12 text-center">
-            <p className="text-gray-600">No transactions found matching the selected filters.</p>
+          <div className="col-span-full border border-dashed border-gray-200 px-6 py-10 text-center">
+            <p className="text-sm text-gray-600">No transactions match the selected filters.</p>
           </div>
         )}
       </div>

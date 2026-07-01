@@ -4,20 +4,22 @@ import {
   contactAddressLine1,
   contactAddressLine2,
   contactEmail,
+  contactLinkedIn,
   contactPhone,
   contactPhoneHref,
 } from '../data/contact';
+import { primaryNavLinks } from '../data/navigation';
 
-const companyLinks = [
-  { href: '/capabilities', label: 'Capabilities' },
-  { href: '/transactions', label: 'Transactions' },
-  { href: '/news', label: 'News' },
-  { href: '/about', label: 'About' },
-  { href: '/careers', label: 'Careers' },
-  { href: '/contact', label: 'Contact' },
+const audienceLinks = [
+  { href: '/contact?tab=referrals', label: 'Referrals' },
+  { href: '/contact?tab=investors', label: 'Investors' },
 ];
 
 const profileLinks = [
+  {
+    href: contactLinkedIn,
+    label: 'LinkedIn',
+  },
   {
     href: 'https://pitchbook.com/profiles/advisor/1405195-84',
     label: 'PitchBook',
@@ -52,7 +54,27 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-2.5 text-sm text-white/70">
-              {companyLinks.map((link) => (
+              {primaryNavLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="transition-colors hover:text-white/90">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/contact" className="transition-colors hover:text-white/90">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <h4 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#c4a062]">
+              Partners
+            </h4>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              {audienceLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="transition-colors hover:text-white/90">
                     {link.label}
@@ -62,7 +84,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#c4a062]">
               Profiles
             </h4>
@@ -82,7 +104,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#c4a062]">
               Contact
             </h4>
@@ -122,4 +144,3 @@ export default function Footer() {
     </footer>
   );
 }
-
