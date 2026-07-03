@@ -33,6 +33,7 @@ export default function CapitalRaisingPage() {
         subtitle="Debt and equity financing solutions for growth, acquisitions, and strategic initiatives."
         imageUrl={unsplashSrc('photo-1518837695005-2083093ee35b')}
         imageAlt="Ocean waves on rocky coast"
+        secondaryCta={{ label: 'Raise readiness diagnostic', href: '/raise-readiness' }}
       />
 
       <section className="py-12 bg-white">

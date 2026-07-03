@@ -14,6 +14,7 @@ export const heroOverlayPaths = [
   '/about',
   '/careers',
   '/contact',
+  '/raise-readiness',
 ] as const;
 
 export function hasHeroOverlay(pathname: string | null): boolean {

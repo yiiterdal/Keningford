@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/news',
     '/careers',
     '/contact',
+    '/raise-readiness',
     '/privacy',
     '/terms',
   ];
