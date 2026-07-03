@@ -3,6 +3,7 @@ import './globals.css';
 import SiteChrome from './components/SiteChrome';
 import SmoothScrollProvider from './components/SmoothScrollProvider';
 import JsonLd from './components/JsonLd';
+import ApolloTracker from './components/ApolloTracker';
 import { inter, playfair } from './fonts';
 import { organizationSchema } from './lib/json-ld';
 import type { Metadata } from 'next';
@@ -43,6 +44,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://assets.calendly.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://assets.apollo.io" />
+        <link rel="dns-prefetch" href="https://aplo-evnt.com" />
+        <ApolloTracker />
       </head>
       <body className="min-h-screen flex flex-col bg-white font-sans antialiased">
         <JsonLd data={organizationSchema} />
