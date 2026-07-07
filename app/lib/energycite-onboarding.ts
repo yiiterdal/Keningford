@@ -216,30 +216,6 @@ export function formatEnergyCiteSubmissionHtml(
   return `<div style="font-family:Arial,sans-serif;color:#1A1916;"><p style="font-size:14px;color:#5C5A55;">Submitted ${escapeHtml(submittedAt)}</p>${sections}</div>`;
 }
 
-export const ENERGYCITE_REQUIRED_FIELDS: (keyof EnergyCiteFormData)[] = [
-  'companyName',
-  'incState',
-  'ceoName',
-  'oneLiner',
-  'stage',
-  'productDesc',
-  'moat',
-  'devStage',
-  'revenueModel',
-  'raiseTarget',
-  'offeringType',
-  'useProceeds',
-  'closeTimeline',
-];
-
-export function validateEnergyCiteForm(data: EnergyCiteFormData): string | null {
-  for (const key of ENERGYCITE_REQUIRED_FIELDS) {
-    const value = data[key];
-    if (Array.isArray(value) ? value.length === 0 : !String(value).trim()) {
-      return `Missing required field: ${key}`;
-    }
-  }
-  if (data.invType.length === 0) return 'Missing required field: invType';
-  if (data.geo.length === 0) return 'Missing required field: geo';
+export function validateEnergyCiteForm(_data: EnergyCiteFormData): string | null {
   return null;
 }

@@ -66,6 +66,12 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.stepsList li {
+  list-style: none;
 }
 
 .stepItem {
@@ -74,6 +80,21 @@
   gap: 12px;
   padding: 10px 12px;
   border-radius: 8px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+  font: inherit;
+}
+
+.stepItem:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stepItem:disabled {
+  cursor: default;
 }
 
 .stepItemActive {

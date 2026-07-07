@@ -90,6 +90,12 @@ export default function EnergyCiteOnboardingForm() {
     if (step > 1) setStep((current) => current - 1);
   }
 
+  function goToStep(targetStep: number) {
+    if (submitted || targetStep < 1 || targetStep > TOTAL_STEPS) return;
+    setStep(targetStep);
+    setError('');
+  }
+
   async function handleSubmit() {
     setSubmitting(true);
     setError('');
@@ -150,8 +156,7 @@ export default function EnergyCiteOnboardingForm() {
               <div className={styles.fieldRow}>
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="companyName">
-                    Legal Company Name <span className={styles.required}>*</span>
-                  </label>
+                    Legal Company Name                  </label>
                   <input
                     id="companyName"
                     className={styles.input}
@@ -162,8 +167,7 @@ export default function EnergyCiteOnboardingForm() {
                 </div>
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="incState">
-                    State of Incorporation <span className={styles.required}>*</span>
-                  </label>
+                    State of Incorporation                  </label>
                   <input
                     id="incState"
                     className={styles.input}
@@ -201,8 +205,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="ceoName">
-                  CEO / Founder Name <span className={styles.required}>*</span>
-                </label>
+                  CEO / Founder Name                </label>
                 <input
                   id="ceoName"
                   className={styles.input}
@@ -213,8 +216,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="oneLiner">
-                  One-Line Company Description <span className={styles.required}>*</span>
-                </label>
+                  One-Line Company Description                </label>
                 <input
                   id="oneLiner"
                   className={styles.input}
@@ -242,8 +244,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <span className={styles.label}>
-                  Stage / Status <span className={styles.required}>*</span>
-                </span>
+                  Stage / Status                </span>
                 <ChipGroup
                   value={values.stage}
                   onChange={(value) => updateField('stage', value as string)}
@@ -283,8 +284,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="productDesc">
-                  Product Description <span className={styles.required}>*</span>
-                </label>
+                  Product Description                </label>
                 <textarea
                   id="productDesc"
                   className={styles.textarea}
@@ -294,8 +294,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="moat">
-                  Core Differentiator / Moat <span className={styles.required}>*</span>
-                </label>
+                  Core Differentiator / Moat                </label>
                 <textarea
                   id="moat"
                   className={styles.textarea}
@@ -305,8 +304,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <span className={styles.label}>
-                  Current Development Stage <span className={styles.required}>*</span>
-                </span>
+                  Current Development Stage                </span>
                 <ChipGroup
                   value={values.devStage}
                   onChange={(value) => updateField('devStage', value as string)}
@@ -386,8 +384,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="revenueModel">
-                  Revenue Model <span className={styles.required}>*</span>
-                </label>
+                  Revenue Model                </label>
                 <textarea
                   id="revenueModel"
                   className={styles.textarea}
@@ -482,8 +479,7 @@ export default function EnergyCiteOnboardingForm() {
                 </div>
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="raiseTarget">
-                    Current Raise Target <span className={styles.required}>*</span>
-                  </label>
+                    Current Raise Target                  </label>
                 <input
                   id="raiseTarget"
                   className={styles.input}
@@ -495,8 +491,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <span className={styles.label}>
-                  Offering Type <span className={styles.required}>*</span>
-                </span>
+                  Offering Type                </span>
                 <ChipGroup
                   value={values.offeringType}
                   onChange={(value) => updateField('offeringType', value as string)}
@@ -534,8 +529,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="useProceeds">
-                  Use of Proceeds <span className={styles.required}>*</span>
-                </label>
+                  Use of Proceeds                </label>
                 <textarea
                   id="useProceeds"
                   className={styles.textarea}
@@ -582,8 +576,7 @@ export default function EnergyCiteOnboardingForm() {
             <div className={styles.fieldGroup}>
               <div className={styles.field}>
                 <span className={styles.label}>
-                  Preferred Investor Types <span className={styles.required}>*</span>
-                </span>
+                  Preferred Investor Types                </span>
                 <ChipGroup
                   multiple
                   value={values.invType}
@@ -600,8 +593,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <span className={styles.label}>
-                  Geographic Focus <span className={styles.required}>*</span>
-                </span>
+                  Geographic Focus                </span>
                 <ChipGroup
                   multiple
                   value={values.geo}
@@ -663,8 +655,7 @@ export default function EnergyCiteOnboardingForm() {
               </div>
               <div className={styles.field}>
                 <span className={styles.label}>
-                  Timeline to Close <span className={styles.required}>*</span>
-                </span>
+                  Timeline to Close                </span>
                 <ChipGroup
                   value={values.closeTimeline}
                   onChange={(value) => updateField('closeTimeline', value as string)}
@@ -774,14 +765,19 @@ export default function EnergyCiteOnboardingForm() {
             const isCompleted = submitted || step > stepNumber;
 
             return (
-              <li
-                key={label}
-                className={`${styles.stepItem} ${isActive ? styles.stepItemActive : ''} ${
-                  isCompleted ? styles.stepItemCompleted : ''
-                }`}
-              >
-                <div className={styles.stepNum}>{stepNumber}</div>
-                <div className={styles.stepLabel}>{label}</div>
+              <li key={label}>
+                <button
+                  type="button"
+                  className={`${styles.stepItem} ${isActive ? styles.stepItemActive : ''} ${
+                    isCompleted ? styles.stepItemCompleted : ''
+                  }`}
+                  onClick={() => goToStep(stepNumber)}
+                  disabled={submitted}
+                  aria-current={isActive ? 'step' : undefined}
+                >
+                  <div className={styles.stepNum}>{stepNumber}</div>
+                  <div className={styles.stepLabel}>{label}</div>
+                </button>
               </li>
             );
           })}
