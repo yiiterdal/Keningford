@@ -5,13 +5,22 @@ import {
   type EnergyCiteFormData,
 } from './energycite-onboarding';
 
+function parseResendError(body: string): string {
+  try {
+    const parsed = JSON.parse(body) as { message?: string; error?: string };
+    return parsed.message || parsed.error || body;
+  } catch {
+    return body;
+  }
+}
+
 export async function sendEnergyCiteSubmission(
   data: EnergyCiteFormData,
   submittedAt: string,
 ): Promise<void> {
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
-    throw new Error('RESEND_API_KEY is not configured');
+    throw new Error('Email service is not configured. Please contact Keningford Partners.');
   }
 
   const to = process.env.ENERGYCITE_FORM_TO || contactEmail;
@@ -36,6 +45,14 @@ export async function sendEnergyCiteSubmission(
 
   if (!response.ok) {
     const errorBody = await response.text();
-    throw new Error(errorBody || 'Failed to send submission email');
+    const message = parseResendError(errorBody);
+
+    if (response.status === 403 && from.includes('resend.dev')) {
+      throw new Error(
+        'Email could not be sent: Resend test mode only delivers to your Resend account email. Verify keningfordpartners.com in Resend and set ENERGYCITE_FORM_FROM, or set ENERGYCITE_FORM_TO to your Resend signup email for testing.',
+      );
+    }
+
+    throw new Error(message || 'Failed to send submission email');
   }
 }

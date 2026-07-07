@@ -32,9 +32,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('EnergyCite onboarding submission failed:', error);
-    return NextResponse.json(
-      { error: 'Unable to submit the form. Please try again or contact Keningford Partners directly.' },
-      { status: 500 },
-    );
+    const message =
+      error instanceof Error
+        ? error.message
+        : 'Unable to submit the form. Please try again or contact Keningford Partners directly.';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
