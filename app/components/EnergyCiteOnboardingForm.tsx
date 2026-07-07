@@ -155,6 +155,7 @@ export default function EnergyCiteOnboardingForm() {
                   <input
                     id="companyName"
                     className={styles.input}
+                    placeholder="EnergyCite, Inc."
                     value={values.companyName}
                     onChange={(e) => updateField('companyName', e.target.value)}
                   />
@@ -166,6 +167,7 @@ export default function EnergyCiteOnboardingForm() {
                   <input
                     id="incState"
                     className={styles.input}
+                    placeholder="e.g. Nevada"
                     value={values.incState}
                     onChange={(e) => updateField('incState', e.target.value)}
                   />
@@ -179,6 +181,7 @@ export default function EnergyCiteOnboardingForm() {
                   <input
                     id="founded"
                     className={styles.input}
+                    placeholder="2018"
                     value={values.founded}
                     onChange={(e) => updateField('founded', e.target.value)}
                   />
@@ -190,6 +193,7 @@ export default function EnergyCiteOnboardingForm() {
                   <input
                     id="hq"
                     className={styles.input}
+                    placeholder="City, State"
                     value={values.hq}
                     onChange={(e) => updateField('hq', e.target.value)}
                   />
@@ -202,6 +206,7 @@ export default function EnergyCiteOnboardingForm() {
                 <input
                   id="ceoName"
                   className={styles.input}
+                  placeholder="Full name"
                   value={values.ceoName}
                   onChange={(e) => updateField('ceoName', e.target.value)}
                 />
@@ -213,6 +218,7 @@ export default function EnergyCiteOnboardingForm() {
                 <input
                   id="oneLiner"
                   className={styles.input}
+                  placeholder="What does your company do in one sentence?"
                   value={values.oneLiner}
                   onChange={(e) => updateField('oneLiner', e.target.value)}
                 />
@@ -229,6 +235,7 @@ export default function EnergyCiteOnboardingForm() {
                   id="website"
                   className={styles.input}
                   type="url"
+                  placeholder="https://..."
                   value={values.website}
                   onChange={(e) => updateField('website', e.target.value)}
                 />
@@ -349,9 +356,9 @@ export default function EnergyCiteOnboardingForm() {
             </div>
             <div className={styles.fieldGroup}>
               <div className={styles.infoBox}>
-                EnergyCite&apos;s numbers: 140M installed US smart meters, 168 IOUs + top 100
-                municipal utilities, $0.50/month/meter lease model = $588M+ annual gross at 70%
-                penetration. Confirm or update below.
+                Provide your market sizing assumptions below. These figures will feed the
+                &quot;Market Opportunity&quot; and &quot;Business Model&quot; slides of your pitch
+                deck.
               </div>
               <div className={styles.fieldRow}>
                 <div className={styles.field}>
@@ -477,10 +484,11 @@ export default function EnergyCiteOnboardingForm() {
                   <label className={styles.label} htmlFor="raiseTarget">
                     Current Raise Target <span className={styles.required}>*</span>
                   </label>
-                  <input
-                    id="raiseTarget"
-                    className={styles.input}
-                    value={values.raiseTarget}
+                <input
+                  id="raiseTarget"
+                  className={styles.input}
+                  placeholder="e.g. $5,000,000"
+                  value={values.raiseTarget}
                     onChange={(e) => updateField('raiseTarget', e.target.value)}
                   />
                 </div>
