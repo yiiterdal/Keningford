@@ -7,7 +7,7 @@ import { CAPABILITIES_HERO_IMAGE, CAPABILITIES_HERO_IMAGE_ALT } from '../lib/ima
 export const metadata = {
   title: 'Capabilities | Keningford Partners',
   description:
-    'Strategic capital advisory and financial services including M&A, capital raising, strategic advisory, valuation, and restructuring.',
+    'Strategic capital advisory including M&A, capital raising, buy-side deal origination, strategic advisory, valuation, and restructuring.',
 };
 
 const approachPoints = [

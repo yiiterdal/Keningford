@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Hero from '../../components/Hero';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SidebarNav from '../../components/SidebarNav';
@@ -13,14 +14,14 @@ export const metadata = {
 
 const relatedCapabilities = [
   {
+    title: 'Buy-side Advisory & Deal Origination',
+    description: 'Deal origination for investors seeking proprietary private-market opportunities.',
+    href: '/capabilities/buy-side-advisory',
+  },
+  {
     title: 'Mergers & Acquisitions',
     description: 'Strategic M&A advisory including acquisition financing and sale processes.',
     href: '/capabilities/mergers-acquisitions',
-  },
-  {
-    title: 'Strategic Advisory',
-    description: 'Customized strategic advisory to optimize capital structure and efficiency.',
-    href: '/capabilities/strategic-advisory',
   },
 ];
 
@@ -96,6 +97,18 @@ export default function CapitalRaisingPage() {
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     We manage indicative offers, due diligence, documentation, and syndication, always focusing on optimizing pricing, covenants, and flexibility for future strategic moves.
+                    For growth equity processes, plan against our{' '}
+                    <Link
+                      href="/insights/guides/14-week-growth-round-equity-process-map"
+                      className="font-medium text-navy underline-offset-2 hover:underline"
+                    >
+                      14-week process map
+                    </Link>{' '}
+                    and{' '}
+                    <Link href="/raise-readiness" className="font-medium text-navy underline-offset-2 hover:underline">
+                      raise readiness diagnostic
+                    </Link>
+                    .
                   </p>
                 </div>
 

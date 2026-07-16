@@ -4,6 +4,7 @@ import {
   contactAddressLine2,
   contactEmail,
 } from '../data/contact';
+import type { InvestorGuideFaqItem } from '../data/investor-guides';
 import type { NewsItem } from '../data/news';
 
 const SITE_URL = 'https://www.keningfordpartners.com';
@@ -61,6 +62,21 @@ export const personSchema = {
   image: `${SITE_URL}/images/partners/haktan-tuna-yilar.jpg`,
   sameAs: ['https://www.linkedin.com/in/haktan-tuna-yilar-48311a264/'],
 };
+
+export function faqPageSchema(faq: InvestorGuideFaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
 
 export function newsArticleSchema(article: NewsItem) {
   const datePublished = new Date(article.date).toISOString();

@@ -53,6 +53,93 @@ The engagement reflects Keningford Partners' focus on growth-stage biotech and d
     imageAlt: 'Sustainable biotechnology research laboratory',
   },
   {
+    slug: 'debt-first-capital-stack-founders-toolkit',
+    title: 'The Debt-First Capital Stack: A Founder\'s Toolkit',
+    excerpt:
+      'When equity is expensive, growth-stage founders are rebuilding the capital stack with venture debt, structured credit, and hybrid instruments — without defaulting to dilution.',
+    content: `For much of the last decade, the default growth-stage sequence was equity first, debt later. That order made sense when equity was cheap and speed mattered more than cost of capital. At current rates and diligence standards, the fully loaded cost of an equity round — dilution, structure, and process time — often exceeds what a carefully sized debt or hybrid layer would require.
+
+Founders evaluating a raise in 2026 should treat capital stack design as a strategic decision, not a reflex. Debt is not always available, and it is not always right. But where recurring revenue, cash conversion, and collateral or contracted cash flows support it, a debt-first posture can preserve ownership while funding identifiable ROI.
+
+## When Debt Belongs Near the Top of the Stack
+
+Debt fits best when proceeds fund measurable outcomes: acquisitions with a clear synergy case, working capital against contracted backlog, or refinancing at better terms. Lenders underwrite visibility. Businesses with predictable retention, diversified customers, and disciplined monthly reporting clear faster than narrative-only growth stories.
+
+## Structure Choices That Matter
+
+Senior facilities, unitranche, venture debt, and preferred / structured common each solve different problems. The wrong instrument creates covenant pressure or unnecessary dilution; the right one buys runway and optionality for a later equity process on stronger terms.
+
+## Process Discipline
+
+Debt processes still require institutional materials — cohort analysis, concentration schedules, and a credible use-of-proceeds plan. Founders who treat lender diligence as lighter than equity diligence often discover the opposite: credit committees are rigorous on downside cases.
+
+## How We Advise
+
+Keningford Partners advises growth-stage companies on sequencing debt, equity, and hybrid capital as an integrated stack. For a structured view of raise timing, see our 14-week growth-round process map and raise readiness diagnostic.`,
+    date: 'June 10, 2026',
+    category: 'Market Insights',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Founder reviewing capital structure and financing documents',
+  },
+  {
+    slug: 'q2-2026-lower-middle-market-capital-outlook',
+    title: 'Q2 2026 Lower Middle Market Capital Outlook',
+    excerpt:
+      'Credit conditions, equity selectivity, and process length are reshaping how lower middle-market companies access institutional capital in the second half of 2026.',
+    content: `The lower middle market enters the second half of 2026 under simultaneous pressure: lenders remain selective after several quarters of tighter standards, growth equity investors continue to prioritize profitability and unit economics, and process timelines have lengthened for both debt and equity raises.
+
+Capital remains available for quality credits and differentiated equity stories. What has changed is the preparation bar and the cost of arriving unprepared.
+
+## Credit Markets
+
+Senior and unitranche lenders are favoring recurring-revenue profiles, clean quality-of-earnings outcomes, and conservative leverage. Cyclical industrials without visibility into near-term earnings face longer syndications and tighter covenants. Companies that present lender-ready reporting are clearing processes with fewer re-trades.
+
+## Equity Markets
+
+Growth equity pacing is selective. Investment committees spend more time on retention, payback, and capital efficiency than on top-line growth alone. Syndicates are larger on average, which extends diligence and documentation timelines. Founders should plan for a multi-month cycle rather than a compressed close.
+
+## Implications for Issuers
+
+Boards planning a capital event should start six to nine months ahead: data room readiness, investor or lender mapping, and narrative calibration around structural readiness. Incomplete preparation is now one of the largest drivers of failed or suboptimal processes.
+
+Keningford Partners publishes ongoing market perspectives for founders and boards evaluating financing alternatives. For deal-level questions, contact the firm through the website.`,
+    date: 'June 2, 2026',
+    category: 'Market Insights',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Market data and capital markets analysis on a desk',
+  },
+  {
+    slug: '14-week-growth-round-what-changed',
+    title: 'The 14-Week Growth-Round Cycle: What Changed for Founders',
+    excerpt:
+      'Institutional growth equity processes have lengthened. Founders should treat fourteen weeks as the operational base case — and prepare runway accordingly.',
+    content: `Median time-to-close for many U.S. growth-stage equity rounds has moved toward a fourteen-week cycle, against shorter medians earlier in the decade. The stretch is structural: harder term-sheet terms, larger syndicates, and deeper pre-commitment diligence.
+
+Founders who still plan an eight-week close often discover that confirmatory work and legal documentation consume the buffer they thought they had. Runway planning should assume the longer cycle plus contingency.
+
+## What Stretched the Timeline
+
+Term sheets more frequently include participating preferences and broader pro-rata rights. Syndicates with multiple named co-investors add coordination overhead. Diligence now routinely includes multi-stage investment committee review and longer customer cohort analysis before a term sheet is finalized.
+
+## What Founders Should Do Differently
+
+Treat the four weeks before launch as part of the process, not optional prep. Build the data room to investor priority order, map prospects at the partner level, and stress-test narrative against structure — not valuation alone. Compare offers by modeling dilution under realistic exit scenarios.
+
+## Where to Start
+
+Keningford Partners published a full phase-by-phase map as an investor guide, and offers a raise readiness diagnostic for CEOs six to twelve months from launching a growth process. Both are designed to turn a longer cycle into a manageable operating plan rather than a surprise.`,
+    date: 'June 1, 2026',
+    category: 'Market Insights',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Founders and advisors planning an equity fundraising timeline',
+  },
+  {
     slug: 'capital-markets-outlook-2026',
     title: 'Capital Markets Outlook for 2026',
     excerpt:

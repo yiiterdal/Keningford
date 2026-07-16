@@ -42,6 +42,18 @@ function ValuationIcon({ className }: IconProps) {
   );
 }
 
+function BuysideIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM8 11h6M11 8v6"
+      />
+    </svg>
+  );
+}
+
 function RestructuringIcon({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
@@ -57,6 +69,7 @@ function RestructuringIcon({ className }: IconProps) {
 const iconMap: Record<CapabilityIconId, (props: IconProps) => ReactElement> = {
   ma: MaIcon,
   capital: CapitalIcon,
+  buyside: BuysideIcon,
   strategic: StrategicIcon,
   valuation: ValuationIcon,
   restructuring: RestructuringIcon,

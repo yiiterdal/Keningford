@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import Hero, { DEFAULT_HERO_IMAGE, DEFAULT_HERO_IMAGE_ALT } from './components/Hero';
 import EditorialImage from './components/EditorialImage';
 import JsonLd from './components/JsonLd';
-import SelectedExperience from './components/SelectedExperience';
+import RecentMandates from './components/RecentMandates';
 import MarketPerspective from './components/MarketPerspective';
 import NewsSection from './components/NewsSection';
 import { financialServiceSchema } from './lib/json-ld';
@@ -10,6 +10,7 @@ import { financialServiceSchema } from './lib/json-ld';
 const FirmPositioning = dynamic(() => import('./components/FirmPositioning'));
 const CapabilitiesOverview = dynamic(() => import('./components/CapabilitiesOverview'));
 const OurApproach = dynamic(() => import('./components/OurApproach'));
+const EngagementFramework = dynamic(() => import('./components/EngagementFramework'));
 
 export const metadata = {
   title: 'Strategic Capital Advisory & Financial Services',
@@ -44,6 +45,8 @@ export default function Home() {
 
       <CapabilitiesOverview />
 
+      <RecentMandates />
+
       <EditorialImage
         variant="architecture-4"
         eyebrow="Long-term Perspective"
@@ -60,7 +63,7 @@ export default function Home() {
         description="Access to global capital sources and strategic partners through established institutional networks."
       />
 
-      <SelectedExperience />
+      <EngagementFramework />
 
       <EditorialImage
         variant="architecture-5"

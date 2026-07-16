@@ -1,4 +1,10 @@
-export type CapabilityIconId = 'ma' | 'capital' | 'strategic' | 'valuation' | 'restructuring';
+export type CapabilityIconId =
+  | 'ma'
+  | 'capital'
+  | 'buyside'
+  | 'strategic'
+  | 'valuation'
+  | 'restructuring';
 
 export interface CapabilityItem {
   title: string;
@@ -19,6 +25,13 @@ export const capabilities: CapabilityItem[] = [
     description: 'Debt and equity financing solutions for growth, acquisitions, and strategic initiatives.',
     href: '/capabilities/capital-raising',
     icon: 'capital',
+  },
+  {
+    title: 'Buy-side Advisory & Deal Origination',
+    description:
+      'Proprietary deal sourcing and buy-side advisory for institutional investors and private equity funds.',
+    href: '/capabilities/buy-side-advisory',
+    icon: 'buyside',
   },
   {
     title: 'Strategic Advisory',

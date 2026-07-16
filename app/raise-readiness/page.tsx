@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Hero from '../components/Hero';
 import RaiseReadinessAssessment from '../components/RaiseReadinessAssessment';
@@ -34,6 +35,23 @@ export default function RaiseReadinessPage() {
               This assessment evaluates the dimensions institutional investors typically examine
               before engaging in a formal process. Responses are confidential and results are
               indicative — not a valuation, recommendation, or offer of services.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-gray-600">
+              For a phase-by-phase view of timing, see{' '}
+              <Link
+                href="/insights/guides/14-week-growth-round-equity-process-map"
+                className="font-medium text-navy underline-offset-2 hover:underline"
+              >
+                The 14-Week Growth-Round Equity Process Map
+              </Link>
+              , or{' '}
+              <Link
+                href="/insights/guides/14-week-growth-round-equity-process-map#booklet"
+                className="font-medium text-navy underline-offset-2 hover:underline"
+              >
+                download the free booklet
+              </Link>
+              .
             </p>
           </div>
 

@@ -11,8 +11,9 @@ import {
 import { primaryNavLinks } from '../data/navigation';
 
 const audienceLinks = [
+  { href: '/investors', label: 'For Investors' },
   { href: '/contact?tab=referrals', label: 'Referrals' },
-  { href: '/contact?tab=investors', label: 'Investors' },
+  { href: '/resources', label: 'Resources' },
 ];
 
 const profileLinks = [
@@ -144,3 +145,8 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
+
+

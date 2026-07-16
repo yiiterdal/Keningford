@@ -12,14 +12,14 @@ export const metadata = {
 
 const relatedCapabilities = [
   {
+    title: 'Buy-side Advisory & Deal Origination',
+    description: 'Proprietary deal sourcing and buy-side mandates for institutional investors.',
+    href: '/capabilities/buy-side-advisory',
+  },
+  {
     title: 'Capital Raising',
     description: 'Debt and equity financing solutions for acquisitions and strategic initiatives.',
     href: '/capabilities/capital-raising',
-  },
-  {
-    title: 'Valuation & Fairness Opinions',
-    description: 'Independent valuation services and fairness opinions for M&A transactions.',
-    href: '/capabilities/valuation-fairness-opinions',
   },
 ];
 

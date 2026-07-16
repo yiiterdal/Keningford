@@ -6,6 +6,7 @@ import { useState } from 'react';
 const capabilityLinks = [
   { href: '/capabilities/mergers-acquisitions', label: 'Mergers & Acquisitions' },
   { href: '/capabilities/capital-raising', label: 'Capital Raising' },
+  { href: '/capabilities/buy-side-advisory', label: 'Buy-side Advisory' },
   { href: '/capabilities/strategic-advisory', label: 'Strategic Advisory' },
   { href: '/capabilities/valuation-fairness-opinions', label: 'Valuation & Fairness Opinions' },
   { href: '/capabilities/restructuring', label: 'Restructuring' },
