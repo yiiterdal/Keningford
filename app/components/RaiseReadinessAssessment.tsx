@@ -146,7 +146,7 @@ const GAP_MESSAGES: Record<string, string> = {
   'Product & IP':
     'A stronger product or IP position significantly de-risks the investment thesis. If this is early stage, a government grant or competitive award can substitute for some of this credibility.',
   Validation:
-    'Third-party validation — whether a competitive grant, a named strategic partner, or signed commercial contracts — is one of the most important trust signals for institutional investors.',
+    'Third-party validation, whether a competitive grant, a named strategic partner, or signed commercial contracts, is one of the most important trust signals for institutional investors.',
   Team:
     'Institutional investors invest in teams as much as products. Key hires or advisors with domain-specific credibility can materially change how investors assess your risk profile.',
   'Use of proceeds':
@@ -180,7 +180,7 @@ function getVerdict(pct: number) {
     return {
       tier: 'ready' as VerdictTier,
       verdict: 'Ready to raise',
-      sub: 'Your company has the fundamentals investors look for. The focus now is on targeting the right investors with the right positioning — not on building the business case further.',
+      sub: 'Your company has the fundamentals investors look for. The focus now is on targeting the right investors with the right positioning, not on building the business case further.',
     };
   }
   if (pct >= 60) {
@@ -200,7 +200,7 @@ function getVerdict(pct: number) {
   return {
     tier: 'notYet' as VerdictTier,
     verdict: 'Not yet ready',
-    sub: 'The fundamentals need further development before a formal investor process makes sense. This is a sequencing question — the right capital for this stage likely looks different from institutional equity.',
+    sub: 'The fundamentals need further development before a formal investor process makes sense. This is a sequencing question, the right capital for this stage likely looks different from institutional equity.',
   };
 }
 
@@ -297,7 +297,7 @@ export default function RaiseReadinessAssessment() {
   return (
     <div className={styles.assessment}>
       <h2 className="sr-only">
-        Keningford Partners raise readiness assessment — answer eight questions to find out if your
+        Keningford Partners raise readiness assessment, answer eight questions to find out if your
         company is ready to raise institutional capital
       </h2>
 
@@ -464,7 +464,7 @@ export default function RaiseReadinessAssessment() {
               <div className={styles.ctaTitle}>Request a confidential diagnostic</div>
               <p className={styles.ctaSub}>
                 Keningford offers a short diagnostic call with founders before any engagement. No
-                pitch, no pressure — an honest view of where you stand and what needs to happen
+                pitch, no pressure, an honest view of where you stand and what needs to happen
                 before investors will engage seriously.
               </p>
               <Link href="/contact" className={styles.ctaBtn}>

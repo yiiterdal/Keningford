@@ -73,8 +73,8 @@ export default function Navbar() {
   const isTransparent = hasHeroOverlay(pathname) && !scrolled;
 
   const headerClasses = isTransparent
-    ? 'fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300'
-    : `fixed top-0 left-0 right-0 z-50 bg-[#0b1426] transition-all duration-300 ${
+    ? 'fixed top-0 left-0 right-0 z-50 border-b border-transparent bg-transparent transition-all duration-300'
+    : `fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0b1426] transition-all duration-300 ${
         scrolled ? 'shadow-md shadow-black/20' : ''
       }`;
 
@@ -113,7 +113,7 @@ export default function Navbar() {
             return (
               <div
                 key={link.href}
-                className="relative flex items-center"
+                className="group relative flex items-center"
                 onMouseEnter={() => openDropdownFor(link.href)}
                 onMouseLeave={scheduleCloseDropdown}
               >
@@ -142,36 +142,34 @@ export default function Navbar() {
                   </svg>
                 </button>
 
-                {isOpen && (
-                  <div
-                    className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3"
-                    onMouseEnter={() => openDropdownFor(link.href)}
-                    onMouseLeave={scheduleCloseDropdown}
-                  >
-                    <div className="overflow-hidden border border-white/10 bg-[#0b1426] shadow-xl shadow-black/30">
-                      <ul className="py-2">
-                        {dropdown.items.map((item) => (
-                          <li key={item.href}>
-                            <Link
-                              href={item.href}
-                              onClick={() => setOpenDropdown(null)}
-                              className="block px-5 py-3 text-[13px] font-medium text-white transition-colors hover:bg-white/5"
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href={dropdown.viewAllHref}
-                        onClick={() => setOpenDropdown(null)}
-                        className="block border-t border-white/10 px-5 py-3 text-[12px] font-medium text-[#c4a062] transition-colors hover:bg-white/5"
-                      >
-                        {dropdown.viewAllLabel}
-                      </Link>
-                    </div>
+                <div
+                  className={`absolute left-1/2 top-full z-[60] w-80 -translate-x-1/2 pt-3 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 ${
+                    isOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden border border-white/10 bg-[#0b1426] shadow-xl shadow-black/30">
+                    <ul className="py-2">
+                      {dropdown.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            onClick={() => setOpenDropdown(null)}
+                            className="block px-5 py-3 text-[13px] font-medium text-white transition-colors hover:bg-white/5"
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={dropdown.viewAllHref}
+                      onClick={() => setOpenDropdown(null)}
+                      className="block border-t border-white/10 px-5 py-3 text-[12px] font-medium text-[#c4a062] transition-colors hover:bg-white/5"
+                    >
+                      {dropdown.viewAllLabel}
+                    </Link>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

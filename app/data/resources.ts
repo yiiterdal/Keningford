@@ -36,7 +36,7 @@ Legal & Corporate
     slug: 'fundraising-timeline',
     title: 'Fundraising Timeline',
     description:
-      'A week-by-week roadmap aligned to a 14-week institutional growth-round cycle — from readiness through close.',
+      'A week-by-week roadmap aligned to a 14-week institutional growth-round cycle, from readiness through close.',
     pages: '8 pages',
     content: `Weeks −4 to 0: Readiness
 • Build data room in investor-priority order
@@ -105,7 +105,7 @@ Core folders
 5. Tax & regulatory
 
 Best practices
-• Upload complete documents — avoid placeholders
+• Upload complete documents, avoid placeholders
 • Redact sensitively but avoid excessive blackouts
 • Assign an internal owner for Q&A response times`,
   },
@@ -115,7 +115,7 @@ Best practices
     description:
       'A template for quarterly investor communications covering performance, capital priorities, and strategic developments.',
     pages: '5 pages',
-    content: `Subject: [Company] — Q[X] Investor Update
+    content: `Subject: [Company], Q[X] Investor Update
 
 Highlights
 • Key wins this quarter

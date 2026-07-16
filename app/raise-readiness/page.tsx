@@ -16,7 +16,7 @@ export default function RaiseReadinessPage() {
       <Hero
         eyebrow="Diagnostic"
         title="Institutional raise readiness"
-        subtitle="Eight questions across financial profile, capital position, and market credibility — designed to give founders an honest view before going to investors."
+        subtitle="Eight questions across financial profile, capital position, and market credibility, designed to give founders an honest view before going to investors."
         imageUrl={unsplashSrc('photo-1460925895917-afdab827c52f')}
         imageAlt="Financial analysis on a laptop"
       />
@@ -34,7 +34,7 @@ export default function RaiseReadinessPage() {
             <p className="text-sm leading-relaxed text-gray-600">
               This assessment evaluates the dimensions institutional investors typically examine
               before engaging in a formal process. Responses are confidential and results are
-              indicative — not a valuation, recommendation, or offer of services.
+              indicative, not a valuation, recommendation, or offer of services.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-gray-600">
               For a phase-by-phase view of timing, see{' '}

@@ -28,13 +28,13 @@ export default function InsightsPage() {
       <Hero
         eyebrow="Insights"
         title="Capital intelligence for decision-makers."
-        subtitle="Market dashboard, investor guides, perspectives, and research — structured for founders, boards, and institutional investors."
+        subtitle="Market dashboard, investor guides, perspectives, and research, structured for founders, boards, and institutional investors."
         imageUrl={unsplashSrc('photo-1504711434969-e33886168f5c')}
         imageAlt="Market analysis and financial insights"
       />
 
       {featuredGuide && (
-        <section className="bg-[#0b1426] py-12 md:py-14">
+        <section className="bg-navy py-12 md:py-14">
           <div className="container mx-auto px-6 md:px-8">
             <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
               <div className="flex items-start gap-4">

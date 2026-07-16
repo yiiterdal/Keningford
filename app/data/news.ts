@@ -56,8 +56,8 @@ The engagement reflects Keningford Partners' focus on growth-stage biotech and d
     slug: 'debt-first-capital-stack-founders-toolkit',
     title: 'The Debt-First Capital Stack: A Founder\'s Toolkit',
     excerpt:
-      'When equity is expensive, growth-stage founders are rebuilding the capital stack with venture debt, structured credit, and hybrid instruments — without defaulting to dilution.',
-    content: `For much of the last decade, the default growth-stage sequence was equity first, debt later. That order made sense when equity was cheap and speed mattered more than cost of capital. At current rates and diligence standards, the fully loaded cost of an equity round — dilution, structure, and process time — often exceeds what a carefully sized debt or hybrid layer would require.
+      'When equity is expensive, growth-stage founders are rebuilding the capital stack with venture debt, structured credit, and hybrid instruments, without defaulting to dilution.',
+    content: `For much of the last decade, the default growth-stage sequence was equity first, debt later. That order made sense when equity was cheap and speed mattered more than cost of capital. At current rates and diligence standards, the fully loaded cost of an equity round, dilution, structure, and process time, often exceeds what a carefully sized debt or hybrid layer would require.
 
 Founders evaluating a raise in 2026 should treat capital stack design as a strategic decision, not a reflex. Debt is not always available, and it is not always right. But where recurring revenue, cash conversion, and collateral or contracted cash flows support it, a debt-first posture can preserve ownership while funding identifiable ROI.
 
@@ -71,7 +71,7 @@ Senior facilities, unitranche, venture debt, and preferred / structured common e
 
 ## Process Discipline
 
-Debt processes still require institutional materials — cohort analysis, concentration schedules, and a credible use-of-proceeds plan. Founders who treat lender diligence as lighter than equity diligence often discover the opposite: credit committees are rigorous on downside cases.
+Debt processes still require institutional materials, cohort analysis, concentration schedules, and a credible use-of-proceeds plan. Founders who treat lender diligence as lighter than equity diligence often discover the opposite: credit committees are rigorous on downside cases.
 
 ## How We Advise
 
@@ -116,7 +116,7 @@ Keningford Partners publishes ongoing market perspectives for founders and board
     slug: '14-week-growth-round-what-changed',
     title: 'The 14-Week Growth-Round Cycle: What Changed for Founders',
     excerpt:
-      'Institutional growth equity processes have lengthened. Founders should treat fourteen weeks as the operational base case — and prepare runway accordingly.',
+      'Institutional growth equity processes have lengthened. Founders should treat fourteen weeks as the operational base case, and prepare runway accordingly.',
     content: `Median time-to-close for many U.S. growth-stage equity rounds has moved toward a fourteen-week cycle, against shorter medians earlier in the decade. The stretch is structural: harder term-sheet terms, larger syndicates, and deeper pre-commitment diligence.
 
 Founders who still plan an eight-week close often discover that confirmatory work and legal documentation consume the buffer they thought they had. Runway planning should assume the longer cycle plus contingency.
@@ -127,7 +127,7 @@ Term sheets more frequently include participating preferences and broader pro-ra
 
 ## What Founders Should Do Differently
 
-Treat the four weeks before launch as part of the process, not optional prep. Build the data room to investor priority order, map prospects at the partner level, and stress-test narrative against structure — not valuation alone. Compare offers by modeling dilution under realistic exit scenarios.
+Treat the four weeks before launch as part of the process, not optional prep. Build the data room to investor priority order, map prospects at the partner level, and stress-test narrative against structure, not valuation alone. Compare offers by modeling dilution under realistic exit scenarios.
 
 ## Where to Start
 

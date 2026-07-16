@@ -21,7 +21,7 @@ export const investorGuides: InvestorGuide[] = [
     slug: 'how-family-offices-evaluate-opportunities',
     title: 'How Family Offices Evaluate Opportunities',
     excerpt:
-      'What family offices look for beyond headline returns — alignment, governance, liquidity, and relationship quality.',
+      'What family offices look for beyond headline returns, alignment, governance, liquidity, and relationship quality.',
     readTime: '6 min read',
     icon: 'building',
     content: `Family offices evaluate opportunities through a lens that differs materially from institutional fund managers. Return potential matters, but so do alignment with the family's values, governance rights, liquidity expectations, and the quality of the relationship with sponsors and management teams.
@@ -70,7 +70,7 @@ LPs are increasingly attentive to fee structures, key person provisions, and co-
 
 ## When Debt Fits
 
-Recurring revenue businesses with predictable cash conversion can often support senior or unitranche debt at attractive terms. Debt works best when proceeds fund identifiable ROI — acquisitions with synergy cases, working capital for contracted growth, or refinancing at better terms.
+Recurring revenue businesses with predictable cash conversion can often support senior or unitranche debt at attractive terms. Debt works best when proceeds fund identifiable ROI, acquisitions with synergy cases, working capital for contracted growth, or refinancing at better terms.
 
 ## When Equity Fits
 
@@ -84,7 +84,7 @@ Preferred equity, convertible instruments, and structured common can bridge gaps
     slug: 'how-due-diligence-works',
     title: 'How Due Diligence Works',
     excerpt:
-      'What institutional investors examine in financial, commercial, and legal diligence — and how to prepare.',
+      'What institutional investors examine in financial, commercial, and legal diligence, and how to prepare.',
     readTime: '8 min read',
     icon: 'search',
     content: `Due diligence is the process by which investors validate the investment thesis, identify risks, and build conviction for pricing and structure. Preparation quality directly affects timeline, re-trade risk, and ultimate terms.
@@ -108,7 +108,7 @@ Cap tables, material contracts, IP ownership, litigation, and regulatory exposur
       'The elements institutional investors expect in a concise, credible investment memorandum.',
     readTime: '6 min read',
     icon: 'document',
-    content: `A strong investment memo distills a complex business into a clear thesis, supported by evidence and honest risk disclosure. It is not a marketing deck — it is the document that earns a second meeting.
+    content: `A strong investment memo distills a complex business into a clear thesis, supported by evidence and honest risk disclosure. It is not a marketing deck, it is the document that earns a second meeting.
 
 ## Structure That Works
 
@@ -126,18 +126,18 @@ Acknowledging risks builds credibility. The best memos pair each material risk w
     slug: '14-week-growth-round-equity-process-map',
     title: 'The 14-Week Growth-Round Equity Process Map',
     excerpt:
-      'How growth-stage equity cycles lengthened — and what founders should do each phase from readiness through close.',
+      'How growth-stage equity cycles lengthened, and what founders should do each phase from readiness through close.',
     readTime: '12 min read',
     icon: 'calendar',
-    content: `Growth-stage equity processes have lengthened. What was often an eight-week median cycle earlier in the decade is now closer to a fourteen-week base case for many institutional rounds. Founders launching a growth raise in 2026 should plan runway for that timeline plus buffer for confirmatory diligence and legal close — not treat a compressed close as the default.
+    content: `Growth-stage equity processes have lengthened. What was often an eight-week median cycle earlier in the decade is now closer to a fourteen-week base case for many institutional rounds. Founders launching a growth raise in 2026 should plan runway for that timeline plus buffer for confirmatory diligence and legal close, not treat a compressed close as the default.
 
-Three forces stretched the cycle. Term sheets carry more structure: participating preferences, broader pro-rata rights, and occasional anti-dilution provisions appear more frequently than in the prior easy-capital window. Syndicates are larger and more diverse, which adds coordination time. Investor diligence has deepened — multi-stage investment committee review, longer cohort analysis, and pre-term-sheet structuring conversations are now routine rather than exceptional.
+Three forces stretched the cycle. Term sheets carry more structure: participating preferences, broader pro-rata rights, and occasional anti-dilution provisions appear more frequently than in the prior easy-capital window. Syndicates are larger and more diverse, which adds coordination time. Investor diligence has deepened, multi-stage investment committee review, longer cohort analysis, and pre-term-sheet structuring conversations are now routine rather than exceptional.
 
 This guide maps the fourteen-week cycle into phases, clarifies what founders should be doing in each window, and aligns with the readiness framework Keningford Partners uses when advising growth-stage CEOs.
 
 ## Weeks −4 to 0: Readiness Before Launch
 
-The four weeks before the first investor meeting are the highest-leverage period. Three workstreams should run in parallel: building the data room in investor-priority order (cohort economics, monthly P&L reconciled to budget, concentration analysis, preference math under exit scenarios), mapping twenty-five to forty prospects at the partner level, and calibrating the narrative around structural readiness — not growth metrics alone.
+The four weeks before the first investor meeting are the highest-leverage period. Three workstreams should run in parallel: building the data room in investor-priority order (cohort economics, monthly P&L reconciled to budget, concentration analysis, preference math under exit scenarios), mapping twenty-five to forty prospects at the partner level, and calibrating the narrative around structural readiness, not growth metrics alone.
 
 ## Weeks 1–3: Outreach and First Meetings
 
@@ -157,7 +157,7 @@ Lock exclusivity only when terms and process confidence justify it. Complete con
 
 ## Practical Implications
 
-If readiness work is complete at launch, a fourteen-week cycle is often manageable on existing runway. If readiness is incomplete, a bridge sized to finish preparation plus the cycle plus buffer may be necessary — sized to the work it funds, not as a pre-emption of the growth round.
+If readiness work is complete at launch, a fourteen-week cycle is often manageable on existing runway. If readiness is incomplete, a bridge sized to finish preparation plus the cycle plus buffer may be necessary, sized to the work it funds, not as a pre-emption of the growth round.
 
 Founders six to twelve months from a growth process can start with Keningford's raise readiness diagnostic, then use this map to sequence preparation against a realistic close window.`,
     downloadResourceSlug: 'fundraising-timeline',
@@ -165,7 +165,7 @@ Founders six to twelve months from a growth process can start with Keningford's 
       {
         question: 'How long does a growth round take in 2026?',
         answer:
-          'Cooley GO\u2019s Quarterly Venture Financing Reports place the median time-to-close for US growth-stage equity rounds at roughly fourteen weeks in H1 2025, against an eight-week median in 2023. Keningford Partners expects the fourteen-to-eighteen-week range to remain the operational base case through 2026 and 2027, because the structural drivers — deeper diligence, larger syndicates, harder term-sheet structure — are not cyclical.',
+          'Cooley GO\u2019s Quarterly Venture Financing Reports place the median time-to-close for US growth-stage equity rounds at roughly fourteen weeks in H1 2025, against an eight-week median in 2023. Keningford Partners expects the fourteen-to-eighteen-week range to remain the operational base case through 2026 and 2027, because the structural drivers, deeper diligence, larger syndicates, harder term-sheet structure, are not cyclical.',
       },
       {
         question: 'What should a founder be doing in the weeks before launching a growth-round process?',
@@ -180,7 +180,7 @@ Founders six to twelve months from a growth process can start with Keningford's 
       {
         question: 'Should a founder take a bridge round before launching a growth round?',
         answer:
-          'We advise founders to size a bridge to the work it is funding — structural readiness preparation, not pre-emption of the growth round itself. If readiness work is complete at launch, a fourteen-week cycle is typically manageable on existing runway. If readiness work is incomplete, a bridge may be necessary, sized to complete the work plus the cycle plus a buffer of roughly thirty percent.',
+          'We advise founders to size a bridge to the work it is funding, structural readiness preparation, not pre-emption of the growth round itself. If readiness work is complete at launch, a fourteen-week cycle is typically manageable on existing runway. If readiness work is incomplete, a bridge may be necessary, sized to complete the work plus the cycle plus a buffer of roughly thirty percent.',
       },
       {
         question: 'Who is Keningford Partners?',

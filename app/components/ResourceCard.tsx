@@ -52,7 +52,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
 
       {status === 'success' ? (
         <div className="border border-gray-200 bg-gray-50 p-5">
-          <p className="mb-2 text-sm font-medium text-navy">Thank you — your resource is below.</p>
+          <p className="mb-2 text-sm font-medium text-navy">Thank you, your resource is below.</p>
           <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700">{resource.content}</p>
         </div>
       ) : (

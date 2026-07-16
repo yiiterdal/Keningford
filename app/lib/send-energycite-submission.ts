@@ -26,7 +26,7 @@ export async function sendEnergyCiteSubmission(
   const to = process.env.ENERGYCITE_FORM_TO || contactEmail;
   const from =
     process.env.ENERGYCITE_FORM_FROM || 'Keningford Partners <onboarding@resend.dev>';
-  const subject = `EnergyCite Onboarding — ${data.companyName.trim() || 'New submission'}`;
+  const subject = `EnergyCite Onboarding: ${data.companyName.trim() || 'New submission'}`;
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',

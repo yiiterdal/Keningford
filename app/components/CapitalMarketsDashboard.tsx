@@ -53,7 +53,7 @@ export default function CapitalMarketsDashboard() {
       </div>
 
       <p className="border-t border-gray-200 px-6 py-4 text-xs leading-relaxed text-gray-500 md:px-8">
-        Illustrative weekly snapshot for market context — not live market data or investment advice.
+        Illustrative weekly snapshot for market context, not live market data or investment advice.
       </p>
     </section>
   );

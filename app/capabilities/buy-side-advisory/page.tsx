@@ -15,7 +15,7 @@ export const metadata = {
 const serviceAreas = [
   {
     title: 'Acquisitions & Buyouts',
-    body: 'We help investors identify and execute acquisition targets that fit their thesis and portfolio strategy — including off-market sourcing, diligence coordination, and transaction structuring from first approach through close.',
+    body: 'We help investors identify and execute acquisition targets that fit their thesis and portfolio strategy, including off-market sourcing, diligence coordination, and transaction structuring from first approach through close.',
   },
   {
     title: 'Minority Investments',
@@ -23,7 +23,7 @@ const serviceAreas = [
   },
   {
     title: 'Exit Planning',
-    body: 'We support portfolio exit readiness — timing analysis, buyer identification, and process design for strategic sales, secondary buyouts, or public-market pathways that protect return objectives.',
+    body: 'We support portfolio exit readiness, timing analysis, buyer identification, and process design for strategic sales, secondary buyouts, or public-market pathways that protect return objectives.',
   },
   {
     title: 'Joint Ventures & Partnerships',
@@ -80,7 +80,7 @@ export default function BuySideAdvisoryPage() {
                   </p>
                   <p className="mb-4 leading-relaxed text-gray-700">
                     We support off-market deal sourcing, competitive acquisition processes, strategic
-                    partnership formations, and portfolio company add-on acquisitions — with a focus on
+                    partnership formations, and portfolio company add-on acquisitions, with a focus on
                     opportunities that align to mandate, sector focus, and return objectives.
                   </p>
                   <p className="leading-relaxed text-gray-700">
@@ -101,7 +101,7 @@ export default function BuySideAdvisoryPage() {
                     path to close.
                   </p>
                   <p className="leading-relaxed text-gray-700">
-                    Mandates are senior-led from first conversation through documentation — the same
+                    Mandates are senior-led from first conversation through documentation, the same
                     principals who map the opportunity set remain accountable through negotiation and
                     closing.
                   </p>

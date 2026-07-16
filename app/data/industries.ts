@@ -24,13 +24,13 @@ export const industries: Industry[] = [
     slug: 'healthcare',
     title: 'Healthcare',
     excerpt:
-      'Physician services, outpatient platforms, and healthcare technology — where scale, payer mix, and regulatory quality drive outcomes.',
+      'Physician services, outpatient platforms, and healthcare technology, where scale, payer mix, and regulatory quality drive outcomes.',
     overview:
       'Healthcare services remains among the most active sectors in private capital. Sponsors and strategics compete for platforms with recurring revenue, clinical quality, and density advantages. Valuation dispersion between market leaders and the broader field has rarely been wider.',
     recentDeals: [
-      'Multi-site healthcare services platform — $800M sell-side process',
-      'Outpatient facilities roll-up — growth equity and add-on financing',
-      'Behavioral health platform — strategic buyer competition',
+      'Multi-site healthcare services platform, $800M sell-side process',
+      'Outpatient facilities roll-up, growth equity and add-on financing',
+      'Behavioral health platform, strategic buyer competition',
     ],
     capitalTrends: [
       'Financial sponsors prioritizing platforms with payer diversity and same-store growth',
@@ -56,9 +56,9 @@ export const industries: Industry[] = [
     overview:
       'Defense and dual-use technology financing has accelerated as sovereign capital, family offices, and specialist funds increase allocation to national security themes. Processes require sector fluency, regulatory awareness, and credible investor positioning.',
     recentDeals: [
-      'Defense-focused fund — anchor investor strategy and placement',
-      'Dual-use technology platform — growth capital process',
-      'Government services contractor — strategic alternatives review',
+      'Defense-focused fund, anchor investor strategy and placement',
+      'Dual-use technology platform, growth capital process',
+      'Government services contractor, strategic alternatives review',
     ],
     capitalTrends: [
       'Rising sovereign and specialist fund interest in defense adjacencies',
@@ -78,13 +78,13 @@ export const industries: Industry[] = [
     slug: 'energy',
     title: 'Energy',
     excerpt:
-      'Energy transition, infrastructure, and renewable platforms — where capital intensity meets policy tailwinds.',
+      'Energy transition, infrastructure, and renewable platforms, where capital intensity meets policy tailwinds.',
     overview:
       'Energy and infrastructure mandates blend project finance, growth equity, and strategic M&A. Investors evaluate asset quality, offtake visibility, and execution risk across conventional and transition assets.',
     recentDeals: [
-      'Renewable energy platform — senior debt and project financing',
-      'Energy infrastructure carve-out — sell-side advisory',
-      'Transition technology company — Series B growth equity',
+      'Renewable energy platform, senior debt and project financing',
+      'Energy infrastructure carve-out, sell-side advisory',
+      'Transition technology company, Series B growth equity',
     ],
     capitalTrends: [
       'Infrastructure funds active in mid-market renewable platforms',
@@ -106,13 +106,13 @@ export const industries: Industry[] = [
     slug: 'software',
     title: 'Software',
     excerpt:
-      'Vertical software, technology-enabled services, and growth equity — where retention and unit economics drive valuation.',
+      'Vertical software, technology-enabled services, and growth equity, where retention and unit economics drive valuation.',
     overview:
       'Software and technology-enabled services attract both financial and strategic capital, but investors are selective. Businesses with durable retention, expanding ARPU, and credible paths to profitable growth command premium multiples.',
     recentDeals: [
-      'Vertical software platform — $150M growth equity financing',
-      'Technology platform — $800M strategic sale process',
-      'Workflow software company — minority recapitalization',
+      'Vertical software platform, $150M growth equity financing',
+      'Technology platform, $800M strategic sale process',
+      'Workflow software company, minority recapitalization',
     ],
     capitalTrends: [
       'Growth equity investors demanding margin discipline alongside growth',
@@ -134,13 +134,13 @@ export const industries: Industry[] = [
     slug: 'industrials',
     title: 'Industrials',
     excerpt:
-      'Manufacturing, business services, and industrial platforms — cyclicality, consolidation, and operational improvement.',
+      'Manufacturing, business services, and industrial platforms, cyclicality, consolidation, and operational improvement.',
     overview:
       'Industrials and business services remain core middle-market territory. Sponsors seek platforms with operational improvement potential, fragmented markets, and defensible customer relationships.',
     recentDeals: [
-      'Industrial manufacturer — liability management and recapitalization',
-      'Business services platform — add-on acquisition financing',
-      'Specialty manufacturing — sell-side process',
+      'Industrial manufacturer, liability management and recapitalization',
+      'Business services platform, add-on acquisition financing',
+      'Specialty manufacturing, sell-side process',
     ],
     capitalTrends: [
       'Sponsors favoring tuck-in strategies over new platform bets',
@@ -160,13 +160,13 @@ export const industries: Industry[] = [
     slug: 'financial-services',
     title: 'Financial Services',
     excerpt:
-      'Specialty finance, asset management, and fintech — where regulation, capital efficiency, and distribution matter.',
+      'Specialty finance, asset management, and fintech, where regulation, capital efficiency, and distribution matter.',
     overview:
       'Financial services mandates require nuance on regulatory structure, capital requirements, and investor suitability. We advise on raises, M&A, and strategic partnerships where capital is core to the business model.',
     recentDeals: [
-      'Specialty finance platform — growth equity round',
-      'Asset manager — fund placement and anchor strategy',
-      'Fintech infrastructure — strategic partnership process',
+      'Specialty finance platform, growth equity round',
+      'Asset manager, fund placement and anchor strategy',
+      'Fintech infrastructure, strategic partnership process',
     ],
     capitalTrends: [
       'Institutional interest in niche lending and specialty finance platforms',

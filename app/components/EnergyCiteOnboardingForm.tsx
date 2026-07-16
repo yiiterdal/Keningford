@@ -225,7 +225,7 @@ export default function EnergyCiteOnboardingForm() {
                   onChange={(e) => updateField('oneLiner', e.target.value)}
                 />
                 <p className={styles.fieldHint}>
-                  This becomes your deck&apos;s hero tagline. Be specific — avoid generic
+                  This becomes your deck&apos;s hero tagline. Be specific, avoid generic
                   descriptions.
                 </p>
               </div>
@@ -266,7 +266,7 @@ export default function EnergyCiteOnboardingForm() {
               <div className={styles.stepEyebrow}>Step 2 of 6</div>
               <h1 className={styles.stepHeading}>Product & Technology</h1>
               <p className={styles.stepSubhead}>
-                Details about your product, IP, and competitive advantage — this feeds the
+                Details about your product, IP, and competitive advantage, this feeds the
                 &quot;Product&quot; and &quot;IP&quot; slides.
               </p>
             </div>
@@ -348,7 +348,7 @@ export default function EnergyCiteOnboardingForm() {
               <div className={styles.stepEyebrow}>Step 3 of 6</div>
               <h1 className={styles.stepHeading}>Market & Revenue Model</h1>
               <p className={styles.stepSubhead}>
-                Market sizing and revenue details — feeds the &quot;Market Opportunity&quot; and
+                Market sizing and revenue details, feeds the &quot;Market Opportunity&quot; and
                 &quot;Business Model&quot; slides.
               </p>
             </div>
@@ -444,8 +444,8 @@ export default function EnergyCiteOnboardingForm() {
                   value={values.channel}
                   onChange={(value) => updateField('channel', value as string)}
                   options={[
-                    { label: 'B2B — Utilities', value: 'B2B (Utility)' },
-                    { label: 'B2C — Consumer', value: 'B2C (Consumer)' },
+                    { label: 'B2B, Utilities', value: 'B2B (Utility)' },
+                    { label: 'B2C, Consumer', value: 'B2C (Consumer)' },
                     { label: 'Both', value: 'Both' },
                   ]}
                 />
@@ -460,7 +460,7 @@ export default function EnergyCiteOnboardingForm() {
               <div className={styles.stepEyebrow}>Step 4 of 6</div>
               <h1 className={styles.stepHeading}>Capital & Financials</h1>
               <p className={styles.stepSubhead}>
-                Funding history, current raise details, and use of proceeds — feeds the
+                Funding history, current raise details, and use of proceeds, feeds the
                 &quot;Financials&quot; and &quot;The Ask&quot; slides.
               </p>
             </div>
@@ -496,7 +496,7 @@ export default function EnergyCiteOnboardingForm() {
                   value={values.offeringType}
                   onChange={(value) => updateField('offeringType', value as string)}
                   options={[
-                    { label: 'Reg D 504 — Common Equity', value: 'Reg D 504 Equity' },
+                    { label: 'Reg D 504, Common Equity', value: 'Reg D 504 Equity' },
                     { label: 'SAFE', value: 'SAFE' },
                     { label: 'Convertible Note', value: 'Convertible Note' },
                     { label: 'Debt', value: 'Debt' },
@@ -569,7 +569,7 @@ export default function EnergyCiteOnboardingForm() {
               <div className={styles.stepEyebrow}>Step 5 of 6</div>
               <h1 className={styles.stepHeading}>Investor Preferences</h1>
               <p className={styles.stepSubhead}>
-                Who you want to reach and how — feeds the outreach strategy and investor
+                Who you want to reach and how, feeds the outreach strategy and investor
                 targeting sections.
               </p>
             </div>
@@ -676,7 +676,7 @@ export default function EnergyCiteOnboardingForm() {
               <div className={styles.stepEyebrow}>Step 6 of 6</div>
               <h1 className={styles.stepHeading}>Team & Exit Strategy</h1>
               <p className={styles.stepSubhead}>
-                Leadership and long-term vision — feeds the &quot;Team&quot; and &quot;Exit&quot;
+                Leadership and long-term vision, feeds the &quot;Team&quot; and &quot;Exit&quot;
                 slides of the pitch deck.
               </p>
             </div>

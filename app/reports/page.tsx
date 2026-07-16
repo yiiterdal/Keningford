@@ -18,7 +18,7 @@ export default function ReportsPage() {
       <Hero
         eyebrow="Research Reports"
         title="Perspectives you can take into the room."
-        subtitle="Periodic PDF reports on markets, sectors, and capital formation — structured for boards, sponsors, and institutional investors."
+        subtitle="Periodic PDF reports on markets, sectors, and capital formation, structured for boards, sponsors, and institutional investors."
         imageUrl={unsplashSrc('photo-1454165804606-c3d57bc86b40')}
         imageAlt="Business professional reviewing research documents"
       />

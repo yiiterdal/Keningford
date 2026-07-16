@@ -25,7 +25,7 @@ export default function InvestorsPage() {
       <Hero
         eyebrow="For Investors"
         title="Institutional access to our deal flow."
-        subtitle="Not a portal — a direct line to senior bankers on active mandates, market perspectives, and research."
+        subtitle="Not a portal, a direct line to senior bankers on active mandates, market perspectives, and research."
         imageUrl={unsplashSrc('photo-1556761175-5973dc0f32e7')}
         imageAlt="Institutional investors in discussion"
       />
