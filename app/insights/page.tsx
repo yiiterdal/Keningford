@@ -34,29 +34,61 @@ export default function InsightsPage() {
       />
 
       {featuredGuide && (
-        <section className="bg-navy py-12 md:py-14">
+        <section className="bg-navy py-14 md:py-20">
           <div className="container mx-auto px-6 md:px-8">
-            <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#c4a062]/40 bg-[#c4a062]/10 text-[#c4a062]">
-                  <GuideIcon id={featuredGuide.icon} className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#c4a062]">
-                    Free Downloadable Guide
+            <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
+              <div>
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c4a062]">
+                  Featured Booklet · Free Download
+                </p>
+                <h2 className="font-serif text-2xl leading-snug text-white md:text-[2rem]">
+                  {featuredGuide.title}
+                </h2>
+                <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-white/65">
+                  {featuredGuide.excerpt}
+                </p>
+                <ul className="mt-6 space-y-2.5">
+                  {featuredGuide.takeaways.slice(0, 3).map((takeaway) => (
+                    <li key={takeaway} className="flex gap-3 text-sm leading-relaxed text-white/75">
+                      <span aria-hidden className="mt-[8px] h-1.5 w-1.5 shrink-0 bg-[#c4a062]" />
+                      {takeaway}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link
+                    href={`/insights/guides/${featuredGuide.slug}#booklet`}
+                    className="inline-flex items-center justify-center gap-2 bg-[#c4a062] px-6 py-3 text-[13px] font-semibold text-[#0b1426] transition hover:bg-[#d4b276]"
+                  >
+                    Read the booklet →
+                  </Link>
+                  <Link
+                    href={`/insights/guides/${featuredGuide.slug}`}
+                    className="inline-flex items-center justify-center border border-white/30 px-6 py-3 text-[13px] font-medium text-white transition hover:bg-white/5"
+                  >
+                    View the guide
+                  </Link>
+                </div>
+              </div>
+
+              {/* Booklet cover mockup */}
+              <div className="relative mx-auto w-full max-w-sm" aria-hidden>
+                <div className="absolute -right-3 top-5 bottom-1 w-full border border-white/10 bg-white/5" />
+                <div className="absolute -right-1.5 top-2.5 bottom-0.5 w-full border border-white/10 bg-white/[0.08]" />
+                <div className="relative border border-[#c4a062]/30 bg-[#0e1c38] px-9 py-11 shadow-2xl shadow-black/40">
+                  <p className="mb-9 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#c4a062]">
+                    Keningford Partners Research
                   </p>
-                  <h2 className="text-xl font-semibold text-white md:text-2xl">{featuredGuide.title}</h2>
-                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
-                    {featuredGuide.excerpt}
+                  <span className="mb-7 flex h-12 w-12 items-center justify-center border border-[#c4a062]/50 bg-[#c4a062]/10 text-[#c4a062]">
+                    <GuideIcon id={featuredGuide.icon} className="h-5 w-5" />
+                  </span>
+                  <p className="font-serif text-xl leading-snug text-white">{featuredGuide.title}</p>
+                  <div className="mt-7 h-px w-14 bg-[#c4a062]/50" />
+                  <p className="mt-7 text-[10px] font-medium uppercase tracking-[0.18em] text-white/40">
+                    {featuredGuide.readTime} · PDF Booklet
                   </p>
                 </div>
               </div>
-              <Link
-                href={`/insights/guides/${featuredGuide.slug}#booklet`}
-                className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap border border-[#c4a062] px-5 py-2.5 text-[13px] font-medium text-[#c4a062] transition hover:bg-[#c4a062] hover:text-[#0b1426]"
-              >
-                Get the booklet →
-              </Link>
             </div>
           </div>
         </section>

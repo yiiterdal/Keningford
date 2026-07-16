@@ -12,6 +12,8 @@ export interface InvestorGuide {
   readTime: string;
   content: string;
   icon: GuideIconId;
+  /** Three to four scannable takeaways shown before the full text. */
+  takeaways: string[];
   faq?: InvestorGuideFaqItem[];
   downloadResourceSlug?: string;
 }
@@ -21,9 +23,14 @@ export const investorGuides: InvestorGuide[] = [
     slug: 'how-family-offices-evaluate-opportunities',
     title: 'How Family Offices Evaluate Opportunities',
     excerpt:
-      'What family offices look for beyond headline returns, alignment, governance, liquidity, and relationship quality.',
+      'What family offices weigh beyond headline returns: alignment, governance, liquidity, and relationship quality.',
     readTime: '6 min read',
     icon: 'building',
+    takeaways: [
+      'Family offices weigh alignment, governance rights, and liquidity as heavily as return potential.',
+      'Concise, institutional-quality materials and direct access to decision-makers move processes forward.',
+      'A credible equity story with transparent risk disclosure consistently outperforms polished marketing.',
+    ],
     content: `Family offices evaluate opportunities through a lens that differs materially from institutional fund managers. Return potential matters, but so do alignment with the family's values, governance rights, liquidity expectations, and the quality of the relationship with sponsors and management teams.
 
 ## Investment Criteria
@@ -45,6 +52,11 @@ The best-received opportunities combine a credible equity story, transparent ris
       'How institutional limited partners underwrite emerging and established managers in a selective deployment environment.',
     readTime: '7 min read',
     icon: 'handshake',
+    takeaways: [
+      'LPs scrutinize track record net of fees, loss ratios, pacing, and team stability before terms.',
+      'Warm introductions from trusted advisors carry real weight; cold outreach rarely advances.',
+      'Disciplined portfolio strategy and realistic fund size win in competitive fundraises.',
+    ],
     content: `Limited partners are deploying more selectively than in prior cycles. Investment committees are spending more time on track record quality, team stability, portfolio construction, and the specificity of the manager's edge.
 
 ## Diligence Priorities
@@ -66,6 +78,11 @@ LPs are increasingly attentive to fee structures, key person provisions, and co-
       'A practical framework for founders evaluating financing alternatives without defaulting to equity dilution.',
     readTime: '5 min read',
     icon: 'balance',
+    takeaways: [
+      'Debt fits recurring-revenue businesses funding identifiable ROI; equity fits unproven risk capital.',
+      'Covenants, dilution, and the signal each structure sends all belong in the comparison.',
+      'Hybrid structures often bridge the gap when neither pure debt nor pure equity fits cleanly.',
+    ],
     content: `The debt versus equity decision is rarely binary. Founders should evaluate cost of capital, flexibility, covenant constraints, dilution, and the strategic signal each structure sends to customers, employees, and future investors.
 
 ## When Debt Fits
@@ -87,6 +104,11 @@ Preferred equity, convertible instruments, and structured common can bridge gaps
       'What institutional investors examine in financial, commercial, and legal diligence, and how to prepare.',
     readTime: '8 min read',
     icon: 'search',
+    takeaways: [
+      'Preparation quality directly affects timeline, re-trade risk, and final terms.',
+      'Quality-of-earnings work is standard; expect scrutiny on revenue quality and concentration.',
+      'Management credibility in live Q&A matters as much as the data room itself.',
+    ],
     content: `Due diligence is the process by which investors validate the investment thesis, identify risks, and build conviction for pricing and structure. Preparation quality directly affects timeline, re-trade risk, and ultimate terms.
 
 ## Financial Diligence
@@ -108,6 +130,11 @@ Cap tables, material contracts, IP ownership, litigation, and regulatory exposur
       'The elements institutional investors expect in a concise, credible investment memorandum.',
     readTime: '6 min read',
     icon: 'document',
+    takeaways: [
+      'Lead with the opportunity in one paragraph: what the company does, why it wins, what capital enables.',
+      'Replace adjectives with metrics: retention, payback, cohorts, and capital efficiency.',
+      'Pairing each material risk with a mitigant builds credibility; omission signals evasiveness.',
+    ],
     content: `A strong investment memo distills a complex business into a clear thesis, supported by evidence and honest risk disclosure. It is not a marketing deck, it is the document that earns a second meeting.
 
 ## Structure That Works
@@ -129,6 +156,12 @@ Acknowledging risks builds credibility. The best memos pair each material risk w
       'How growth-stage equity cycles lengthened, and what founders should do each phase from readiness through close.',
     readTime: '12 min read',
     icon: 'calendar',
+    takeaways: [
+      'Fourteen weeks is now the operational base case for institutional growth rounds, not eight.',
+      'The four weeks before launch are the highest-leverage period: data room, prospect map, narrative.',
+      'Compare term sheets on structure and exit-scenario dilution, not headline valuation alone.',
+      'Build a thirty-percent time buffer into runway planning for confirmatory diligence and close.',
+    ],
     content: `Growth-stage equity processes have lengthened. What was often an eight-week median cycle earlier in the decade is now closer to a fourteen-week base case for many institutional rounds. Founders launching a growth raise in 2026 should plan runway for that timeline plus buffer for confirmatory diligence and legal close, not treat a compressed close as the default.
 
 Three forces stretched the cycle. Term sheets carry more structure: participating preferences, broader pro-rata rights, and occasional anti-dilution provisions appear more frequently than in the prior easy-capital window. Syndicates are larger and more diverse, which adds coordination time. Investor diligence has deepened, multi-stage investment committee review, longer cohort analysis, and pre-term-sheet structuring conversations are now routine rather than exceptional.
