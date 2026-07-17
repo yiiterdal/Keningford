@@ -154,8 +154,8 @@ export default function AboutPage() {
             <div>
               <h2 className="mb-6 text-2xl font-semibold text-navy md:text-3xl">Sectors & Situations</h2>
               <p className="mb-6 text-lg leading-relaxed text-gray-700 md:text-xl">
-                We advise across business services, technology, healthcare, industrials, defense and
-                dual-use technology, real estate, and selected financial services. Our mandates typically
+                We advise across business services, technology, healthcare, industrials, biotech and
+                life sciences, real estate, and selected financial services. Our mandates typically
                 involve inflection-point decisions: acceleration capital, ownership transitions,
                 recapitalizations, complex stakeholder alignment, or strategic alternatives under tight
                 timelines.

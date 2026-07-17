@@ -7,7 +7,7 @@ import { unsplashSrc } from '../lib/image-utils';
 export const metadata = {
   title: 'Industries | Keningford Partners',
   description:
-    'Sector coverage across healthcare, defense, energy, software, industrials, and financial services.',
+    'Sector coverage across healthcare, biotech and life sciences, energy, software, industrials, and financial services.',
 };
 
 export default function IndustriesPage() {
@@ -16,7 +16,7 @@ export default function IndustriesPage() {
       <Hero
         eyebrow="Industries"
         title="Sector depth across the middle market."
-        subtitle="Industry-specific capital advisory across healthcare, defense, energy, software, industrials, and financial services."
+        subtitle="Industry-specific capital advisory across healthcare, biotech and life sciences, energy, software, industrials, and financial services."
         imageUrl={unsplashSrc('photo-1454165804606-c3d57bc86b40')}
         imageAlt="Industry and sector analysis"
       />

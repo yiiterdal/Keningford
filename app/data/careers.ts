@@ -82,7 +82,7 @@ export const founderProfile = {
   imageUrl: '/images/partners/haktan-tuna-yilar.jpg',
   bio: [
     'Tuna Yilar founded Keningford Partners after building, operating, and exiting his own investment bank. He leads the firm on a principal-led model, with direct senior involvement on every mandate from origination through close.',
-    'The firm advises founders and management teams on capital raises from Series A through pre-IPO, sell-side and buy-side M&A, and debt advisory. Priorities include defense and dual-use technology financing, cross-border SPV structuring, real estate capital introduction, and growth-stage biotech and deep-tech mandates.',
+    'The firm advises founders and management teams on capital raises from Series A through pre-IPO, sell-side and buy-side M&A, and debt advisory. Priorities include cross-border SPV structuring, real estate capital introduction, and growth-stage biotech and deep-tech mandates.',
     'Before founding Keningford, Mr. Yilar operated on both sides of the table as an owner, operator, and advisor. That perspective shapes the firm\'s conviction that clients deserve the same senior banker they met during the pitch to lead execution through close.',
   ],
 };

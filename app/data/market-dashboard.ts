@@ -33,9 +33,9 @@ export const marketDashboard: DashboardCategory[] = [
         date: 'Jul 10, 2026',
       },
       {
-        headline: 'Defense-focused venture fund launches $350M vehicle',
-        summary: 'Dual-use technology mandate with sovereign and family office anchor commitments.',
-        sector: 'Defense',
+        headline: 'Life sciences venture fund launches $350M vehicle',
+        summary: 'Growth-stage therapeutics and sustainable materials mandate with family office anchor commitments.',
+        sector: 'Life Sciences',
         date: 'Jul 8, 2026',
       },
     ],
