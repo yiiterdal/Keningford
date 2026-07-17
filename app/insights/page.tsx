@@ -34,23 +34,23 @@ export default function InsightsPage() {
       />
 
       {featuredGuide && (
-        <section className="bg-navy py-14 md:py-20">
+        <section className="border-b border-[#BF9B5F]/20 bg-[#f7f2e9] py-14 md:py-20">
           <div className="container mx-auto px-6 md:px-8">
             <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
               <div>
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c4a062]">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#a8823f]">
                   Featured Booklet · Free Download
                 </p>
-                <h2 className="font-serif text-2xl leading-snug text-white md:text-[2rem]">
+                <h2 className="font-serif text-2xl leading-snug text-navy md:text-[2rem]">
                   {featuredGuide.title}
                 </h2>
-                <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-white/65">
+                <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-gray-600">
                   {featuredGuide.excerpt}
                 </p>
                 <ul className="mt-6 space-y-2.5">
                   {featuredGuide.takeaways.slice(0, 3).map((takeaway) => (
-                    <li key={takeaway} className="flex gap-3 text-sm leading-relaxed text-white/75">
-                      <span aria-hidden className="mt-[8px] h-1.5 w-1.5 shrink-0 bg-[#c4a062]" />
+                    <li key={takeaway} className="flex gap-3 text-sm leading-relaxed text-gray-700">
+                      <span aria-hidden className="mt-[8px] h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" />
                       {takeaway}
                     </li>
                   ))}
@@ -58,13 +58,13 @@ export default function InsightsPage() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href={`/insights/guides/${featuredGuide.slug}#booklet`}
-                    className="inline-flex items-center justify-center gap-2 bg-[#c4a062] px-6 py-3 text-[13px] font-semibold text-[#0b1426] transition hover:bg-[#d4b276]"
+                    className="inline-flex items-center justify-center gap-2 bg-navy px-6 py-3 text-[13px] font-semibold text-white transition hover:bg-navy-dark"
                   >
                     Read the booklet →
                   </Link>
                   <Link
                     href={`/insights/guides/${featuredGuide.slug}`}
-                    className="inline-flex items-center justify-center border border-white/30 px-6 py-3 text-[13px] font-medium text-white transition hover:bg-white/5"
+                    className="inline-flex items-center justify-center border border-navy/30 px-6 py-3 text-[13px] font-medium text-navy transition hover:bg-navy/5"
                   >
                     View the guide
                   </Link>
@@ -73,9 +73,9 @@ export default function InsightsPage() {
 
               {/* Booklet cover mockup */}
               <div className="relative mx-auto w-full max-w-sm" aria-hidden>
-                <div className="absolute -right-3 top-5 bottom-1 w-full border border-white/10 bg-white/5" />
-                <div className="absolute -right-1.5 top-2.5 bottom-0.5 w-full border border-white/10 bg-white/[0.08]" />
-                <div className="relative border border-[#c4a062]/30 bg-[#0e1c38] px-9 py-11 shadow-2xl shadow-black/40">
+                <div className="absolute -right-3 top-5 bottom-1 w-full border border-navy/10 bg-navy/5" />
+                <div className="absolute -right-1.5 top-2.5 bottom-0.5 w-full border border-navy/10 bg-navy/10" />
+                <div className="relative border border-[#c4a062]/30 bg-[#0e1c38] px-9 py-11 shadow-2xl shadow-navy/25">
                   <p className="mb-9 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#c4a062]">
                     Keningford Partners Research
                   </p>
