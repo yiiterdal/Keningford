@@ -18,10 +18,10 @@ export const recentMandates: RecentMandate[] = [
     logo: { src: '/images/news/ecopha-logo.png', alt: 'EcoPha Biotech logo' },
   },
   {
-    client: 'Defense Platform',
-    type: 'Fund Placement',
+    client: 'Energy Infrastructure Platform',
+    type: 'Capital Raising',
     description:
-      'Supporting a defense-focused fund with anchor investor strategy, institutional outreach, and positioning across dual-use technology investors.',
+      'Advising a renewable energy platform on growth equity and project-level debt to fund contracted pipeline expansion across distributed generation assets.',
     status: 'Active',
   },
   {
