@@ -12,6 +12,8 @@ export interface ReportItem {
   title: string;
   excerpt: string;
   summary: string;
+  /** Full document text rendered into the downloadable PDF. Run `npm run pdfs` after editing. */
+  pdfContent?: string;
   date: string;
   type: ReportType;
   sector: ReportSector;
@@ -35,6 +37,46 @@ export const reports: ReportItem[] = [
 - Valuation dispersion widening between contracted and merchant-exposed assets
 - Lender appetite firming for contracted cash flows with inflation linkage
 - Middle East capital continuing to seek North American and European platform entry points
+
+## Methodology
+
+Findings draw on proprietary deal tracking, lender dialogue, and sponsor interviews conducted during Q1 2026. Figures are indicative and for general information only; they do not constitute investment advice or an offer of services.`,
+    pdfContent: `Energy and infrastructure M&A enters Q2 2026 with a distinct two-speed character. Contracted, inflation-linked cash flows are clearing at firm valuations with competitive lender support, while merchant-exposed and development-stage assets face wider bid-ask spreads and longer processes. This outlook examines transaction activity across power, renewables, and midstream, with emphasis on sponsor-to-sponsor transfers, asset-level carve-outs, and cross-border capital deployment.
+
+## Deal Velocity and Volume
+
+Transaction count across North American energy and infrastructure held broadly flat against the prior quarter, but composition shifted meaningfully. Sponsor-to-sponsor transfers accounted for a growing share of closed deals as funds raised in the 2019 to 2021 vintages reached the back half of their hold periods and portfolio rotation became a liquidity necessity rather than an option.
+
+• Sponsor-to-sponsor transfers led deal flow, driven by fund-life pressure and a still-selective IPO window.
+• Asset-level carve-outs from utilities and integrated players continued as balance-sheet discipline outweighed empire preservation.
+• Auction processes for contracted platforms drew deep first-round fields; merchant-exposed assets frequently converted to bilateral negotiations.
+• Average time from launch to signing extended for development-stage assets, while operating contracted assets cleared on schedule.
+
+## Valuation Benchmarks
+
+Valuation dispersion is the defining feature of the current market. The spread between contracted and merchant-exposed assets has widened to levels not seen since the last rate cycle, and buyers are pricing revenue quality line by line rather than applying platform multiples.
+
+• Contracted renewables platforms with investment-grade offtake continued to command premium multiples, supported by lender appetite for inflation-linked cash flows.
+• Merchant-exposed generation traded at meaningful discounts, with structure, earnouts, and seller rollover bridging valuation gaps.
+• Midstream assets with take-or-pay contracts and demonstrated volume durability priced firmly; gathering systems with basin concentration risk did not.
+• Buyers increasingly separated platform value from development pipeline value, paying for the former and optioning the latter.
+
+## Capital Availability
+
+Debt capital remains available but selective. Lenders are competing hardest for contracted cash flows with inflation linkage, while holding structure and covenant discipline on everything else.
+
+• Project finance and infrastructure debt markets remained open throughout the quarter, with spreads tightening modestly for top-tier contracted assets.
+• Private credit continued to take share in mid-market energy transactions, offering speed and structural flexibility against bank processes.
+• Hybrid and holdco structures re-emerged for sponsors seeking leverage on portfolios with mixed contract profiles.
+• Development-stage capital remains the scarcest tranche, concentrated among strategics and specialist funds.
+
+## Cross-Border Dynamics
+
+Middle East capital remains the most consequential cross-border force in the market, seeking North American and European platform entry points at scale. Sovereign-affiliated investors showed a clear preference for platform investments with existing management teams over asset-level acquisitions, and for partnership structures that retain sponsor alignment through the hold.
+
+## Outlook for the Balance of 2026
+
+We expect the two-speed market to persist through year-end. Contracted assets will continue to clear efficiently, sponsor rotation will sustain deal count, and the valuation gap on merchant exposure will close only as rate expectations settle. For sellers, preparation quality and revenue-contract documentation are the highest-return investments before launch. For buyers, the opportunity concentrates in complexity: carve-outs, mixed-contract portfolios, and situations where diligence capability substitutes for auction premium.
 
 ## Methodology
 
@@ -66,6 +108,45 @@ Findings draw on proprietary deal tracking, lender dialogue, and sponsor intervi
 ## Methodology
 
 Based on observed mandates, investor conversations, and market data through March 2026. Not a recommendation to buy, sell, or transact in any security or asset class.`,
+    pdfContent: `Middle-market capital markets in the first half of 2026 reward preparation over momentum. Capital is available across growth equity, private credit, and structured instruments, but it is priced and allocated with a discipline that did not exist in the prior cycle. This review summarizes conditions for middle-market companies seeking institutional financing, with focus on process readiness, term sheet trends, and sector-specific investor appetite.
+
+## Growth Equity: Selective Pacing, Deeper Diligence
+
+Growth equity deployment continued at a measured pace. Funds hold substantial dry powder, but investment committees are underwriting to profitability paths and unit economics rather than growth rates alone, and diligence has deepened accordingly.
+
+• Median time-to-close for institutional growth rounds remained near fourteen weeks, roughly double the 2021 to 2022 cycle.
+• Cohort-level revenue quality, net retention, and capital efficiency carried more underwriting weight than top-line growth.
+• Term sheets carried more structure: participating preferences, broader pro-rata rights, and occasional anti-dilution provisions appeared with growing frequency.
+• Inside-led rounds and structured extensions bridged companies between priced rounds, at the cost of future cap-table complexity.
+
+## Private Credit: Competing on Structure
+
+Private credit continued its expansion into territory banks have ceded, competing most effectively on speed, certainty, and structural flexibility rather than headline pricing.
+
+• Unitranche structures priced competitively for sponsor-backed platforms with demonstrated cash conversion.
+• Non-sponsored borrowers faced a higher documentation bar but found receptive lenders for recurring-revenue models.
+• Covenant packages firmed at the margin; lenders traded pricing for protection rather than volume.
+• Asset-based and hybrid facilities gained share among companies with contracted revenue but uneven EBITDA.
+
+## Structured Capital: The Middle Path Widens
+
+Preferred equity, convertible instruments, and revenue-linked structures continued to fill the space between straight debt and priced equity, particularly for companies unwilling to accept current equity marks but needing more capital than lenders will advance.
+
+• Structured preferred with PIK toggles served sponsors managing leverage through the rate environment.
+• Convertible instruments with valuation collars bridged founder and investor pricing views without forcing a mark.
+• Minority structured solutions funded acquisitions and shareholder liquidity without control transfer.
+
+## Cross-Border Considerations
+
+Cross-border raises required earlier structural work than domestic processes. SPV architecture, governance alignment, and regulatory reviews are now critical-path items rather than closing mechanics, and processes that deferred them lost weeks in documentation.
+
+## What Differentiates Successful Processes
+
+Across observed mandates, the companies that cleared the market efficiently shared preparation habits rather than sector or scale: quality-of-earnings work completed before launch, lender-ready reporting packages, data rooms built to investor priority, and management teams able to defend unit economics without slides. Process readiness has become the primary differentiator in a market where capital is available but attention is rationed.
+
+## Methodology
+
+Based on observed mandates, investor conversations, and market data through March 2026. Not a recommendation to buy, sell, or transact in any security or asset class.`,
     date: 'March 2026',
     type: 'Capital Markets Review',
     sector: 'Cross-Sector',
@@ -89,6 +170,48 @@ Based on observed mandates, investor conversations, and market data through Marc
 - Strategic capital playing a larger role alongside traditional growth equity
 - Project-level financing gaining traction for capital-intensive scale-up assets
 - Narrative and data-room quality as decisive factors in competitive raises
+
+## Methodology
+
+Compiled from sector mandates, investor feedback, and public market comparables as of Q1 2026. For informational purposes only.`,
+    pdfContent: `Biotech and life sciences financing in 2026 is defined by a shift in what investors underwrite. The science still opens the door, but capital now flows to companies that can demonstrate commercialization credibility: realistic timelines, defensible offtake or reimbursement assumptions, and governance ready for institutional scrutiny. This primer outlines the financing pathways available to growth-stage biotech and deep-tech companies and the preparation each pathway demands.
+
+## The Diligence Shift: From Science Risk to Execution Risk
+
+Investor diligence has moved decisively toward commercialization questions. Platform breadth and publication pedigree remain necessary, but they no longer carry a raise on their own.
+
+• Commercialization timelines are stress-tested against regulatory precedent, not management ambition; a credible eighteen-month plan outperforms an aspirational nine-month one.
+• Offtake credibility, whether pharma partnership, health-system contract, or government procurement, is underwritten as revenue quality, with counterparty and termination analysis.
+• Reimbursement pathway analysis has moved from an appendix item to a first-meeting topic for anything touching clinical delivery.
+• Data-room quality and KPI discipline are read as proxies for how the company will handle regulatory and partner scrutiny.
+
+## Venture Crossover and Growth Equity
+
+The crossover investor base that fueled the last cycle has returned selectively, concentrated in assets with near-term value inflection points.
+
+• Crossover appetite concentrates on companies within eighteen months of a registrational readout or first commercial revenue.
+• Insiders are anchoring a growing share of growth rounds, with external leads validating rather than setting terms.
+• Structured equity, tranched closes tied to milestones, and warrant coverage appear more frequently in place of straight preferred.
+
+## Strategic Capital and Partnerships
+
+Strategic capital is playing a larger role alongside traditional growth equity, and for many companies it is the superior instrument: it validates the science, funds development, and defers dilution.
+
+• Pharma and medtech corporate venture arms increased early-stage activity, frequently pairing equity with option-to-license structures.
+• Milestone-based partnership payments funded development programs that equity markets would have priced punitively.
+• The negotiation focus has shifted to control terms: exclusivity scope, data rights, and change-of-control provisions determine whether strategic capital helps or constrains the next round.
+
+## Project-Level and Infrastructure-Style Financing
+
+For capital-intensive scale-up assets, biomanufacturing capacity, GMP facilities, diagnostic networks, project-level financing has gained real traction, importing infrastructure discipline into life sciences.
+
+• Facility-level debt against contracted capacity reduced equity burn for platform companies building physical scale.
+• Government co-funding programs in the US, EU, and Gulf states funded strategic-capacity projects on terms no private instrument matches.
+• The prerequisite is contract quality: project finance underwrites the offtake, not the science.
+
+## Preparing for a 2026 Raise
+
+Companies that cleared the market efficiently in the past year shared a preparation pattern: a data room built around commercialization evidence rather than publications, a financial model that separates platform spend from program spend, governance and reporting upgraded a full round earlier than felt necessary, and a financing strategy that sequenced strategic, project, and equity capital deliberately rather than defaulting to the next preferred round.
 
 ## Methodology
 

@@ -14,9 +14,6 @@ export default function CapabilitiesOverview({ showHeader = true }: Capabilities
     useFadeInAnimation({ delay: 200 + index * 100, duration: 800 }),
   );
 
-  const topRow = capabilities.slice(0, 3);
-  const bottomRow = capabilities.slice(3);
-
   return (
     <section className="py-24 md:py-32 bg-gray-50">
       <div className="container mx-auto px-6 md:px-8">
@@ -40,26 +37,10 @@ export default function CapabilitiesOverview({ showHeader = true }: Capabilities
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {topRow.map((capability, index) => {
+          {capabilities.map((capability, index) => {
             const anim = cardAnimations[index];
             return (
               <div key={capability.href} ref={anim.ref} style={anim.style}>
-                <CapabilityServiceCard capability={capability} />
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-5 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto lg:max-w-none lg:mx-0 lg:grid-cols-6">
-          {bottomRow.map((capability, index) => {
-            const anim = cardAnimations[index + 3];
-            return (
-              <div
-                key={capability.href}
-                ref={anim.ref}
-                style={anim.style}
-                className="lg:col-span-2 lg:col-start-auto first:lg:col-start-2"
-              >
                 <CapabilityServiceCard capability={capability} />
               </div>
             );

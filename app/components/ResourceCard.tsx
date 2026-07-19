@@ -52,8 +52,23 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
 
       {status === 'success' ? (
         <div className="border border-gray-200 bg-gray-50 p-5">
-          <p className="mb-2 text-sm font-medium text-navy">Thank you, your resource is below.</p>
-          <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700">{resource.content}</p>
+          <p className="mb-4 text-sm font-medium text-navy">Thank you, your PDF is ready to download.</p>
+          <a
+            href={resource.pdfUrl}
+            download
+            aria-label={`Download ${resource.title} PDF`}
+            className="inline-flex items-center gap-2 bg-navy px-5 py-2.5 text-sm font-medium text-white transition hover:bg-navy-dark"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0-3-3m3 3 3-3m2 8H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"
+              />
+            </svg>
+            Download PDF
+          </a>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">

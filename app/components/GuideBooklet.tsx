@@ -1,19 +1,16 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { GuideIcon } from './GuideIcons';
-import ResourceCard from './ResourceCard';
 import { contactEmail } from '../data/contact';
-import type { GuideIconId } from '../data/investor-guides';
-import type { Resource } from '../data/resources';
 
 interface GuideBookletProps {
   title: string;
   readTime: string;
+  date: string;
   excerpt: string;
   content: string;
-  icon: GuideIconId;
-  resource?: Resource;
+  /** Path to the generated PDF under /public, e.g. /downloads/guides/slug.pdf */
+  pdfUrl?: string;
 }
 
 interface Section {
@@ -44,7 +41,7 @@ function parseSections(content: string): Section[] {
   return sections;
 }
 
-export default function GuideBooklet({ title, readTime, excerpt, content, icon, resource }: GuideBookletProps) {
+export default function GuideBooklet({ title, readTime, date, excerpt, content, pdfUrl }: GuideBookletProps) {
   const pages: BookletPage[] = useMemo(() => {
     const sections = parseSections(content);
     const numbered = sections.filter((s) => s.heading);
@@ -71,102 +68,70 @@ export default function GuideBooklet({ title, readTime, excerpt, content, icon, 
   }, [content]);
 
   const [pageIndex, setPageIndex] = useState(0);
-  const [showDownload, setShowDownload] = useState(false);
   const page = pages[pageIndex];
   const isFirst = pageIndex === 0;
   const isLast = pageIndex === pages.length - 1;
-  const progress = ((pageIndex + 1) / pages.length) * 100;
 
   const goPrev = () => setPageIndex((i) => Math.max(0, i - 1));
   const goNext = () => setPageIndex((i) => Math.min(pages.length - 1, i + 1));
 
-  const isDarkPage = page.type === 'cover' || page.type === 'back';
+  const isSpreadPage = page.type === 'cover' || page.type === 'back';
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <div className="relative">
-        {/* Book spine and stacked-page edges */}
-        <div aria-hidden className="absolute -left-2 top-3 bottom-3 hidden w-2 rounded-l-sm bg-navy md:block" />
-        <div aria-hidden className="absolute -right-1.5 top-4 bottom-4 hidden w-1.5 border-r border-gray-300 bg-gray-100 md:block" />
-        <div aria-hidden className="absolute -right-3 top-6 bottom-6 hidden w-1.5 border-r border-gray-200 bg-gray-50 md:block" />
-
-        <div className="relative overflow-hidden border border-gray-200 bg-white shadow-xl shadow-black/10">
-          {/* Toolbar */}
-          <div className="flex items-center justify-between border-b border-gray-200 bg-gray-50 px-5 py-3">
-            <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500">
-              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.75}
-                  d="M12 6.5c-1.8-1.3-4.2-2-6.5-2v13c2.3 0 4.7.7 6.5 2 1.8-1.3 4.2-2 6.5-2v-13c-2.3 0-4.7.7-6.5 2zm0 0v13"
-                />
-              </svg>
-              Booklet
+    <div className="mx-auto">
+      {/* Document viewer frame */}
+      <div className="border border-gray-200 bg-gray-100 p-4 md:p-10">
+        {/* Sheet */}
+        <div className="relative mx-auto flex min-h-[640px] max-w-2xl flex-col bg-white shadow-lg shadow-black/10 md:min-h-[780px]">
+          {/* Letterhead */}
+          <div className="flex items-center justify-between border-b border-gray-200 px-8 pb-4 pt-6 md:px-12">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-navy">
+              Keningford Partners
             </span>
-            <button
-              type="button"
-              onClick={() => setShowDownload((prev) => !prev)}
-              className="inline-flex items-center gap-2 bg-navy px-4 py-2 text-[12px] font-medium text-white transition hover:bg-navy-dark"
-            >
-              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0-3-3m3 3 3-3m2 8H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"
-                />
-              </svg>
-              Download PDF
-            </button>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Research</span>
           </div>
 
           {/* Page body */}
           <div
-            className={`flex min-h-[460px] flex-col justify-center px-8 py-10 md:min-h-[500px] md:px-14 md:py-12 ${
-              isDarkPage ? 'bg-[#0e1c38]' : 'bg-[#fbfaf7]'
+            className={`flex flex-1 flex-col px-8 py-10 md:px-14 md:py-12 ${
+              isSpreadPage ? 'justify-center' : 'justify-start'
             }`}
           >
             {page.type === 'cover' && (
               <div className="text-center">
-                <p className="mb-8 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#c4a062]">
-                  Keningford Partners Research
+                <p className="mb-8 text-[10px] font-semibold uppercase tracking-[0.28em] text-gray-400">
+                  Founder Briefing
                 </p>
-                <span className="mx-auto mb-7 flex h-14 w-14 items-center justify-center border border-[#c4a062]/50 bg-[#c4a062]/10 text-[#c4a062]">
-                  <GuideIcon id={icon} className="h-6 w-6" />
-                </span>
-                <h3 className="mx-auto mb-5 max-w-md font-serif text-2xl leading-snug text-white md:text-[2rem]">
+                <div aria-hidden className="mx-auto mb-8 h-px w-14 bg-[#BF9B5F]" />
+                <h3 className="mx-auto mb-6 max-w-md font-serif text-2xl leading-snug text-navy md:text-[2.1rem] md:leading-[1.25]">
                   {title}
                 </h3>
-                <p className="mx-auto mb-8 max-w-sm text-sm leading-relaxed text-white/60">{excerpt}</p>
-                <div className="mx-auto mb-8 h-px w-16 bg-[#c4a062]/50" aria-hidden />
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/40">{readTime}</p>
+                <p className="mx-auto mb-10 max-w-sm text-sm leading-relaxed text-gray-500">{excerpt}</p>
+                <div aria-hidden className="mx-auto mb-8 h-px w-14 bg-[#BF9B5F]" />
+                <p className="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                  {date} · {readTime}
+                </p>
               </div>
             )}
 
             {page.type === 'contents' && (
               <div>
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-                  Contents
-                </p>
-                <h3 className="mb-8 font-serif text-2xl text-navy">In this booklet</h3>
+                <h3 className="mb-8 font-serif text-2xl text-navy">Contents</h3>
                 <ol className="space-y-1">
                   {page.sections.map((entry, i) => (
                     <li key={entry.heading}>
                       <button
                         type="button"
                         onClick={() => setPageIndex(entry.pageIndex)}
-                        className="group flex w-full items-baseline gap-4 border-b border-gray-200 py-3 text-left transition-colors hover:border-[#BF9B5F]"
+                        className="group flex w-full items-baseline gap-4 border-b border-dotted border-gray-300 py-3 text-left"
                       >
                         <span className="font-serif text-sm text-[#BF9B5F]">
                           {String(i + 1).padStart(2, '0')}
                         </span>
-                        <span className="flex-1 text-[15px] font-medium text-navy group-hover:underline">
+                        <span className="flex-1 text-[14px] font-medium text-navy group-hover:underline">
                           {entry.heading}
                         </span>
-                        <span aria-hidden className="text-xs text-gray-400 transition-transform group-hover:translate-x-0.5">
-                          →
-                        </span>
+                        <span className="text-xs tabular-nums text-gray-400">{entry.pageIndex + 1}</span>
                       </button>
                     </li>
                   ))}
@@ -178,19 +143,19 @@ export default function GuideBooklet({ title, readTime, excerpt, content, icon, 
               <div>
                 {page.heading ? (
                   <>
-                    <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-                      Section {String(page.number).padStart(2, '0')} / {String(page.total).padStart(2, '0')}
+                    <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#BF9B5F]">
+                      Section {String(page.number).padStart(2, '0')} of {String(page.total).padStart(2, '0')}
                     </p>
-                    <h3 className="mb-6 font-serif text-xl font-semibold text-navy md:text-2xl">{page.heading}</h3>
+                    <h3 className="mb-6 font-serif text-xl text-navy md:text-2xl">{page.heading}</h3>
                   </>
                 ) : (
-                  <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
+                  <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#BF9B5F]">
                     Introduction
                   </p>
                 )}
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   {page.paragraphs.map((paragraph, index) => (
-                    <p key={index} className="text-[15px] leading-[1.85] text-gray-700">
+                    <p key={index} className="text-[13px] leading-[1.75] text-gray-700 md:text-[13.5px]">
                       {paragraph}
                     </p>
                   ))}
@@ -200,20 +165,18 @@ export default function GuideBooklet({ title, readTime, excerpt, content, icon, 
 
             {page.type === 'back' && (
               <div className="text-center">
-                <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#c4a062]">
+                <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-gray-400">
                   Next Step
                 </p>
-                <h3 className="mb-5 font-serif text-2xl text-white md:text-3xl">
-                  Discuss this with our team
-                </h3>
-                <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-white/65">
+                <h3 className="mb-5 font-serif text-2xl text-navy md:text-3xl">Discuss this with our team</h3>
+                <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-gray-600">
                   If you are a founder six to twelve months from launching a growth-round process, our team
                   will run a no-cost readiness review against this framework and tell you which workstreams
                   are ready and which need attention.
                 </p>
                 <a
                   href={`mailto:${contactEmail}`}
-                  className="inline-flex items-center gap-2 border border-[#c4a062] px-6 py-3 text-sm font-medium text-[#c4a062] transition hover:bg-[#c4a062] hover:text-[#0e1c38]"
+                  className="inline-flex items-center border border-navy px-6 py-3 text-sm font-medium text-navy transition hover:bg-navy hover:text-white"
                 >
                   {contactEmail}
                 </a>
@@ -221,44 +184,60 @@ export default function GuideBooklet({ title, readTime, excerpt, content, icon, 
             )}
           </div>
 
-          {/* Progress bar */}
-          <div className="h-0.5 bg-gray-200" aria-hidden>
-            <div className="h-full bg-[#BF9B5F] transition-all duration-300" style={{ width: `${progress}%` }} />
-          </div>
-
-          {/* Pager */}
-          <div className="flex items-center justify-between border-t border-gray-200 bg-gray-50 px-5 py-3">
-            <button
-              type="button"
-              onClick={goPrev}
-              disabled={isFirst}
-              aria-label="Previous page"
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-navy transition disabled:cursor-not-allowed disabled:text-gray-300 enabled:hover:underline"
-            >
-              <span aria-hidden>←</span> Prev
-            </button>
-            <span className="text-[11px] uppercase tracking-[0.12em] text-gray-400">
+          {/* Page footer */}
+          <div className="flex items-center justify-between border-t border-gray-200 px-8 py-3 md:px-12">
+            <span className="truncate pr-4 text-[10px] uppercase tracking-[0.14em] text-gray-400">{title}</span>
+            <span className="shrink-0 text-[10px] tabular-nums text-gray-400">
               {pageIndex + 1} / {pages.length}
             </span>
-            <button
-              type="button"
-              onClick={goNext}
-              disabled={isLast}
-              aria-label="Next page"
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-navy transition disabled:cursor-not-allowed disabled:text-gray-300 enabled:hover:underline"
-            >
-              Next <span aria-hidden>→</span>
-            </button>
           </div>
+        </div>
+
+        {/* Pager */}
+        <div className="mt-5 flex items-center justify-center gap-6 text-[13px]">
+          <button
+            type="button"
+            onClick={goPrev}
+            disabled={isFirst}
+            aria-label="Previous page"
+            className="font-medium text-navy transition disabled:cursor-not-allowed disabled:text-gray-300 enabled:hover:underline"
+          >
+            ←Prev
+          </button>
+          <span className="tabular-nums text-gray-500">
+            Page {pageIndex + 1} of {pages.length}
+          </span>
+          <button
+            type="button"
+            onClick={goNext}
+            disabled={isLast}
+            aria-label="Next page"
+            className="font-medium text-navy transition disabled:cursor-not-allowed disabled:text-gray-300 enabled:hover:underline"
+          >
+            Next→
+          </button>
         </div>
       </div>
 
-      {showDownload && resource && (
-        <div className="mt-6 border border-gray-200 bg-white p-6">
-          <p className="mb-4 text-sm leading-relaxed text-gray-600">
-            Enter your work email to receive the full PDF version of this booklet.
-          </p>
-          <ResourceCard resource={resource} />
+      {/* Download PDF */}
+      {pdfUrl && (
+        <div className="mt-5 text-center">
+          <a
+            href={pdfUrl}
+            download
+            aria-label={`Download ${title} PDF`}
+            className="inline-flex items-center gap-2 border border-navy px-6 py-3 text-sm font-medium text-navy transition hover:bg-navy hover:text-white"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0-3-3m3 3 3-3m2 8H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"
+              />
+            </svg>
+            Download PDF
+          </a>
         </div>
       )}
     </div>
