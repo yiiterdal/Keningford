@@ -3,6 +3,8 @@
  *
  * Usage: npm run pdfs
  * Output: public/downloads/guides/*.pdf, public/downloads/resources/*.pdf, public/reports/*.pdf
+ *
+ * Pagination is fully manual (margin: 0) so PDFKit never auto-inserts blank pages.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,8 +24,8 @@ const RULE = '#d8dce2';
 const PAGE_W = 595.28; // A4
 const PAGE_H = 841.89;
 const MARGIN_X = 68;
-const TOP_Y = 92;
-const BOTTOM_Y = PAGE_H - 88;
+const TOP_Y = 78;
+const BOTTOM_Y = PAGE_H - 72;
 const CONTENT_W = PAGE_W - MARGIN_X * 2;
 
 const SERIF = 'Times-Roman';
@@ -87,7 +89,74 @@ function parseContent(content: string): Block[] {
   return blocks;
 }
 
+/** Advance to a fresh content page. */
+function newPage(doc: PDFKit.PDFDocument) {
+  doc.addPage();
+  doc.y = TOP_Y;
+}
+
+/** If remaining space is under `needed`, start a new page. */
+function ensureRoom(doc: PDFKit.PDFDocument, needed: number) {
+  if (doc.y + needed > BOTTOM_Y) {
+    newPage(doc);
+  }
+}
+
+/**
+ * Draw wrapped text with manual page breaks. Never lets PDFKit auto-paginate,
+ * which is what was producing blank pages when mixed with addPage().
+ */
+function drawWrappedText(
+  doc: PDFKit.PDFDocument,
+  text: string,
+  opts: {
+    x: number;
+    width: number;
+    font: string;
+    size: number;
+    color: string;
+    lineGap?: number;
+    align?: 'left' | 'center' | 'right';
+    afterGap?: number;
+  },
+) {
+  const lineGap = opts.lineGap ?? 3.5;
+  const afterGap = opts.afterGap ?? 10;
+  doc.font(opts.font).fontSize(opts.size).fillColor(opts.color);
+
+  const words = text.split(/\s+/).filter(Boolean);
+  let line = '';
+  const lines: string[] = [];
+
+  for (const word of words) {
+    const trial = line ? `${line} ${word}` : word;
+    if (doc.widthOfString(trial) > opts.width && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = trial;
+    }
+  }
+  if (line) lines.push(line);
+
+  const lineHeight = opts.size * 1.15 + lineGap;
+
+  for (const l of lines) {
+    ensureRoom(doc, lineHeight);
+    doc.font(opts.font).fontSize(opts.size).fillColor(opts.color);
+    doc.text(l, opts.x, doc.y, {
+      width: opts.width,
+      align: opts.align ?? 'left',
+      lineBreak: false,
+    });
+    doc.y += lineHeight;
+  }
+
+  doc.y += afterGap;
+}
+
 function drawCover(doc: PDFKit.PDFDocument, spec: DocSpec) {
+  // First page already exists from PDFDocument constructor.
   doc.rect(0, 0, PAGE_W, PAGE_H).fill(NAVY);
 
   doc
@@ -98,15 +167,17 @@ function drawCover(doc: PDFKit.PDFDocument, spec: DocSpec) {
       width: CONTENT_W,
       align: 'center',
       characterSpacing: 3.5,
+      lineBreak: false,
     });
   doc
     .font(SANS)
     .fontSize(8)
     .fillColor(GOLD)
-    .text('C A P I T A L   A D V I S O R Y', MARGIN_X, doc.y + 8, {
+    .text('C A P I T A L   A D V I S O R Y', MARGIN_X, 118, {
       width: CONTENT_W,
       align: 'center',
       characterSpacing: 2,
+      lineBreak: false,
     });
 
   const midRuleY = 210;
@@ -125,27 +196,61 @@ function drawCover(doc: PDFKit.PDFDocument, spec: DocSpec) {
       width: CONTENT_W,
       align: 'center',
       characterSpacing: 3,
+      lineBreak: false,
     });
 
-  doc
-    .font(SERIF)
-    .fontSize(30)
-    .fillColor('#ffffff')
-    .text(spec.title, MARGIN_X + 24, doc.y + 22, {
-      width: CONTENT_W - 48,
-      align: 'center',
-      lineGap: 5,
-    });
+  // Title — wrap manually so we stay on the cover page.
+  doc.font(SERIF).fontSize(28).fillColor('#ffffff');
+  const titleWords = spec.title.split(/\s+/);
+  let titleLine = '';
+  const titleLines: string[] = [];
+  const titleWidth = CONTENT_W - 48;
+  for (const word of titleWords) {
+    const trial = titleLine ? `${titleLine} ${word}` : word;
+    if (doc.widthOfString(trial) > titleWidth && titleLine) {
+      titleLines.push(titleLine);
+      titleLine = word;
+    } else {
+      titleLine = trial;
+    }
+  }
+  if (titleLine) titleLines.push(titleLine);
 
-  doc
-    .font(SANS)
-    .fontSize(10.5)
-    .fillColor('#b9c2d4')
-    .text(spec.subtitle, MARGIN_X + 48, doc.y + 22, {
-      width: CONTENT_W - 96,
+  let titleY = midRuleY + 72;
+  for (const l of titleLines) {
+    doc.font(SERIF).fontSize(28).fillColor('#ffffff').text(l, MARGIN_X + 24, titleY, {
+      width: titleWidth,
       align: 'center',
-      lineGap: 4,
+      lineBreak: false,
     });
+    titleY += 36;
+  }
+
+  doc.font(SANS).fontSize(10.5).fillColor('#b9c2d4');
+  const subWords = spec.subtitle.split(/\s+/);
+  let subLine = '';
+  const subLines: string[] = [];
+  const subWidth = CONTENT_W - 96;
+  for (const word of subWords) {
+    const trial = subLine ? `${subLine} ${word}` : word;
+    if (doc.widthOfString(trial) > subWidth && subLine) {
+      subLines.push(subLine);
+      subLine = word;
+    } else {
+      subLine = trial;
+    }
+  }
+  if (subLine) subLines.push(subLine);
+
+  let subY = titleY + 18;
+  for (const l of subLines.slice(0, 5)) {
+    doc.font(SANS).fontSize(10.5).fillColor('#b9c2d4').text(l, MARGIN_X + 48, subY, {
+      width: subWidth,
+      align: 'center',
+      lineBreak: false,
+    });
+    subY += 16;
+  }
 
   doc
     .moveTo(PAGE_W / 2 - 26, PAGE_H - 168)
@@ -162,6 +267,7 @@ function drawCover(doc: PDFKit.PDFDocument, spec: DocSpec) {
       width: CONTENT_W,
       align: 'center',
       characterSpacing: 1.6,
+      lineBreak: false,
     });
   doc
     .font(SANS)
@@ -171,115 +277,136 @@ function drawCover(doc: PDFKit.PDFDocument, spec: DocSpec) {
       width: CONTENT_W,
       align: 'center',
       characterSpacing: 1,
+      lineBreak: false,
     });
 }
 
-function ensureRoom(doc: PDFKit.PDFDocument, needed: number) {
-  if (doc.y + needed > BOTTOM_Y) {
-    doc.addPage();
-    doc.y = TOP_Y;
-  }
-}
-
 function drawParagraph(doc: PDFKit.PDFDocument, text: string, opts: { lead?: boolean } = {}) {
-  const size = opts.lead ? 12 : 10.5;
-  const font = opts.lead ? SERIF : SANS;
-  const color = opts.lead ? NAVY : INK;
-  doc.font(font).fontSize(size).fillColor(color);
-  ensureRoom(doc, doc.heightOfString(text.slice(0, 160), { width: CONTENT_W }) + 14);
-  doc.text(text, MARGIN_X, doc.y, { width: CONTENT_W, lineGap: 4.5, paragraphGap: 0 });
-  doc.y += 12;
+  drawWrappedText(doc, text, {
+    x: MARGIN_X,
+    width: CONTENT_W,
+    font: opts.lead ? SERIF : SANS,
+    size: opts.lead ? 11.5 : 10,
+    color: opts.lead ? NAVY : INK,
+    lineGap: opts.lead ? 4 : 3.25,
+    afterGap: 11,
+  });
 }
 
 function drawBullets(doc: PDFKit.PDFDocument, items: string[]) {
   for (const item of items) {
-    doc.font(SANS).fontSize(10.5);
-    const h = doc.heightOfString(item, { width: CONTENT_W - 18, lineGap: 4 });
-    ensureRoom(doc, Math.min(h, 60) + 8);
-    const y = doc.y;
-    doc.font(SANS_BOLD).fontSize(10.5).fillColor(GOLD).text('•', MARGIN_X + 2, y);
-    doc
-      .font(SANS)
-      .fontSize(10.5)
-      .fillColor(INK)
-      .text(item, MARGIN_X + 18, y, { width: CONTENT_W - 18, lineGap: 4 });
-    doc.y += 7;
+    // Keep the bullet with at least the first line of text.
+    ensureRoom(doc, 28);
+
+    const bulletX = MARGIN_X + 2;
+    const textX = MARGIN_X + 16;
+    const textW = CONTENT_W - 16;
+    const startY = doc.y;
+
+    doc.font(SANS_BOLD).fontSize(10).fillColor(GOLD).text('•', bulletX, startY, { lineBreak: false });
+
+    // Draw item text starting at the same Y; subsequent lines indent without the bullet.
+    doc.y = startY;
+    drawWrappedText(doc, item, {
+      x: textX,
+      width: textW,
+      font: SANS,
+      size: 10,
+      color: INK,
+      lineGap: 3,
+      afterGap: 8,
+    });
   }
-  doc.y += 6;
+  doc.y += 4;
 }
 
 function drawSectionHeading(doc: PDFKit.PDFDocument, text: string, index: number, total: number) {
-  ensureRoom(doc, 120);
-  doc.y += index === 1 && doc.y <= TOP_Y ? 0 : 14;
+  // Keep heading with the first lines of the section — break only if under ~2 lines of room.
+  ensureRoom(doc, 56);
+
+  if (!(index === 1 && doc.y <= TOP_Y + 2)) {
+    doc.y += 10;
+  }
+
   doc
     .font(SANS_BOLD)
-    .fontSize(8)
+    .fontSize(7.5)
     .fillColor(GOLD)
     .text(
       `SECTION ${String(index).padStart(2, '0')} OF ${String(total).padStart(2, '0')}`,
       MARGIN_X,
       doc.y,
-      { characterSpacing: 2.2 },
+      { characterSpacing: 2, lineBreak: false },
     );
-  doc.y += 8;
-  doc
-    .font(SERIF_BOLD)
-    .fontSize(16.5)
-    .fillColor(NAVY)
-    .text(text, MARGIN_X, doc.y, { width: CONTENT_W, lineGap: 3 });
-  doc.y += 4;
+  doc.y += 14;
+
+  drawWrappedText(doc, text, {
+    x: MARGIN_X,
+    width: CONTENT_W,
+    font: SERIF_BOLD,
+    size: 14.5,
+    color: NAVY,
+    lineGap: 2.5,
+    afterGap: 4,
+  });
+
   doc
     .moveTo(MARGIN_X, doc.y)
     .lineTo(MARGIN_X + 42, doc.y)
     .lineWidth(1)
     .strokeColor(GOLD)
     .stroke();
-  doc.y += 14;
+  doc.y += 12;
 }
 
 function drawKeyFindings(doc: PDFKit.PDFDocument, findings: string[]) {
-  ensureRoom(doc, 140);
-  doc.y += 8;
+  ensureRoom(doc, 48);
+  doc.y += 6;
+
   doc
     .font(SANS_BOLD)
-    .fontSize(8.5)
+    .fontSize(8)
     .fillColor(GOLD)
-    .text('KEY FINDINGS', MARGIN_X, doc.y, { characterSpacing: 2.4 });
-  doc.y += 6;
+    .text('KEY FINDINGS', MARGIN_X, doc.y, { characterSpacing: 2.2, lineBreak: false });
+  doc.y += 12;
+
   doc
     .moveTo(MARGIN_X, doc.y)
     .lineTo(MARGIN_X + CONTENT_W, doc.y)
     .lineWidth(0.75)
     .strokeColor(RULE)
     .stroke();
-  doc.y += 14;
+  doc.y += 12;
 
   findings.forEach((finding, i) => {
-    doc.font(SANS).fontSize(10);
-    const h = doc.heightOfString(finding, { width: CONTENT_W - 30, lineGap: 3.5 });
-    ensureRoom(doc, Math.min(h, 70) + 10);
+    ensureRoom(doc, 28);
     const y = doc.y;
     doc
       .font(SERIF_BOLD)
-      .fontSize(11)
-      .fillColor(GOLD)
-      .text(String(i + 1).padStart(2, '0'), MARGIN_X, y);
-    doc
-      .font(SANS)
       .fontSize(10)
-      .fillColor(INK)
-      .text(finding, MARGIN_X + 30, y, { width: CONTENT_W - 30, lineGap: 3.5 });
-    doc.y += 9;
+      .fillColor(GOLD)
+      .text(String(i + 1).padStart(2, '0'), MARGIN_X, y, { lineBreak: false });
+
+    doc.y = y;
+    drawWrappedText(doc, finding, {
+      x: MARGIN_X + 28,
+      width: CONTENT_W - 28,
+      font: SANS,
+      size: 9.5,
+      color: INK,
+      lineGap: 2.75,
+      afterGap: 8,
+    });
   });
 
-  doc.y += 4;
+  ensureRoom(doc, 16);
   doc
     .moveTo(MARGIN_X, doc.y)
     .lineTo(MARGIN_X + CONTENT_W, doc.y)
     .lineWidth(0.75)
     .strokeColor(RULE)
     .stroke();
-  doc.y += 20;
+  doc.y += 16;
 }
 
 function drawClosing(doc: PDFKit.PDFDocument, spec: DocSpec) {
@@ -289,35 +416,60 @@ function drawClosing(doc: PDFKit.PDFDocument, spec: DocSpec) {
       'Keningford Partners is a New York-based, principal-led capital advisory and M&A firm advising companies from Series A through the pre-IPO stage, alongside institutional investors, on equity, debt, and strategic transactions. Every mandate is led directly by senior bankers from origination through close.',
   };
 
-  doc.addPage();
-  doc.y = TOP_Y + 40;
+  // Prefer filling the current page. Only break when the page is already full and
+  // there is not enough room left for the closing block (~280pt).
+  const closingNeeds = 280;
+  const remaining = BOTTOM_Y - doc.y;
+  if (remaining < closingNeeds && doc.y > TOP_Y + 80) {
+    newPage(doc);
+    doc.y = TOP_Y + 36;
+  } else if (doc.y > TOP_Y + 4) {
+    doc.y += 28;
+  } else {
+    doc.y = TOP_Y + 36;
+  }
 
   doc
     .font(SANS_BOLD)
-    .fontSize(8.5)
+    .fontSize(8)
     .fillColor(GOLD)
-    .text('NEXT STEP', MARGIN_X, doc.y, { width: CONTENT_W, align: 'center', characterSpacing: 2.6 });
-  doc.y += 10;
-  doc
-    .font(SERIF)
-    .fontSize(21)
-    .fillColor(NAVY)
-    .text(closing.heading, MARGIN_X, doc.y, { width: CONTENT_W, align: 'center' });
-  doc.y += 12;
-  doc
-    .font(SANS)
-    .fontSize(10.5)
-    .fillColor(MUTED)
-    .text(closing.body, MARGIN_X + 40, doc.y, { width: CONTENT_W - 80, align: 'center', lineGap: 4.5 });
+    .text('NEXT STEP', MARGIN_X, doc.y, {
+      width: CONTENT_W,
+      align: 'center',
+      characterSpacing: 2.4,
+      lineBreak: false,
+    });
+  doc.y += 18;
 
-  doc.y += 26;
+  drawWrappedText(doc, closing.heading, {
+    x: MARGIN_X,
+    width: CONTENT_W,
+    font: SERIF,
+    size: 20,
+    color: NAVY,
+    lineGap: 3,
+    align: 'center',
+    afterGap: 14,
+  });
+
+  drawWrappedText(doc, closing.body, {
+    x: MARGIN_X + 36,
+    width: CONTENT_W - 72,
+    font: SANS,
+    size: 10,
+    color: MUTED,
+    lineGap: 3.5,
+    align: 'center',
+    afterGap: 20,
+  });
+
   doc
     .moveTo(PAGE_W / 2 - 26, doc.y)
     .lineTo(PAGE_W / 2 + 26, doc.y)
     .lineWidth(1)
     .strokeColor(GOLD)
     .stroke();
-  doc.y += 22;
+  doc.y += 20;
 
   const lines: [string, string][] = [
     ['EMAIL', contactEmail],
@@ -330,25 +482,55 @@ function drawClosing(doc: PDFKit.PDFDocument, spec: DocSpec) {
       .font(SANS_BOLD)
       .fontSize(7.5)
       .fillColor(FAINT)
-      .text(label, MARGIN_X, doc.y, { width: CONTENT_W, align: 'center', characterSpacing: 2 });
-    doc.y += 3;
+      .text(label, MARGIN_X, doc.y, {
+        width: CONTENT_W,
+        align: 'center',
+        characterSpacing: 2,
+        lineBreak: false,
+      });
+    doc.y += 12;
     doc
       .font(SANS)
-      .fontSize(10.5)
+      .fontSize(10)
       .fillColor(NAVY)
-      .text(value, MARGIN_X, doc.y, { width: CONTENT_W, align: 'center' });
-    doc.y += 14;
+      .text(value, MARGIN_X, doc.y, {
+        width: CONTENT_W,
+        align: 'center',
+        lineBreak: false,
+      });
+    doc.y += 16;
   }
 
   const disclaimer =
     'This document is provided by Keningford Partners for informational purposes only. It does not constitute an offer, solicitation, recommendation, or commitment for any transaction, nor investment, legal, tax, or accounting advice. Market observations reflect conditions at the date of publication and are subject to change without notice. Figures drawn from third-party sources are believed reliable but are not independently verified. Recipients should conduct their own analysis and consult their own advisors before acting on any matter described herein. © ' +
     new Date().getFullYear() +
     ' Keningford Partners. All rights reserved.';
-  doc
-    .font(SANS)
-    .fontSize(7.5)
-    .fillColor(FAINT)
-    .text(disclaimer, MARGIN_X, BOTTOM_Y - 70, { width: CONTENT_W, align: 'center', lineGap: 2.5 });
+
+  // Pin disclaimer near the bottom of this closing page.
+  doc.font(SANS).fontSize(7).fillColor(FAINT);
+  const discWords = disclaimer.split(/\s+/);
+  let discLine = '';
+  const discLines: string[] = [];
+  for (const word of discWords) {
+    const trial = discLine ? `${discLine} ${word}` : word;
+    if (doc.widthOfString(trial) > CONTENT_W && discLine) {
+      discLines.push(discLine);
+      discLine = word;
+    } else {
+      discLine = trial;
+    }
+  }
+  if (discLine) discLines.push(discLine);
+
+  let discY = BOTTOM_Y - discLines.length * 11 - 4;
+  for (const l of discLines) {
+    doc.font(SANS).fontSize(7).fillColor(FAINT).text(l, MARGIN_X, discY, {
+      width: CONTENT_W,
+      align: 'center',
+      lineBreak: false,
+    });
+    discY += 11;
+  }
 }
 
 function drawChrome(doc: PDFKit.PDFDocument, spec: DocSpec) {
@@ -357,47 +539,45 @@ function drawChrome(doc: PDFKit.PDFDocument, spec: DocSpec) {
     if (i === 0) continue; // cover
     doc.switchToPage(i);
 
-    // Header
     doc
       .font(SANS_BOLD)
-      .fontSize(7.5)
+      .fontSize(7)
       .fillColor(NAVY)
-      .text('KENINGFORD PARTNERS', MARGIN_X, 44, { characterSpacing: 2, lineBreak: false });
+      .text('KENINGFORD PARTNERS', MARGIN_X, 36, { characterSpacing: 1.8, lineBreak: false });
     doc
       .font(SANS)
-      .fontSize(7.5)
+      .fontSize(7)
       .fillColor(FAINT)
-      .text(spec.eyebrow.toUpperCase(), MARGIN_X, 44, {
+      .text(spec.eyebrow.toUpperCase(), MARGIN_X, 36, {
         width: CONTENT_W,
         align: 'right',
-        characterSpacing: 1.6,
+        characterSpacing: 1.4,
         lineBreak: false,
       });
     doc
-      .moveTo(MARGIN_X, 60)
-      .lineTo(MARGIN_X + CONTENT_W, 60)
+      .moveTo(MARGIN_X, 50)
+      .lineTo(MARGIN_X + CONTENT_W, 50)
       .lineWidth(0.75)
       .strokeColor(RULE)
       .stroke();
 
-    // Footer
     doc
-      .moveTo(MARGIN_X, PAGE_H - 58)
-      .lineTo(MARGIN_X + CONTENT_W, PAGE_H - 58)
+      .moveTo(MARGIN_X, PAGE_H - 48)
+      .lineTo(MARGIN_X + CONTENT_W, PAGE_H - 48)
       .lineWidth(0.75)
       .strokeColor(RULE)
       .stroke();
     const footerTitle = spec.title.length > 72 ? `${spec.title.slice(0, 69)}…` : spec.title;
     doc
       .font(SANS)
-      .fontSize(7.5)
+      .fontSize(7)
       .fillColor(FAINT)
-      .text(footerTitle, MARGIN_X, PAGE_H - 48, { lineBreak: false });
+      .text(footerTitle, MARGIN_X, PAGE_H - 38, { lineBreak: false });
     doc
       .font(SANS)
-      .fontSize(7.5)
+      .fontSize(7)
       .fillColor(FAINT)
-      .text(`Page ${i + 1} of ${range.count}`, MARGIN_X, PAGE_H - 48, {
+      .text(`Page ${i + 1} of ${range.count}`, MARGIN_X, PAGE_H - 38, {
         width: CONTENT_W,
         align: 'right',
         lineBreak: false,
@@ -410,8 +590,9 @@ async function renderPdf(spec: DocSpec): Promise<void> {
 
   const doc = new PDFDocument({
     size: 'A4',
-    margins: { top: TOP_Y, bottom: PAGE_H - BOTTOM_Y, left: MARGIN_X, right: MARGIN_X },
+    margin: 0, // critical: disables PDFKit auto page-breaks that were creating blanks
     bufferPages: true,
+    autoFirstPage: true,
     info: {
       Title: spec.title,
       Author: 'Keningford Partners',
@@ -425,14 +606,13 @@ async function renderPdf(spec: DocSpec): Promise<void> {
 
   drawCover(doc, spec);
 
-  doc.addPage();
-  doc.y = TOP_Y;
+  newPage(doc);
 
   const blocks = parseContent(spec.content);
   const totalSections = blocks.filter((b) => b.kind === 'heading').length;
   let sectionIndex = 0;
   let paragraphsBeforeFirstHeading = 0;
-  let findingsRendered = spec.keyFindings ? false : true;
+  let findingsRendered = !spec.keyFindings?.length;
 
   for (const block of blocks) {
     if (block.kind === 'heading') {
