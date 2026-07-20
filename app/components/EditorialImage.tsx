@@ -69,6 +69,7 @@ export default function EditorialImage({
   return (
     <section
       className={`relative h-[65vh] w-full overflow-hidden bg-gray-200 md:h-[75vh] ${className}`}
+      data-reveal-root
     >
       <div className="absolute inset-0">
         <Image

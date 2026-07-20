@@ -43,7 +43,7 @@ export default function EngagementFramework() {
   const stepAnimations = [stepAnimation0, stepAnimation1, stepAnimation2, stepAnimation3, stepAnimation4];
 
   return (
-    <section className="bg-white py-24 md:py-32">
+    <section className="bg-white py-24 md:py-32" data-reveal-root>
       <div className="container mx-auto px-6 md:px-8">
         <div ref={headerAnimation.ref} style={headerAnimation.style} className="mb-16 md:mb-24">
           <div className="mb-6 flex items-center gap-4">

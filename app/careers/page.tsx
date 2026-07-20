@@ -59,12 +59,12 @@ export default function CareersPage() {
             </div>
 
             <div className="mt-20 pt-16 border-t border-gray-200">
-              <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-4 text-center">Our Partners</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-4 text-center">Our Team</h2>
               <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-                Work directly with senior bankers who lead mandates, not layers of management between you and the
-                client.
+                Work directly with the bankers who lead and execute mandates, not layers of management between you
+                and the client.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-stretch">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 items-stretch">
                 {careerPartners.map((partner) => (
                   <article
                     key={partner.name}
@@ -78,7 +78,7 @@ export default function CareersPage() {
                           fill
                           sizes="80px"
                           quality={IMAGE_QUALITY}
-                          className="object-cover object-center grayscale"
+                          className={`object-cover grayscale ${partner.imageObjectPosition ?? 'object-center'}`}
                         />
                       </div>
                     ) : (

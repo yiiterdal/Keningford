@@ -99,7 +99,7 @@ export default function FirmPositioning() {
   const pillarAnimations = pillars.map((_, index) => useFadeInAnimation({ delay: 150 + index * 100, duration: 800 }));
 
   return (
-    <section className="bg-white">
+    <section className="bg-white" data-reveal-root>
       <div className="container mx-auto px-6 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-5xl">
           <h2

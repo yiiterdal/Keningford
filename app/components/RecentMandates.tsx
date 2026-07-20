@@ -38,13 +38,13 @@ export default function RecentMandates() {
                   </p>
                 </div>
                 {mandate.logo && (
-                  <div className="shrink-0 rounded-sm border border-gray-100 bg-gray-50 px-3 py-2">
+                  <div className="flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-gray-100 bg-white px-2.5">
                     <Image
                       src={mandate.logo.src}
                       alt={mandate.logo.alt}
-                      width={72}
+                      width={96}
                       height={32}
-                      className="h-8 w-auto object-contain"
+                      className="h-7 w-auto max-w-[6.5rem] object-contain"
                     />
                   </div>
                 )}

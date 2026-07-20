@@ -226,6 +226,110 @@ Compiled from sector mandates, investor feedback, and public market comparables 
     ),
     imageAlt: 'Scientist working in a biotechnology laboratory',
   },
+  {
+    slug: 'healthcare-ai-equity-trajectory-2026',
+    title: 'Healthcare AI Equity Trajectory: 2026 Sector Review',
+    excerpt:
+      'How growth-stage healthcare AI companies are positioning for institutional capital — reimbursement clarity, clinical validation, and enterprise distribution as the new underwriting baseline.',
+    summary: `This sector review examines financing conditions for healthcare AI at growth stage, including valuation dispersion, investor diligence priorities, and structural terms observed in 2025–2026 processes.
+
+## Key themes
+
+- Premium multiples concentrated in assets with payer or provider distribution and contracted revenue
+- Reimbursement and clinical validation moving to first-meeting diligence topics
+- Structured equity and milestone tranches more common for pre-commercial platforms
+- Narrative quality and data-room discipline as decisive process variables
+
+## Methodology
+
+Compiled from sector mandates, investor conversations, and public market comparables as of Q2 2026. For informational purposes only.`,
+    pdfContent: `Healthcare AI financing in 2026 rewards companies that can be underwritten as durable healthcare businesses — not experimental technology projects. This review examines how growth-stage healthcare AI companies are accessing institutional capital, where multiples have held, and where processes have stalled.
+
+## Market Context
+
+Healthcare AI sits at the intersection of enterprise software capital flows and healthcare services underwriting standards. Investors with software mandates and investors with healthcare mandates are both active, but they converge only on assets that satisfy both lenses: recurring or contracted revenue, measurable clinical or economic outcomes, and a distribution path that does not depend on a single pilot customer.
+
+## Valuation Dispersion
+
+Valuation outcomes in 2025 and early 2026 were bifurcated. Assets with provider-system embedding, multi-site deployment, and revenue tied to workflow adoption cleared at premium multiples relative to horizontal software peers. Assets without reimbursement clarity, with concentrated customer bases, or with pilots that had not converted to contracts faced longer processes and more structured terms.
+
+## Diligence Priorities
+
+Investment committees moved reimbursement pathway analysis, payer mix disclosure, and clinical validation timelines into first-round diligence. Customer reference quality — particularly from health-system economic buyers — carried more weight than model performance metrics alone.
+
+## Structure Trends
+
+Structured equity, milestone-linked tranches, and insider-led extensions appeared more frequently for pre-commercial assets. For assets with visible ARR, straight preferred rounds remained available to companies with clean retention and capital efficiency metrics.
+
+## Preparation Checklist
+
+Companies preparing a 2026 raise should separate R&D from commercial spend in the financial model, document outcomes by cohort, and prepare payer and provider references before launch. Materials that treat clinical credibility and unit economics as one narrative consistently outperformed technology-only stories.
+
+## Methodology
+
+Compiled from sector mandates, investor conversations, and public market comparables as of Q2 2026. For informational purposes only.`,
+    date: 'June 2026',
+    type: 'Sector Primer',
+    sector: 'Technology & Life Sciences',
+    pages: 16,
+    pdfUrl: '/reports/healthcare-ai-equity-trajectory-2026.pdf',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Healthcare technology and clinical systems',
+  },
+  {
+    slug: 'founder-liquidity-secondary-tender-structures-2026',
+    title: 'Founder Liquidity Without IPO: Secondary & Tender Structures',
+    excerpt:
+      'A practical primer on secondary tenders, company-sponsored repurchases, and structured liquidity — when they work, how they are priced, and what boards should prepare.',
+    summary: `This primer outlines secondary liquidity instruments for growth-stage private companies, including tenders, selective repurchases, and combined primary-secondary structures.
+
+## Key themes
+
+- Extended private-company lifecycles making liquidity a board-level planning item
+- Secondary programs as retention and cap-table management tools when executed with discipline
+- Pricing, fairness, and investor communication as critical design elements
+- Poorly structured secondaries creating more complexity than they resolve
+
+## Methodology
+
+Based on observed mandates and market practice through Q2 2026. For informational purposes only.`,
+    pdfContent: `Growth-stage companies are staying private longer. For boards and founders, that shift makes liquidity design a strategic capability — not an afterthought reserved for pre-IPO planning. This primer outlines secondary tenders, company-sponsored repurchases, and combined primary-secondary structures, and the preparation each requires.
+
+## Why Liquidity Moved Up the Agenda
+
+Median timelines from early institutional rounds to public listing have extended. Early investors, employees, and founders accumulate paper value long before a traditional exit. Secondary liquidity programs can retain talent, manage cap-table concentration, and align holders — but only when structured with the same discipline as a primary raise.
+
+## Instrument Overview
+
+Secondary tenders allow existing holders to sell a portion of shares at a defined price. Company-sponsored repurchases use balance-sheet capital to buy back shares from selected classes. Combined primary-secondary rounds pair new capital with seller liquidity in a single process. Each instrument carries different signaling, tax, and governance implications.
+
+## When Secondaries Work
+
+Secondaries fit best when the operating business is performing, the cap table includes holders seeking partial liquidity, and management retention is a priority. They are a poor substitute for fixing broken unit economics or avoiding a necessary primary raise at a realistic mark.
+
+## Design Considerations
+
+Boards must address pricing methodology, pro-rata vs. selective participation, insider trading policies, and communication to investors not participating in the tender. Tax and legal coordination is critical-path, not closing mechanics.
+
+## Common Pitfalls
+
+Rushed secondaries without fairness analysis, unclear insider participation rules, or simultaneous unstructured primary negotiations often create cap-table complexity and investor friction that outweigh the liquidity benefit.
+
+## Methodology
+
+Based on observed mandates and market practice through Q2 2026. For informational purposes only.`,
+    date: 'June 2026',
+    type: 'Sector Primer',
+    sector: 'Cross-Sector',
+    pages: 14,
+    pdfUrl: '/reports/founder-liquidity-secondary-tender-structures-2026.pdf',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Board and management reviewing shareholder liquidity planning',
+  },
 ];
 
 export function getReportBySlug(slug: string): ReportItem | undefined {

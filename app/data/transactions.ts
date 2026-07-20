@@ -92,17 +92,35 @@ export const transactions: Transaction[] = [
   {
     clientType: 'Growth Company',
     type: 'Capital Raising',
+    sector: 'Energy',
+    description: 'EnergyCite',
+    value: 'Active',
+    valueLabel: 'Capital Raise',
+    details: {
+      overview:
+        'Current mandate advising EnergyCite on its capital raise. The company\'s founding team holds seven granted patents on the smart utility meter and related billing systems, and is commercializing an AI conservation app for residential smart-meter customers with real-time usage and billing visibility.',
+      highlights: [
+        'Seven granted patents across the U.S., Israel, China, and the EU on smart metering and in-home display',
+        'Recurring-revenue licensing model targeting 100M+ U.S. residential smart-meter accounts',
+        'Platform supports flat-rate, time-of-use, peak-demand, and dynamic real-time pricing',
+      ],
+      role: 'Capital raise advisor',
+    },
+  },
+  {
+    clientType: 'Growth Company',
+    type: 'Capital Raising',
     sector: 'Biotech',
     description: 'EcoPha Biotech',
     value: 'Active',
     valueLabel: 'Capital Raise',
     details: {
       overview:
-        'Current mandate advising EcoPha Biotech on its capital raise for sustainable bioplastics and aviation fuel from a single non-edible feedstock.',
+        'Current mandate advising EcoPha Biotech on its cross-border capital raise. The company produces sustainable bioplastics and aviation fuel from a single non-edible feedstock, with a Queensland flagship project supported by government co-funding.',
       highlights: [
-        'Flagship Queensland project supported by government co-funding',
-        'Cross-border SPV structuring across multiple geographies',
-        'Investor positioning for growth-stage biotech and deep-tech institutional capital',
+        'Dual-output platform addressing bioplastics and sustainable aviation fuel from one feedstock',
+        'Queensland flagship with government co-funding and cross-border SPV structuring',
+        'Strategic partnerships across aviation and industrial offtake channels',
       ],
       role: 'Capital raise advisor',
     },

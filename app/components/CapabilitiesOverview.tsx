@@ -15,7 +15,7 @@ export default function CapabilitiesOverview({ showHeader = true }: Capabilities
   );
 
   return (
-    <section className="py-24 md:py-32 bg-gray-50">
+    <section className="py-24 md:py-32 bg-gray-50" data-reveal-root>
       <div className="container mx-auto px-6 md:px-8">
         {showHeader && (
           <header ref={headerAnimation.ref} style={headerAnimation.style} className="mb-14 md:mb-16 max-w-2xl">

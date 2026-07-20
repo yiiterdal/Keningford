@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import TextRevealProvider from './TextRevealProvider';
 
 const CHROMELESS_PREFIXES = ['/energycite-onboarding-form'];
 
@@ -20,9 +21,10 @@ export default function SiteChrome({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="flex-1 w-full">{children}</main>
+      <main className="flex-1 w-full">
+        <TextRevealProvider>{children}</TextRevealProvider>
+      </main>
       <Footer />
     </>
   );
 }
-

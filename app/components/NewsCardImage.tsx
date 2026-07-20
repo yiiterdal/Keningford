@@ -45,13 +45,13 @@ export default function NewsCardImage({
       />
       <div className="absolute inset-0 bg-navy/10 pointer-events-none" aria-hidden="true" />
       {clientLogo && (
-        <div className="absolute bottom-4 left-4 rounded-sm bg-white/95 px-4 py-3 shadow-sm">
+        <div className="absolute bottom-4 left-4 flex h-12 items-center justify-center overflow-hidden rounded-sm border border-gray-100 bg-white px-3 py-2 shadow-sm md:h-14">
           <Image
             src={clientLogo.src}
             alt={clientLogo.alt}
-            width={120}
+            width={140}
             height={48}
-            className="h-8 w-auto object-contain md:h-10"
+            className="h-8 w-auto max-w-[8rem] object-contain md:h-10"
           />
         </div>
       )}

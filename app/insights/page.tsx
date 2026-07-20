@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import Hero from '../components/Hero';
 import CapitalMarketsDashboard from '../components/CapitalMarketsDashboard';
+import FeaturedGuideSection from '../components/FeaturedGuideSection';
 import { GuideIcon } from '../components/GuideIcons';
+import Hero from '../components/Hero';
 import NewsCardImage from '../components/NewsCardImage';
 import NewsMeta from '../components/NewsMeta';
 import ReportMeta from '../components/ReportMeta';
@@ -13,7 +14,7 @@ import { IMAGE_SIZES, unsplashSrc } from '../lib/image-utils';
 export const metadata = {
   title: 'Insights | Keningford Partners',
   description:
-    'Capital markets dashboard, investor guides, market perspectives, and research from Keningford Partners.',
+    'Capital markets dashboard, investor guides, market perspectives, and downloadable research from Keningford Partners.',
 };
 
 const featuredGuideSlug = '14-week-growth-round-equity-process-map';
@@ -21,78 +22,32 @@ const featuredGuideSlug = '14-week-growth-round-equity-process-map';
 export default function InsightsPage() {
   const featuredGuide = investorGuides.find((guide) => guide.slug === featuredGuideSlug);
   const otherGuides = investorGuides.filter((guide) => guide.slug !== featuredGuideSlug);
-  const marketInsights = newsItems.filter((item) => item.category === 'Market Insights').slice(0, 3);
+  const marketInsights = newsItems.filter((item) => item.category === 'Market Insights').slice(0, 6);
 
   return (
     <>
       <Hero
         eyebrow="Insights"
         title="Capital intelligence for decision-makers."
-        subtitle="Market dashboard, investor guides, perspectives, and research, structured for founders, boards, and institutional investors."
+        subtitle="Market dashboard, investor guides, perspectives, and research — structured for founders, boards, and institutional investors."
         imageUrl={unsplashSrc('photo-1504711434969-e33886168f5c')}
         imageAlt="Market analysis and financial insights"
       />
 
-      {featuredGuide && (
-        <section className="border-b border-[#BF9B5F]/20 bg-[#f7f2e9] py-14 md:py-20">
-          <div className="container mx-auto px-6 md:px-8">
-            <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
-              <div>
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#a8823f]">
-                  Featured Booklet · Free Download
-                </p>
-                <h2 className="font-serif text-2xl leading-snug text-navy md:text-[2rem]">
-                  {featuredGuide.title}
-                </h2>
-                <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-gray-600">
-                  {featuredGuide.excerpt}
-                </p>
-                <ul className="mt-6 space-y-2.5">
-                  {featuredGuide.takeaways.slice(0, 3).map((takeaway) => (
-                    <li key={takeaway} className="flex gap-3 text-sm leading-relaxed text-gray-700">
-                      <span aria-hidden className="mt-[8px] h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" />
-                      {takeaway}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <Link
-                    href={`/insights/guides/${featuredGuide.slug}#booklet`}
-                    className="inline-flex items-center justify-center gap-2 bg-navy px-6 py-3 text-[13px] font-semibold text-white transition hover:bg-navy-dark"
-                  >
-                    Read the booklet →
-                  </Link>
-                  <Link
-                    href={`/insights/guides/${featuredGuide.slug}`}
-                    className="inline-flex items-center justify-center border border-navy/30 px-6 py-3 text-[13px] font-medium text-navy transition hover:bg-navy/5"
-                  >
-                    View the guide
-                  </Link>
-                </div>
-              </div>
+      <section className="border-b border-gray-100 bg-white py-10 md:py-12">
+        <div className="container mx-auto px-6 md:px-8">
+          <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-gray-600 md:text-base">
+            Keningford Partners regularly publishes strategic insights on how growth-stage companies
+            access institutional capital and execute transactions. Our research is sector-agnostic by
+            design: it reflects mandate activity across equity, debt, and M&A rather than a single
+            vertical headline cycle. Each report and guide examines a specific corner of the
+            growth-stage capital markets and is written to be useful to founders, boards, investors,
+            and the advisers who sit alongside them.
+          </p>
+        </div>
+      </section>
 
-              {/* Booklet cover mockup */}
-              <div className="relative mx-auto w-full max-w-sm" aria-hidden>
-                <div className="absolute -right-3 top-5 bottom-1 w-full border border-navy/10 bg-navy/5" />
-                <div className="absolute -right-1.5 top-2.5 bottom-0.5 w-full border border-navy/10 bg-navy/10" />
-                <div className="relative border border-[#c4a062]/30 bg-[#0e1c38] px-9 py-11 shadow-2xl shadow-navy/25">
-                  <p className="mb-9 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#c4a062]">
-                    Keningford Partners Research
-                  </p>
-                  <span className="mb-7 flex h-12 w-12 items-center justify-center border border-[#c4a062]/50 bg-[#c4a062]/10 text-[#c4a062]">
-                    <GuideIcon id={featuredGuide.icon} className="h-5 w-5" />
-                  </span>
-                  <p className="font-serif text-xl leading-snug text-white">{featuredGuide.title}</p>
-                  <div className="mt-7 h-px w-14 bg-[#c4a062]/50" />
-                  <p className="mt-7 text-[10px] font-medium uppercase tracking-[0.18em] text-white/40">
-                    {featuredGuide.readTime} · PDF Booklet
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {featuredGuide && <FeaturedGuideSection guide={featuredGuide} />}
 
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-8">

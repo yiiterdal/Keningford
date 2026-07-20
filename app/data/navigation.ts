@@ -18,6 +18,12 @@ export const insightsDropdownLinks: NavDropdownLink[] = [
   { label: 'News', href: '/news' },
   { label: 'Reports & Primers', href: '/reports' },
   { label: 'Resources', href: '/resources' },
+  { label: 'Raise Readiness', href: '/raise-readiness' },
+];
+
+/** Appended to the Capabilities navbar dropdown after service pages. */
+export const capabilitiesDropdownExtras: NavDropdownLink[] = [
+  { label: 'Raise Readiness Diagnostic', href: '/raise-readiness' },
 ];
 
 /**

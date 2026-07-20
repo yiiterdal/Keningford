@@ -18,10 +18,21 @@ export default function ReportsPage() {
       <Hero
         eyebrow="Research Reports"
         title="Perspectives you can take into the room."
-        subtitle="Periodic PDF reports on markets, sectors, and capital formation, structured for boards, sponsors, and institutional investors."
+        subtitle="Periodic PDF reports on markets, sectors, and capital formation — structured for boards, sponsors, and institutional investors."
         imageUrl={unsplashSrc('photo-1454165804606-c3d57bc86b40')}
         imageAlt="Business professional reviewing research documents"
       />
+
+      <section className="border-b border-gray-100 bg-gray-50 py-10 md:py-12">
+        <div className="container mx-auto px-6 md:px-8">
+          <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-gray-600 md:text-base">
+            Each report examines a specific segment of the growth-stage capital markets. Our team
+            updates facts, data, and transaction observations as conditions move so the version
+            published here reflects our current view. The latest edition of each report appears below,
+            with a brief overview of its contents. For institutional and professional use only.
+          </p>
+        </div>
+      </section>
 
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-6 md:px-8">

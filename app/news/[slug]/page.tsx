@@ -83,13 +83,13 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
           />
 
           {article.clientLogo && (
-            <div className="mb-8 flex items-center justify-center border border-gray-200 bg-gray-50 px-8 py-6">
+            <div className="mb-8 flex items-center justify-center border border-gray-200 bg-white px-8 py-6">
               <Image
                 src={article.clientLogo.src}
                 alt={article.clientLogo.alt}
-                width={240}
-                height={96}
-                className="h-16 w-auto object-contain md:h-20"
+                width={320}
+                height={80}
+                className="max-h-14 max-w-[18rem] w-auto object-contain md:max-h-16"
               />
             </div>
           )}

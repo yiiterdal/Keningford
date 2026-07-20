@@ -340,7 +340,7 @@ The arithmetic founders should carry is the honest end-to-end number. Four prepa
       {
         question: 'Where can a founder reach Keningford Partners?',
         answer:
-          'Founders six to twelve months from launching a growth-round process can request a raise readiness review through our contact page or by writing to info@keningfordpartners.com.',
+          'Founders six to twelve months from launching a growth-round process can start with Keningford\u2019s raise readiness diagnostic at keningfordpartners.com/raise-readiness, request a review through our contact page, or write to info@keningfordpartners.com.',
       },
     ],
   },

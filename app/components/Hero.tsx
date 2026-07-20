@@ -48,10 +48,10 @@ export default function Hero({
   const isLarge = variant === 'large';
   const isEditorial = layout === 'editorial';
   const isCompactEditorial = isEditorial && !isLarge;
-  const eyebrowAnimation = useFadeInAnimation({ delay: 0, duration: 700 });
-  const titleAnimation = useFadeInAnimation({ delay: 150, duration: 700 });
-  const subtitleAnimation = useFadeInAnimation({ delay: 400, duration: 700 });
-  const ctaAnimation = useFadeInAnimation({ delay: 600, duration: 700 });
+  const eyebrowAnimation = useFadeInAnimation({ delay: 0, duration: 700, animateOnMount: true });
+  const titleAnimation = useFadeInAnimation({ delay: 150, duration: 700, animateOnMount: true });
+  const subtitleAnimation = useFadeInAnimation({ delay: 400, duration: 700, animateOnMount: true });
+  const ctaAnimation = useFadeInAnimation({ delay: 600, duration: 700, animateOnMount: true });
 
   const sectionClasses = isLarge
     ? 'relative min-h-screen overflow-hidden'
@@ -139,7 +139,7 @@ export default function Hero({
   );
 
   return (
-    <section className={sectionClasses}>
+    <section className={sectionClasses} data-hero>
       <div className="absolute inset-0 bg-[#111820]">
         <Image
           src={imageUrl}

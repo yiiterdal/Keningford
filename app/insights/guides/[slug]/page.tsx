@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import GuideBooklet from '../../../components/GuideBooklet';
+import GuideFaq from '../../../components/GuideFaq';
 import JsonLd from '../../../components/JsonLd';
 import { contactEmail } from '../../../data/contact';
 import { getInvestorGuideBySlug, investorGuidePdfUrl, investorGuides } from '../../../data/investor-guides';
@@ -33,6 +34,7 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
     introBlocks.push(block);
   }
   const keyFindings = guide.stats ?? guide.takeaways;
+  const showRaiseReadiness = guide.slug === '14-week-growth-round-equity-process-map';
 
   return (
     <>
@@ -100,10 +102,30 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
                   </li>
                 ))}
               </ul>
+              {showRaiseReadiness && (
+                <div className="mt-8 border-t border-gray-200 pt-6">
+                  <Link
+                    href="/raise-readiness"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-navy underline-offset-2 hover:underline"
+                  >
+                    Take the raise readiness diagnostic →
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
+
+      {guide.faq && guide.faq.length > 0 && (
+        <section className="border-t border-gray-100 bg-gray-50 py-14 md:py-16">
+          <div className="container mx-auto px-6 md:px-8">
+            <div className="mx-auto max-w-3xl">
+              <GuideFaq items={guide.faq} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Embedded document */}
       <section id="booklet" className="scroll-mt-28 border-t border-gray-100 bg-white py-14 md:py-16">
@@ -130,46 +152,6 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
         </div>
       </section>
 
-      {/* FAQ */}
-      {guide.faq && guide.faq.length > 0 && (
-        <section className="border-t border-gray-100 bg-gray-50 py-16 md:py-20">
-          <div className="container mx-auto px-6 md:px-8">
-            <div className="mx-auto max-w-3xl">
-              <div className="mb-9 text-center">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-                  FAQ
-                </p>
-                <h2 className="mt-3 font-serif text-2xl text-navy md:text-3xl">
-                  Frequently asked questions
-                </h2>
-              </div>
-              <div className="space-y-3">
-                {guide.faq.map((item) => (
-                  <details key={item.question} className="group border border-gray-200 bg-white">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 [&::-webkit-details-marker]:hidden md:px-7">
-                      <span className="text-[15px] font-semibold leading-snug text-navy md:text-base">
-                        {item.question}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="flex h-7 w-7 shrink-0 items-center justify-center border border-gray-200 text-gray-400 transition group-open:rotate-45 group-open:border-[#BF9B5F] group-open:text-[#BF9B5F]"
-                      >
-                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14M5 12h14" />
-                        </svg>
-                      </span>
-                    </summary>
-                    <p className="border-t border-gray-100 px-6 py-5 text-[15px] leading-[1.85] text-gray-600 md:px-7">
-                      {item.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* CTA band */}
       <section className="bg-[#0e1c38] py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-8">
@@ -187,18 +169,37 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
               runway needs to be at launch.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center bg-white px-7 py-3.5 text-sm font-medium text-navy transition hover:bg-gray-100"
-              >
-                Contact Us
-              </Link>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="inline-flex items-center border border-white/30 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white hover:bg-white/5"
-              >
-                {contactEmail}
-              </a>
+              {showRaiseReadiness ? (
+                <>
+                  <Link
+                    href="/raise-readiness"
+                    className="inline-flex items-center bg-white px-7 py-3.5 text-sm font-medium text-navy transition hover:bg-gray-100"
+                  >
+                    Take the diagnostic
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center border border-white/30 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white hover:bg-white/5"
+                  >
+                    Contact Us
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center bg-white px-7 py-3.5 text-sm font-medium text-navy transition hover:bg-gray-100"
+                  >
+                    Contact Us
+                  </Link>
+                  <a
+                    href={`mailto:${contactEmail}`}
+                    className="inline-flex items-center border border-white/30 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white hover:bg-white/5"
+                  >
+                    {contactEmail}
+                  </a>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -29,6 +29,8 @@ export interface CareerPartner {
   title: string;
   bio: string;
   imageUrl?: string;
+  /** Tailwind object-position class for circular crop framing */
+  imageObjectPosition?: string;
 }
 
 export const careerValues: CareerValue[] = [
@@ -55,6 +57,7 @@ export const careerPartners: CareerPartner[] = [
     title: 'Managing Partner',
     bio: 'Co-leads strategic advisory, marketing, and financial advisory for growth-stage and established companies.',
     imageUrl: '/images/partners/haktan-tuna-yilar.jpg',
+    imageObjectPosition: 'object-[center_28%]',
   },
   {
     name: 'Kevin Lark',
@@ -73,6 +76,12 @@ export const careerPartners: CareerPartner[] = [
     title: 'Managing Partner',
     bio: 'Leads cross-border M&A and private capital advisory for US and European family offices and founders.',
     imageUrl: '/images/partners/yigit-erdal.jpg',
+  },
+  {
+    name: 'Joy Shome',
+    title: 'Analyst',
+    bio: 'Supports financial modeling, valuation, and materials preparation across active capital raising and M&A mandates.',
+    imageUrl: '/images/partners/joy-shome.jpg',
   },
 ];
 

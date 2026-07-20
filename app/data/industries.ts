@@ -1,4 +1,4 @@
-import { pexelsSrc } from '../lib/image-utils';
+import { pexelsSrc, unsplashSrc } from '../lib/image-utils';
 
 export interface IndustryArticle {
   title: string;
@@ -100,10 +100,13 @@ export const industries: Industry[] = [
       'Investor mapping for transition technology companies',
     ],
     articles: [
+      { title: 'Keningford Advises EnergyCite on Capital Raise', href: '/news/keningford-advises-energycite-capital-raise', type: 'News' },
       { title: 'Q2 2026 Energy & Infrastructure M&A Outlook', href: '/reports/q2-2026-energy-infrastructure-ma-outlook', type: 'Report' },
     ],
-    imageUrl: pexelsSrc('https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop'),
-    imageAlt: 'Energy infrastructure',
+    imageUrl: pexelsSrc(
+      'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+    ),
+    imageAlt: 'Electric power transmission lines and energy infrastructure',
   },
   {
     slug: 'software',
@@ -130,8 +133,8 @@ export const industries: Industry[] = [
     articles: [
       { title: 'Keningford Advises on $150M Growth Equity Financing', href: '/news/keningford-advises-growth-equity-financing', type: 'News' },
     ],
-    imageUrl: pexelsSrc('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop'),
-    imageAlt: 'Technology and software business',
+    imageUrl: unsplashSrc('photo-1451187580459-43490279c0fa'),
+    imageAlt: 'Digital technology network and enterprise software infrastructure',
   },
   {
     slug: 'industrials',

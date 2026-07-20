@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { hasHeroOverlay, insightsDropdownLinks, primaryNavLinks } from '../data/navigation';
+import { capabilitiesDropdownExtras, hasHeroOverlay, insightsDropdownLinks, primaryNavLinks } from '../data/navigation';
 import { capabilities } from '../data/capabilities';
 
 interface NavDropdownConfig {
@@ -22,7 +22,10 @@ export default function Navbar() {
   const dropdowns: Record<string, NavDropdownConfig> = useMemo(
     () => ({
       '/capabilities': {
-        items: capabilities.map((capability) => ({ label: capability.title, href: capability.href })),
+        items: [
+          ...capabilities.map((capability) => ({ label: capability.title, href: capability.href })),
+          ...capabilitiesDropdownExtras,
+        ],
         viewAllLabel: 'View all capabilities →',
         viewAllHref: '/capabilities',
       },
