@@ -1,4 +1,4 @@
-import { pexelsSrc, unsplashSrc } from '../lib/image-utils';
+import { pexelsSrc } from '../lib/image-utils';
 
 export type NewsCategory = 'Firm News' | 'Market Insights' | 'Transactions';
 
