@@ -80,17 +80,58 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
             sizes={ARTICLE_SIZES}
             aspectClassName="aspect-[21/9]"
             className="mb-8"
+            clientLogo={article.clientLogo}
           />
 
           {article.clientLogo && (
-            <div className="mb-8 flex items-center justify-center border border-gray-200 bg-white px-8 py-6">
-              <Image
-                src={article.clientLogo.src}
-                alt={article.clientLogo.alt}
-                width={320}
-                height={80}
-                className="max-h-14 max-w-[18rem] w-auto object-contain md:max-h-16"
-              />
+            <div className="mb-10 flex flex-col items-center gap-4 border border-gray-200 bg-gray-50 px-6 py-8 sm:flex-row sm:justify-between sm:px-8">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
+                <div className="flex h-16 items-center justify-center bg-white px-5 py-3 shadow-sm sm:h-[4.5rem]">
+                  <Image
+                    src={article.clientLogo.src}
+                    alt={article.clientLogo.alt}
+                    width={280}
+                    height={72}
+                    className="max-h-12 max-w-[14rem] w-auto object-contain sm:max-h-14"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-500">
+                    Client
+                  </p>
+                  <p className="mt-1 text-base font-semibold text-navy">
+                    {article.clientLogo.alt.replace(/ logo$/i, '')}
+                  </p>
+                </div>
+              </div>
+              {article.clientWebsite && (
+                <a
+                  href={article.clientWebsite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-navy px-5 py-2.5 text-[13px] font-semibold text-white transition hover:bg-navy-dark"
+                >
+                  Visit website →
+                </a>
+              )}
+            </div>
+          )}
+
+          {article.highlights && article.highlights.length > 0 && (
+            <div className="mb-10 border border-gray-200 border-t-2 border-t-[#BF9B5F] bg-gray-50 p-6 md:p-8">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
+                At a Glance
+              </p>
+              <ul className="mt-5 space-y-4">
+                {article.highlights.map((item, index) => (
+                  <li key={item} className="flex gap-4">
+                    <span className="shrink-0 font-serif text-sm leading-[1.7] text-[#BF9B5F]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-[15px] leading-[1.7] text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 
@@ -104,6 +145,29 @@ export default function NewsArticlePage({ params }: NewsArticlePageProps) {
                   >
                     {block.slice(3)}
                   </h2>
+                );
+              }
+
+              if (block.includes('energycite.com') && article.clientWebsite) {
+                const parts = block.split(/(energycite\.com)/i);
+                return (
+                  <p key={index} className="mb-6 text-lg leading-relaxed text-gray-700">
+                    {parts.map((part, i) =>
+                      part.toLowerCase() === 'energycite.com' ? (
+                        <a
+                          key={i}
+                          href={article.clientWebsite}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-navy underline-offset-2 hover:underline"
+                        >
+                          {part}
+                        </a>
+                      ) : (
+                        <span key={i}>{part}</span>
+                      ),
+                    )}
+                  </p>
                 );
               }
 

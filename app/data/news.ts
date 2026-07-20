@@ -1,4 +1,4 @@
-import { pexelsSrc } from '../lib/image-utils';
+import { pexelsSrc, unsplashSrc } from '../lib/image-utils';
 
 export type NewsCategory = 'Firm News' | 'Market Insights' | 'Transactions';
 
@@ -21,6 +21,8 @@ export interface NewsItem {
     src: string;
     alt: string;
   };
+  clientWebsite?: string;
+  highlights?: string[];
 }
 
 export const newsItems: NewsItem[] = [
@@ -29,28 +31,41 @@ export const newsItems: NewsItem[] = [
     title: 'Advising EnergyCite on Its Current Capital Raise',
     eyebrow: 'Current Mandate',
     excerpt:
-      'Keningford Partners is advising EnergyCite on its current capital raise. Founded by the inventor of the smart utility meter, EnergyCite is building an AI-powered conservation app that gives residential smart-meter customers real-time visibility into kilowatt-hour usage, rate structures, and monthly spend.',
-    content: `NEW YORK, July 20, 2026. Keningford Partners announces that it is advising EnergyCite on its current capital raise.
+      'Keningford Partners is advising EnergyCite on its current capital raise. Founded by the inventor of the smart utility meter, EnergyCite is commercializing an AI-powered conservation app that gives residential customers real-time visibility into usage, rates, and monthly spend.',
+    content: `NEW YORK, July 20, 2026. Keningford Partners announces that it is advising EnergyCite Inc. on its current capital raise.
 
 EnergyCite was founded by Tomer Tamarkin, whose development team holds seven granted patents on the smart utility meter and related remote billing and in-home display systems across the United States, Israel, China, and the European Union. Over a twenty-year period, Mr. Tamarkin was instrumental in the nationwide transition from electro-mechanical utility meters to electronic smart meters — the installed infrastructure on which EnergyCite's product is designed to run.
 
+## The Product
+
 The company's proprietary application delivers up-to-the-second energy usage in kilowatt-hours, accumulated monthly bill totals in dollars and cents, and real-time cost of power directly to consumer mobile devices. The platform supports flat-rate, time-of-use, peak-demand, and dynamic real-time pricing structures, and is designed for licensing to residential electrical utility customers through investor-owned and municipal utilities nationwide.
 
-EnergyCite is pursuing a recurring-revenue model with low overhead and high margin potential, with beta site completion scheduled for Q2 2027. The company's total addressable market spans more than 100 million U.S. residential accounts served by smart electric utility meters.
+## Market and Model
 
-The engagement reflects Keningford Partners' focus on growth-stage energy technology mandates where patent-protected IP, utility-sector go-to-market complexity, and institutional investor positioning require senior-led attention from origination through close.`,
+EnergyCite is pursuing a recurring-revenue licensing model with low overhead and high margin potential. Beta site completion is scheduled for Q2 2027. The company's total addressable market spans more than 100 million U.S. residential accounts served by smart electric utility meters, marketed through the nation's investor-owned utilities and leading municipal utilities.
+
+## Our Role
+
+The engagement reflects Keningford Partners' focus on growth-stage energy technology mandates where patent-protected IP, utility-sector go-to-market complexity, and institutional investor positioning require senior-led attention from origination through close.
+
+Learn more about EnergyCite at energycite.com.`,
     closingNote:
       'Keningford Partners works with a small number of companies each year on capital raises and strategic transactions, providing direct, senior-led access to institutional investors.',
     clientLogo: {
       src: '/images/news/energycite-logo.png',
-      alt: 'EnergyCite logo',
+      alt: 'EnergyCite Inc. logo',
     },
+    clientWebsite: 'https://energycite.com',
+    highlights: [
+      'Seven granted patents on smart metering and in-home display systems (U.S., Israel, China, EU)',
+      'AI conservation app with real-time kWh usage, billing totals, and multi-rate pricing support',
+      'Recurring-revenue licensing model targeting 100M+ U.S. residential smart-meter accounts',
+      'Beta site completion targeted for Q2 2027',
+    ],
     date: 'July 20, 2026',
     category: 'Transactions',
-    imageUrl: pexelsSrc(
-      'https://images.pexels.com/photos/4489734/pexels-photo-4489734.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
-    ),
-    imageAlt: 'Electric utility meter and residential power infrastructure',
+    imageUrl: unsplashSrc('photo-1473341304170-971dccb5ac1e'),
+    imageAlt: 'Electric power transmission lines at dusk — utility infrastructure',
   },
   {
     slug: 'keningford-advises-ecopha-biotech-capital-raise',

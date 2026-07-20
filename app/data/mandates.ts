@@ -12,7 +12,7 @@ export const recentMandates: RecentMandate[] = [
     client: 'EnergyCite',
     type: 'Capital Raising',
     description:
-      'Capital raise for a patented smart-meter platform and AI conservation app — real-time kWh usage, billing visibility, and multi-rate pricing for U.S. residential utility customers.',
+      'Capital raise for EnergyCite Inc. — patented smart-meter IP and an AI conservation app delivering real-time kWh usage, billing visibility, and multi-rate pricing to U.S. residential utility customers.',
     status: 'Active',
     href: '/news/keningford-advises-energycite-capital-raise',
     logo: { src: '/images/news/energycite-logo.png', alt: 'EnergyCite logo' },
