@@ -3,13 +3,12 @@ import CapitalMarketsDashboard from '../components/CapitalMarketsDashboard';
 import FeaturedGuideSection from '../components/FeaturedGuideSection';
 import { GuideIcon } from '../components/GuideIcons';
 import Hero from '../components/Hero';
-import NewsCardImage from '../components/NewsCardImage';
-import NewsMeta from '../components/NewsMeta';
+import NewsListing from '../components/NewsListing';
 import ReportMeta from '../components/ReportMeta';
 import { investorGuides } from '../data/investor-guides';
 import { newsItems } from '../data/news';
 import { reports } from '../data/reports';
-import { IMAGE_SIZES, unsplashSrc } from '../lib/image-utils';
+import { unsplashSrc } from '../lib/image-utils';
 
 export const metadata = {
   title: 'Insights | Keningford Partners',
@@ -119,26 +118,7 @@ export default function InsightsPage() {
               All news →
             </Link>
           </div>
-          <div className="space-y-10">
-            {marketInsights.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/news/${item.slug}`}
-                className="group grid grid-cols-1 gap-6 border-b border-gray-200 pb-10 last:border-b-0 last:pb-0 md:grid-cols-5"
-              >
-                <div className="md:col-span-2">
-                  <NewsCardImage src={item.imageUrl} alt={item.imageAlt} sizes={IMAGE_SIZES.newsList} />
-                </div>
-                <div className="md:col-span-3">
-                  <NewsMeta category={item.category} date={item.date} className="mb-3" />
-                  <h3 className="mb-3 text-2xl font-semibold text-navy group-hover:underline">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600">{item.excerpt}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <NewsListing items={marketInsights} />
         </div>
       </section>
 

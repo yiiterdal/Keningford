@@ -41,7 +41,7 @@ export default function NewsCardImage({
         unoptimized={serveUnoptimized}
         placeholder={serveUnoptimized ? 'empty' : 'blur'}
         blurDataURL={serveUnoptimized ? undefined : IMAGE_BLUR_DATA_URL}
-        className="object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-navy/10 pointer-events-none" aria-hidden="true" />
       {clientLogo && (

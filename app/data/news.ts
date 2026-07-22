@@ -23,6 +23,20 @@ export interface NewsItem {
   };
   clientWebsite?: string;
   highlights?: string[];
+  stats?: {
+    label: string;
+    value: string;
+    note?: string;
+  }[];
+  chart?: {
+    title: string;
+    caption?: string;
+    bars: {
+      label: string;
+      value: number;
+      display?: string;
+    }[];
+  };
 }
 
 export const newsItems: NewsItem[] = [
@@ -61,6 +75,12 @@ Learn more about EnergyCite at energycite.com.`,
       'AI conservation app with real-time kWh usage, billing totals, and multi-rate pricing support',
       'Recurring-revenue licensing model targeting 100M+ U.S. residential smart-meter accounts',
       'Beta site completion targeted for Q2 2027',
+    ],
+    stats: [
+      { label: 'Patents', value: '7', note: 'U.S., Israel, China, EU' },
+      { label: 'Addressable accounts', value: '100M+', note: 'U.S. residential smart meters' },
+      { label: 'Beta target', value: 'Q2 2027', note: 'Site completion schedule' },
+      { label: 'Model', value: 'License', note: 'Recurring utility-channel revenue' },
     ],
     date: 'July 20, 2026',
     category: 'Transactions',
@@ -121,6 +141,22 @@ Founders preparing a vertical AI raise should lead with workflow ownership, cust
 Keningford Partners advises growth-stage software and AI platforms on equity positioning, investor mapping, and process design. For sector-specific questions, contact the firm through its website.`,
     date: 'June 22, 2026',
     category: 'Market Insights',
+    stats: [
+      { label: 'Net retention bar', value: '110%+', note: 'Where multiples still hold' },
+      { label: 'Process outcome', value: 'Selective', note: 'Workflow depth over model demos' },
+      { label: 'Structure trend', value: 'Tranched', note: 'More common without software metrics' },
+      { label: 'Founder focus', value: 'ROI proof', note: 'Own the workflow, not the model' },
+    ],
+    chart: {
+      title: 'What clears a growth round in vertical AI',
+      caption: 'Illustrative underwriting weight — not market survey data.',
+      bars: [
+        { label: 'Workflow ownership & retention', value: 92, display: 'Highest' },
+        { label: 'Measurable customer ROI', value: 84, display: 'High' },
+        { label: 'Defensible data loop', value: 78, display: 'High' },
+        { label: 'Model benchmarks alone', value: 28, display: 'Low' },
+      ],
+    },
     imageUrl: pexelsSrc(
       'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
     ),
@@ -150,6 +186,12 @@ Management teams entering a healthcare AI process should prepare payer and provi
 Keningford Partners advises healthcare and technology-enabled services companies on growth equity and strategic capital. Questions on investor positioning can be directed to the firm through its contact page.`,
     date: 'June 18, 2026',
     category: 'Market Insights',
+    stats: [
+      { label: 'Premium profile', value: 'Contracted', note: 'Recurring or payer-backed revenue' },
+      { label: 'Diligence focus', value: 'Outcomes', note: 'Clinical + unit economics as one story' },
+      { label: 'Common stall', value: 'Pilots', note: 'Pilots that never convert to multi-year' },
+      { label: 'Board prep', value: 'Payer mix', note: 'References and cohort outcomes ready' },
+    ],
     imageUrl: pexelsSrc(
       'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
     ),
@@ -293,6 +335,22 @@ Boards planning a capital event should start six to nine months ahead: data room
 Keningford Partners publishes ongoing market perspectives for founders and boards evaluating financing alternatives. For deal-level questions, contact the firm through the website.`,
     date: 'June 2, 2026',
     category: 'Market Insights',
+    stats: [
+      { label: 'Credit stance', value: 'Selective', note: 'Recurring revenue preferred' },
+      { label: 'Equity pacing', value: 'Patient', note: 'Retention over top-line alone' },
+      { label: 'Prep window', value: '6–9 mo', note: 'Before a formal process launch' },
+      { label: 'Process risk', value: 'Unreadiness', note: 'Largest driver of failed raises' },
+    ],
+    chart: {
+      title: 'What buyers and lenders are prioritizing',
+      caption: 'Illustrative emphasis for lower middle-market processes in H2 2026.',
+      bars: [
+        { label: 'Reporting quality & QoE readiness', value: 90, display: 'Critical' },
+        { label: 'Retention / cash conversion', value: 85, display: 'Critical' },
+        { label: 'Conservative leverage case', value: 72, display: 'High' },
+        { label: 'Growth narrative alone', value: 35, display: 'Secondary' },
+      ],
+    },
     imageUrl: pexelsSrc(
       'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
     ),
@@ -320,6 +378,22 @@ Treat the four weeks before launch as part of the process, not optional prep. Bu
 Keningford Partners published a full phase-by-phase map as an investor guide, and offers a raise readiness diagnostic for CEOs six to twelve months from launching a growth process. Both are designed to turn a longer cycle into a manageable operating plan rather than a surprise.`,
     date: 'June 1, 2026',
     category: 'Market Insights',
+    stats: [
+      { label: 'Base-case cycle', value: '14 wks', note: 'Median time-to-close, growth equity' },
+      { label: 'Prior cycle', value: '~8 wks', note: 'Earlier-decade operational habit' },
+      { label: 'Prep buffer', value: '+4 wks', note: 'Before first investor meeting' },
+      { label: 'Runway plan', value: '+30%', note: 'Contingency on the full cycle' },
+    ],
+    chart: {
+      title: 'Planning the growth-round calendar',
+      caption: 'Illustrative weeks — see the full process map for phase detail.',
+      bars: [
+        { label: 'Preparation (pre-launch)', value: 4, display: '4 wks' },
+        { label: 'Process to close', value: 14, display: '14 wks' },
+        { label: 'Buffer (~30%)', value: 5, display: '~5 wks' },
+        { label: 'End-to-end planning case', value: 23, display: '~6 mo' },
+      ],
+    },
     imageUrl: pexelsSrc(
       'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
     ),
