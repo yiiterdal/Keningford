@@ -648,6 +648,7 @@ async function main() {
   const jobs: DocSpec[] = [];
 
   for (const guide of investorGuides) {
+    if (guide.customPdf) continue;
     jobs.push({
       outPath: path.join(publicDir, 'downloads', 'guides', `${guide.slug}.pdf`),
       eyebrow: 'Investor Guide',

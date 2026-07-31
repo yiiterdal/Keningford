@@ -19,10 +19,7 @@ export default function GuideFaq({ items, limit, viewAllHref, id = 'faq', classN
   return (
     <div id={id} className={`scroll-mt-28 ${className}`}>
       <div className="mb-6 md:mb-8">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">FAQ</p>
-        <h2 className="mt-2 font-serif text-2xl leading-snug text-navy md:text-3xl">
-          Frequently asked questions
-        </h2>
+        <h2 className="font-serif text-2xl leading-snug text-navy md:text-3xl">FAQ</h2>
       </div>
 
       <div className="overflow-hidden rounded-sm border border-gray-200 bg-white shadow-sm">
@@ -36,9 +33,9 @@ export default function GuideFaq({ items, limit, viewAllHref, id = 'faq', classN
                 type="button"
                 aria-expanded={isOpen}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50 md:px-6 md:py-5"
+                className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50 md:gap-8 md:px-8 md:py-5"
               >
-                <span className="text-[15px] font-semibold leading-snug text-navy md:text-base">
+                <span className="max-w-4xl text-[15px] font-semibold leading-snug text-navy md:text-base">
                   {item.question}
                 </span>
                 <span
@@ -55,8 +52,8 @@ export default function GuideFaq({ items, limit, viewAllHref, id = 'faq', classN
                 </span>
               </button>
               {isOpen && (
-                <div className="border-t border-gray-100 bg-gray-50 px-5 py-4 md:px-6 md:py-5">
-                  <p className="text-[15px] leading-[1.85] text-gray-600">{item.answer}</p>
+                <div className="border-t border-gray-100 bg-gray-50 px-5 py-4 md:px-8 md:py-5">
+                  <p className="max-w-4xl text-[15px] leading-[1.85] text-gray-600">{item.answer}</p>
                 </div>
               )}
             </div>
