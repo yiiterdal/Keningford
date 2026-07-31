@@ -17,7 +17,7 @@ export default function FeaturedGuideSection({ guide }: FeaturedGuideSectionProp
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">
-                {guide.customPdf ? 'Featured Research · Free Download' : 'Featured Booklet · Free Download'}
+                Featured Booklet · Free Download
               </p>
 
               <h2 className="font-serif text-2xl leading-snug text-navy md:text-[2rem] lg:text-[2.125rem]">
@@ -41,7 +41,7 @@ export default function FeaturedGuideSection({ guide }: FeaturedGuideSectionProp
                   href={`${guideHref}#booklet`}
                   className="inline-flex items-center justify-center gap-2 bg-navy px-6 py-3 text-[13px] font-semibold text-white transition hover:bg-navy-dark"
                 >
-                  {guide.customPdf ? 'Read the paper →' : 'Read the booklet →'}
+                  Read the booklet →
                 </Link>
                 <Link
                   href={guideHref}
@@ -52,23 +52,11 @@ export default function FeaturedGuideSection({ guide }: FeaturedGuideSectionProp
               </div>
 
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-gray-600">
-                {guide.slug === '14-week-growth-round-equity-process-map' ? (
-                  <>
-                    Six to twelve months from a growth process?{' '}
-                    <Link href="/raise-readiness" className="font-medium text-navy underline-offset-2 hover:underline">
-                      Take the raise readiness diagnostic
-                    </Link>{' '}
-                    before you read the full phase map.
-                  </>
-                ) : (
-                  <>
-                    Preparing a sale, raise, or acquisition in H2 2026?{' '}
-                    <Link href="/contact" className="font-medium text-navy underline-offset-2 hover:underline">
-                      Talk to our team
-                    </Link>{' '}
-                    about how this market reads against your facts.
-                  </>
-                )}
+                Six to twelve months from a growth process?{' '}
+                <Link href="/raise-readiness" className="font-medium text-navy underline-offset-2 hover:underline">
+                  Take the raise readiness diagnostic
+                </Link>{' '}
+                before you read the full phase map.
               </p>
             </div>
 
@@ -89,7 +77,7 @@ export default function FeaturedGuideSection({ guide }: FeaturedGuideSectionProp
                   <p className="font-serif text-xl leading-snug text-white md:text-[1.3rem]">{guide.title}</p>
                   <div className="mt-7 h-px w-12 bg-white/20" aria-hidden />
                   <p className="mt-7 text-[10px] font-medium uppercase tracking-[0.18em] text-white/40">
-                    {guide.readTime} · {guide.customPdf ? 'PDF Research' : 'PDF Booklet'}
+                    {guide.readTime} · PDF Booklet
                   </p>
                 </div>
               </div>
@@ -100,8 +88,8 @@ export default function FeaturedGuideSection({ guide }: FeaturedGuideSectionProp
 
       {guide.faq && guide.faq.length > 0 && (
         <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
-          <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:max-w-[1360px] lg:px-10">
-            <GuideFaq items={guide.faq} limit={6} viewAllHref={`${guideHref}#faq`} />
+          <div className="container mx-auto px-6 md:px-8">
+            <GuideFaq items={guide.faq} limit={3} viewAllHref={`${guideHref}#faq`} />
           </div>
         </section>
       )}

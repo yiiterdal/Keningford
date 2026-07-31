@@ -4,7 +4,6 @@ import { industries } from './data/industries';
 import { investorGuides } from './data/investor-guides';
 import { newsItems } from './data/news';
 import { reports } from './data/reports';
-import { strategyReports } from './data/strategy-reports';
 
 const SITE_URL = 'https://www.keningfordpartners.com';
 
@@ -30,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const capabilityRoutes = capabilities.map((capability) => capability.href);
   const industryRoutes = industries.map((industry) => `/industries/${industry.slug}`);
   const guideRoutes = investorGuides.map((guide) => `/insights/guides/${guide.slug}`);
-  const strategyRoutes = strategyReports.map((report) => `/insights/strategy/${report.slug}`);
   const newsRoutes = newsItems.map((item) => `/news/${item.slug}`);
   const reportRoutes = reports.map((item) => `/reports/${item.slug}`);
 
@@ -39,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...capabilityRoutes,
     ...industryRoutes,
     ...guideRoutes,
-    ...strategyRoutes,
     ...newsRoutes,
     ...reportRoutes,
   ].map((route) => ({

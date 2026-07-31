@@ -17,10 +17,6 @@ export const insightsDropdownLinks: NavDropdownLink[] = [
   { label: 'Overview', href: '/insights' },
   { label: 'News', href: '/news' },
   { label: 'Reports & Primers', href: '/reports' },
-  {
-    label: 'Strategy Reports',
-    href: '/insights/strategy/advanced-manufacturing-materials',
-  },
   { label: 'Resources', href: '/resources' },
   { label: 'Raise Readiness', href: '/raise-readiness' },
 ];
@@ -52,7 +48,7 @@ export const heroOverlayPaths = [
 ] as const;
 
 /** Sections whose child pages also use a dark hero. */
-export const heroOverlayPrefixes = ['/capabilities', '/insights/strategy'] as const;
+export const heroOverlayPrefixes = ['/capabilities'] as const;
 
 export function hasHeroOverlay(pathname: string | null): boolean {
   if (!pathname) return false;
