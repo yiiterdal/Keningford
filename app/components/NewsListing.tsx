@@ -32,8 +32,8 @@ function TopicPills({ item }: { item: NewsItem }) {
 export default function NewsListing({ items, showFeatured = true }: NewsListingProps) {
   if (items.length === 0) return null;
 
-  const [featured, ...rest] = showFeatured ? items : [undefined, ...items];
-  const secondary = showFeatured ? rest : items;
+  const featured = showFeatured ? items[0] : undefined;
+  const secondary = showFeatured ? items.slice(1) : items;
 
   return (
     <div className="space-y-12 md:space-y-16">
