@@ -230,7 +230,7 @@ Compiled from sector mandates, investor feedback, and public market comparables 
     slug: 'healthcare-ai-equity-trajectory-2026',
     title: 'Healthcare AI Equity Trajectory: 2026 Sector Review',
     excerpt:
-      'How growth-stage healthcare AI companies are positioning for institutional capital — reimbursement clarity, clinical validation, and enterprise distribution as the new underwriting baseline.',
+      'How growth-stage healthcare AI companies are positioning for institutional capital - reimbursement clarity, clinical validation, and enterprise distribution as the new underwriting baseline.',
     summary: `This sector review examines financing conditions for healthcare AI at growth stage, including valuation dispersion, investor diligence priorities, and structural terms observed in 2025–2026 processes.
 
 ## Key themes
@@ -243,7 +243,7 @@ Compiled from sector mandates, investor feedback, and public market comparables 
 ## Methodology
 
 Compiled from sector mandates, investor conversations, and public market comparables as of Q2 2026. For informational purposes only.`,
-    pdfContent: `Healthcare AI financing in 2026 rewards companies that can be underwritten as durable healthcare businesses — not experimental technology projects. This review examines how growth-stage healthcare AI companies are accessing institutional capital, where multiples have held, and where processes have stalled.
+    pdfContent: `Healthcare AI financing in 2026 rewards companies that can be underwritten as durable healthcare businesses - not experimental technology projects. This review examines how growth-stage healthcare AI companies are accessing institutional capital, where multiples have held, and where processes have stalled.
 
 ## Market Context
 
@@ -255,7 +255,7 @@ Valuation outcomes in 2025 and early 2026 were bifurcated. Assets with provider-
 
 ## Diligence Priorities
 
-Investment committees moved reimbursement pathway analysis, payer mix disclosure, and clinical validation timelines into first-round diligence. Customer reference quality — particularly from health-system economic buyers — carried more weight than model performance metrics alone.
+Investment committees moved reimbursement pathway analysis, payer mix disclosure, and clinical validation timelines into first-round diligence. Customer reference quality - particularly from health-system economic buyers - carried more weight than model performance metrics alone.
 
 ## Structure Trends
 
@@ -282,7 +282,7 @@ Compiled from sector mandates, investor conversations, and public market compara
     slug: 'founder-liquidity-secondary-tender-structures-2026',
     title: 'Founder Liquidity Without IPO: Secondary & Tender Structures',
     excerpt:
-      'A practical primer on secondary tenders, company-sponsored repurchases, and structured liquidity — when they work, how they are priced, and what boards should prepare.',
+      'A practical primer on secondary tenders, company-sponsored repurchases, and structured liquidity - when they work, how they are priced, and what boards should prepare.',
     summary: `This primer outlines secondary liquidity instruments for growth-stage private companies, including tenders, selective repurchases, and combined primary-secondary structures.
 
 ## Key themes
@@ -295,11 +295,11 @@ Compiled from sector mandates, investor conversations, and public market compara
 ## Methodology
 
 Based on observed mandates and market practice through Q2 2026. For informational purposes only.`,
-    pdfContent: `Growth-stage companies are staying private longer. For boards and founders, that shift makes liquidity design a strategic capability — not an afterthought reserved for pre-IPO planning. This primer outlines secondary tenders, company-sponsored repurchases, and combined primary-secondary structures, and the preparation each requires.
+    pdfContent: `Growth-stage companies are staying private longer. For boards and founders, that shift makes liquidity design a strategic capability - not an afterthought reserved for pre-IPO planning. This primer outlines secondary tenders, company-sponsored repurchases, and combined primary-secondary structures, and the preparation each requires.
 
 ## Why Liquidity Moved Up the Agenda
 
-Median timelines from early institutional rounds to public listing have extended. Early investors, employees, and founders accumulate paper value long before a traditional exit. Secondary liquidity programs can retain talent, manage cap-table concentration, and align holders — but only when structured with the same discipline as a primary raise.
+Median timelines from early institutional rounds to public listing have extended. Early investors, employees, and founders accumulate paper value long before a traditional exit. Secondary liquidity programs can retain talent, manage cap-table concentration, and align holders - but only when structured with the same discipline as a primary raise.
 
 ## Instrument Overview
 

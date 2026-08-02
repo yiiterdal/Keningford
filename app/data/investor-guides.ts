@@ -14,6 +14,9 @@ export interface InvestorGuide {
   date: string;
   content: string;
   icon: GuideIconId;
+  /** Full-bleed hero image for the guide detail page. */
+  heroImage: string;
+  heroImageAlt: string;
   /** Three to four scannable takeaways shown before the full text. */
   takeaways: string[];
   /** Source-cited data points shown as the key-findings bullet list after the intro. Falls back to takeaways. */
@@ -35,6 +38,8 @@ export const investorGuides: InvestorGuide[] = [
     readTime: '10 min read',
     date: 'February 10, 2026',
     icon: 'building',
+    heroImage: '/images/guides/skyline-framed.jpg',
+    heroImageAlt: 'City skyline framed between glass towers from a high-rise balcony',
     takeaways: [
       'Family offices weigh alignment, governance rights, and liquidity as heavily as return potential.',
       'Concise, institutional-quality materials and direct access to decision-makers move processes forward.',
@@ -67,6 +72,33 @@ The best-received opportunities combine a credible equity story, transparent ris
 Transparency on risk carries unusual weight with this investor class. A family office that has operated businesses through cycles has seen every category of corporate distress, and a founder who names the two or three things that could genuinely impair the business, alongside what is being done about them, builds more conviction than one who presents an unblemished story. Omission reads as either inexperience or evasion, and neither supports a long-hold relationship.
 
 Finally, alignment is examined in both directions. The family is deciding whether the founder is someone they want to be partners with for a decade; the founder should be conducting the same evaluation. Asking about the office's decision process, prior direct investments, behavior in downside scenarios, and expectations around information rights is not impertinence, it is exactly the seriousness the best family offices are looking for across the table.`,
+    faq: [
+      {
+        question: 'How do family offices differ from growth funds when evaluating a company?',
+        answer:
+          'A fund manager answers to limited partners on a defined fund life, which disciplines check size and exit timing. A family office answers to a family, so the mandate can be broader, the hold longer, and the decision both faster and more personal. Founders who pitch a family office as if it were a growth fund routinely answer the wrong questions well.',
+      },
+      {
+        question: 'What do family offices weigh beyond returns?',
+        answer:
+          'Alignment with family values, governance rights, liquidity expectations, and relationship quality sit alongside return potential. Direct investments often receive more scrutiny on management quality and governance than fund commitments, because the family cannot diversify a direct position the way a fund diversifies a portfolio.',
+      },
+      {
+        question: 'When should founders start conversations with family offices?',
+        answer:
+          'Open conversations six to twelve months before capital is needed. Share interim updates that demonstrate execution against stated plans, and treat every interaction as diligence. An update that quietly walks back an earlier projection does more damage in a family office process than in a fund process.',
+      },
+      {
+        question: 'What materials work best with family offices?',
+        answer:
+          'Concise, institutional-quality materials, clear use of proceeds, and direct access to decision-makers. A fragmented process with multiple handoffs often signals misalignment before terms are discussed. Unscripted fluency on unit economics and capital priorities consistently outperforms polished decks alone.',
+      },
+      {
+        question: 'How should founders present downside risk to a family office?',
+        answer:
+          'Name the two or three things that could genuinely impair the business, alongside what is being done about them. Many family offices underwrite closer to a credit committee: realistic worst case, what the business looks like in that case, and how the structure protects the position. Omission reads as inexperience or evasion.',
+      },
+    ],
   },
   {
     slug: 'how-lps-select-funds',
@@ -76,6 +108,8 @@ Finally, alignment is examined in both directions. The family is deciding whethe
     readTime: '12 min read',
     date: 'March 3, 2026',
     icon: 'handshake',
+    heroImage: '/images/guides/aerial-cityscape.jpg',
+    heroImageAlt: 'Aerial view of a dense city skyline in late-day light',
     takeaways: [
       'LPs scrutinize track record net of fees, loss ratios, pacing, and team stability before terms.',
       'Warm introductions from trusted advisors carry real weight; cold outreach rarely advances.',
@@ -108,6 +142,33 @@ LPs are increasingly attentive to fee structures, key person provisions, and co-
 Key person and governance terms are negotiated with more energy than economics. Allocators have absorbed the lesson of funds where the named partners left mid-fund, so expect specific key person triggers, meaningful GP commitment sized to the principals' net worth rather than a token percentage, and advisory committee rights with substance. Co-investment has moved from a perk to a core part of many LPs' deployment models, and managers who can articulate a credible, fair co-investment allocation policy hold a real advantage.
 
 Managers who present a disciplined portfolio strategy and realistic fund size relative to opportunity set are better positioned in competitive fundraises. Fund-size discipline is read as a proxy for alignment: a manager who raises to the strategy rather than to demand signals that carry, not fees, is the business model. The most damaging pattern an LP can find is strategy drift that tracks fund growth, larger checks, later stages, and broader sectors that quietly abandon the edge the track record was built on.`,
+    faq: [
+      {
+        question: 'What do LPs scrutinize first when selecting a fund?',
+        answer:
+          'Track record net of fees, loss ratios, pacing discipline, and team stability usually come before terms. Allocators rebuild the track record themselves rather than accepting a marketing IRR, and they weight realized outcomes more heavily than mark-to-market paper gains.',
+      },
+      {
+        question: 'Why do consultants and gatekeepers matter in an LP process?',
+        answer:
+          'For many institutions, the consultant rating determines whether the internal team can even bring a fund to committee. Managers should understand which consultants cover their strategy, engage them early, and treat that process with the same seriousness as a direct LP relationship.',
+      },
+      {
+        question: 'Which LPA terms do sophisticated LPs negotiate hardest?',
+        answer:
+          'Fee step-downs after the investment period, management fee offsets, recycling, waterfall and clawback mechanics, key person triggers, GP commitment sized to principals\' net worth, and advisory committee rights with substance. Co-investment allocation policy has also moved from a perk to a core deployment tool for many LPs.',
+      },
+      {
+        question: 'How should emerging managers approach LP fundraising?',
+        answer:
+          'Lead with a disciplined portfolio strategy and a fund size that matches the opportunity set, not demand. Strategy drift that tracks fund growth (larger checks, later stages, broader sectors) is one of the most damaging patterns an LP can find when underwriting a first or second fund.',
+      },
+      {
+        question: 'What is the difference between a marketing track record and an LP underwriting track record?',
+        answer:
+          'Marketing materials often emphasize gross IRR and selected winners. LPs rebuild net-of-fee results, examine loss ratios and capital pacing, and test whether the team that produced the track record is still intact and incented to stay.',
+      },
+    ],
   },
   {
     slug: 'debt-vs-equity',
@@ -117,6 +178,8 @@ Managers who present a disciplined portfolio strategy and realistic fund size re
     readTime: '11 min read',
     date: 'March 24, 2026',
     icon: 'balance',
+    heroImage: '/images/guides/city-dusk.jpg',
+    heroImageAlt: 'City skyline at dusk over water',
     takeaways: [
       'Debt fits recurring-revenue businesses funding identifiable ROI; equity fits unproven risk capital.',
       'Covenants, dilution, and the signal each structure sends all belong in the comparison.',
@@ -149,6 +212,33 @@ Preferred equity, convertible instruments, and structured common can bridge gaps
 Each hybrid carries its own discipline. Structured preferred with PIK features preserves cash but compounds quietly, and founders should model the redemption stack at exit rather than at issuance. Convertibles defer the valuation conversation but stack up: three rounds of notes with different caps and discounts create a conversion event that surprises everyone at the priced round. Revenue-based instruments avoid dilution entirely but claim the same operating cash flow that funds growth, which limits them to businesses with genuine margin headroom.
 
 The sequencing insight that ties the framework together is that instruments should match the maturity of what they fund. Prove the unproven with equity, finance the proven with debt, and use hybrids to bridge timing gaps rather than to avoid hard pricing conversations. Companies that let the risk profile of the funded work choose the instrument, rather than defaulting to whichever capital is easiest to raise that quarter, compound ownership meaningfully over a decade.`,
+    faq: [
+      {
+        question: 'When is debt a better fit than equity?',
+        answer:
+          'Debt fits recurring-revenue businesses funding identifiable ROI: acquisitions with synergy cases, working capital for contracted growth, or refinancing at better terms. The test is whether the funded activity produces cash flows that service the obligation on a timeline the instrument respects.',
+      },
+      {
+        question: 'When should founders raise equity instead?',
+        answer:
+          'Equity is appropriate for unproven initiatives, balance sheet repair, or expansion where cash payback is uncertain. These outcomes have wide distributions, and equity is the instrument designed to absorb them. Using debt against uncertain payback is equity risk wearing a credit structure.',
+      },
+      {
+        question: 'Why is comparing instruments on headline cost misleading?',
+        answer:
+          'Equity looks free because it has no coupon; debt looks cheap because the rate is visible. Both readings are incomplete. Equity permanently shares future value creation; debt\'s visible rate omits covenants, amortization pressure, and refinancing risk. The honest comparison prices flexibility and downside behavior.',
+      },
+      {
+        question: 'What should founders watch in debt covenants?',
+        answer:
+          'Model covenant headroom under the downside case, not the base case. A cheap facility with tight maintenance covenants can become the most expensive capital on the balance sheet the first quarter the plan slips, because a breach transfers negotiating leverage to the lender at the wrong moment.',
+      },
+      {
+        question: 'When do hybrid structures make sense?',
+        answer:
+          'Preferred equity, convertibles, and structured common bridge gaps when a company is too levered for more debt but unwilling to price equity in a soft market, or needs capital certainty now with valuation discovery deferred. Use hybrids to bridge timing gaps, not to avoid hard pricing conversations.',
+      },
+    ],
   },
   {
     slug: 'how-due-diligence-works',
@@ -158,6 +248,8 @@ The sequencing insight that ties the framework together is that instruments shou
     readTime: '13 min read',
     date: 'April 14, 2026',
     icon: 'search',
+    heroImage: '/images/guides/manhattan-day.jpg',
+    heroImageAlt: 'Manhattan skyline in daylight',
     takeaways: [
       'Preparation quality directly affects timeline, re-trade risk, and final terms.',
       'Quality-of-earnings work is standard; expect scrutiny on revenue quality and concentration.',
@@ -194,6 +286,33 @@ Clean documentation and proactive disclosure reduce friction in final documentat
 Diligence is also an operational load on a company that still has a business to run, and processes fail from exhaustion as often as from findings. Assign a single internal owner for the data room and Q&A flow, route every investor question through one channel with a forty-eight-hour response standard, and maintain a living FAQ so the tenth investor receives the same answer as the first in the same words. Inconsistent answers across parallel conversations are how careless companies manufacture diligence issues out of nothing.
 
 Finally, protect the operating rhythm. Ring-fence the deal team, keep the wider company on quarterly execution, and remember that the strongest diligence artifact of all is a business that hits its numbers during the process. Nothing re-prices a deal downward faster than a company missing its own forecast in the exact quarter it asked to be underwritten on it.`,
+    faq: [
+      {
+        question: 'Why does diligence preparation affect price and terms?',
+        answer:
+          'Every material issue has two prices: the price of fixing it before launch, and the price of the investor finding it first. A gap found in preparation is a task; the same gap found during exclusivity becomes a re-trade, because the company has lost alternatives and the buyer knows it.',
+      },
+      {
+        question: 'What do investors examine in financial diligence?',
+        answer:
+          'Revenue quality, margin durability, working capital seasonality, customer concentration, and normalized EBITDA bridges. Quality-of-earnings work is standard; expect every addback to be rebuilt independently, and assume contracted versus reorder revenue and cohort behavior will be tested against raw data.',
+      },
+      {
+        question: 'How should management prepare for commercial diligence?',
+        answer:
+          'Anticipate what customer interviews will surface before third-party firms run them. Run informal win-loss and reference conversations in advance, and address recurring criticism in the narrative. Fluency without the deck matters as much as the data room itself.',
+      },
+      {
+        question: 'Which legal issues most often delay a closing?',
+        answer:
+          'Unsigned IP assignments, option grants never approved by the board, material contracts with unflagged change-of-control clauses, and uncatalogued side letters. A pre-launch legal audit by transaction counsel is among the highest-return preparation spends available.',
+      },
+      {
+        question: 'How should a company run diligence without breaking operations?',
+        answer:
+          'Assign a single internal owner for the data room and Q&A, route every investor question through one channel with a forty-eight-hour response standard, and maintain a living FAQ so answers stay consistent. Ring-fence the deal team and keep the wider company on quarterly execution.',
+      },
+    ],
   },
   {
     slug: 'what-makes-a-great-investment-memo',
@@ -203,6 +322,8 @@ Finally, protect the operating rhythm. Ring-fence the deal team, keep the wider 
     readTime: '11 min read',
     date: 'May 5, 2026',
     icon: 'document',
+    heroImage: '/images/guides/street-canyon.jpg',
+    heroImageAlt: 'Looking up through a canyon of downtown skyscrapers',
     takeaways: [
       'Lead with the opportunity in one paragraph: what the company does, why it wins, what capital enables.',
       'Replace adjectives with metrics: retention, payback, cohorts, and capital efficiency.',
@@ -237,6 +358,33 @@ Choose the honest three or four rather than the defensive ten. A litany of boile
 ## Before It Goes Out
 
 The final test of a memo is adversarial reading. Have someone unaffiliated with the company, ideally someone who evaluates deals professionally, read it cold and mark every claim they doubted, every number they could not reconcile, and every question it raised without answering. Then fix the document, not the reader. A memo that survives one honest adversarial pass before it circulates will survive the twenty it receives after.`,
+    faq: [
+      {
+        question: 'How is an investment memo different from a pitch deck?',
+        answer:
+          'A deck performs in the room with management present to carry it. A memo circulates alone, gets forwarded to partners who were not in the meeting, and is read without anyone there to defend it. Write for that cold reader: falsifiable thesis on page one, reconciling numbers, and anticipated objections.',
+      },
+      {
+        question: 'What structure do institutional readers expect?',
+        answer:
+          'Lead with the opportunity in one paragraph, then market context, business model, financial profile, use of proceeds, and risks. Size markets from the bottom up, let unit economics argue the model, and tie every dollar of proceeds to a milestone that changes the company\'s risk profile.',
+      },
+      {
+        question: 'How long should an investment memo be?',
+        answer:
+          'A memo that cannot make its case in roughly ten pages is usually hiding a weak argument inside a long one. Depth belongs in the appendix: cohort tables, model output, and pipeline detail, referenced from the body so scanning readers are not obstructed.',
+      },
+      {
+        question: 'How should risks be disclosed in a memo?',
+        answer:
+          'Pair each material risk with a specific mitigant or management plan. Choose the honest three or four risks management actually worries about rather than a defensive boilerplate list. Omission of obvious risks signals inexperience or evasiveness, and both are priced in.',
+      },
+      {
+        question: 'What is the best final check before circulating a memo?',
+        answer:
+          'Have someone unaffiliated with the company, ideally someone who evaluates deals professionally, read it cold. Mark every doubted claim, unreconciled number, and unanswered question, then fix the document. A memo that survives one honest adversarial pass will survive the twenty it receives after.',
+      },
+    ],
   },
   {
     slug: '14-week-growth-round-equity-process-map',
@@ -246,6 +394,8 @@ The final test of a memo is adversarial reading. Have someone unaffiliated with 
     readTime: '18 min read',
     date: 'June 15, 2026',
     icon: 'calendar',
+    heroImage: '/images/editorial/manhattan-skyline-hero.jpg',
+    heroImageAlt: 'Midtown Manhattan skyline at dusk with the Chrysler Building',
     takeaways: [
       'Fourteen weeks is now the operational base case for institutional growth rounds, not eight.',
       'The four weeks before launch are the highest-leverage period: data room, prospect map, narrative.',
@@ -331,6 +481,26 @@ The arithmetic founders should carry is the honest end-to-end number. Four prepa
         question: 'Should a founder take a bridge round before launching a growth round?',
         answer:
           'We advise founders to size a bridge to the work it is funding, structural readiness preparation, not pre-emption of the growth round itself. If readiness work is complete at launch, a fourteen-week cycle is typically manageable on existing runway. If readiness work is incomplete, a bridge may be necessary, sized to complete the work plus the cycle plus a buffer of roughly thirty percent.',
+      },
+      {
+        question: 'How should founders compare competing term sheets?',
+        answer:
+          'Compare structure and exit-scenario dilution, not headline valuation alone. A modest valuation premium can disappear, or reverse, once participating preferences, perpetual pro-rata, and anti-dilution are modeled across a few exit cases. Preference math under multiple scenarios belongs in the data room before negotiation starts.',
+      },
+      {
+        question: 'How many investors should a growth-round prospect map include?',
+        answer:
+          'Map twenty-five to forty prospects at the partner level before launch, with a clear view of which quartile each firm sits in on follow-on behavior. Lead follow-on rates vary widely by firm quality, and founders should know that before the first meeting rather than discovering it mid-process.',
+      },
+      {
+        question: 'What runway buffer should founders plan around a growth raise?',
+        answer:
+          'Four preparation weeks plus fourteen process weeks plus a thirty percent buffer is roughly six months from decision to funds wired. Companies that treat that as the planning base case launch calmer, negotiate from strength, and close on schedule.',
+      },
+      {
+        question: 'What happens in the closing weeks of a growth round?',
+        answer:
+          'Confirmatory diligence, documentation, and closing conditions should run against a dated checklist with a named owner on every item. Unowned conditions are where closings slip. Sequence close communications deliberately: employees, existing investors, and key customers should hear the news from the company first.',
       },
       {
         question: 'Who is Keningford Partners?',

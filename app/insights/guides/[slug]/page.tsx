@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import GuideBooklet from '../../../components/GuideBooklet';
 import GuideFaq from '../../../components/GuideFaq';
+import Hero from '../../../components/Hero';
 import JsonLd from '../../../components/JsonLd';
 import { contactEmail } from '../../../data/contact';
 import { getInvestorGuideBySlug, investorGuidePdfUrl, investorGuides } from '../../../data/investor-guides';
@@ -40,10 +41,22 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
     <>
       {guide.faq && guide.faq.length > 0 && <JsonLd data={faqPageSchema(guide.faq)} />}
 
-      {/* Article header */}
-      <section className="bg-white pt-32 md:pt-40">
+      <Hero
+        eyebrow={`Investor Guide · ${guide.readTime}`}
+        title={guide.title}
+        subtitle={guide.excerpt}
+        imageUrl={guide.heroImage}
+        imageAlt={guide.heroImageAlt}
+        variant="large"
+        layout="editorial"
+        primaryCta={{ label: 'Read the booklet', href: '#booklet' }}
+        secondaryCta={{ label: 'All insights', href: '/insights' }}
+      />
+
+      {/* Article chrome */}
+      <section className="bg-white pt-10 md:pt-14">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-6xl">
             <Breadcrumbs
               items={[
                 { label: 'Insights', href: '/insights' },
@@ -51,29 +64,27 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
                 { label: guide.title },
               ]}
             />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-              Investor Guide · {guide.readTime}
-            </p>
-            <h1 className="mt-4 font-serif text-3xl leading-tight text-navy md:text-[2.75rem] md:leading-[1.15]">
-              {guide.title}
-            </h1>
-            <p className="mt-6 text-sm text-gray-500">
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
               <time>{guide.date}</time>
-              <span aria-hidden className="mx-3 text-gray-300">
+              <span aria-hidden className="hidden text-gray-300 sm:inline">
                 |
               </span>
               <span className="font-medium text-gray-600">Keningford Partners Research</span>
-            </p>
+              <span aria-hidden className="hidden text-gray-300 sm:inline">
+                |
+              </span>
+              <span>{guide.readTime}</span>
+            </div>
             <div aria-hidden className="mt-8 h-px w-full bg-gray-200" />
           </div>
         </div>
       </section>
 
-      {/* Article lead and key findings */}
-      <section className="bg-white pb-14 pt-8 md:pb-16">
+      {/* Lead + key findings — wide layout */}
+      <section className="bg-white pb-12 pt-8 md:pb-16">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="mx-auto max-w-3xl">
-            <div className="space-y-5">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="space-y-5 lg:col-span-7">
               {introBlocks.map((block, index) => (
                 <p
                   key={index}
@@ -88,31 +99,33 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
               ))}
             </div>
 
-            <div className="mt-12 border border-gray-200 border-t-2 border-t-[#BF9B5F] bg-gray-50 p-7 md:p-9">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-                Key Findings
-              </p>
-              <ul className="mt-6 space-y-5">
-                {keyFindings.map((finding, index) => (
-                  <li key={finding} className="flex gap-4">
-                    <span className="shrink-0 font-serif text-sm leading-[1.8] text-[#BF9B5F]">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-[15px] leading-[1.8] text-gray-700">{finding}</span>
-                  </li>
-                ))}
-              </ul>
-              {showRaiseReadiness && (
-                <div className="mt-8 border-t border-gray-200 pt-6">
-                  <Link
-                    href="/raise-readiness"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-navy underline-offset-2 hover:underline"
-                  >
-                    Take the raise readiness diagnostic →
-                  </Link>
-                </div>
-              )}
-            </div>
+            <aside className="lg:col-span-5">
+              <div className="h-full border border-gray-200 border-t-2 border-t-[#BF9B5F] bg-gray-50 p-6 md:p-8">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
+                  Key Findings
+                </p>
+                <ul className="mt-5 space-y-4">
+                  {keyFindings.map((finding, index) => (
+                    <li key={finding} className="flex gap-3">
+                      <span className="shrink-0 font-serif text-sm leading-[1.7] text-[#BF9B5F]">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="text-sm leading-[1.7] text-gray-700 md:text-[15px]">{finding}</span>
+                    </li>
+                  ))}
+                </ul>
+                {showRaiseReadiness && (
+                  <div className="mt-7 border-t border-gray-200 pt-5">
+                    <Link
+                      href="/raise-readiness"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-navy underline-offset-2 hover:underline"
+                    >
+                      Take the raise readiness diagnostic →
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -120,14 +133,14 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
       {guide.faq && guide.faq.length > 0 && (
         <section className="border-t border-gray-100 bg-gray-50 py-14 md:py-16">
           <div className="container mx-auto px-6 md:px-8">
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-6xl">
               <GuideFaq items={guide.faq} />
             </div>
           </div>
         </section>
       )}
 
-      {/* Embedded document */}
+      {/* Embedded booklet */}
       <section id="booklet" className="scroll-mt-28 border-t border-gray-100 bg-white py-14 md:py-16">
         <div className="container mx-auto px-6 md:px-8">
           <div className="mx-auto max-w-4xl">

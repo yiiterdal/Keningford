@@ -4,6 +4,8 @@ export const IMAGE_BLUR_DATA_URL =
 
 /** Next/Image encoder quality (1–100) */
 export const IMAGE_QUALITY = 80;
+/** Higher quality for full-bleed hero bands */
+export const HERO_IMAGE_QUALITY = 95;
 
 /** Remote source widths — balance quality and payload */
 export const REMOTE_HERO_WIDTH = 1920;
@@ -16,8 +18,8 @@ export const REMOTE_NEWS_WIDTH = 1280;
 const UNSPLASH_QUALITY = 80;
 
 export const IMAGE_SIZES = {
-  /** Full-viewport bands — cap at 1920px for retina desktop */
-  fullBleed: '(max-width: 768px) 100vw, (max-width: 1920px) 100vw, 1920px',
+  /** Full-viewport heroes — allow up to 4K so retina desktops stay sharp */
+  fullBleed: '100vw',
   /** News/home cards: half width on tablet+, full width on mobile; 2× for retina */
   newsCard: '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 1200px',
   newsArticle: '(max-width: 768px) 100vw, 1200px',
@@ -58,3 +60,8 @@ export const DEFAULT_HERO_IMAGE_ALT =
 export const CAPABILITIES_HERO_IMAGE = '/images/editorial/capabilities-hero.jpg';
 export const CAPABILITIES_HERO_IMAGE_ALT =
   'Manhattan skyline with the Empire State Building at golden hour';
+
+/** Investor guide / featured booklet hero — Midtown Manhattan at dusk */
+export const GUIDE_HERO_IMAGE = '/images/editorial/manhattan-skyline-hero.jpg';
+export const GUIDE_HERO_IMAGE_ALT =
+  'Midtown Manhattan skyline at dusk with the Chrysler Building';

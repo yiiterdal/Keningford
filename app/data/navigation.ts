@@ -28,8 +28,8 @@ export const capabilitiesDropdownExtras: NavDropdownLink[] = [
 
 /**
  * Pages whose top band is a dark hero, where the navbar can start transparent.
- * Exact matches only: detail pages (news/[slug], reports/[slug], insights/guides/[slug],
- * industries/[slug]) open with a white article header and need the solid navbar.
+ * Exact matches in heroOverlayPaths; child routes listed in heroOverlayPrefixes
+ * (e.g. capabilities/*, insights/guides/*).
  */
 export const heroOverlayPaths = [
   '/',
@@ -48,7 +48,7 @@ export const heroOverlayPaths = [
 ] as const;
 
 /** Sections whose child pages also use a dark hero. */
-export const heroOverlayPrefixes = ['/capabilities'] as const;
+export const heroOverlayPrefixes = ['/capabilities', '/insights/guides'] as const;
 
 export function hasHeroOverlay(pathname: string | null): boolean {
   if (!pathname) return false;

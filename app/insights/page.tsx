@@ -28,20 +28,17 @@ export default function InsightsPage() {
       <Hero
         eyebrow="Insights"
         title="Capital intelligence for decision-makers."
-        subtitle="Market dashboard, investor guides, perspectives, and research — structured for founders, boards, and institutional investors."
+        subtitle="Market dashboard, investor guides, perspectives, and research - structured for founders, boards, and institutional investors."
         imageUrl={unsplashSrc('photo-1504711434969-e33886168f5c')}
         imageAlt="Market analysis and financial insights"
       />
 
-      <section className="border-b border-gray-100 bg-white py-10 md:py-12">
+      <section className="border-b border-gray-100 bg-gray-50 py-12 md:py-14">
         <div className="container mx-auto px-6 md:px-8">
-          <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-gray-600 md:text-base">
-            Keningford Partners regularly publishes strategic insights on how growth-stage companies
-            access institutional capital and execute transactions. Our research is sector-agnostic by
-            design: it reflects mandate activity across equity, debt, and M&A rather than a single
-            vertical headline cycle. Each report and guide examines a specific corner of the
-            growth-stage capital markets and is written to be useful to founders, boards, investors,
-            and the advisers who sit alongside them.
+          <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-gray-600 md:text-[15px] md:leading-[1.85]">
+            Market dashboard, investor guides, and research drawn from live mandate activity across
+            equity, debt, and M&A. Written for founders, boards, and institutional investors who need
+            usable framing, not headline recycling. For institutional and professional use only.
           </p>
         </div>
       </section>

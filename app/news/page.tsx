@@ -15,7 +15,7 @@ export default function NewsPage() {
       <Hero
         eyebrow="News & Insights"
         title="The latest from Keningford Partners."
-        subtitle="Perspectives on capital markets, transactions, and firm developments — drawn from live mandate activity across equity, debt, and M&A."
+        subtitle="Perspectives on capital markets, transactions, and firm developments - drawn from live mandate activity across equity, debt, and M&A."
         imageUrl={unsplashSrc('photo-1504711434969-e33886168f5c')}
         imageAlt="Business news and market analysis"
       />
@@ -25,7 +25,7 @@ export default function NewsPage() {
           <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-gray-600 md:text-base">
             Keningford Partners publishes in-depth perspectives on the trends shaping how growth-stage
             companies raise capital and transact. Our coverage draws on activity across the sectors we
-            advise — equity, debt, and strategic M&A — so founders, boards, and investors can see where
+            advise - equity, debt, and strategic M&A - so founders, boards, and investors can see where
             capital is moving, not just where headlines point. For institutional and professional use
             only.
           </p>
