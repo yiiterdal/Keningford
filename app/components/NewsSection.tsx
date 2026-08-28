@@ -7,7 +7,13 @@ import { IMAGE_SIZES } from '../lib/image-utils';
 import { extractArticleHeadings } from '../lib/news-content';
 
 export default function NewsSection() {
-  const latestNews = getLatestNews(4);
+  const homepageHiddenSlugs = new Set([
+    'keningford-advises-energycite-capital-raise',
+    'keningford-advises-ecopha-biotech-capital-raise',
+  ]);
+  const latestNews = getLatestNews(6)
+    .filter((item) => !homepageHiddenSlugs.has(item.slug))
+    .slice(0, 4);
   const [featured, ...rest] = latestNews;
 
   if (!featured) return null;

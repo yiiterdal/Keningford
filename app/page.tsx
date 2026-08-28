@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic';
 import Hero, { DEFAULT_HERO_IMAGE, DEFAULT_HERO_IMAGE_ALT } from './components/Hero';
 import EditorialImage from './components/EditorialImage';
 import JsonLd from './components/JsonLd';
-import RecentMandates from './components/RecentMandates';
 import MarketPerspective from './components/MarketPerspective';
 import NewsSection from './components/NewsSection';
 import { financialServiceSchema } from './lib/json-ld';
@@ -44,8 +43,6 @@ export default function Home() {
       />
 
       <CapabilitiesOverview />
-
-      <RecentMandates />
 
       <EditorialImage
         variant="architecture-4"
