@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Hero from '../components/Hero';
 import TransactionsGrid from '../components/TransactionsGrid';
+import TransactionLogoGrid from '../components/TransactionLogoGrid';
+import { transactionPortfolio } from '../data/transaction-portfolio';
 import { transactionStats, transactions } from '../data/transactions';
 import { unsplashSrc } from '../lib/image-utils';
 
@@ -25,6 +27,8 @@ export default function TransactionsPage() {
           </div>
 
           <TransactionsGrid transactions={transactions} />
+
+          <TransactionLogoGrid companies={transactionPortfolio} />
 
           <p className="mt-10 max-w-3xl text-xs leading-relaxed text-gray-500">
             Transactions listed are representative of advisory experience across Keningford Partners

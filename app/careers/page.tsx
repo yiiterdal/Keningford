@@ -64,12 +64,14 @@ export default function CareersPage() {
                 Work directly with the bankers who lead and execute mandates, not layers of management between you
                 and the client.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 items-stretch">
-                {careerPartners.map((partner) => (
-                  <article
-                    key={partner.name}
-                    className="flex h-full w-full flex-col items-center bg-white border border-gray-200 rounded-sm px-6 py-8"
-                  >
+              {(() => {
+                const topRow = careerPartners.slice(0, 4);
+                const bottomRow = careerPartners.slice(4);
+                const cardClassName =
+                  'flex h-full min-h-[26rem] w-full flex-col items-center border border-gray-200 bg-white px-6 py-8 rounded-sm';
+
+                const renderPartner = (partner: (typeof careerPartners)[number]) => (
+                  <article key={partner.name} className={cardClassName}>
                     {partner.imageUrl ? (
                       <div className="relative mx-auto mb-5 h-20 w-20 shrink-0 overflow-hidden rounded-full bg-gray-200">
                         <Image
@@ -89,18 +91,29 @@ export default function CareersPage() {
                         {partner.name.charAt(0)}
                       </div>
                     )}
-                    <h3 className="w-full text-center text-base font-semibold text-navy leading-snug">
+                    <h3 className="w-full text-center text-base font-semibold leading-snug text-navy">
                       {partner.name}
                     </h3>
-                    <p className="mt-1.5 mb-5 min-h-[2.5rem] w-full text-center text-xs font-medium uppercase tracking-wide text-gray-500 leading-snug">
+                    <p className="mb-5 mt-1.5 min-h-[2.5rem] w-full text-center text-xs font-medium uppercase tracking-wide leading-snug text-gray-500">
                       {partner.title}
                     </p>
-                    <p className="mt-auto w-full text-center text-sm text-gray-600 leading-relaxed text-pretty">
+                    <p className="w-full text-center text-sm leading-relaxed text-pretty text-gray-600">
                       {partner.bio}
                     </p>
                   </article>
-                ))}
-              </div>
+                );
+
+                return (
+                  <div className="space-y-6 md:space-y-8">
+                    <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:gap-8 xl:grid-cols-4">
+                      {topRow.map(renderPartner)}
+                    </div>
+                    <div className="mx-auto grid w-full grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:w-[calc(75%-0.5rem)]">
+                      {bottomRow.map(renderPartner)}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </div>

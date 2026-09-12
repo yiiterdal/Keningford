@@ -57,7 +57,18 @@ export const careerPartners: CareerPartner[] = [
     title: 'Managing Partner',
     bio: 'Co-leads strategic advisory, marketing, and financial advisory for growth-stage and established companies.',
     imageUrl: '/images/partners/haktan-tuna-yilar.jpg',
-    imageObjectPosition: 'object-[center_28%]',
+  },
+  {
+    name: 'Yigit Erdal',
+    title: 'Managing Partner',
+    bio: 'Leads cross-border M&A and private capital advisory for US and European family offices and founders.',
+    imageUrl: '/images/partners/yigit-erdal.jpg',
+  },
+  {
+    name: 'George Dorkhom',
+    title: 'Senior Advisor',
+    bio: 'Senior advisor on industrials, aerospace/defense, and technology mandates, with three decades leading business transformation and M&A globally.',
+    imageUrl: '/images/partners/george-dorkhom.jpg',
   },
   {
     name: 'Kevin Lark',
@@ -72,15 +83,9 @@ export const careerPartners: CareerPartner[] = [
     imageUrl: '/images/partners/daria-kyrychenko.jpg',
   },
   {
-    name: 'Yigit Erdal',
-    title: 'Managing Partner',
-    bio: 'Leads cross-border M&A and private capital advisory for US and European family offices and founders.',
-    imageUrl: '/images/partners/yigit-erdal.jpg',
-  },
-  {
     name: 'Joy Shome',
     title: 'Analyst',
-    bio: 'Supports financial modeling, valuation, and materials preparation across active capital raising and M&A mandates.',
+    bio: "Supports the firm's investment analysis and execution across active mandates.",
     imageUrl: '/images/partners/joy-shome.jpg',
   },
 ];
