@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import Hero from '../components/Hero';
 import Divider from '../components/Divider';
 import JsonLd from '../components/JsonLd';
-import { founderProfile } from '../data/careers';
+import TeamGrid from '../components/TeamGrid';
+import { careerPartners } from '../data/careers';
 import { personSchema } from '../lib/json-ld';
 import { unsplashSrc } from '../lib/image-utils';
 
@@ -24,37 +24,21 @@ export default function AboutPage() {
         imageAlt="Professional business meeting"
       />
 
+      <section className="border-b border-gray-200 bg-gray-50 py-16 md:py-20">
+        <div className="container mx-auto px-6 md:px-8">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="mb-4 text-center text-2xl font-semibold text-navy md:text-3xl">Our Team</h2>
+            <p className="mx-auto mb-12 max-w-2xl text-center leading-relaxed text-gray-600">
+              Senior bankers and advisors who lead every mandate directly, from origination through close.
+            </p>
+            <TeamGrid members={careerPartners} />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 grid grid-cols-1 items-start gap-10 md:grid-cols-[220px_1fr] md:gap-12">
-              <div className="relative aspect-[4/5] w-full max-w-[220px] overflow-hidden bg-gray-100">
-                <Image
-                  src={founderProfile.imageUrl}
-                  alt={founderProfile.name}
-                  fill
-                  className="object-cover object-[center_28%]"
-                  sizes="220px"
-                  priority
-                />
-              </div>
-              <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-[0.22em] text-gray-500">
-                  {founderProfile.title}
-                </p>
-                <h2 className="mb-6 text-3xl font-semibold text-navy md:text-4xl">
-                  {founderProfile.name}
-                </h2>
-                {founderProfile.bio.map((paragraph) => (
-                  <p key={paragraph} className="mb-6 text-lg leading-relaxed text-gray-700 md:text-xl">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <Divider />
-
             <div className="mb-12">
               <p className="mb-6 text-lg leading-relaxed text-gray-700 md:text-xl">
                 Keningford Partners is a global investment bank focused on structuring complex capital

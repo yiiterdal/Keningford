@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import NewsCardImage, { ARTICLE_SIZES } from '../../components/NewsCardImage';
 import ReportDownloadButton from '../../components/ReportDownloadButton';
 import ReportMeta from '../../components/ReportMeta';
+import ReportReader from '../../components/ReportReader';
 import { getReportBySlug, reports } from '../../data/reports';
 import type { Metadata } from 'next';
 
@@ -70,7 +71,19 @@ export default function ReportPage({ params }: ReportPageProps) {
           <p className="mb-8 text-lg leading-relaxed text-gray-600">{report.excerpt}</p>
 
           <div className="mb-10 flex flex-wrap items-center gap-4 border border-gray-200 bg-gray-50 px-6 py-5">
-            <ReportDownloadButton pdfUrl={report.pdfUrl} title={report.title} />
+            {report.readerPages && (
+              <a
+                href="#read"
+                className="inline-flex items-center gap-2 border border-navy bg-navy px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy/90"
+              >
+                Read online
+              </a>
+            )}
+            <ReportDownloadButton
+              pdfUrl={report.pdfUrl}
+              title={report.title}
+              variant={report.readerPages ? 'secondary' : 'primary'}
+            />
             <p className="text-sm text-gray-600">
               {report.pages}-page PDF · {report.type}
             </p>
@@ -116,6 +129,13 @@ export default function ReportPage({ params }: ReportPageProps) {
               );
             })}
           </div>
+
+          {report.readerPages && (
+            <div id="read" className="mt-12 scroll-mt-28">
+              <h2 className="mb-6 text-2xl font-semibold text-navy">Read the full paper</h2>
+              <ReportReader title={report.title} pdfUrl={report.pdfUrl} pageCount={report.readerPages} />
+            </div>
+          )}
 
           <div className="mt-10 border-t border-gray-200 pt-8">
             <ReportDownloadButton pdfUrl={report.pdfUrl} title={report.title} />

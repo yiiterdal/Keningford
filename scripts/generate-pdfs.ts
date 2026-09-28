@@ -676,6 +676,7 @@ async function main() {
   }
 
   for (const report of reports) {
+    if (report.sourcePdf) continue;
     jobs.push({
       outPath: path.join(publicDir, report.pdfUrl.replace(/^\//, '').split('/').join(path.sep)),
       eyebrow: `${report.type} · ${report.sector}`,

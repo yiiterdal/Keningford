@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import CapitalMarketsDashboard from '../components/CapitalMarketsDashboard';
 import FeaturedGuideSection from '../components/FeaturedGuideSection';
+import FeaturedReportSection from '../components/FeaturedReportSection';
 import { GuideIcon } from '../components/GuideIcons';
 import Hero from '../components/Hero';
 import NewsListing from '../components/NewsListing';
 import ReportMeta from '../components/ReportMeta';
 import { investorGuides } from '../data/investor-guides';
 import { newsItems } from '../data/news';
-import { reports } from '../data/reports';
+import { featuredReportSlug, reports } from '../data/reports';
 import { unsplashSrc } from '../lib/image-utils';
 
 export const metadata = {
@@ -20,6 +21,7 @@ const featuredGuideSlug = '14-week-growth-round-equity-process-map';
 
 export default function InsightsPage() {
   const featuredGuide = investorGuides.find((guide) => guide.slug === featuredGuideSlug);
+  const featuredReport = reports.find((report) => report.slug === featuredReportSlug);
   const otherGuides = investorGuides.filter((guide) => guide.slug !== featuredGuideSlug);
   const marketInsights = newsItems.filter((item) => item.category === 'Market Insights').slice(0, 6);
 
@@ -42,6 +44,8 @@ export default function InsightsPage() {
           </p>
         </div>
       </section>
+
+      {featuredReport && <FeaturedReportSection report={featuredReport} />}
 
       {featuredGuide && <FeaturedGuideSection guide={featuredGuide} />}
 

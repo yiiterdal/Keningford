@@ -56,37 +56,43 @@ export const careerPartners: CareerPartner[] = [
     name: 'Tuna Yilar',
     title: 'Managing Partner',
     bio: 'Co-leads strategic advisory, marketing, and financial advisory for growth-stage and established companies.',
-    imageUrl: '/images/partners/haktan-tuna-yilar.jpg',
+    imageUrl: '/images/team/tuna-yilar.jpg',
   },
   {
     name: 'Yigit Erdal',
     title: 'Managing Partner',
     bio: 'Leads cross-border M&A and private capital advisory for US and European family offices and founders.',
-    imageUrl: '/images/partners/yigit-erdal.jpg',
+    imageUrl: '/images/team/yigit-erdal.jpg',
   },
   {
     name: 'George Dorkhom',
     title: 'Senior Advisor',
-    bio: 'Senior advisor on industrials, aerospace/defense, and technology mandates, with three decades leading business transformation and M&A globally.',
-    imageUrl: '/images/partners/george-dorkhom.jpg',
+    bio: 'Advises on industrials, aerospace and defense, and technology mandates, with three decades leading business transformation and M&A globally.',
+    imageUrl: '/images/team/george-dorkhom.jpg',
   },
   {
     name: 'Kevin Lark',
     title: 'Senior Advisor',
     bio: 'Senior advisor on strategic mandates, with decades of experience advising boards and management teams.',
-    imageUrl: '/images/partners/kevin-lark.jpg',
+    imageUrl: '/images/team/kevin-lark.jpg',
   },
   {
     name: 'Daria Kyrychenko',
     title: 'Director, Business Development',
     bio: 'Leads client development and institutional outreach across North America and Europe.',
-    imageUrl: '/images/partners/daria-kyrychenko.jpg',
+    imageUrl: '/images/team/daria-kyrychenko.jpg',
+  },
+  {
+    name: 'Jason Atyabi, CPA',
+    title: 'Board Advisor',
+    bio: 'International finance executive with two decades across technical accounting, audit management, strategic planning, and IPO due diligence. Advises on fractional CFO mandates and board-level oversight.',
+    imageUrl: '/images/team/jason-atyabi.jpg',
   },
   {
     name: 'Joy Shome',
     title: 'Analyst',
-    bio: "Supports the firm's investment analysis and execution across active mandates.",
-    imageUrl: '/images/partners/joy-shome.jpg',
+    bio: "Supports the firm's investment analysis and execution across active mandates, from screening through diligence support.",
+    imageUrl: '/images/team/joy-shome.jpg',
   },
 ];
 
@@ -102,29 +108,6 @@ export const founderProfile = {
 };
 
 export const careerOpenings: CareerOpening[] = [
-  {
-    id: 'analyst-investment-banking',
-    title: 'Investment Banking Analyst',
-    department: 'Investment Banking',
-    location: 'New York, NY (on-site)',
-    type: 'Full-time',
-    experience: '0-2 years',
-    summary:
-      'We are seeking an Analyst to join our lean deal team and support active M&A and capital raising mandates. This is a hands-on role on a boutique platform. You will work directly with Partners on live client work, not on internal projects alone.',
-    responsibilities: [
-      'Prepare financial models, valuation work, and board/investor presentation materials',
-      'Support comparable company and precedent transaction analysis',
-      'Assist with buyer/investor lists, outreach tracking, and data room organization',
-      'Help coordinate due diligence requests and internal workstream updates',
-      'Attend client and investor calls as appropriate, with Partner oversight',
-    ],
-    requirements: [
-      "Bachelor's degree in Finance, Economics, Business, or a related field",
-      'Strong Excel and PowerPoint skills; prior internship in banking, consulting, or corporate finance preferred',
-      'High attention to detail, discretion, and ability to manage multiple deadlines',
-      'Eligible to work in the United States',
-    ],
-  },
   {
     id: 'associate-ma',
     title: 'Associate, M&A & Capital Markets',

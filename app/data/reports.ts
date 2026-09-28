@@ -1,6 +1,6 @@
-import { pexelsSrc } from '../lib/image-utils';
+import { pexelsSrc, unsplashSrc } from '../lib/image-utils';
 
-export type ReportType = 'Market Outlook' | 'Sector Primer' | 'Capital Markets Review';
+export type ReportType = 'Market Outlook' | 'Sector Primer' | 'Capital Markets Review' | 'White Paper';
 
 export type ReportSector =
   | 'Energy & Infrastructure'
@@ -14,6 +14,10 @@ export interface ReportItem {
   summary: string;
   /** Full document text rendered into the downloadable PDF. Run `npm run pdfs` after editing. */
   pdfContent?: string;
+  /** PDF is a supplied, finished document; `npm run pdfs` must not overwrite it. */
+  sourcePdf?: boolean;
+  /** Pages pre-rendered to `<pdf path without .pdf>/page-NN.jpg` for the on-page reader. */
+  readerPages?: number;
   date: string;
   type: ReportType;
   sector: ReportSector;
@@ -23,7 +27,51 @@ export interface ReportItem {
   imageAlt: string;
 }
 
+export const featuredReportSlug = 'q4-2026-imperative';
+
 export const reports: ReportItem[] = [
+  {
+    slug: 'q4-2026-imperative',
+    title: 'The Q4 Imperative: Why the Fourth Quarter Shapes Investment and M&A Outcomes',
+    excerpt:
+      'How year-end deadlines, record dry powder and the exit backlog make Q4 2026 the quarter that decides deal outcomes, and what sellers, sponsors and buyers should do before December 31.',
+    summary: `Q4 is the quarter where the year's deal pipeline turns into closed transactions, realized exits and cash back to limited partners. It is also when next year's first-half deal flow gets decided. It is not always the biggest quarter for new deals. It is the quarter where timing costs the most.
+
+In Q4 2025, US PE exit value reached $229.2 billion, up 98.5% on Q3 and the strongest quarterly exit value since Q2 2021. Q4 2026 starts in a harder position.
+
+## Three conditions define Q4 2026
+
+- Capital is waiting: US sponsors hold more than $1.1 trillion of dry powder, fundraising is weak at $159.6 billion year to date, and LPs need distributions
+- Financing costs more: the Federal Reserve raised rates on September 16 for the first time since 2023, to a 3.75%-4.00% target range
+- Strategic buyers are setting value: global M&A reached $1.3 trillion in Q2 2026, with deals of $5 billion or more making up about 42% of that value
+
+## Recommendations
+
+- Sellers: close signed deals before December 31, and launch 2027 processes in October and November so they reach the market on full-year 2026 numbers
+- Buyers and sponsors: use the year-end deadline to win price or terms, and book quality-of-earnings and legal capacity now
+- Capital raisers: get lender and investor term sheets in place before the Thanksgiving slowdown
+
+## Inside the paper
+
+- Q4's footprint in deals and exits, by sector and year
+- Eight structural drivers that pull deals toward December 31
+- Implications by seat, from founder sellers to LPs
+- Case studies from 2012, 2021, 2024 and 2025
+- A dated Q4 playbook and a 12-month outlook
+
+## Methodology
+
+Based on PitchBook research and news data from 2012 to September 2026, plus LCD credit-market coverage. The 12-month outlook is Keningford Partners' own view. For informational purposes only; not investment, tax or legal advice.`,
+    sourcePdf: true,
+    readerPages: 12,
+    date: 'September 2026',
+    type: 'White Paper',
+    sector: 'Cross-Sector',
+    pages: 12,
+    pdfUrl: '/reports/q4-2026-imperative.pdf',
+    imageUrl: unsplashSrc('photo-1554224155-6726b3ff858f'),
+    imageAlt: 'Financial district skyline at year-end',
+  },
   {
     slug: 'q2-2026-energy-infrastructure-ma-outlook',
     title: 'Q2 2026 Energy & Infrastructure M&A Outlook',

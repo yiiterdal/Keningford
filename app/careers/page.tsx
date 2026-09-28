@@ -3,7 +3,7 @@ import Image from 'next/image';
 import CareerApplyButton from '../components/CareerApplyButton';
 import Hero from '../components/Hero';
 import { IMAGE_QUALITY, unsplashSrc } from '../lib/image-utils';
-import { careerOpenings, careerPartners, careerValues, careersContactEmail, gmailApplicationUrl } from '../data/careers';
+import { careerOpenings, careerValues, careersContactEmail, gmailApplicationUrl } from '../data/careers';
 
 export const metadata = {
   title: 'Careers | Keningford Partners',
@@ -56,64 +56,6 @@ export default function CareersPage() {
                   <p className="text-gray-600 leading-relaxed text-sm">{value.description}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-20 pt-16 border-t border-gray-200">
-              <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-4 text-center">Our Team</h2>
-              <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-                Work directly with the bankers who lead and execute mandates, not layers of management between you
-                and the client.
-              </p>
-              {(() => {
-                const topRow = careerPartners.slice(0, 4);
-                const bottomRow = careerPartners.slice(4);
-                const cardClassName =
-                  'flex h-full min-h-[26rem] w-full flex-col items-center border border-gray-200 bg-white px-6 py-8 rounded-sm';
-
-                const renderPartner = (partner: (typeof careerPartners)[number]) => (
-                  <article key={partner.name} className={cardClassName}>
-                    {partner.imageUrl ? (
-                      <div className="relative mx-auto mb-5 h-20 w-20 shrink-0 overflow-hidden rounded-full bg-gray-200">
-                        <Image
-                          src={partner.imageUrl}
-                          alt={partner.name}
-                          fill
-                          sizes="80px"
-                          quality={IMAGE_QUALITY}
-                          className={`object-cover grayscale ${partner.imageObjectPosition ?? 'object-center'}`}
-                        />
-                      </div>
-                    ) : (
-                      <div
-                        className="mx-auto mb-5 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-[#1E293B] text-xl font-semibold text-white"
-                        aria-hidden
-                      >
-                        {partner.name.charAt(0)}
-                      </div>
-                    )}
-                    <h3 className="w-full text-center text-base font-semibold leading-snug text-navy">
-                      {partner.name}
-                    </h3>
-                    <p className="mb-5 mt-1.5 min-h-[2.5rem] w-full text-center text-xs font-medium uppercase tracking-wide leading-snug text-gray-500">
-                      {partner.title}
-                    </p>
-                    <p className="w-full text-center text-sm leading-relaxed text-pretty text-gray-600">
-                      {partner.bio}
-                    </p>
-                  </article>
-                );
-
-                return (
-                  <div className="space-y-6 md:space-y-8">
-                    <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:gap-8 xl:grid-cols-4">
-                      {topRow.map(renderPartner)}
-                    </div>
-                    <div className="mx-auto grid w-full grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:w-[calc(75%-0.5rem)]">
-                      {bottomRow.map(renderPartner)}
-                    </div>
-                  </div>
-                );
-              })()}
             </div>
           </div>
         </div>
