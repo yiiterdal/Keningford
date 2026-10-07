@@ -76,9 +76,11 @@ export default function Navbar() {
   const isTransparent = hasHeroOverlay(pathname) && !scrolled;
 
   const headerClasses = isTransparent
-    ? 'fixed top-0 left-0 right-0 z-50 border-b border-transparent bg-transparent transition-all duration-300'
-    : `fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0b1426] transition-all duration-300 ${
-        scrolled ? 'shadow-md shadow-black/20' : ''
+    ? 'fixed top-0 left-0 right-0 z-50 border-b border-transparent bg-transparent transition-[background-color,border-color,box-shadow] duration-300'
+    : `fixed top-0 left-0 right-0 z-50 border-b border-white/10 transition-[background-color,border-color,box-shadow] duration-300 ${
+        scrolled
+          ? 'bg-[#0b1426]/85 shadow-lg shadow-black/10 backdrop-blur-md'
+          : 'bg-[#0b1426]'
       }`;
 
   const linkClasses = (href: string) =>
@@ -146,8 +148,10 @@ export default function Navbar() {
                 </button>
 
                 <div
-                  className={`absolute left-1/2 top-full z-[60] w-80 -translate-x-1/2 pt-3 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 ${
-                    isOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'
+                  className={`absolute left-1/2 top-full z-[60] w-80 -translate-x-1/2 pt-3 transition-[opacity,transform,visibility] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
+                    isOpen
+                      ? 'visible translate-y-0 opacity-100'
+                      : 'invisible pointer-events-none -translate-y-1 opacity-0'
                   }`}
                 >
                   <div className="overflow-hidden border border-white/10 bg-[#0b1426] shadow-xl shadow-black/30">
@@ -167,7 +171,7 @@ export default function Navbar() {
                     <Link
                       href={dropdown.viewAllHref}
                       onClick={() => setOpenDropdown(null)}
-                      className="block border-t border-white/10 px-5 py-3 text-[12px] font-medium text-[#c4a062] transition-colors hover:bg-white/5"
+                      className="block border-t border-white/10 px-5 py-3 text-[12px] font-medium text-[#BF9B5F] transition-colors hover:bg-white/5"
                     >
                       {dropdown.viewAllLabel}
                     </Link>
@@ -178,7 +182,7 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className="ml-2 whitespace-nowrap border border-white/60 px-4 py-2 text-[12px] font-medium text-white transition hover:bg-white/10"
+            className="ml-2 inline-flex whitespace-nowrap border border-white/60 px-4 py-2 text-[12px] font-medium text-white transition-colors duration-200 hover:border-white hover:bg-white hover:text-navy"
           >
             Contact
           </Link>
