@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './RaiseReadinessAssessment.module.css';
+import { SCHEDULE_HREF } from '../lib/calendly';
 
 type QuestionOption = {
   label: string;
@@ -467,7 +468,7 @@ export default function RaiseReadinessAssessment() {
                 pitch, no pressure, an honest view of where you stand and what needs to happen
                 before investors will engage seriously.
               </p>
-              <Link href="/contact" className={styles.ctaBtn}>
+              <Link href={SCHEDULE_HREF} className={styles.ctaBtn}>
                 Schedule a conversation
               </Link>
             </div>

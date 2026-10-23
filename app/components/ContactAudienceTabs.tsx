@@ -77,7 +77,7 @@ export default function ContactAudienceTabs() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
             <div className="lg:col-span-3">
               {activeTab === 'consultation' && (
-                <div>
+                <div id="schedule" className="scroll-mt-28">
                   <h3 className="mb-2 text-lg font-semibold text-navy">Schedule a meeting</h3>
                   <p className="mb-5 text-sm leading-relaxed text-gray-600">
                     Choose a time for a confidential consultation with our senior team on capital
@@ -85,7 +85,7 @@ export default function ContactAudienceTabs() {
                   </p>
                   {showCalendly ? (
                     <div className="overflow-hidden border border-gray-200 bg-white">
-                      <CalendlyEmbed url={getCalendlyUrl()} minHeight={620} />
+                      <CalendlyEmbed url={getCalendlyUrl()} minHeight={720} />
                     </div>
                   ) : (
                     <div className="border border-gray-200 bg-gray-50 px-6 py-10 text-center">

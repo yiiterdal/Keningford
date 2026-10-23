@@ -27,9 +27,12 @@ export default function CalendlyEmbed({
     const parentElement = containerRef.current;
     if (!parentElement) return;
 
+    const embedUrl = new URL(url);
+    embedUrl.searchParams.set('hide_gdpr_banner', '1');
+
     const initWidget = () => {
       parentElement.innerHTML = '';
-      window.Calendly?.initInlineWidget({ url, parentElement });
+      window.Calendly?.initInlineWidget({ url: embedUrl.toString(), parentElement });
     };
 
     const existingScript = document.querySelector('script[data-calendly-widget]');
@@ -56,7 +59,7 @@ export default function CalendlyEmbed({
     <div
       ref={containerRef}
       className={`w-full ${className}`}
-      style={{ minHeight: `${minHeight}px` }}
+      style={{ minWidth: '320px', height: `${minHeight}px` }}
     />
   );
 }

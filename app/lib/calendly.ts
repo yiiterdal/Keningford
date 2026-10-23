@@ -1,8 +1,8 @@
-const DEFAULT_CALENDLY_URL = 'https://calendly.com/tuna-keningfordpartners/30min';
+const DEFAULT_CALENDLY_URL = 'https://calendly.com/tuna-keningfordpartners/discovery-call-keningford';
 
-/** Set NEXT_PUBLIC_CALENDLY_ENABLED=true to show the embed. Disabled by default. */
+/** Set NEXT_PUBLIC_CALENDLY_ENABLED=false to hide the embed. Enabled by default. */
 export function isCalendlyEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_CALENDLY_ENABLED === 'true';
+  return process.env.NEXT_PUBLIC_CALENDLY_ENABLED !== 'false';
 }
 
 /** Calendly scheduling page URL — override with NEXT_PUBLIC_CALENDLY_URL in .env.local or Vercel. */
@@ -16,3 +16,5 @@ export function isCalendlyConfigured(): boolean {
   const url = getCalendlyUrl();
   return url.startsWith('https://calendly.com/');
 }
+
+export const SCHEDULE_HREF = '/contact?tab=consultation#schedule';

@@ -4,6 +4,7 @@ import EditorialImage from './components/EditorialImage';
 import JsonLd from './components/JsonLd';
 import MarketPerspective from './components/MarketPerspective';
 import NewsSection from './components/NewsSection';
+import { SCHEDULE_HREF } from './lib/calendly';
 import { financialServiceSchema } from './lib/json-ld';
 
 const FirmPositioning = dynamic(() => import('./components/FirmPositioning'));
@@ -29,7 +30,7 @@ export default function Home() {
         imageAlt={DEFAULT_HERO_IMAGE_ALT}
         variant="large"
         layout="editorial"
-        primaryCta={{ label: 'Schedule a consultation', href: '/contact' }}
+        primaryCta={{ label: 'Schedule a consultation', href: SCHEDULE_HREF }}
         secondaryCta={{ label: 'Our capabilities', href: '/capabilities' }}
       />
 
