@@ -16,41 +16,42 @@ export default function FeaturedReportSection({ report }: FeaturedReportSectionP
   const reportHref = `/reports/${report.slug}`;
 
   return (
-    <section className="border-b border-gray-100 bg-white py-14 md:py-16">
+    <section className="bg-white py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-8">
-        <div className="relative grid grid-cols-1 gap-10 border border-gray-200 px-6 py-10 md:px-10 lg:grid-cols-12 lg:gap-14">
-          <div className="absolute inset-x-0 top-0 h-0.5 bg-[#BF9B5F]" aria-hidden />
-
-          <div className="lg:col-span-7">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-12">
+          <div className="bg-[#f0f0f0] p-8 md:p-12 lg:col-span-8">
+            <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+              <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
               Featured Research · {report.type}
             </p>
-            <h2 className="font-serif text-2xl leading-snug text-navy md:text-[1.9rem]">
+            <h2 className="max-w-[640px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem]">
               <Link href={reportHref} className="hover:underline">
                 {report.title}
               </Link>
             </h2>
-            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-gray-600">{report.excerpt}</p>
+            <p className="mt-5 max-w-xl text-base leading-[1.5] tracking-[-0.01em] text-gray-500">{report.excerpt}</p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ReportDownloadButton pdfUrl={report.pdfUrl} title={report.title} />
               <Link
                 href={report.readerPages ? `${reportHref}#read` : reportHref}
-                className="inline-flex items-center justify-center border border-gray-300 px-5 py-2.5 text-sm font-medium text-navy transition-colors hover:border-navy hover:bg-gray-50"
+                className="inline-flex items-center justify-center border border-navy/15 bg-white px-6 py-3 text-sm font-medium text-navy transition-colors hover:border-navy/30"
               >
                 {report.readerPages ? 'Read online' : 'Read the summary'}
               </Link>
             </div>
-            <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.14em] text-gray-400">
+            <p className="mt-6 text-[13px] font-medium text-gray-500">
               {report.date} · {report.pages}-page PDF
             </p>
           </div>
 
-          <dl className="grid grid-cols-1 content-center gap-6 border-t border-gray-100 pt-8 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+          <dl className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:col-span-4 lg:grid-cols-1">
             {keyFigures.map((figure) => (
-              <div key={figure.label}>
-                <dt className="font-serif text-3xl text-navy">{figure.value}</dt>
-                <dd className="mt-1 text-[11px] uppercase tracking-[0.12em] text-gray-500">{figure.label}</dd>
+              <div key={figure.label} className="flex flex-col justify-between bg-[#0f141c] p-8">
+                <dt className="font-sans text-[2.5rem] font-medium leading-none tracking-[-0.03em] text-white">
+                  {figure.value}
+                </dt>
+                <dd className="mt-4 text-[15px] leading-[1.4] tracking-[-0.01em] text-white/60">{figure.label}</dd>
               </div>
             ))}
           </dl>

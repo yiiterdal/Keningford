@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --max-width: 1200px;
+  --max-width: 1344px;
   --navy: #001f4d;
   --navy-dark: #001530;
   --white: #ffffff;
@@ -60,10 +60,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-weight: 500;
   color: var(--navy);
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 

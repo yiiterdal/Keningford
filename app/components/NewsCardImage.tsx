@@ -29,7 +29,7 @@ export default function NewsCardImage({
   const serveUnoptimized = isFullBleedImage(src);
 
   return (
-    <div className={`relative overflow-hidden bg-gray-200 ${aspectClassName} ${className}`}>
+    <div className={`relative overflow-hidden bg-[#f0f0f0] ${aspectClassName} ${className}`}>
       <Image
         src={src}
         alt={alt}
@@ -41,12 +41,12 @@ export default function NewsCardImage({
         unoptimized={serveUnoptimized}
         placeholder={serveUnoptimized ? 'empty' : 'blur'}
         blurDataURL={serveUnoptimized ? undefined : IMAGE_BLUR_DATA_URL}
-        className="object-cover"
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
       />
-      <div className="absolute inset-0 bg-navy/10 pointer-events-none" aria-hidden="true" />
       {clientLogo && (
-        <div className="absolute bottom-4 left-4 flex h-12 items-center justify-center overflow-hidden rounded-sm border border-gray-100 bg-white px-3 py-2 shadow-sm md:h-14">
+        <div className="absolute bottom-4 left-4 flex h-12 items-center justify-center overflow-hidden bg-white px-3 py-2 shadow-sm md:h-14">
           <Image
+            quality={100}
             src={clientLogo.src}
             alt={clientLogo.alt}
             width={140}

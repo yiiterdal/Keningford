@@ -17,61 +17,62 @@ export default function GuideFaq({ items, limit, viewAllHref, id = 'faq', classN
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div id={id} className={`scroll-mt-28 ${className}`}>
-      <div className="mb-6 md:mb-8">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">FAQ</p>
-        <h2 className="mt-2 font-serif text-2xl leading-snug text-navy md:text-3xl">
-          Frequently asked questions
+    <div id={id} className={`grid scroll-mt-28 grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-8 ${className}`}>
+      <div className="lg:col-span-4">
+        <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+          <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+          FAQ
+        </p>
+        <h2 className="max-w-[420px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem]">
+          Frequently asked questions.
         </h2>
+        {viewAllHref && limit !== undefined && items.length > limit && (
+          <Link
+            href={viewAllHref}
+            className="mt-8 inline-flex items-center gap-2 border border-navy/15 bg-white px-6 py-3 text-[13px] font-medium text-navy transition hover:border-navy/30"
+          >
+            View all {items.length} questions <span aria-hidden>→</span>
+          </Link>
+        )}
       </div>
 
-      <div className="overflow-hidden rounded-sm border border-gray-200 bg-white shadow-sm">
+      <div className="lg:col-span-8">
         {displayed.map((item, index) => {
           const isOpen = openIndex === index;
-          const isLast = index === displayed.length - 1;
 
           return (
-            <div key={item.question} className={!isLast ? 'border-b border-gray-100' : undefined}>
+            <div key={item.question} className="border-b border-navy/[0.12]">
               <button
                 type="button"
                 aria-expanded={isOpen}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50 md:px-6 md:py-5"
+                className={`flex w-full items-center justify-between gap-4 text-left ${index === 0 ? 'pb-5 pt-0' : 'py-6'}`}
               >
-                <span className="text-[15px] font-semibold leading-snug text-navy md:text-base">
-                  {item.question}
-                </span>
+                <span className="text-base font-medium tracking-[-0.01em] text-navy md:text-lg">{item.question}</span>
                 <span
                   aria-hidden
-                  className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center border transition-colors ${
-                    isOpen
-                      ? 'rotate-45 border-navy/20 bg-navy/5 text-navy'
-                      : 'border-gray-200 text-gray-400'
+                  className={`flex h-6 w-6 shrink-0 items-center justify-center text-lg leading-none transition-transform duration-200 ${
+                    isOpen ? 'rotate-45 text-gray-400' : 'text-navy'
                   }`}
                 >
-                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14M5 12h14" />
-                  </svg>
+                  +
                 </span>
               </button>
-              {isOpen && (
-                <div className="border-t border-gray-100 bg-gray-50 px-5 py-4 md:px-6 md:py-5">
-                  <p className="text-[15px] leading-[1.85] text-gray-600">{item.answer}</p>
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
+                  isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <p className="max-w-[680px] pb-6 text-[15px] leading-[1.6] tracking-[-0.02em] text-gray-600">
+                    {item.answer}
+                  </p>
                 </div>
-              )}
+              </div>
             </div>
           );
         })}
       </div>
-
-      {viewAllHref && limit !== undefined && items.length > limit && (
-        <Link
-          href={viewAllHref}
-          className="mt-5 inline-flex text-sm font-medium text-navy transition hover:text-navy-dark hover:underline"
-        >
-          View all {items.length} questions →
-        </Link>
-      )}
     </div>
   );
 }

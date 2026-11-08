@@ -18,17 +18,18 @@ export default function NewsArticleBody({ article }: NewsArticleBodyProps) {
       {article.stats && article.stats.length > 0 && <ArticleStatsStrip stats={article.stats} />}
 
       {outline.length > 0 && (
-        <div className="mb-10 border border-gray-200 border-t-2 border-t-[#BF9B5F] bg-gray-50 p-6 md:p-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
+        <div className="mb-12 bg-[#f0f0f0] p-8 md:p-10">
+          <p className="inline-flex items-center gap-2.5 border border-navy/10 bg-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+            <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
             {outlineLabel}
           </p>
-          <ul className="mt-5 space-y-3">
+          <ul className="mt-6 space-y-4">
             {outline.map((item, index) => (
               <li key={item} className="flex gap-4">
-                <span className="shrink-0 font-serif text-sm leading-[1.7] text-[#BF9B5F]">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-white text-[12px] font-medium text-navy">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="text-[15px] leading-[1.7] text-gray-700">{item}</span>
+                <span className="pt-0.5 text-[15px] leading-[1.6] tracking-[-0.01em] text-gray-700">{item}</span>
               </li>
             ))}
           </ul>
@@ -44,7 +45,7 @@ export default function NewsArticleBody({ article }: NewsArticleBodyProps) {
               <h2
                 key={`${block.id}-${index}`}
                 id={block.id}
-                className="mb-4 mt-12 scroll-mt-28 border-t border-gray-100 pt-10 text-2xl font-semibold text-navy first:mt-0 first:border-t-0 first:pt-0"
+                className="mb-5 mt-14 scroll-mt-28 font-sans text-[1.625rem] font-medium leading-[1.15] tracking-[-0.02em] text-navy first:mt-0 md:text-[2rem]"
               >
                 {block.text}
               </h2>
@@ -89,11 +90,11 @@ export default function NewsArticleBody({ article }: NewsArticleBodyProps) {
         })}
 
         {article.quote && (
-          <blockquote className="my-10 border-l-[3px] border-[#BF9B5F] bg-gray-50 py-5 pl-5 pr-5 md:pl-6">
-            <p className="mb-2.5 text-lg italic leading-relaxed text-navy">
+          <blockquote className="my-12 bg-[#0f141c] p-8 md:p-10">
+            <p className="mb-5 font-sans text-xl font-medium leading-[1.35] tracking-[-0.02em] text-white md:text-2xl">
               &ldquo;{article.quote.text}&rdquo;
             </p>
-            <cite className="text-sm font-semibold not-italic text-[#BF9B5F]">
+            <cite className="text-sm font-medium not-italic text-[#e8d5a8]">
               {article.quote.attribution}
             </cite>
           </blockquote>
@@ -106,14 +107,23 @@ export default function NewsArticleBody({ article }: NewsArticleBodyProps) {
         )}
       </div>
 
-      <div className="mt-12 flex flex-wrap items-center gap-4 border-t border-gray-100 pt-8">
-        <Link href="/news" className="text-sm font-medium text-navy hover:underline">
+      <div className="mt-14 flex flex-wrap items-center gap-3 border-t border-gray-200 pt-8">
+        <Link
+          href="/news"
+          className="inline-flex items-center bg-navy px-6 py-3 text-[13px] font-medium text-white transition hover:bg-navy-dark"
+        >
           ← All news
         </Link>
-        <Link href="/insights" className="text-sm font-medium text-gray-500 hover:text-navy hover:underline">
+        <Link
+          href="/insights"
+          className="inline-flex items-center border border-navy/15 px-6 py-3 text-[13px] font-medium text-navy transition hover:border-navy/30"
+        >
           Insights hub →
         </Link>
-        <Link href="/contact" className="text-sm font-medium text-gray-500 hover:text-navy hover:underline">
+        <Link
+          href="/contact"
+          className="inline-flex items-center border border-navy/15 px-6 py-3 text-[13px] font-medium text-navy transition hover:border-navy/30"
+        >
           Contact the team →
         </Link>
       </div>

@@ -3,6 +3,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
+import HomeSectionHeader from '../../components/HomeSectionHeader';
 import CTABlock from '../../components/CTABlock';
 import { unsplashSrc } from '../../lib/image-utils';
 
@@ -35,7 +36,7 @@ export default function RestructuringPage() {
         imageAlt="Calm blue ocean with gentle waves at sunset"
       />
 
-      <section className="py-12 bg-white">
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             <aside className="lg:col-span-1">
@@ -51,7 +52,7 @@ export default function RestructuringPage() {
             <div className="lg:col-span-3">
               <div className="prose max-w-none">
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">What We Do</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">What We Do</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     We advise companies, sponsors, and creditors in situations of stress or transition, from covenant pressure to full financial distress. 
                     Our focus is on stabilizing the business, preserving value, and designing sustainable capital structures.
@@ -64,22 +65,38 @@ export default function RestructuringPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
-                  <ul className="space-y-3">
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Typical Engagements</h2>
+                  <ul className="space-y-4">
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Debt amendments, maturity extensions, and covenant resets</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Operational restructuring plans and performance improvement programs</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Recapitalizations, debt-for-equity swaps, and new-money solutions</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Stakeholder negotiation, creditor coordination, and contingency planning</span>
                     </li>
                   </ul>
@@ -88,7 +105,7 @@ export default function RestructuringPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Our Process</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Our Process</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     We rapidly assess liquidity, covenant headroom, and business performance to define the real options set. 
                     Together with management, we build a credible standalone plan and restructuring proposal supported by detailed financial analysis.
@@ -101,7 +118,7 @@ export default function RestructuringPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Outcomes</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Outcomes</h2>
                   <p className="text-gray-700 leading-relaxed">
                     The outcome is a more sustainable capital structure, improved liquidity profile, and a business plan that stakeholders can credibly support, positioning the company for recovery and future growth.
                   </p>
@@ -112,10 +129,10 @@ export default function RestructuringPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto">
-          <h2 className="text-2xl font-semibold text-navy mb-8">Related Capabilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <HomeSectionHeader pill="Capabilities" title="Related capabilities." />
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {relatedCapabilities.map((capability, index) => (
               <CapabilityCard
                 key={index}

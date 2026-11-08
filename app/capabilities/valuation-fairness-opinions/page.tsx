@@ -3,6 +3,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
+import HomeSectionHeader from '../../components/HomeSectionHeader';
 import CTABlock from '../../components/CTABlock';
 import { unsplashSrc } from '../../lib/image-utils';
 
@@ -35,7 +36,7 @@ export default function ValuationFairnessOpinionsPage() {
         imageAlt="Financial district skyline with modern office buildings"
       />
 
-      <section className="py-12 bg-white">
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             <aside className="lg:col-span-1">
@@ -51,7 +52,7 @@ export default function ValuationFairnessOpinionsPage() {
             <div className="lg:col-span-3">
               <div className="prose max-w-none">
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">What We Do</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">What We Do</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     We deliver independent valuation analyses and fairness opinions to boards, special committees, and shareholders faced with complex or conflicted transactions.
                     Our work supports informed decision-making and robust governance.
@@ -64,22 +65,38 @@ export default function ValuationFairnessOpinionsPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
-                  <ul className="space-y-3">
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Typical Engagements</h2>
+                  <ul className="space-y-4">
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Fairness opinions for public and private M&A transactions</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Business and asset valuations for strategic reviews, tax, or financial reporting</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Valuations in connection with restructurings, recapitalizations, and distress situations</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Valuation of complex equity and debt instruments, including preferred and convertible securities</span>
                     </li>
                   </ul>
@@ -88,7 +105,7 @@ export default function ValuationFairnessOpinionsPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Our Process</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Our Process</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     We review transaction terms, financial projections, historical performance, and industry dynamics, and then apply appropriate valuation methodologies such as DCF, trading comparables, and precedent transactions.
                   </p>
@@ -100,7 +117,7 @@ export default function ValuationFairnessOpinionsPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Outcomes</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Outcomes</h2>
                   <p className="text-gray-700 leading-relaxed">
                     Boards and shareholders gain an independent view on value and deal fairness, strengthening governance and reducing execution risk in sensitive transactions.
                   </p>
@@ -111,10 +128,10 @@ export default function ValuationFairnessOpinionsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto">
-          <h2 className="text-2xl font-semibold text-navy mb-8">Related Capabilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <HomeSectionHeader pill="Capabilities" title="Related capabilities." />
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {relatedCapabilities.map((capability, index) => (
               <CapabilityCard
                 key={index}

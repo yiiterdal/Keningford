@@ -14,8 +14,8 @@ export default function TransactionCard({ transaction, compact = false }: Transa
 
   return (
     <article
-      className={`self-start border border-gray-200 bg-white transition-colors hover:border-gray-300 ${
-        compact ? 'px-4 py-4' : 'px-5 py-5'
+      className={`self-start border border-navy/[0.08] bg-white transition-colors hover:border-navy/20 ${
+        compact ? 'px-5 py-5' : 'px-6 py-6'
       }`}
     >
       <div className="mb-3 flex items-center justify-between gap-3">
@@ -28,14 +28,14 @@ export default function TransactionCard({ transaction, compact = false }: Transa
       </div>
 
       <h3
-        className={`font-medium text-navy ${compact ? 'mb-2 text-sm leading-snug' : 'mb-3 text-[15px] leading-snug'}`}
+        className={`font-sans font-medium tracking-[-0.01em] text-navy ${compact ? 'mb-2 text-[15px] leading-snug' : 'mb-4 text-lg leading-snug'}`}
       >
         {transaction.description}
       </h3>
 
       <div className="flex items-end justify-between gap-4">
         <div>
-          <p className={`font-serif text-navy ${compact ? 'text-2xl' : 'text-[1.75rem] leading-none'}`}>
+          <p className={`font-sans font-medium tracking-[-0.02em] text-navy ${compact ? 'text-2xl' : 'text-[2rem] leading-none'}`}>
             {transaction.value}
           </p>
           <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-500">
@@ -72,7 +72,7 @@ export default function TransactionCard({ transaction, compact = false }: Transa
               <ul className="space-y-1.5 border-t border-gray-100 pt-3">
                 {details.highlights.map((highlight) => (
                   <li key={highlight} className="flex gap-2 text-sm leading-relaxed text-gray-600">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#BF9B5F]" aria-hidden />
+                    <span className="mt-2 h-1 w-1 shrink-0 bg-[#BF9B5F]" aria-hidden />
                     <span>{highlight}</span>
                   </li>
                 ))}

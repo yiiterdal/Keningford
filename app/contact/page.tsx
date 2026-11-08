@@ -19,7 +19,7 @@ export default function ContactPage() {
         imageAlt="Modern office meeting room"
       />
 
-      <Suspense fallback={<div className="bg-white py-16" />}>
+      <Suspense fallback={<div className="bg-[#f0f0f0] py-32" />}>
         <ContactAudienceTabs />
       </Suspense>
     </>

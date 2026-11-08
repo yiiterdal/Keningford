@@ -4,6 +4,8 @@ import Breadcrumbs from '../../../components/Breadcrumbs';
 import GuideBooklet from '../../../components/GuideBooklet';
 import GuideFaq from '../../../components/GuideFaq';
 import Hero from '../../../components/Hero';
+import HomeSectionHeader from '../../../components/HomeSectionHeader';
+import ImageBand from '../../../components/ImageBand';
 import JsonLd from '../../../components/JsonLd';
 import { contactEmail } from '../../../data/contact';
 import { getInvestorGuideBySlug, investorGuidePdfUrl, investorGuides } from '../../../data/investor-guides';
@@ -81,7 +83,7 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
       </section>
 
       {/* Lead + key findings — wide layout */}
-      <section className="bg-white pb-12 pt-8 md:pb-16">
+      <section className="bg-white pb-24 pt-8 md:pb-32">
         <div className="container mx-auto px-6 md:px-8">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="space-y-5 lg:col-span-7">
@@ -100,25 +102,26 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
             </div>
 
             <aside className="lg:col-span-5">
-              <div className="h-full border border-gray-200 border-t-2 border-t-[#BF9B5F] bg-gray-50 p-6 md:p-8">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
+              <div className="h-full bg-[#f0f0f0] p-8 md:p-10">
+                <p className="inline-flex items-center gap-2.5 border border-navy/10 bg-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+                  <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
                   Key Findings
                 </p>
-                <ul className="mt-5 space-y-4">
+                <ul className="mt-6 space-y-4">
                   {keyFindings.map((finding, index) => (
                     <li key={finding} className="flex gap-3">
-                      <span className="shrink-0 font-serif text-sm leading-[1.7] text-[#BF9B5F]">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-white text-[12px] font-medium text-navy">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <span className="text-sm leading-[1.7] text-gray-700 md:text-[15px]">{finding}</span>
+                      <span className="pt-0.5 text-[15px] leading-[1.6] tracking-[-0.01em] text-gray-700">{finding}</span>
                     </li>
                   ))}
                 </ul>
                 {showRaiseReadiness && (
-                  <div className="mt-7 border-t border-gray-200 pt-5">
+                  <div className="mt-8 border-t border-navy/[0.08] pt-6">
                     <Link
                       href="/raise-readiness"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-navy underline-offset-2 hover:underline"
+                      className="inline-flex items-center gap-2 bg-navy px-6 py-3 text-[13px] font-medium text-white transition hover:bg-navy-dark"
                     >
                       Take the raise readiness diagnostic →
                     </Link>
@@ -131,7 +134,7 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
       </section>
 
       {guide.faq && guide.faq.length > 0 && (
-        <section className="border-t border-gray-100 bg-gray-50 py-14 md:py-16">
+        <section className="bg-[#f0f0f0] py-24 md:py-32">
           <div className="container mx-auto px-6 md:px-8">
             <div className="mx-auto max-w-6xl">
               <GuideFaq items={guide.faq} />
@@ -141,18 +144,15 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
       )}
 
       {/* Embedded booklet */}
-      <section id="booklet" className="scroll-mt-28 border-t border-gray-100 bg-white py-14 md:py-16">
+      <section id="booklet" className="scroll-mt-28 bg-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-9 text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-                The Paper
-              </p>
-              <h2 className="mt-3 font-serif text-2xl text-navy md:text-3xl">Read the full paper</h2>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-gray-500">
-                Page through the document below, or download the PDF to keep and share.
-              </p>
-            </div>
+            <HomeSectionHeader
+              align="center"
+              pill="The Paper"
+              title="Read the full paper."
+              description="Page through the document below, or download the PDF to keep and share."
+            />
             <GuideBooklet
               title={guide.title}
               readTime={guide.readTime}
@@ -165,58 +165,24 @@ export default function InvestorGuidePage({ params }: GuidePageProps) {
         </div>
       </section>
 
-      {/* CTA band */}
-      <section className="bg-[#0e1c38] py-16 md:py-20">
-        <div className="container mx-auto px-6 md:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#c4a062]">
-              Next Step
-            </p>
-            <h2 className="mt-4 font-serif text-2xl text-white md:text-3xl">
-              Discuss this with our team
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.85] text-white/65">
-              If you are a growth-stage CEO six to twelve months from launching a process, Keningford
-              Partners will run a no-cost readiness review against the framework in this paper, and
-              tell you which workstreams are ready, which need attention, and what your operational
-              runway needs to be at launch.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              {showRaiseReadiness ? (
-                <>
-                  <Link
-                    href="/raise-readiness"
-                    className="inline-flex items-center bg-white px-7 py-3.5 text-sm font-medium text-navy transition hover:bg-gray-100"
-                  >
-                    Take the diagnostic
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center border border-white/30 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white hover:bg-white/5"
-                  >
-                    Contact Us
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center bg-white px-7 py-3.5 text-sm font-medium text-navy transition hover:bg-gray-100"
-                  >
-                    Contact Us
-                  </Link>
-                  <a
-                    href={`mailto:${contactEmail}`}
-                    className="inline-flex items-center border border-white/30 px-7 py-3.5 text-sm font-medium text-white transition hover:border-white hover:bg-white/5"
-                  >
-                    {contactEmail}
-                  </a>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ImageBand
+        align="center"
+        image="/images/bands/city-above-v2.jpg"
+        imageAlt="City skyline with illuminated towers at night"
+        pill="Next Step"
+        title="Discuss this with our team."
+        description="If you are a growth-stage CEO six to twelve months from launching a process, Keningford Partners will run a no-cost readiness review against the framework in this paper, and tell you which workstreams are ready, which need attention, and what your operational runway needs to be at launch."
+        primaryCta={
+          showRaiseReadiness
+            ? { label: 'Take the diagnostic', href: '/raise-readiness' }
+            : { label: 'Contact Us', href: '/contact' }
+        }
+        secondaryCta={
+          showRaiseReadiness
+            ? { label: 'Contact Us', href: '/contact' }
+            : { label: contactEmail, href: `mailto:${contactEmail}`, external: true }
+        }
+      />
     </>
   );
 }

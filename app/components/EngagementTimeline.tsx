@@ -40,16 +40,14 @@ export default function EngagementTimeline() {
   });
 
   return (
-    <section className="border-t border-gray-200 bg-white py-20 md:py-28" data-reveal-root>
+    <section className="bg-white py-24 md:py-32" data-reveal-root>
       <div className="container mx-auto px-6 md:px-8">
         <div ref={headerAnimation.ref} style={headerAnimation.style} className="mb-16 md:mb-24">
-          <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-10 shrink-0 bg-[#BF9B5F] md:w-12" aria-hidden />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-              How We Work
-            </p>
-          </div>
-          <h2 className="max-w-2xl text-3xl font-bold leading-[1.1] tracking-[-0.02em] text-navy md:text-4xl lg:text-[2.75rem]">
+          <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-[#eef1f5] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+            <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+            How We Work
+          </p>
+          <h2 className="max-w-[550px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem] lg:text-[3rem]">
             How an engagement looks
           </h2>
         </div>
@@ -71,7 +69,7 @@ export default function EngagementTimeline() {
                   <div
                     className={`relative z-10 hidden md:flex md:justify-center ${isLast ? 'pb-0' : 'pb-24'}`}
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-gray-200 bg-white text-gray-500">
                       <StepIcon index={index} />
                     </div>
                   </div>
@@ -85,7 +83,7 @@ export default function EngagementTimeline() {
                       >
                         {step.number}
                       </span>
-                      <h3 className="relative z-10 pl-10 text-[1.75rem] font-bold leading-[1.05] tracking-[-0.02em] text-navy sm:pl-11 sm:text-[2rem] md:pl-12 md:text-[2.25rem] lg:text-[2.5rem]">
+                      <h3 className="relative z-10 pl-10 font-sans text-[1.75rem] font-medium leading-[1.05] tracking-[-0.02em] text-navy sm:pl-11 sm:text-[2rem] md:pl-12 md:text-[2.25rem] lg:text-[2.5rem]">
                         <span className="block">{step.phase}</span>
                         <span className="block">{step.title}</span>
                       </h3>
@@ -101,7 +99,7 @@ export default function EngagementTimeline() {
                       <p className="mb-3 font-mono text-xs lowercase tracking-[0.06em] text-gray-400">
                         output
                       </p>
-                      <p className="max-w-md text-lg font-semibold leading-[1.35] tracking-[-0.01em] text-navy md:max-w-lg md:text-xl">
+                      <p className="max-w-md text-lg font-medium leading-[1.35] tracking-[-0.01em] text-navy md:max-w-lg md:text-xl">
                         {step.output}
                       </p>
                     </div>
@@ -121,12 +119,12 @@ export default function EngagementTimeline() {
             {engagementTimelineSummary}
           </p>
           <div>
-            <p className="mb-4 text-xl font-bold leading-[1.15] tracking-[-0.02em] text-navy md:text-2xl">
+            <p className="mb-5 text-xl font-medium leading-[1.15] tracking-[-0.02em] text-navy md:text-2xl">
               Have a mandate the board is asking about?
             </p>
             <Link
               href="/contact"
-              className="inline-flex border border-navy px-6 py-3 text-sm font-medium text-navy transition hover:bg-navy hover:text-white"
+              className="inline-flex items-center gap-2 bg-navy px-5 py-3 text-[15px] font-medium text-white transition-colors hover:bg-navy-dark"
             >
               Start a conversation
             </Link>

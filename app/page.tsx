@@ -1,16 +1,20 @@
 import dynamic from 'next/dynamic';
 import Hero, { DEFAULT_HERO_IMAGE, DEFAULT_HERO_IMAGE_ALT } from './components/Hero';
-import EditorialImage from './components/EditorialImage';
 import JsonLd from './components/JsonLd';
-import MarketPerspective from './components/MarketPerspective';
 import NewsSection from './components/NewsSection';
-import { SCHEDULE_HREF } from './lib/calendly';
+import HomeCredentials from './components/HomeCredentials';
+import { SCHEDULE_HREF } from './lib/scheduling';
 import { financialServiceSchema } from './lib/json-ld';
 
 const FirmPositioning = dynamic(() => import('./components/FirmPositioning'));
 const CapabilitiesOverview = dynamic(() => import('./components/CapabilitiesOverview'));
-const OurApproach = dynamic(() => import('./components/OurApproach'));
+const HomeIndustries = dynamic(() => import('./components/HomeIndustries'));
+const HomeStats = dynamic(() => import('./components/HomeStats'));
+const HomeAdvisoryTabs = dynamic(() => import('./components/HomeAdvisoryTabs'));
+const HomeCaseStudies = dynamic(() => import('./components/HomeCaseStudies'));
 const EngagementFramework = dynamic(() => import('./components/EngagementFramework'));
+const HomeFaq = dynamic(() => import('./components/HomeFaq'));
+const HomeCta = dynamic(() => import('./components/HomeCta'));
 
 export const metadata = {
   title: 'Strategic Capital Advisory & Financial Services',
@@ -35,53 +39,16 @@ export default function Home() {
       />
 
       <FirmPositioning />
-
-      <EditorialImage
-        variant="architecture-1"
-        eyebrow="Global Reach, Local Expertise"
-        title="Capital is global. Judgment is personal."
-        description="Combining deep market knowledge with extensive transaction experience across industries and geographies."
-      />
-
       <CapabilitiesOverview />
-
-      <EditorialImage
-        variant="architecture-4"
-        eyebrow="Long-term Perspective"
-        title="Value is created over years, not quarters."
-        description="We focus on strategic outcomes that create sustainable value over time, not short-term transactions."
-      />
-
-      <OurApproach />
-
-      <EditorialImage
-        variant="architecture-2"
-        eyebrow="Institutional Relationships"
-        title="The right capital starts with the right relationships."
-        description="Access to global capital sources and strategic partners through established institutional networks."
-      />
-
+      <HomeIndustries />
+      <HomeStats />
+      <HomeAdvisoryTabs />
+      <HomeCaseStudies />
       <EngagementFramework />
-
-      <EditorialImage
-        variant="architecture-5"
-        eyebrow="Disciplined Execution"
-        title="Senior attention on every mandate."
-        description="Rigorous analysis, structured processes, and senior-level attention on every engagement."
-      />
-
-      <MarketPerspective />
-
+      <HomeFaq />
       <NewsSection />
-
-      <EditorialImage
-        variant="architecture-3"
-        eyebrow="Strategic Partnership"
-        title="Begin with a confidential conversation."
-        description="To learn more about our capabilities and how we can assist with your strategic objectives, please contact our team."
-        ctaText="Contact Our Team"
-        ctaHref="/contact"
-      />
+      <HomeCta />
+      <HomeCredentials />
     </>
   );
 }

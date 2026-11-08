@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <Link href="/" className="mb-5 inline-block">
-              <h3 className="font-serif text-2xl font-normal tracking-tight text-white md:text-[1.75rem]">
+              <h3 className="font-serif text-2xl font-medium tracking-tight text-white md:text-[1.75rem]">
                 Keningford Partners
               </h3>
             </Link>
@@ -115,6 +115,16 @@ export default function Footer() {
                 <li>
                   <Link href="/contact" className="transition-colors hover:text-white">
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/credentials" className="transition-colors hover:text-white">
+                    Credentials
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/verify" className="transition-colors hover:text-white">
+                    Verify Us
                   </Link>
                 </li>
               </ul>

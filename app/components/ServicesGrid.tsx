@@ -21,8 +21,8 @@ export default function ServicesGrid() {
     <section className="mt-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((s) => (
-          <div key={s.title} className="p-8 border border-gray-200 rounded-md bg-white">
-            <h3 className="font-semibold mb-3 text-lg">{s.title}</h3>
+          <div key={s.title} className="p-8 border border-gray-200 bg-white">
+            <h3 className="font-medium mb-3 text-lg">{s.title}</h3>
             <p className="text-gh-600 text-sm">{s.body}</p>
           </div>
         ))}

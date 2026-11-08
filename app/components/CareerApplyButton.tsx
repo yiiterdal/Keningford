@@ -47,7 +47,7 @@ export default function CareerApplyButton({ jobTitle, className = '' }: CareerAp
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#1E293B] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
+        className="inline-flex shrink-0 items-center justify-center gap-2 bg-navy px-6 py-2.5 text-sm font-medium text-white transition hover:bg-navy-dark"
       >
         Apply
         <svg className="h-4 w-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -58,7 +58,7 @@ export default function CareerApplyButton({ jobTitle, className = '' }: CareerAp
       {open && (
         <div
           role="menu"
-          className="absolute right-0 z-20 mt-2 min-w-[220px] overflow-hidden rounded-sm border border-gray-200 bg-white py-1 shadow-lg"
+          className="absolute right-0 z-20 mt-2 min-w-[220px] overflow-hidden border border-gray-200 bg-white py-1 shadow-lg"
         >
           <a
             role="menuitem"

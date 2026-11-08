@@ -13,7 +13,7 @@ export default function ContactSection() {
     <section id="contact" className="py-20 md:py-28 bg-white">
       <div className="container mx-auto">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-navy mb-4">Contact</h2>
+          <h2 className="text-3xl md:text-4xl font-medium text-navy mb-4">Contact</h2>
           <p className="text-gray-600 text-lg max-w-2xl">
             Please complete the form to request a confidential consultation or meeting with our senior team.
           </p>
@@ -26,7 +26,7 @@ export default function ContactSection() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-lg font-semibold text-navy mb-4">Contact Information</h3>
+              <h3 className="text-lg font-medium text-navy mb-4">Contact Information</h3>
               <div className="space-y-4 text-gray-700">
                 <div>
                   <div className="text-sm font-medium text-gray-600 mb-1">Email</div>

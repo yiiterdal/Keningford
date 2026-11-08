@@ -29,7 +29,7 @@ export default function CaseStudiesSection() {
     <section id="cases" className="py-20 md:py-28 bg-white">
       <div className="container mx-auto">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold text-navy mb-4">Case Studies</h2>
+          <h2 className="text-3xl md:text-4xl font-medium text-navy mb-4">Case Studies</h2>
           <p className="text-gray-600 text-lg max-w-2xl">
             Representative engagements demonstrating our approach and results.
           </p>
@@ -43,7 +43,7 @@ export default function CaseStudiesSection() {
                   {caseStudy.result}
                 </span>
               </div>
-              <h3 className="text-2xl font-semibold text-navy mb-4">
+              <h3 className="text-2xl font-medium text-navy mb-4">
                 {caseStudy.title}
               </h3>
               <p className="text-gray-600 leading-relaxed mb-8 max-w-3xl">

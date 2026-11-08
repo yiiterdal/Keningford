@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Hero from '../components/Hero';
+import HomeCta from '../components/HomeCta';
+import ImageBand from '../components/ImageBand';
 import TransactionsGrid from '../components/TransactionsGrid';
 import TransactionLogoGrid from '../components/TransactionLogoGrid';
 import { transactionPortfolio } from '../data/transaction-portfolio';
@@ -17,20 +19,36 @@ export default function TransactionsPage() {
         imageAlt="Financial district with modern skyscrapers"
       />
 
-      <section className="bg-white py-10 md:py-14">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="mb-8 border border-gray-200 bg-[#0b1426] px-6 py-5 text-white md:px-8">
-            <p className="font-serif text-3xl md:text-4xl">{transactionStats.headline}</p>
-            <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
-              {transactionStats.label}
-            </p>
-          </div>
-
           <TransactionsGrid transactions={transactions} />
+        </div>
+      </section>
 
+      <ImageBand
+        image="/images/bands/towers-lit-v2.jpg"
+        imageAlt="Office towers with illuminated windows at night"
+        pill="Track Record"
+        title={
+          <>
+            <span className="block text-[3.5rem] leading-none tracking-[-0.04em] md:text-[5rem] lg:text-[6rem]">
+              {transactionStats.headline}
+            </span>
+            <span className="mt-4 block text-[1.5rem] leading-[1.2] text-white/80 md:text-[2rem]">
+              {transactionStats.label}
+            </span>
+          </>
+        }
+        description="Figures may reflect completed, in-progress, or confidential engagements across Keningford Partners and affiliated advisors."
+        primaryCta={{ label: 'Discuss a mandate →', href: '/contact' }}
+        secondaryCta={{ label: 'Our capabilities', href: '/capabilities' }}
+      />
+
+      <section className="bg-white py-24 md:py-32">
+        <div className="container mx-auto px-6 md:px-8">
           <TransactionLogoGrid companies={transactionPortfolio} />
 
-          <p className="mt-10 max-w-3xl text-xs leading-relaxed text-gray-500">
+          <p className="mt-14 max-w-3xl text-xs leading-relaxed text-gray-500">
             Transactions listed are representative of advisory experience across Keningford Partners
             and affiliated advisors. Figures may reflect completed, in-progress, or confidential
             engagements. For questions on our capabilities, please{' '}
@@ -41,6 +59,8 @@ export default function TransactionsPage() {
           </p>
         </div>
       </section>
+
+      <HomeCta />
     </>
   );
 }

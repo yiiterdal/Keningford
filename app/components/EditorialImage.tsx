@@ -26,7 +26,7 @@ interface EditorialImageProps {
 
 const imageMap: Record<string, { url: string; alt: string }> = {
   'architecture-1': {
-    url: '/images/hero/hero.jpg',
+    url: '/images/hero/hero-hq.jpg',
     alt: 'Modern glass skyscrapers rising toward a cloudy sky',
   },
   'architecture-2': {
@@ -38,7 +38,7 @@ const imageMap: Record<string, { url: string; alt: string }> = {
     alt: 'Modern corporate building with glass facade',
   },
   'architecture-4': {
-    url: '/images/editorial/long-term-perspective.jpg',
+    url: '/images/editorial/long-term-perspective-hq.jpg',
     alt: 'Modern conference room with natural light and contemporary furnishings',
   },
   'architecture-5': {
@@ -110,7 +110,7 @@ export default function EditorialImage({
                 <h2
                   ref={titleAnimation.ref}
                   style={titleAnimation.style}
-                  className="font-serif text-3xl font-normal leading-[1.12] tracking-[-0.01em] text-white md:text-4xl lg:text-[2.75rem]"
+                  className="font-sans font-medium text-3xl leading-[1.12] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.75rem]"
                 >
                   {title}
                 </h2>

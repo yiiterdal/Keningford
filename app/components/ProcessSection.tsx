@@ -27,7 +27,7 @@ export default function ProcessSection() {
     <section className="py-20 md:py-28 bg-navy text-white">
       <div className="container mx-auto">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">How We Work</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mb-4">How We Work</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
@@ -36,7 +36,7 @@ export default function ProcessSection() {
               <div className="text-5xl font-light text-gray-400 mb-4 tracking-tight">
                 {step.number}
               </div>
-              <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
+              <h3 className="text-lg font-medium mb-3">{step.title}</h3>
               <p className="text-gray-300 leading-relaxed text-sm">
                 {step.description}
               </p>

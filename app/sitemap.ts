@@ -22,6 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/careers',
     '/contact',
     '/raise-readiness',
+    '/credentials',
+    '/verify',
     '/privacy',
     '/terms',
   ];

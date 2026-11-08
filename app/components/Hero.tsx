@@ -56,7 +56,7 @@ export default function Hero({
   const sectionClasses = isLarge
     ? 'relative min-h-screen overflow-hidden'
     : isCompactEditorial
-      ? 'relative h-[55vh] min-h-[420px] overflow-hidden md:h-[65vh]'
+      ? 'relative h-[62vh] min-h-[460px] overflow-hidden md:h-[70vh] md:min-h-[540px]'
       : `relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40 min-h-[60vh] md:min-h-[65vh]`;
 
   const overlayClasses = isEditorial
@@ -70,19 +70,19 @@ export default function Hero({
     <div
       className={
         isLarge
-          ? 'container relative z-10 mx-auto flex min-h-screen items-center px-6 pb-16 pt-24 md:px-8 md:pb-20 md:pt-28'
-          : 'container relative z-10 mx-auto flex h-full items-center px-6 py-24 md:px-8 md:py-28'
+          ? 'container relative z-10 mx-auto flex min-h-screen items-end px-6 pb-14 pt-32 md:px-8 md:pb-16 lg:pb-20'
+          : 'container relative z-10 mx-auto flex h-full items-end px-6 pb-12 pt-28 md:px-8 md:pb-14 lg:pb-16'
       }
     >
-      <div className="w-full max-w-xl lg:max-w-2xl">
+      <div className="w-full max-w-2xl lg:max-w-3xl">
         {eyebrow && (
           <div
             ref={eyebrowAnimation.ref}
             style={eyebrowAnimation.style}
-            className="mb-6 flex items-center gap-4 md:mb-8"
+            className="mb-6 md:mb-7"
           >
-            <span className="h-px w-10 shrink-0 bg-[#e8d5a8] md:w-12" aria-hidden />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e8d5a8] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] md:text-xs">
+            <p className="inline-flex items-center gap-2.5 border border-white/15 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm md:text-[11px]">
+              <span className="h-1.5 w-1.5 shrink-0 bg-[#e8d5a8]" aria-hidden />
               {eyebrow}
             </p>
           </div>
@@ -90,10 +90,10 @@ export default function Hero({
         <h1
           ref={titleAnimation.ref}
           style={titleAnimation.style}
-          className={`font-serif font-normal leading-[1.12] tracking-[-0.01em] text-white ${
+          className={`font-sans font-medium text-white ${
             isLarge
-              ? 'text-[2.125rem] md:text-[2.75rem] lg:text-[3.375rem] lg:leading-[1.08]'
-              : 'text-3xl md:text-4xl lg:text-[2.75rem]'
+              ? 'text-[2.25rem] leading-[1.05] tracking-[-0.03em] md:text-[3rem] lg:text-[3.5rem] lg:leading-[1] xl:text-[4rem]'
+              : 'text-[2rem] leading-[1.08] tracking-[-0.03em] md:text-[2.5rem] lg:text-[3rem] lg:leading-[1.04]'
           }`}
         >
           {title}
@@ -116,7 +116,7 @@ export default function Hero({
             {primaryCta && (
               <Link
                 href={primaryCta.href}
-                className="inline-flex items-center justify-center gap-2.5 border border-white/10 bg-[#1a1a1a]/75 px-6 py-3 text-[13px] font-medium text-white transition hover:bg-[#1a1a1a]/90"
+                className="inline-flex items-center justify-center gap-2 bg-white px-6 py-3 text-[13px] font-medium text-navy transition hover:bg-white/90"
               >
                 {primaryCta.label}
                 <span aria-hidden className="text-sm leading-none">
@@ -127,7 +127,7 @@ export default function Hero({
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center justify-center border border-white/55 bg-transparent px-6 py-3 text-[13px] font-medium text-white transition hover:bg-white/5"
+                className="inline-flex items-center justify-center border border-white/70 bg-white/10 px-6 py-3 text-[13px] font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
               >
                 {secondaryCta.label}
               </Link>
@@ -165,7 +165,7 @@ export default function Hero({
             <h1
               ref={titleAnimation.ref}
               style={titleAnimation.style}
-              className="mb-8 font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl"
+              className="mb-8 font-sans text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-white md:text-5xl lg:text-6xl"
             >
               {title}
             </h1>
@@ -187,7 +187,7 @@ export default function Hero({
                 {primaryCta && (
                   <Link
                     href={primaryCta.href}
-                    className="inline-flex min-w-[200px] items-center justify-center rounded-sm bg-white px-8 py-3.5 text-sm font-semibold text-navy transition hover:bg-gray-100"
+                    className="inline-flex items-center justify-center bg-white px-6 py-3 text-[13px] font-medium text-navy transition hover:bg-white/90"
                   >
                     {primaryCta.label}
                   </Link>
@@ -195,7 +195,7 @@ export default function Hero({
                 {secondaryCta && (
                   <Link
                     href={secondaryCta.href}
-                    className="inline-flex min-w-[200px] items-center justify-center rounded-sm border border-white/80 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                    className="inline-flex items-center justify-center border border-white/70 bg-white/10 px-6 py-3 text-[13px] font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
                   >
                     {secondaryCta.label}
                   </Link>

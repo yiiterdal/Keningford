@@ -95,6 +95,7 @@ export default function ReportReader({ title, pdfUrl, pageCount }: ReportReaderP
           {pages.map((page) => (
             <div key={page} className="flex w-full shrink-0 snap-center justify-center px-14 py-6 md:px-20 md:py-8">
               <Image
+                quality={100}
                 src={reportPageUrl(pdfUrl, page)}
                 alt={`${title}, page ${page} of ${pageCount}`}
                 width={PAGE_WIDTH}

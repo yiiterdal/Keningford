@@ -8,11 +8,11 @@ export default function ReportsSection() {
   const latestReports = getLatestReports(3);
 
   return (
-    <section className="bg-gray-50 py-24 md:py-32">
+    <section className="bg-[#f0f0f0] py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-8">
         <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="mb-4 text-3xl font-semibold text-navy md:text-4xl">Research Reports</h2>
+            <h2 className="mb-4 text-3xl font-medium text-navy md:text-4xl">Research Reports</h2>
             <p className="max-w-2xl text-lg leading-relaxed text-gray-600">
               Periodic outlooks and sector primers on capital markets, transactions, and financing
               trends from Keningford Partners.
@@ -45,7 +45,7 @@ export default function ReportsSection() {
                   className="mb-3"
                 />
                 <Link href={`/reports/${report.slug}`} className="group">
-                  <h3 className="mb-3 text-lg font-semibold leading-snug text-navy decoration-navy/40 underline-offset-[5px] group-hover:underline">
+                  <h3 className="mb-3 text-lg font-medium leading-snug text-navy decoration-navy/40 underline-offset-[5px] group-hover:underline">
                     {report.title}
                   </h3>
                 </Link>

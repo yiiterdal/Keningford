@@ -43,16 +43,14 @@ export default function EngagementFramework() {
   const stepAnimations = [stepAnimation0, stepAnimation1, stepAnimation2, stepAnimation3, stepAnimation4];
 
   return (
-    <section className="bg-white py-24 md:py-32" data-reveal-root>
+    <section className="bg-[#f0f0f0] py-24 md:py-32" data-reveal-root>
       <div className="container mx-auto px-6 md:px-8">
-        <div ref={headerAnimation.ref} style={headerAnimation.style} className="mb-16 md:mb-24">
-          <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-10 shrink-0 bg-[#BF9B5F] md:w-12" aria-hidden />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#BF9B5F]">
-              How We Work
-            </p>
-          </div>
-          <h2 className="max-w-xl font-serif text-3xl font-semibold leading-tight text-navy md:text-4xl lg:text-5xl">
+        <div ref={headerAnimation.ref} style={headerAnimation.style} className="mb-16 text-center md:mb-20">
+          <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-[#e4e4e4] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+            <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+            How We Work
+          </p>
+          <h2 className="mx-auto max-w-[700px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem] lg:text-[3rem]">
             The Keningford Framework
           </h2>
         </div>
@@ -68,11 +66,11 @@ export default function EngagementFramework() {
                     {step.number}
                   </p>
                   <div className="mb-5 flex items-center gap-0" aria-hidden>
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#BF9B5F]" />
-                    <span className="h-px flex-1 bg-[#BF9B5F]/60" />
+                    <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" />
+                    <span className="h-px flex-1 bg-[#BF9B5F]/50" />
                   </div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="mb-3 font-serif text-2xl font-semibold text-navy md:text-[1.75rem]">
+                    <h3 className="mb-3 font-sans text-2xl font-medium tracking-[-0.02em] text-navy md:text-[1.75rem]">
                       {step.title}
                     </h3>
                     {isLast && (

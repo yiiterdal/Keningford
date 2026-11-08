@@ -3,6 +3,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
+import HomeSectionHeader from '../../components/HomeSectionHeader';
 import CTABlock from '../../components/CTABlock';
 import { unsplashSrc } from '../../lib/image-utils';
 
@@ -55,7 +56,7 @@ export default function BuySideAdvisoryPage() {
         imageAlt="Corporate skyline reflecting institutional capital markets"
       />
 
-      <section className="bg-white py-12">
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
             <aside className="lg:col-span-1">
@@ -71,7 +72,7 @@ export default function BuySideAdvisoryPage() {
             <div className="lg:col-span-3">
               <div className="prose max-w-none">
                 <div className="mb-12">
-                  <h2 className="mb-4 text-2xl font-semibold text-navy">What We Do</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">What We Do</h2>
                   <p className="mb-4 leading-relaxed text-gray-700">
                     Our deal origination specialists advise institutional investors, family offices, and
                     private equity funds on identifying and executing investment opportunities across
@@ -93,7 +94,7 @@ export default function BuySideAdvisoryPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="mb-4 text-2xl font-semibold text-navy">How We Engage</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">How We Engage</h2>
                   <p className="mb-4 leading-relaxed text-gray-700">
                     Sector specialists and the origination team work as one mandate team. We translate
                     investment criteria into a focused screening framework, run confidential outreach,
@@ -110,11 +111,11 @@ export default function BuySideAdvisoryPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="mb-6 text-2xl font-semibold text-navy">Service Areas</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Service Areas</h2>
                   <div className="space-y-8">
                     {serviceAreas.map((area) => (
                       <div key={area.title}>
-                        <h3 className="mb-2 text-lg font-semibold text-navy">{area.title}</h3>
+                        <h3 className="mb-2 font-sans text-lg font-medium tracking-[-0.01em] text-navy">{area.title}</h3>
                         <p className="leading-relaxed text-gray-700">{area.body}</p>
                       </div>
                     ))}
@@ -124,28 +125,44 @@ export default function BuySideAdvisoryPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="mb-4 text-2xl font-semibold text-navy">Typical Mandates</h2>
-                  <ul className="space-y-3">
-                    <li className="flex gap-4">
-                      <span className="mt-1 text-navy">•</span>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Typical Mandates</h2>
+                  <ul className="space-y-4">
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">
                         Proprietary target screening against a defined investment mandate
                       </span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="mt-1 text-navy">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">
                         Confidential approach and process management for off-market opportunities
                       </span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="mt-1 text-navy">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">
                         Add-on acquisition programs for portfolio platforms
                       </span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="mt-1 text-navy">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">
                         Co-investment and joint venture structuring alongside strategic partners
                       </span>
@@ -158,10 +175,10 @@ export default function BuySideAdvisoryPage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto">
-          <h2 className="mb-8 text-2xl font-semibold text-navy">Related Capabilities</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <HomeSectionHeader pill="Capabilities" title="Related capabilities." />
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {relatedCapabilities.map((capability) => (
               <CapabilityCard
                 key={capability.href}

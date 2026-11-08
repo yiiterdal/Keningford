@@ -1,8 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import CareerApplyButton from '../components/CareerApplyButton';
 import Hero from '../components/Hero';
-import { IMAGE_QUALITY, unsplashSrc } from '../lib/image-utils';
+import HomeSectionHeader from '../components/HomeSectionHeader';
+import ImageBand from '../components/ImageBand';
+import NumberedCard from '../components/NumberedCard';
+import { unsplashSrc } from '../lib/image-utils';
 import { careerOpenings, careerValues, careersContactEmail, gmailApplicationUrl } from '../data/careers';
 
 export const metadata = {
@@ -10,6 +11,23 @@ export const metadata = {
   description:
     'Join Keningford Partners and build your career in strategic capital advisory, M&A, and institutional finance.',
 };
+
+function CheckList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-3">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-[15px] leading-[1.5] tracking-[-0.01em] text-gray-600">
+          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-white" aria-hidden>
+            <svg className="h-3 w-3 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function CareersPage() {
   return (
@@ -24,149 +42,121 @@ export default function CareersPage() {
         secondaryCta={{ label: 'Contact Us', href: '/contact' }}
       />
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="bg-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">Working at Keningford</h2>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-              Keningford Partners is a lean, senior led investment bank where exceptional people do meaningful work on
-              behalf of leading companies and institutional investors. We hire individuals who combine analytical rigor
-              with sound judgment, discretion, and a genuine interest in long term client outcomes.
-            </p>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              Our culture rewards ownership, intellectual curiosity, and teamwork. If you thrive in fast paced
-              environments and want direct exposure to live transactions rather than back office support, we encourage
-              you to explore our current openings.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-20 bg-gray-50 border-y border-gray-200">
-        <div className="container mx-auto px-6 md:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-4 text-center">Why Keningford</h2>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-              A boutique platform with institutional reach, where your contribution is visible from the first mandate.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {careerValues.map((value) => (
-                <div key={value.title} className="bg-white border border-gray-200 rounded-sm p-8">
-                  <h3 className="text-lg font-semibold text-navy mb-3">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">{value.description}</p>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-[#eef1f5] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+                <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+                Working at Keningford
+              </p>
+              <h2 className="max-w-[550px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem] lg:text-[3rem]">
+                A lean, senior-led investment bank.
+              </h2>
+            </div>
+            <div className="space-y-6 text-base leading-[1.6] tracking-[-0.01em] text-gray-600 md:text-lg lg:col-span-6 lg:col-start-7 lg:pt-14">
+              <p>
+                Keningford Partners is a lean, senior led investment bank where exceptional people do meaningful work on
+                behalf of leading companies and institutional investors. We hire individuals who combine analytical rigor
+                with sound judgment, discretion, and a genuine interest in long term client outcomes.
+              </p>
+              <p>
+                Our culture rewards ownership, intellectual curiosity, and teamwork. If you thrive in fast paced
+                environments and want direct exposure to live transactions rather than back office support, we encourage
+                you to explore our current openings.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="open-roles" className="py-16 md:py-24 bg-white scroll-mt-24">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-4">Open Positions</h2>
-            <p className="text-gray-600 leading-relaxed mb-12">
-              We hire selectively for each mandate cycle. Roles listed below reflect our current needs; if timing does
-              not align, we still welcome strong intern and experienced-hire inquiries. Include your resume, relevant
-              experience, and earliest start date in your application.
-            </p>
+          <HomeSectionHeader
+            align="center"
+            pill="Why Keningford"
+            title="A boutique platform with institutional reach."
+            description="Your contribution is visible from the first mandate."
+          />
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+            {careerValues.map((value, index) => (
+              <NumberedCard key={value.title} index={index} title={value.title} body={value.description} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="space-y-8">
-              {careerOpenings.map((role) => (
-                <article
-                  key={role.id}
-                  className="border border-gray-200 rounded-sm p-8 md:p-10 hover:border-gray-300 transition-colors"
-                >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-navy mb-2">{role.title}</h3>
-                      <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500">
-                        <span>{role.department}</span>
-                        <span aria-hidden>·</span>
-                        <span>{role.location}</span>
-                        <span aria-hidden>·</span>
-                        <span>{role.type}</span>
-                        <span aria-hidden>·</span>
-                        <span>{role.experience}</span>
-                      </div>
+      <section id="open-roles" className="scroll-mt-24 bg-white py-24 md:py-32">
+        <div className="container mx-auto px-6 md:px-8">
+          <HomeSectionHeader
+            pill="Open Positions"
+            title="Current openings."
+            description="We hire selectively for each mandate cycle. Include your resume, relevant experience, and earliest start date in your application."
+          />
+
+          <div className="space-y-3">
+            {careerOpenings.map((role) => (
+              <article key={role.id} className="bg-[#f0f0f0] p-8 md:p-10">
+                <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <h3 className="mb-3 font-sans text-2xl font-medium leading-[1.15] tracking-[-0.02em] text-navy md:text-[28px]">
+                      {role.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {[role.department, role.location, role.type, role.experience].map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-white px-3 py-1 text-[12px] font-medium text-gray-600"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                    <CareerApplyButton jobTitle={role.title} />
                   </div>
+                  <CareerApplyButton jobTitle={role.title} />
+                </div>
 
-                  <p className="text-gray-700 leading-relaxed mb-6">{role.summary}</p>
+                <p className="mb-8 max-w-3xl text-base leading-[1.6] tracking-[-0.01em] text-gray-600">{role.summary}</p>
 
-                  <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
-                    Responsibilities
-                  </h4>
-                  <ul className="space-y-2 text-gray-600 text-sm leading-relaxed list-disc pl-5 mb-8">
-                    {role.responsibilities.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-
-                  <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
-                    Requirements
-                  </h4>
-                  <ul className="space-y-2 text-gray-600 text-sm leading-relaxed list-disc pl-5">
-                    {role.requirements.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
+                <div className="grid grid-cols-1 gap-8 border-t border-navy/[0.08] pt-8 lg:grid-cols-2 lg:gap-12">
+                  <div>
+                    <h4 className="mb-4 font-sans text-lg font-medium text-navy">Responsibilities</h4>
+                    <CheckList items={role.responsibilities} />
+                  </div>
+                  <div>
+                    <h4 className="mb-4 font-sans text-lg font-medium text-navy">Requirements</h4>
+                    <CheckList items={role.requirements} />
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
+
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-gray-500">
+            Roles listed reflect our current needs; if timing does not align, we still welcome strong intern and
+            experienced-hire inquiries.
+          </p>
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-[#1E293B] text-white">
-        <div className="container mx-auto px-6 md:px-8">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
-            <div className="relative aspect-[4/3] w-full rounded-sm overflow-hidden border border-white/10">
-              <Image
-                src="/images/careers/general-inquiries.jpg"
-                alt="Professional team in a meeting"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 480px"
-                quality={IMAGE_QUALITY}
-              />
-              <div className="absolute inset-0 bg-[#1E293B]/20" aria-hidden />
-            </div>
-
-            <div className="text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">General Inquiries</h2>
-              <p className="text-gray-300 leading-relaxed mb-8">
-                Don&apos;t see a role that fits your background? We welcome inquiries from experienced professionals and
-                motivated candidates who believe they can contribute to our team.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4">
-                <a
-                  href={gmailApplicationUrl('General Application')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-w-[200px] items-center justify-center rounded-sm bg-white px-8 py-3.5 text-sm font-semibold text-[#1E293B] transition hover:bg-gray-100"
-                >
-                  Send Your Resume
-                </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex min-w-[200px] items-center justify-center rounded-sm border border-white/80 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Contact Us
-                </Link>
-              </div>
-              <p className="mt-8 text-sm text-gray-400">
-                Email{' '}
-                <a href={`mailto:${careersContactEmail}`} className="text-white hover:underline">
-                  {careersContactEmail}
-                </a>{' '}
-                with the subject line &ldquo;Careers.&rdquo;
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ImageBand
+        image="/images/bands/city-lights-v2.jpg"
+        imageAlt="Modern city skyline illuminated at dusk"
+        imagePosition="center 40%"
+        pill="General Inquiries"
+        title="Don't see a role that fits?"
+        description="We welcome inquiries from experienced professionals and motivated candidates who believe they can contribute to our team."
+        primaryCta={{ label: 'Send Your Resume', href: gmailApplicationUrl('General Application'), external: true }}
+        secondaryCta={{ label: 'Contact Us', href: '/contact' }}
+      >
+        <p className="mt-6 text-sm text-white/55">
+          Email{' '}
+          <a href={`mailto:${careersContactEmail}`} className="text-white hover:underline">
+            {careersContactEmail}
+          </a>{' '}
+          with the subject line &ldquo;Careers.&rdquo;
+        </p>
+      </ImageBand>
     </>
   );
 }

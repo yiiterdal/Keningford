@@ -48,7 +48,7 @@ function renderBullets(bullets: string[] | undefined, keyPrefix: string) {
 function renderSection(section: PolicySection) {
   return (
     <article key={section.id} id={section.id} className="scroll-mt-32">
-      <h3 className="text-base font-semibold text-navy mb-3">{section.title}</h3>
+      <h3 className="text-base font-medium text-navy mb-3">{section.title}</h3>
       {renderParagraphs(section.paragraphs, section.id)}
       {renderBullets(section.bullets, section.id)}
       {section.subsections?.map((sub, subIndex) => (
@@ -76,7 +76,7 @@ export default function CookiePolicyContent({
       {showTitle && (
         <h2
           id="privacy-policy-heading"
-          className="text-2xl md:text-3xl font-semibold text-navy mb-4 leading-tight"
+          className="mb-6 font-sans text-[2.25rem] font-medium leading-[1.06] tracking-[-0.03em] text-navy md:text-[3rem]"
         >
           {cookiePolicyTitle}
         </h2>

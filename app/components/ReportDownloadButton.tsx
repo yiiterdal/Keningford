@@ -16,8 +16,8 @@ export default function ReportDownloadButton({
 
   const variantClasses =
     variant === 'primary'
-      ? 'border border-navy bg-navy px-5 py-2.5 text-white hover:bg-navy/90'
-      : 'border border-gray-300 px-5 py-2.5 text-navy hover:border-navy hover:bg-gray-50';
+      ? 'border border-navy bg-navy px-6 py-3 text-white hover:bg-navy/90'
+      : 'border border-navy/15 bg-white px-6 py-3 text-navy hover:border-navy/30';
 
   return (
     <a

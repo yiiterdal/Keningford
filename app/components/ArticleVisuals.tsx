@@ -20,11 +20,11 @@ export function ArticleStatsStrip({ stats }: { stats: ArticleStat[] }) {
   if (stats.length === 0) return null;
 
   return (
-    <div className="mb-10 grid grid-cols-1 gap-px overflow-hidden border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat) => (
-        <div key={stat.label} className="bg-gray-50 px-5 py-5 md:px-6 md:py-6">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-gray-500">{stat.label}</p>
-          <p className="mt-2 font-serif text-2xl text-navy md:text-[1.75rem]">{stat.value}</p>
+        <div key={stat.label} className="bg-[#f0f0f0] p-6">
+          <p className="text-[12px] font-medium text-gray-500">{stat.label}</p>
+          <p className="mt-3 font-sans text-[1.75rem] font-medium leading-none tracking-[-0.03em] text-navy md:text-[2rem]">{stat.value}</p>
           {stat.note && <p className="mt-2 text-xs leading-relaxed text-gray-500">{stat.note}</p>}
         </div>
       ))}
@@ -36,9 +36,12 @@ export function ArticleBarChart({ chart }: { chart: ArticleChart }) {
   const max = Math.max(...chart.bars.map((bar) => bar.value), 1);
 
   return (
-    <div className="my-10 border border-gray-200 bg-white p-6 md:p-8">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">Snapshot</p>
-      <h3 className="mt-2 font-serif text-xl text-navy md:text-2xl">{chart.title}</h3>
+    <div className="my-12 bg-[#f0f0f0] p-8 md:p-10">
+      <p className="inline-flex items-center gap-2.5 border border-navy/10 bg-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+        <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+        Snapshot
+      </p>
+      <h3 className="mt-5 font-sans text-xl font-medium tracking-[-0.02em] text-navy md:text-2xl">{chart.title}</h3>
       {chart.caption && <p className="mt-2 text-sm leading-relaxed text-gray-500">{chart.caption}</p>}
 
       <div className="mt-8 space-y-5">
@@ -52,7 +55,7 @@ export function ArticleBarChart({ chart }: { chart: ArticleChart }) {
                   {bar.display ?? String(bar.value)}
                 </span>
               </div>
-              <div className="h-2.5 w-full bg-gray-100">
+              <div className="h-2.5 w-full overflow-hidden bg-white">
                 <div className="h-full bg-navy" style={{ width: `${width}%` }} />
               </div>
             </div>

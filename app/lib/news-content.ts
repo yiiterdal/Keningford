@@ -1,3 +1,16 @@
+export function estimateReadMinutes(content: string): number {
+  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(4, Math.ceil(words / 130));
+}
+
+export function formatInsightDate(date: string): string {
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) return date.toUpperCase();
+  return parsed
+    .toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    .toUpperCase();
+}
+
 export function extractArticleHeadings(content: string): string[] {
   return content
     .split('\n')

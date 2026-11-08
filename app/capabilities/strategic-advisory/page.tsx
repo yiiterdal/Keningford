@@ -3,6 +3,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import SidebarNav from '../../components/SidebarNav';
 import CapabilityCard from '../../components/CapabilityCard';
 import Divider from '../../components/Divider';
+import HomeSectionHeader from '../../components/HomeSectionHeader';
 import CTABlock from '../../components/CTABlock';
 import { unsplashSrc } from '../../lib/image-utils';
 
@@ -35,7 +36,7 @@ export default function StrategicAdvisoryPage() {
         imageAlt="Coastal landscape with horizon and water"
       />
 
-      <section className="py-12 bg-white">
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             <aside className="lg:col-span-1">
@@ -51,7 +52,7 @@ export default function StrategicAdvisoryPage() {
             <div className="lg:col-span-3">
               <div className="prose max-w-none">
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">What We Do</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">What We Do</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     We work with boards, shareholders, and management teams on high-stakes decisions that shape the long-term direction of the business. 
                     Our focus is on capital structure, portfolio configuration, and strategic options that create resilience and optionality.
@@ -64,22 +65,38 @@ export default function StrategicAdvisoryPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Typical Engagements</h2>
-                  <ul className="space-y-3">
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Typical Engagements</h2>
+                  <ul className="space-y-4">
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Capital structure reviews and recommendations on leverage, dividend, and buyback policies</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Strategic alternatives assessments, including sale, IPO, recapitalization, or partnership scenarios</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Board-level advisory on shareholder alignment, governance, and stakeholder communication</span>
                     </li>
-                    <li className="flex gap-4">
-                      <span className="text-navy mt-1">•</span>
+                    <li className="flex gap-3.5">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#f0f0f0] text-navy" aria-hidden>
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
                       <span className="text-gray-700">Investor messaging, positioning, and preparation ahead of capital markets or M&A activity</span>
                     </li>
                   </ul>
@@ -88,7 +105,7 @@ export default function StrategicAdvisoryPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Our Process</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Our Process</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     We start with a fact-based assessment of the company&apos;s financial profile, competitive positioning, and stakeholder expectations. 
                     We then develop scenario analyses and decision frameworks that clarify trade-offs between different strategic paths.
@@ -101,7 +118,7 @@ export default function StrategicAdvisoryPage() {
                 <Divider />
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-semibold text-navy mb-4">Outcomes</h2>
+                  <h2 className="mb-5 font-sans text-[1.75rem] font-medium leading-[1.1] tracking-[-0.02em] text-navy md:text-[2rem]">Outcomes</h2>
                   <p className="text-gray-700 leading-relaxed">
                     Clients gain a clear, shared view of strategic priorities, a capital structure aligned with those priorities, and a roadmap for execution.
                     This enables faster decision-making and stronger alignment between management, shareholders, and financing partners.
@@ -113,10 +130,10 @@ export default function StrategicAdvisoryPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto">
-          <h2 className="text-2xl font-semibold text-navy mb-8">Related Capabilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <HomeSectionHeader pill="Capabilities" title="Related capabilities." />
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {relatedCapabilities.map((capability, index) => (
               <CapabilityCard
                 key={index}

@@ -20,7 +20,7 @@ function TopicPills({ item }: { item: NewsItem }) {
       {topics.map((topic) => (
         <li
           key={topic}
-          className="border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-medium text-gray-600"
+          className="bg-[#f0f0f0] px-3 py-1 text-[12px] font-medium text-gray-600"
         >
           {topic.length > 48 ? `${topic.slice(0, 46)}…` : topic}
         </li>
@@ -59,10 +59,10 @@ export default function NewsListing({ items, showFeatured = true }: NewsListingP
               </p>
             )}
             <NewsMeta category={featured.category} date={featured.date} className="mb-3" />
-            <h2 className="font-serif text-2xl leading-snug text-navy group-hover:underline md:text-3xl lg:text-[2rem]">
+            <h2 className="font-sans text-[1.75rem] font-medium leading-[1.12] tracking-[-0.02em] text-navy group-hover:underline md:text-[2.25rem] lg:text-[2.5rem]">
               {featured.title}
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-gray-600 md:text-base">{featured.excerpt}</p>
+            <p className="mt-5 text-base leading-[1.5] tracking-[-0.01em] text-gray-500">{featured.excerpt}</p>
             <TopicPills item={featured} />
             <div className="mt-6">
               <NewsReadMore />
@@ -72,7 +72,7 @@ export default function NewsListing({ items, showFeatured = true }: NewsListingP
       )}
 
       {secondary.length > 0 && (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
           {secondary.map((item) => (
             <Link
               key={item.slug}
@@ -86,17 +86,17 @@ export default function NewsListing({ items, showFeatured = true }: NewsListingP
                 aspectClassName="aspect-[16/10]"
                 clientLogo={item.clientLogo}
               />
-              <div className="flex flex-1 flex-col pt-4">
+              <div className="flex flex-1 flex-col pt-5">
                 {item.eyebrow && (
                   <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.12em] text-[#BF9B5F]">
                     {item.eyebrow}
                   </p>
                 )}
                 <NewsMeta category={item.category} date={item.date} className="mb-2" />
-                <h3 className="text-lg font-semibold leading-snug text-navy group-hover:underline">
+                <h3 className="font-sans text-lg font-medium leading-[1.3] tracking-[-0.01em] text-navy group-hover:underline md:text-xl">
                   {item.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600 line-clamp-3">
+                <p className="mt-3 flex-1 text-[15px] leading-[1.5] tracking-[-0.02em] text-gray-500 line-clamp-3">
                   {item.excerpt}
                 </p>
                 <div className="mt-4">

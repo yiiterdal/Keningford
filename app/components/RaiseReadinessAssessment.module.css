@@ -7,7 +7,7 @@
   --border: #e5e7eb;
   --border-strong: #d1d5db;
   --fill-accent: #001f4d;
-  --radius: 4px;
+  --radius: 0;
   --bg-warning: #faf8f3;
   --border-warning: #c9a227;
   --bg-success: #f4f8f5;
@@ -19,9 +19,8 @@
 
 .card {
   background: var(--surface-2);
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 3px rgba(0, 31, 77, 0.04), 0 8px 24px rgba(0, 31, 77, 0.06);
-  padding: 2rem 2rem 2.25rem;
+  border-radius: 0;
+  padding: 2.5rem 2.5rem 2.75rem;
 }
 
 @media (max-width: 640px) {
@@ -58,7 +57,7 @@
 
 .progBar {
   background: var(--surface-1);
-  border-radius: 99px;
+  border-radius: 0;
   height: 3px;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -67,7 +66,7 @@
 .progFill {
   background: var(--fill-accent);
   height: 3px;
-  border-radius: 99px;
+  border-radius: 0;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -79,7 +78,7 @@
 .stepDot {
   flex: 1;
   height: 3px;
-  border-radius: 99px;
+  border-radius: 0;
   background: var(--surface-1);
   transition: background 0.3s;
 }
@@ -123,7 +122,8 @@
 }
 
 .qTitle {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
   font-size: 1.375rem;
   font-weight: 500;
   color: var(--text-primary);
@@ -244,6 +244,7 @@
   background: #001f4d;
   color: #ffffff;
   border: none;
+  border-radius: 0;
   cursor: pointer;
   transition: background 0.15s;
   text-decoration: none;
@@ -259,6 +260,7 @@
 }
 
 .btnSecondary {
+  border-radius: 0;
   padding: 0.7rem 1.25rem;
   font-size: 13px;
   font-weight: 500;
@@ -353,7 +355,8 @@
 }
 
 .rVerdict {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--text-primary);
@@ -441,7 +444,8 @@
 }
 
 .ctaTitle {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
   font-size: 1.25rem;
   font-weight: 500;
   color: #ffffff;
@@ -468,6 +472,7 @@
   background: #ffffff;
   color: #001f4d;
   border: none;
+  border-radius: 0;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s;

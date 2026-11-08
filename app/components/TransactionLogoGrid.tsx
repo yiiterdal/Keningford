@@ -41,7 +41,7 @@ function LogoPlate({ company }: { company: TransactionPortfolioCompany }) {
           />
         </div>
       ) : (
-        <p className="line-clamp-2 px-4 text-center font-serif text-[1.15rem] font-medium leading-snug tracking-tight text-white">
+        <p className="line-clamp-2 px-4 text-center font-sans text-[1.15rem] font-medium leading-snug tracking-[-0.02em] text-white">
           {company.wordmark}
         </p>
       )}
@@ -51,14 +51,14 @@ function LogoPlate({ company }: { company: TransactionPortfolioCompany }) {
 
 function LogoCard({ company }: { company: TransactionPortfolioCompany }) {
   return (
-    <article className="flex h-[16.5rem] w-[16.5rem] shrink-0 flex-col overflow-hidden border border-gray-200 bg-white md:w-[17.5rem]">
+    <article className="flex h-[16.5rem] w-[16.5rem] shrink-0 flex-col overflow-hidden border border-navy/[0.08] bg-white md:w-[17.5rem]">
       <LogoPlate company={company} />
 
       <div className="flex flex-1 flex-col border-t border-gray-100 px-5 py-5 text-center">
         <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#BF9B5F]">
           {company.industry}
         </p>
-        <h3 className="mt-2 line-clamp-2 text-[15px] font-semibold leading-snug text-navy">
+        <h3 className="mt-2 line-clamp-2 text-[15px] font-medium leading-snug text-navy">
           {company.name}
         </h3>
         {(company.detail || company.hq || company.founded) && (
@@ -86,16 +86,21 @@ export default function TransactionLogoGrid({ companies }: TransactionLogoGridPr
   };
 
   const arrowClassName =
-    'absolute top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-gray-200 bg-white text-navy shadow-sm transition-colors hover:border-gray-300 hover:bg-gray-50';
+    'absolute top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-navy/10 bg-white text-navy shadow-sm transition-colors hover:border-navy/25 hover:bg-gray-50';
 
   return (
-    <section className="mt-16 border-t border-gray-200 pt-12 md:mt-20 md:pt-16">
-      <div className="mb-8 md:mb-10">
-        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">
-          Closed Transactions
-        </p>
-        <h2 className="text-xl font-semibold text-navy md:text-2xl">Companies we have worked with</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600 md:text-[15px]">
+    <section>
+      <div className="mb-12 grid grid-cols-1 items-end gap-8 md:mb-14 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-[#eef1f5] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+            <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+            Closed Transactions
+          </p>
+          <h2 className="max-w-[550px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem] lg:text-[3rem]">
+            Companies we have worked with.
+          </h2>
+        </div>
+        <p className="max-w-[350px] text-base leading-[1.4] tracking-[-0.01em] text-gray-500 lg:col-span-5 lg:justify-self-end">
           A selection of companies across technology, healthcare, industrials, energy, and private
           markets where our team has advised on capital, strategic, or transaction matters.
         </p>

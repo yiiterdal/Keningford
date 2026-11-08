@@ -3,19 +3,19 @@ export const IMAGE_BLUR_DATA_URL =
   'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A0AAA//Z';
 
 /** Next/Image encoder quality (1–100) */
-export const IMAGE_QUALITY = 80;
+export const IMAGE_QUALITY = 100;
 /** Higher quality for full-bleed hero bands */
-export const HERO_IMAGE_QUALITY = 95;
+export const HERO_IMAGE_QUALITY = 100;
 
-/** Remote source widths — balance quality and payload */
-export const REMOTE_HERO_WIDTH = 1920;
-export const REMOTE_EDITORIAL_WIDTH = 1920;
+/** Remote source widths, sized for 4K / retina displays */
+export const REMOTE_HERO_WIDTH = 3840;
+export const REMOTE_EDITORIAL_WIDTH = 3840;
 export const REMOTE_FULL_WIDTH = REMOTE_HERO_WIDTH;
-export const REMOTE_CARD_WIDTH = 1280;
-export const REMOTE_NEWS_WIDTH = 1280;
+export const REMOTE_CARD_WIDTH = 2560;
+export const REMOTE_NEWS_WIDTH = 2560;
 
 /** Unsplash CDN quality (1–100) */
-const UNSPLASH_QUALITY = 80;
+const UNSPLASH_QUALITY = 100;
 
 export const IMAGE_SIZES = {
   /** Full-viewport heroes — allow up to 4K so retina desktops stay sharp */
@@ -52,12 +52,12 @@ export function isFullBleedImage(_src: string): boolean {
 }
 
 /** Default home hero — aerial city skyline photograph */
-export const DEFAULT_HERO_IMAGE = '/images/editorial/global-reach.jpg';
+export const DEFAULT_HERO_IMAGE = '/images/editorial/global-reach-hq.jpg';
 export const DEFAULT_HERO_IMAGE_ALT =
   'Aerial view of a major city skyline at golden hour';
 
 /** Capabilities page hero — Manhattan skyline at golden hour */
-export const CAPABILITIES_HERO_IMAGE = '/images/editorial/capabilities-hero.jpg';
+export const CAPABILITIES_HERO_IMAGE = '/images/editorial/capabilities-hero-hq.jpg';
 export const CAPABILITIES_HERO_IMAGE_ALT =
   'Manhattan skyline with the Empire State Building at golden hour';
 

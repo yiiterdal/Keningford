@@ -19,7 +19,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 md:py-28 bg-white">
       <div className="container mx-auto">
         <div className="max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-semibold text-navy mb-8">About Us</h2>
+          <h2 className="text-3xl md:text-4xl font-medium text-navy mb-8">About Us</h2>
           
           <div className="space-y-6 text-gray-700 leading-relaxed mb-16">
             <p className="text-lg">
@@ -36,7 +36,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
             {differentiators.map((diff, index) => (
               <div key={index}>
-                <h3 className="text-lg font-semibold text-navy mb-3">{diff.title}</h3>
+                <h3 className="text-lg font-medium text-navy mb-3">{diff.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
                   {diff.description}
                 </p>

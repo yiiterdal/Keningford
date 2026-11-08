@@ -17,7 +17,7 @@ export default function ContactForm() {
 
   if (sent) {
     return (
-      <div className="p-6 bg-gray-50 border border-gray-200">
+      <div className="p-6 bg-[#f0f0f0] border border-gray-200">
         <p className="text-gray-700">Thank you. We will respond shortly.</p>
       </div>
     );

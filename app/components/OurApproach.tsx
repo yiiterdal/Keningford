@@ -39,7 +39,7 @@ export default function OurApproach() {
           style={headerAnimation.style}
           className="mb-16 md:mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-navy mb-6">Our Approach</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-navy mb-6">Our Approach</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
             A disciplined, client-focused methodology that emphasizes strategic clarity, execution excellence, and long-term value creation.
           </p>
@@ -57,7 +57,7 @@ export default function OurApproach() {
                 <div className="text-5xl font-light text-gray-300 mb-4 tracking-tight">
                   {principle.number}
                 </div>
-                <h3 className="text-lg font-semibold text-navy mb-3">
+                <h3 className="text-lg font-medium text-navy mb-3">
                   {principle.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">

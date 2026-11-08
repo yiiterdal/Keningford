@@ -1,10 +1,26 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getLatestNews } from '../data/news';
-import NewsCardImage from './NewsCardImage';
-import NewsMeta from './NewsMeta';
-import NewsReadMore from './NewsReadMore';
 import { IMAGE_SIZES } from '../lib/image-utils';
-import { extractArticleHeadings } from '../lib/news-content';
+import { estimateReadMinutes, formatInsightDate } from '../lib/news-content';
+
+const HOMEPAGE_IMAGES: Record<string, { src: string; alt: string; position: string }> = {
+  'vertical-ai-capital-trajectory-h2-2026': {
+    src: '/images/home/news-meeting.jpg',
+    alt: 'Two executives in discussion at a table overlooking the city',
+    position: 'center',
+  },
+  'healthcare-ai-equity-what-round-data-shows': {
+    src: '/images/home/news-coffee.jpg',
+    alt: 'Hands holding a cup of coffee during a working conversation',
+    position: 'center 62%',
+  },
+  'family-office-allocation-shift-h2-2026': {
+    src: '/images/home/news-towers.jpg',
+    alt: 'Glass office towers against an overcast sky',
+    position: 'center 40%',
+  },
+};
 
 export default function NewsSection() {
   const homepageHiddenSlugs = new Set([
@@ -13,99 +29,62 @@ export default function NewsSection() {
   ]);
   const latestNews = getLatestNews(6)
     .filter((item) => !homepageHiddenSlugs.has(item.slug))
-    .slice(0, 4);
-  const [featured, ...rest] = latestNews;
+    .slice(0, 3);
 
-  if (!featured) return null;
+  if (latestNews.length === 0) return null;
 
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-8">
-        <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="mb-4 text-3xl font-semibold text-navy md:text-4xl">News & Insights</h2>
-            <p className="max-w-2xl text-lg leading-relaxed text-gray-600">
-              Perspectives on markets, transactions, and developments from Keningford Partners.
-            </p>
-          </div>
-          <Link href="/news" className="shrink-0 text-sm font-medium text-navy hover:underline">
-            View all news →
-          </Link>
+        <div className="mb-14 text-center md:mb-16">
+          <p className="mb-6 inline-flex items-center gap-2.5 border border-navy/10 bg-[#eef1f5] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy md:text-[11px]">
+            <span className="h-1.5 w-1.5 shrink-0 bg-[#BF9B5F]" aria-hidden />
+            Insights
+          </p>
+          <h2 className="mx-auto max-w-[700px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem] lg:text-[3rem]">
+            Perspectives on markets and transactions.
+          </h2>
         </div>
 
-        <Link
-          href={`/news/${featured.slug}`}
-          className="group mb-12 grid grid-cols-1 gap-8 border-b border-gray-200 pb-12 md:mb-14 md:grid-cols-12 md:gap-10 md:pb-14"
-        >
-          <div className="md:col-span-7">
-            <NewsCardImage
-              src={featured.imageUrl}
-              alt={featured.imageAlt}
-              priority
-              sizes={IMAGE_SIZES.newsList}
-              aspectClassName="aspect-[16/10] md:aspect-[21/12]"
-              clientLogo={featured.clientLogo}
-            />
-          </div>
-          <div className="flex flex-col justify-center md:col-span-5">
-            {featured.eyebrow && (
-              <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#BF9B5F]">
-                {featured.eyebrow}
-              </p>
-            )}
-            <NewsMeta category={featured.category} date={featured.date} className="mb-3" />
-            <h3 className="font-serif text-2xl leading-snug text-navy group-hover:underline md:text-[1.75rem]">
-              {featured.title}
-            </h3>
-            <p className="mt-4 text-[15px] leading-relaxed text-gray-600">{featured.excerpt}</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {(featured.highlights ?? extractArticleHeadings(featured.content))
-                .slice(0, 3)
-                .map((topic) => (
-                  <li
-                    key={topic}
-                    className="border border-gray-200 bg-gray-50 px-2.5 py-1 text-[11px] font-medium text-gray-600"
-                  >
-                    {topic.length > 42 ? `${topic.slice(0, 40)}…` : topic}
-                  </li>
-                ))}
-            </ul>
-            <div className="mt-6">
-              <NewsReadMore />
-            </div>
-          </div>
-        </Link>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
-          {rest.map((item) => (
-            <article key={item.slug} className="h-full">
-              <Link
-                href={`/news/${item.slug}`}
-                className="group flex h-full flex-col border-b border-gray-200 pb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
-              >
-                <NewsCardImage
-                  src={item.imageUrl}
-                  alt={item.imageAlt}
-                  clientLogo={item.clientLogo}
-                />
-                <div className="flex flex-1 flex-col pt-4">
-                  {item.eyebrow && (
-                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#BF9B5F]">
-                      {item.eyebrow}
-                    </p>
-                  )}
-                  <NewsMeta category={item.category} date={item.date} className="mb-3" />
-                  <h3 className="mb-3 text-lg font-semibold leading-snug text-navy group-hover:underline">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+          {latestNews.map((item) => {
+            const image = HOMEPAGE_IMAGES[item.slug] ?? { src: item.imageUrl, alt: item.imageAlt, position: 'center' };
+            const minutes = estimateReadMinutes(item.content);
+            return (
+              <article key={item.slug}>
+                <Link
+                  href={`/news/${item.slug}`}
+                  className="group flex h-full flex-col border-b border-gray-200 pb-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-4"
+                >
+                  <div className="relative mb-5 aspect-[16/9] overflow-hidden bg-[#f0f0f0]">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes={IMAGE_SIZES.newsCard}
+                      quality={100}
+                      style={{ objectPosition: image.position }}
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    />
+                  </div>
+                  <h3 className="font-sans text-lg font-medium leading-[1.3] tracking-[-0.01em] text-navy md:text-xl">
                     {item.title}
                   </h3>
-                  <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-600 line-clamp-3">
-                    {item.excerpt}
+                  <p className="mt-auto flex items-center pt-8 text-[11px] font-medium uppercase tracking-[0.12em] text-gray-500">
+                    {formatInsightDate(item.date)}
+                    <span className="mx-3 h-px w-4 bg-gray-300" aria-hidden />
+                    {minutes} MIN READ
                   </p>
-                  <NewsReadMore />
-                </div>
-              </Link>
-            </article>
-          ))}
+                </Link>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link href="/news" className="text-sm font-medium text-navy hover:underline">
+            View all insights
+          </Link>
         </div>
       </div>
     </section>

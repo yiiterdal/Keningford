@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './RaiseReadinessAssessment.module.css';
-import { SCHEDULE_HREF } from '../lib/calendly';
+import { SCHEDULE_HREF } from '../lib/scheduling';
 
 type QuestionOption = {
   label: string;

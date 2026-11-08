@@ -13,7 +13,7 @@ export default function SelectedExperience() {
             <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#BF9B5F]">
               Select Transactions
             </p>
-            <h2 className="text-2xl font-semibold text-navy md:text-3xl">Representative deal experience</h2>
+            <h2 className="text-2xl font-medium text-navy md:text-3xl">Representative deal experience</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
               A selection of mandates across M&A, capital raising, and strategic advisory.
             </p>
