@@ -22,7 +22,7 @@ export const transactions: Transaction[] = [
     type: 'M&A',
     sector: 'Technology',
     description: 'Technology Platform',
-    value: '$800M',
+    value: 'Undisclosed',
     valueLabel: 'Enterprise Value',
     details: {
       overview:
@@ -40,7 +40,7 @@ export const transactions: Transaction[] = [
     type: 'Capital Raising',
     sector: 'Technology',
     description: 'Vertical Software Platform',
-    value: '$150M',
+    value: 'Undisclosed',
     valueLabel: 'Growth Equity',
     details: {
       overview:
@@ -58,7 +58,7 @@ export const transactions: Transaction[] = [
     type: 'Capital Raising',
     sector: 'Real Estate',
     description: 'Real Estate Portfolio',
-    value: '$500M',
+    value: 'Undisclosed',
     valueLabel: 'Total Financing',
     details: {
       overview:
@@ -76,7 +76,7 @@ export const transactions: Transaction[] = [
     type: 'M&A',
     sector: 'Healthcare',
     description: 'Healthcare Services Platform',
-    value: '$800M',
+    value: 'Undisclosed',
     valueLabel: 'Purchase Price',
     details: {
       overview:
@@ -172,8 +172,3 @@ export const transactionDealTypes = [
   'All',
   ...Array.from(new Set(transactions.map((transaction) => transaction.type))),
 ];
-
-export const transactionStats = {
-  headline: '$2.5B+',
-  label: 'in representative transaction value',
-};

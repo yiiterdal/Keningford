@@ -5,7 +5,7 @@ import ImageBand from '../components/ImageBand';
 import TransactionsGrid from '../components/TransactionsGrid';
 import TransactionLogoGrid from '../components/TransactionLogoGrid';
 import { transactionPortfolio } from '../data/transaction-portfolio';
-import { transactionStats, transactions } from '../data/transactions';
+import { transactions } from '../data/transactions';
 import { unsplashSrc } from '../lib/image-utils';
 
 export default function TransactionsPage() {
@@ -29,17 +29,8 @@ export default function TransactionsPage() {
         image="/images/bands/towers-lit-v2.jpg"
         imageAlt="Office towers with illuminated windows at night"
         pill="Track Record"
-        title={
-          <>
-            <span className="block text-[3.5rem] leading-none tracking-[-0.04em] md:text-[5rem] lg:text-[6rem]">
-              {transactionStats.headline}
-            </span>
-            <span className="mt-4 block text-[1.5rem] leading-[1.2] text-white/80 md:text-[2rem]">
-              {transactionStats.label}
-            </span>
-          </>
-        }
-        description="Figures may reflect completed, in-progress, or confidential engagements across Keningford Partners and affiliated advisors."
+        title="Sell-side, capital raising, strategic, and restructuring mandates across sectors."
+        description="Transactions shown may reflect completed, in-progress, or confidential engagements across Keningford Partners and affiliated advisors."
         primaryCta={{ label: 'Discuss a mandate →', href: '/contact' }}
         secondaryCta={{ label: 'Our capabilities', href: '/capabilities' }}
       />

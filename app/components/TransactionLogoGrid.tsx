@@ -61,13 +61,9 @@ function LogoCard({ company }: { company: TransactionPortfolioCompany }) {
         <h3 className="mt-2 line-clamp-2 text-[15px] font-medium leading-snug text-navy">
           {company.name}
         </h3>
-        {(company.detail || company.hq || company.founded) && (
+        {(company.detail || company.hq) && (
           <p className="mt-auto pt-3 text-[11px] uppercase tracking-[0.12em] text-gray-400">
-            {company.detail
-              ? company.detail
-              : [company.hq, company.founded ? `Est. ${company.founded}` : null]
-                  .filter(Boolean)
-                  .join(' · ')}
+            {company.detail ?? company.hq}
           </p>
         )}
       </div>

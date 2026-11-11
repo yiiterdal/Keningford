@@ -28,7 +28,7 @@ export const industries: Industry[] = [
     overview:
       'Healthcare services remains among the most active sectors in private capital. Sponsors and strategics compete for platforms with recurring revenue, clinical quality, and density advantages. Valuation dispersion between market leaders and the broader field has rarely been wider.',
     recentDeals: [
-      'Multi-site healthcare services platform, $800M sell-side process',
+      'Multi-site healthcare services platform, sell-side process',
       'Outpatient facilities roll-up, growth equity and add-on financing',
       'Behavioral health platform, strategic buyer competition',
     ],
@@ -116,8 +116,8 @@ export const industries: Industry[] = [
     overview:
       'Software and technology-enabled services attract both financial and strategic capital, but investors are selective. Businesses with durable retention, expanding ARPU, and credible paths to profitable growth command premium multiples.',
     recentDeals: [
-      'Vertical software platform, $150M growth equity financing',
-      'Technology platform, $800M strategic sale process',
+      'Vertical software platform, growth equity financing',
+      'Technology platform, strategic sale process',
       'Workflow software company, minority recapitalization',
     ],
     capitalTrends: [
@@ -131,7 +131,7 @@ export const industries: Industry[] = [
       'Capital structure advisory for founder-led businesses',
     ],
     articles: [
-      { title: 'Keningford Advises on $150M Growth Equity Financing', href: '/news/keningford-advises-growth-equity-financing', type: 'News' },
+      { title: 'Keningford Advises on Growth Equity Financing', href: '/news/keningford-advises-growth-equity-financing', type: 'News' },
     ],
     imageUrl: unsplashSrc('photo-1451187580459-43490279c0fa'),
     imageAlt: 'Digital technology network and enterprise software infrastructure',

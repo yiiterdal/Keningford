@@ -52,7 +52,13 @@ export default function TeamGrid({ members }: TeamGridProps) {
         ))}
       </div>
       {bottomRow.length > 0 && (
-        <div className="mx-auto grid w-full grid-cols-1 items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:w-[calc(75%-0.1875rem)]">
+        <div
+          className={
+            bottomRow.length >= 4
+              ? 'grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2 xl:grid-cols-4'
+              : 'mx-auto grid w-full grid-cols-1 items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:w-[calc(75%-0.1875rem)]'
+          }
+        >
           {bottomRow.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}

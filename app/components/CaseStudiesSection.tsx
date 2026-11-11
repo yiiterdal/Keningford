@@ -4,21 +4,21 @@ export default function CaseStudiesSection() {
   const cases = [
     {
       title: 'Technology Platform Growth Financing',
-      result: '$150M Series C',
+      result: 'Growth Equity',
       description: 'Led strategic equity raise for a high-growth technology platform, enabling international expansion and strengthening market position. Structured a syndicate of institutional investors and negotiated favorable terms while preserving founder control.',
       testimonial: 'Exceptional execution and deep market knowledge. The team delivered exactly what we needed.',
       client: 'CEO, Leading Technology Platform'
     },
     {
       title: 'Healthcare M&A Transaction',
-      result: '$800M Acquisition',
+      result: 'Sell-side M&A',
       description: 'Managed competitive sale process for a healthcare services platform, achieving premium valuation through strategic buyer identification and optimal timing. Coordinated due diligence and negotiated transaction terms with multiple parties.',
       testimonial: 'Strategic guidance throughout the entire process. Their expertise made a material difference.',
       client: 'Chairman, Healthcare Group'
     },
     {
       title: 'Real Estate Capital Structure Optimization',
-      result: '$500M Debt Refinancing',
+      result: 'Debt Refinancing',
       description: 'Optimized capital structure for a real estate portfolio through comprehensive debt refinancing. Secured favorable terms, extended maturities, and improved covenant flexibility to support long-term strategic initiatives.',
       testimonial: 'Delivered exceptional outcomes exceeding our expectations. Highly professional and results-oriented.',
       client: 'CFO, Real Estate Fund'

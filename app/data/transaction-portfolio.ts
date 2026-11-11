@@ -3,8 +3,7 @@ export interface TransactionPortfolioCompany {
   website: string;
   industry: string;
   hq?: string;
-  founded?: string;
-  /** Deal / mandate line when HQ/founded is not the primary detail */
+  /** Deal / mandate line when HQ is not the primary detail */
   detail?: string;
   wordmark: string;
   /** Real brand logo when available; otherwise the wordmark plate is used */
@@ -25,7 +24,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.argoid.ai',
     industry: 'Artificial Intelligence',
     hq: 'San Francisco, CA',
-    founded: '2018',
     wordmark: 'Argoid',
     logoUrl: '/images/transactions/argoid-v3.png',
     logoOnDark: false,
@@ -35,7 +33,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.pmdistribution.com',
     industry: 'Healthcare Distribution',
     hq: 'Riverton, UT',
-    founded: '2010',
     wordmark: 'Premier Medical',
     logoUrl: '/images/transactions/premier-medical-distribution.png',
   },
@@ -52,7 +49,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.3deo.co',
     industry: 'Advanced Manufacturing',
     hq: 'Torrance, CA',
-    founded: '2016',
     wordmark: '3DEO',
     logoUrl: '/images/transactions/3deo.png',
   },
@@ -69,7 +65,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.3clogic.com',
     industry: 'Enterprise Software',
     hq: 'Rockville, MD',
-    founded: '2005',
     wordmark: '3CLogic',
     logoUrl: '/images/transactions/3clogic.png',
   },
@@ -86,7 +81,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.dealertradenetwork.com',
     industry: 'B2B Marketplace Software',
     hq: 'Louisville, KY',
-    founded: '2004',
     wordmark: 'Dealer Trade',
     logoUrl: '/images/transactions/dealer-trade-network.png',
   },
@@ -111,7 +105,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.lovo.ai',
     industry: 'AI Voice Technology',
     hq: 'Berkeley, CA',
-    founded: '2016',
     wordmark: 'Lovo',
     logoUrl: '/images/transactions/lovo.png',
   },
@@ -128,7 +121,6 @@ export const transactionPortfolio: TransactionPortfolioCompany[] = [
     website: 'https://www.weldbot.com',
     industry: 'Industrial Robotics',
     hq: 'Akron, OH',
-    founded: '2017',
     wordmark: 'WeldBot',
     logoUrl: '/images/transactions/weldbot.png',
   },

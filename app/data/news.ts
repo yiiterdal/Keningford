@@ -479,10 +479,10 @@ For more information, visit keningfordpartners.com or contact the firm through i
   },
   {
     slug: 'keningford-advises-growth-equity-financing',
-    title: 'Keningford Partners Advises on $150 Million Growth Equity Financing',
+    title: 'Keningford Partners Advises Vertical Software Platform on Growth Equity Financing',
     excerpt:
-      'Keningford Partners served as exclusive financial advisor to a vertical software platform in a $150 million growth equity round led by a North American institutional syndicate.',
-    content: `NEW YORK, February 28, 2026. Keningford Partners announced today that it served as exclusive financial advisor to a leading vertical software platform (the "Company") in connection with its $150 million growth equity financing. The transaction closed following a targeted six-month process that engaged a select group of institutional growth equity investors.
+      'Keningford Partners served as exclusive financial advisor to a vertical software platform in a growth equity round led by a North American institutional syndicate.',
+    content: `NEW YORK, February 28, 2026. Keningford Partners announced today that it served as exclusive financial advisor to a leading vertical software platform (the "Company") in connection with its growth equity financing. The transaction closed following a targeted six-month process that engaged a select group of institutional growth equity investors.
 
 Keningford Partners was led on the mandate by R. Bennett, Partner, with support from the firm's capital raising and M&A teams in New York and London.
 

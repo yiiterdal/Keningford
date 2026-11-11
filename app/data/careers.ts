@@ -65,10 +65,10 @@ export const careerPartners: CareerPartner[] = [
     imageUrl: '/images/team/yigit-erdal.jpg',
   },
   {
-    name: 'George Dorkhom',
-    title: 'Senior Advisor',
-    bio: 'Advises on industrials, aerospace and defense, and technology mandates, with three decades leading business transformation and M&A globally.',
-    imageUrl: '/images/team/george-dorkhom.jpg',
+    name: 'Adam Thompson',
+    title: 'Vice President',
+    bio: 'Originates capital raising and sell-side M&A mandates with founders and business owners. Former Chief Operating Officer and plc Board Director of Utilitywise, which he helped lead through its admission to AIM.',
+    imageUrl: '/images/team/adam-thompson.jpg',
   },
   {
     name: 'Kevin Lark',
@@ -81,6 +81,12 @@ export const careerPartners: CareerPartner[] = [
     title: 'Director, Business Development',
     bio: 'Leads client development and institutional outreach across North America and Europe.',
     imageUrl: '/images/team/daria-kyrychenko.jpg',
+  },
+  {
+    name: 'George Dorkhom',
+    title: 'Senior Advisor',
+    bio: 'Advises on industrials, aerospace and defense, and technology mandates, with three decades leading business transformation and M&A globally.',
+    imageUrl: '/images/team/george-dorkhom.jpg',
   },
   {
     name: 'Jason Atyabi, CPA',

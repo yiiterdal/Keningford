@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { transactions, transactionStats } from '../data/transactions';
+import { transactions } from '../data/transactions';
 import { useFadeInAnimation } from '../hooks/useFadeInAnimation';
 import { IMAGE_QUALITY } from '../lib/image-utils';
 import HomeSectionHeader from './HomeSectionHeader';
@@ -180,10 +180,10 @@ export default function HomeCaseStudies() {
           <div className="mt-3 flex flex-col gap-5 bg-[#f0f0f0] px-6 py-5 md:flex-row md:items-center md:justify-between md:px-8">
             <div>
               <p className="font-sans text-xl font-medium tracking-[-0.03em] text-navy">
-                {transactionStats.headline} {transactionStats.label}
+                Representative mandates across sectors
               </p>
               <p className="mt-1 text-[15px] tracking-[-0.02em] text-gray-500">
-                Sell-side, capital raising, strategic, and restructuring mandates across sectors.
+                Sell-side, capital raising, strategic, and restructuring mandates.
               </p>
             </div>
             <Link
