@@ -68,7 +68,7 @@ export const careerPartners: CareerPartner[] = [
     name: 'Adam Thompson',
     title: 'Vice President',
     bio: 'Originates capital raising and sell-side M&A mandates with founders and business owners. Former Chief Operating Officer and plc Board Director of Utilitywise, which he helped lead through its admission to AIM.',
-    imageUrl: '/images/team/adam-thompson.jpg',
+    imageUrl: '/images/team/adam-thompson-v2.jpg',
   },
   {
     name: 'Kevin Lark',
