@@ -80,7 +80,6 @@ export function faqPageSchema(faq: InvestorGuideFaqItem[]) {
 
 export function newsArticleSchema(article: NewsItem) {
   const datePublished = new Date(article.date).toISOString();
-  const isFounderArticle = article.slug === 'keningford-partners-launches-in-new-york';
 
   return {
     '@context': 'https://schema.org',
@@ -91,13 +90,11 @@ export function newsArticleSchema(article: NewsItem) {
     image: article.imageUrl.startsWith('http')
       ? article.imageUrl
       : `${SITE_URL}${article.imageUrl}`,
-    author: isFounderArticle
-      ? personSchema
-      : {
-          '@type': 'Organization',
-          name: 'Keningford Partners',
-          url: SITE_URL,
-        },
+    author: {
+      '@type': 'Organization',
+      name: 'Keningford Partners',
+      url: SITE_URL,
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Keningford Partners',
