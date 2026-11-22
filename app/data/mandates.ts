@@ -9,22 +9,18 @@ export interface RecentMandate {
 
 export const recentMandates: RecentMandate[] = [
   {
-    client: 'EnergyCite',
+    client: 'Energy Technology Platform',
     type: 'Capital Raising',
     description:
-      'Capital raise for EnergyCite Inc. - patented smart-meter IP and an AI conservation app delivering real-time kWh usage, billing visibility, and multi-rate pricing to U.S. residential utility customers.',
+      'Confidential capital raise for an energy technology platform focused on conservation software and usage visibility for residential utility customers. Client identity and size undisclosed.',
     status: 'Active',
-    href: '/news/keningford-advises-energycite-capital-raise',
-    logo: { src: '/images/news/energycite-logo.png', alt: 'EnergyCite logo' },
   },
   {
-    client: 'EcoPha Biotech',
+    client: 'Biotech Platform',
     type: 'Capital Raising',
     description:
-      'Cross-border raise for a dual-output biotech platform - sustainable bioplastics and aviation fuel from one non-edible feedstock, with a Queensland flagship backed by government co-funding.',
+      'Confidential cross-border raise for a dual-output biotech platform addressing sustainable materials and aviation fuel. Client identity and size undisclosed.',
     status: 'Active',
-    href: '/news/keningford-advises-ecopha-biotech-capital-raise',
-    logo: { src: '/images/news/ecopha-logo.png', alt: 'EcoPha Biotech logo' },
   },
   {
     client: 'Healthcare Services Platform',

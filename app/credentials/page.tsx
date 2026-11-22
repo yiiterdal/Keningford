@@ -2,14 +2,14 @@ import Link from 'next/link';
 import JsonLd from '../components/JsonLd';
 import { Eyebrow, FaqList, PAGE_BG, TalkToPersonBand, faqSchema } from '../components/CredentialsBlocks';
 import { companyFacts, companyRegistry, contactChannels, credentialsFaq, verificationSources } from '../data/credentials';
-import { transactionPortfolio } from '../data/transaction-portfolio';
+import { transactions } from '../data/transactions';
 
 export const metadata = {
   title: 'Credentials & Company Information',
   description: `${companyRegistry.legalName} is a Delaware-registered capital advisory firm based in New York. Our company registration, team, track record, and how to verify us independently.`,
 };
 
-const deals = transactionPortfolio.filter((company) => company.detail);
+const deals = transactions.filter((transaction) => transaction.value !== 'Active').slice(0, 5);
 
 const dueDiligence = [
   ...verificationSources,
@@ -99,18 +99,19 @@ export default function CredentialsPage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {deals.map((deal) => {
-              const [amount, type] = deal.detail!.split(' · ');
-              return (
-                <div key={deal.name} className="flex h-full flex-col bg-white p-7">
-                  <p className="font-sans text-[2rem] font-medium leading-none tracking-[-0.03em] text-navy">{amount}</p>
-                  <p className="mt-3 text-[15px] text-gray-600">{type}</p>
-                  <p className="mt-auto pt-8 text-[15px] font-medium text-navy">{deal.name}</p>
-                  <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-gray-500">{deal.industry}</p>
-                </div>
-              );
-            })}
+            {deals.map((deal) => (
+              <div key={`${deal.description}-${deal.type}`} className="flex h-full flex-col bg-white p-7">
+                <p className="font-sans text-[2rem] font-medium leading-none tracking-[-0.03em] text-navy">{deal.value}</p>
+                <p className="mt-3 text-[15px] text-gray-600">{deal.valueLabel}</p>
+                <p className="mt-auto pt-8 text-[15px] font-medium text-navy">{deal.description}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-gray-500">{deal.sector}</p>
+              </div>
+            ))}
           </div>
+          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-gray-500">
+            Client names and transaction values are confidential. The examples above are anonymized representatives of
+            mandate types across our practice.
+          </p>
         </div>
       </section>
 
