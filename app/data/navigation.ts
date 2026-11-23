@@ -2,7 +2,6 @@ export const primaryNavLinks = [
   { href: '/about', label: 'About' },
   { href: '/capabilities', label: 'Capabilities' },
   { href: '/industries', label: 'Industries' },
-  { href: '/transactions', label: 'Transactions' },
   { href: '/insights', label: 'Insights' },
   { href: '/careers', label: 'Careers' },
 ] as const;
@@ -35,7 +34,6 @@ export const heroOverlayPaths = [
   '/',
   '/capabilities',
   '/industries',
-  '/transactions',
   '/insights',
   '/reports',
   '/news',

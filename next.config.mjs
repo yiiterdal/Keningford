@@ -2,6 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: '/transactions',
+        destination: '/',
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

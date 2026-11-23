@@ -1,15 +1,11 @@
-import Link from 'next/link';
 import JsonLd from '../components/JsonLd';
 import { Eyebrow, FaqList, PAGE_BG, TalkToPersonBand, faqSchema } from '../components/CredentialsBlocks';
 import { companyFacts, companyRegistry, contactChannels, credentialsFaq, verificationSources } from '../data/credentials';
-import { transactions } from '../data/transactions';
 
 export const metadata = {
   title: 'Credentials & Company Information',
-  description: `${companyRegistry.legalName} is a Delaware-registered capital advisory firm based in New York. Our company registration, team, track record, and how to verify us independently.`,
+  description: `${companyRegistry.legalName} is a Delaware-registered capital advisory firm based in New York. Our company registration, team, and how to verify us independently.`,
 };
-
-const deals = transactions.filter((transaction) => transaction.value !== 'Active').slice(0, 5);
 
 const dueDiligence = [
   ...verificationSources,
@@ -33,9 +29,9 @@ export default function CredentialsPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-[1.6] tracking-[-0.01em] text-gray-500 md:text-lg">
             {companyRegistry.legalName} is a capital-advisory firm registered in the State of Delaware and based in New
-            York. Below are our company details, our leadership, our completed track record, and every way you can check
-            us out independently. We believe a firm that asks investors and operators to trust it should be easy to verify
-            - so here is everything in one place.
+            York. Below are our company details, our leadership, and every way you can check us out independently. We
+            believe a firm that asks investors and operators to trust it should be easy to verify - so here is everything
+            in one place.
           </p>
         </div>
       </section>
@@ -81,37 +77,6 @@ export default function CredentialsPage() {
               advisory fee plus a success fee earned on capital actually raised.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-6 md:px-8">
-          <div className="mb-14 flex flex-col gap-8 md:mb-16 md:flex-row md:items-end md:justify-between">
-            <div>
-              <Eyebrow>Track record</Eyebrow>
-              <h2 className="max-w-[550px] font-sans text-[2rem] font-medium leading-[1.083] tracking-[-0.0225em] text-navy md:text-[2.5rem] lg:text-[3rem]">Completed transactions.</h2>
-            </div>
-            <Link
-              href="/transactions"
-              className="inline-flex w-fit items-center gap-2 border border-navy/15 bg-white px-6 py-3 text-[13px] font-medium text-navy transition hover:border-navy/30"
-            >
-              View all transactions <span aria-hidden>→</span>
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {deals.map((deal) => (
-              <div key={`${deal.description}-${deal.type}`} className="flex h-full flex-col bg-white p-7">
-                <p className="font-sans text-[2rem] font-medium leading-none tracking-[-0.03em] text-navy">{deal.value}</p>
-                <p className="mt-3 text-[15px] text-gray-600">{deal.valueLabel}</p>
-                <p className="mt-auto pt-8 text-[15px] font-medium text-navy">{deal.description}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-gray-500">{deal.sector}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-gray-500">
-            Client names and transaction values are confidential. The examples above are anonymized representatives of
-            mandate types across our practice.
-          </p>
         </div>
       </section>
 

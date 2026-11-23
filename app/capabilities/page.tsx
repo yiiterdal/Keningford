@@ -31,7 +31,7 @@ export default function CapabilitiesPage() {
         title="Senior bankers lead every mandate, from origination through close."
         description="Clients work directly with decision-makers throughout strategy design, investor positioning, negotiation, and closing."
         primaryCta={{ label: 'Meet the team →', href: '/about#team' }}
-        secondaryCta={{ label: 'View transactions', href: '/transactions' }}
+        secondaryCta={{ label: 'Contact our team →', href: '/contact' }}
       />
 
       <EngagementTimeline />

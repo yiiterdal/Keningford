@@ -131,18 +131,13 @@ export const verificationSources: VerificationSource[] = [
     description: 'Real, named people with public profiles - meet the leadership behind every mandate.',
     href: '/about#team',
   },
-  {
-    title: 'Track record',
-    description: 'Completed transactions advised by the Keningford Partners team, through to financial close.',
-    href: '/transactions',
-  },
 ];
 
 /** Full index of official and independent records listed on /verify */
 export const verifyIndex: VerificationSource[] = [
   ...verificationSources,
   { title: 'What investors should know', description: 'Information for investors and capital partners.', href: '/investors' },
-  { title: 'Our credentials', description: 'Company details, team and track record in one place.', href: '/credentials' },
+  { title: 'Our credentials', description: 'Company details and team in one place.', href: '/credentials' },
   { title: 'Frequently asked questions', description: 'Answers about who we are and how we work.', href: '/credentials#faq' },
   {
     title: 'Official information for internship and job candidates',
@@ -173,7 +168,7 @@ export const credentialsFaq: FaqItem[] = [
     question: 'Where is Keningford Partners registered?',
     answer: `Its legal entity, ${companyRegistry.legalName}, is registered in the State of Delaware, United States, with the Delaware Division of Corporations${
       companyRegistry.formationYear ? `, formed in ${companyRegistry.formationYear}` : ''
-    }. You can verify it independently on the public Delaware entity register. We have a named, public leadership team and a track record of completed capital-raising and M&A transactions.`,
+    }. You can verify it independently on the public Delaware entity register. We have a named, public leadership team advising on capital-raising and M&A mandates.`,
   },
   {
     question: 'What does Keningford Partners do?',
@@ -186,7 +181,7 @@ export const credentialsFaq: FaqItem[] = [
   },
   {
     question: 'How can I verify Keningford Partners independently?',
-    answer: `Search "${companyRegistry.legalName}" on the Delaware Division of Corporations register; view us on LinkedIn, Crunchbase and PitchBook; review the named team and the public track record; or simply email us and speak to a real person before deciding anything.`,
+    answer: `Search "${companyRegistry.legalName}" on the Delaware Division of Corporations register; view us on LinkedIn, Crunchbase and PitchBook; review the named team on our About page; or simply email us and speak to a real person before deciding anything.`,
   },
   {
     question: 'Does Keningford Partners hold or manage client or investor money?',

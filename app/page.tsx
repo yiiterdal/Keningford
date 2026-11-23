@@ -11,7 +11,6 @@ const CapabilitiesOverview = dynamic(() => import('./components/CapabilitiesOver
 const HomeIndustries = dynamic(() => import('./components/HomeIndustries'));
 const HomeStats = dynamic(() => import('./components/HomeStats'));
 const HomeAdvisoryTabs = dynamic(() => import('./components/HomeAdvisoryTabs'));
-const HomeCaseStudies = dynamic(() => import('./components/HomeCaseStudies'));
 const EngagementFramework = dynamic(() => import('./components/EngagementFramework'));
 const HomeFaq = dynamic(() => import('./components/HomeFaq'));
 const HomeCta = dynamic(() => import('./components/HomeCta'));
@@ -43,7 +42,6 @@ export default function Home() {
       <HomeIndustries />
       <HomeStats />
       <HomeAdvisoryTabs />
-      <HomeCaseStudies />
       <EngagementFramework />
       <HomeFaq />
       <NewsSection />

@@ -2,20 +2,18 @@ import Link from 'next/link';
 import Hero from '../components/Hero';
 import HomeSectionHeader from '../components/HomeSectionHeader';
 import ImageBand from '../components/ImageBand';
-import TransactionCard from '../components/TransactionCard';
 import NewsMeta from '../components/NewsMeta';
 import ReportMeta from '../components/ReportMeta';
 import { investorPageSections } from '../data/investors';
 import { recentMandates } from '../data/mandates';
 import { newsItems } from '../data/news';
 import { reports } from '../data/reports';
-import { transactions } from '../data/transactions';
 import { unsplashSrc } from '../lib/image-utils';
 
 export const metadata = {
   title: 'For Investors | Keningford Partners',
   description:
-    'Active mandates, featured transactions, market insights, and research for institutional investors.',
+    'Active mandates, market insights, and research for institutional investors.',
 };
 
 const textLink =
@@ -23,7 +21,6 @@ const textLink =
 
 export default function InvestorsPage() {
   const marketInsights = newsItems.filter((item) => item.category === 'Market Insights').slice(0, 3);
-  const featuredTransactions = transactions.slice(0, 6);
 
   return (
     <>
@@ -63,26 +60,6 @@ export default function InvestorsPage() {
       <section className="bg-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
           <HomeSectionHeader
-            pill="Featured Transactions"
-            title="Representative engagements."
-            description={investorPageSections.featuredTransactionsIntro}
-          />
-          <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredTransactions.map((transaction, index) => (
-              <TransactionCard key={`${transaction.description}-${index}`} transaction={transaction} compact />
-            ))}
-          </div>
-          <div className="mt-10">
-            <Link href="/transactions" className={textLink}>
-              View all transactions <span aria-hidden>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f0f0f0] py-24 md:py-32">
-        <div className="container mx-auto px-6 md:px-8">
-          <HomeSectionHeader
             pill="Market Insights"
             title="Perspectives from our team."
             description={investorPageSections.marketInsightsIntro}
@@ -92,7 +69,7 @@ export default function InvestorsPage() {
               <Link
                 key={item.slug}
                 href={`/news/${item.slug}`}
-                className="group flex h-full flex-col bg-white p-8"
+                className="group flex h-full flex-col bg-[#f0f0f0] p-8"
               >
                 <NewsMeta category={item.category} date={item.date} className="mb-6" />
                 <h3 className="font-sans text-xl font-medium leading-[1.18] tracking-[-0.01em] text-navy group-hover:underline md:text-[22px]">
@@ -113,7 +90,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-[#f0f0f0] py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
           <HomeSectionHeader pill="Research" title="Reports and research." description={investorPageSections.researchIntro} />
           <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
@@ -121,7 +98,7 @@ export default function InvestorsPage() {
               <Link
                 key={report.slug}
                 href={`/reports/${report.slug}`}
-                className="group flex h-full flex-col bg-[#f0f0f0] p-8"
+                className="group flex h-full flex-col bg-white p-8"
               >
                 <ReportMeta
                   type={report.type}
@@ -148,7 +125,7 @@ export default function InvestorsPage() {
         title="Connect with our team."
         description="Mandate details are shared confidentially with qualified institutional investors."
         primaryCta={{ label: 'Connect with our team →', href: '/contact?tab=investors' }}
-        secondaryCta={{ label: 'View transactions', href: '/transactions' }}
+        secondaryCta={{ label: 'Our capabilities', href: '/capabilities' }}
       />
     </>
   );

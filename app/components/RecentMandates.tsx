@@ -16,8 +16,8 @@ export default function RecentMandates() {
               Active engagements across capital raising, fund placement, and strategic advisory.
             </p>
           </div>
-          <Link href="/transactions" className="text-sm font-medium text-navy hover:underline">
-            View transactions →
+          <Link href="/contact" className="text-sm font-medium text-navy hover:underline">
+            Contact our team →
           </Link>
         </div>
 
