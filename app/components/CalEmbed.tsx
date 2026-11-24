@@ -17,8 +17,12 @@ declare global {
   }
 }
 
-const NAMESPACE = 'discovery-call';
 const EMBED_SCRIPT = 'https://app.cal.com/embed/embed.js';
+
+function namespaceFromCalLink(calLink: string): string {
+  const slug = calLink.split('/').filter(Boolean).pop();
+  return slug || 'introduction-call';
+}
 
 /** Port of the official Cal.com loader snippet: queues calls until embed.js has loaded. */
 function installCalLoader() {
@@ -60,10 +64,11 @@ export default function CalEmbed({ calLink, minHeight = 640, className = '' }: C
 
     installCalLoader();
     const Cal = window.Cal!;
-    if (!Cal.ns?.[NAMESPACE]) {
-      Cal('init', NAMESPACE, { origin: 'https://app.cal.com' });
+    const namespace = namespaceFromCalLink(calLink);
+    if (!Cal.ns?.[namespace]) {
+      Cal('init', namespace, { origin: 'https://app.cal.com' });
     }
-    const api = Cal.ns[NAMESPACE];
+    const api = Cal.ns[namespace];
     api('inline', {
       elementOrSelector: element,
       calLink,

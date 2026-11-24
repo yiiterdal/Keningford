@@ -1,4 +1,4 @@
-const DEFAULT_CAL_LINK = 'haktan-tuna-yılar-5srfpw/discovery-call';
+const DEFAULT_CAL_LINK = 'keningfordpartners/introduction-call';
 
 /** Set NEXT_PUBLIC_SCHEDULING_ENABLED=false to hide the booking embed. Enabled by default. */
 export function isSchedulingEnabled(): boolean {
