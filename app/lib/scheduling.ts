@@ -1,4 +1,4 @@
-const DEFAULT_CAL_LINK = 'keningfordpartners/introduction-call';
+const DEFAULT_CAL_LINK = 'keningfordpartners/introduction-call-copy';
 
 /** Set NEXT_PUBLIC_SCHEDULING_ENABLED=false to hide the booking embed. Enabled by default. */
 export function isSchedulingEnabled(): boolean {

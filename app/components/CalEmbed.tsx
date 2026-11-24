@@ -21,7 +21,7 @@ const EMBED_SCRIPT = 'https://app.cal.com/embed/embed.js';
 
 function namespaceFromCalLink(calLink: string): string {
   const slug = calLink.split('/').filter(Boolean).pop();
-  return slug || 'introduction-call';
+  return slug || 'introduction-call-copy';
 }
 
 /** Port of the official Cal.com loader snippet: queues calls until embed.js has loaded. */
